@@ -55,6 +55,57 @@
       flex-direction: column;
     }
 
+    /* ── HEADER ── */
+    .gw-header {
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      z-index: 2;
+    }
+
+    .gw-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 24px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .gw-header-logo {
+      display: inline-flex;
+      align-items: center;
+      line-height: 0;
+      flex-shrink: 0;
+    }
+
+    .gw-header-logo img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+
+    .gw-header-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .gw-header-nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: color .15s ease;
+    }
+
+    .gw-header-nav a:hover {
+      color: var(--accent);
+    }
+
     /* ── HERO ── */
     .gw-hero {
       width: 100%;
@@ -239,6 +290,24 @@
     }
 
     @media (max-width: 640px) {
+      .gw-header-inner {
+        padding: 12px 14px;
+        gap: 10px;
+      }
+
+      .gw-header-logo img {
+        height: 24px;
+      }
+
+      .gw-header-nav {
+        gap: 14px;
+      }
+
+      .gw-header-nav a {
+        font-size: 11px;
+        letter-spacing: .06em;
+      }
+
       main {
         padding: 28px 0 32px;
       }
@@ -255,10 +324,35 @@
         height: 50px;
       }
     }
+
+    /* Extra-narrow fallback (older iPhone SE etc.) */
+    @media (max-width: 380px) {
+      .gw-header-logo img {
+        height: 22px;
+      }
+
+      .gw-header-nav {
+        gap: 10px;
+      }
+    }
   </style>
 </head>
 
 <body>
+
+  <!-- Header -->
+  <header class="gw-header">
+    <div class="gw-header-inner">
+      <a class="gw-header-logo" href="/" aria-label="Epic Outdoors home">
+        <img src="assets/00-emailLogoWideH_eurostile.png" alt="Epic Outdoors" width="2000" height="261">
+      </a>
+      <nav class="gw-header-nav" aria-label="Primary">
+        <a href="/services/epic-hunt-giveaways/">Giveaway</a>
+        <a href="https://epicoutdoorsmember.com">Login</a>
+        <a href="https://store.epicoutdoors.com">Store</a>
+      </nav>
+    </div>
+  </header>
 
   <!-- Hero banner -->
   <div class="gw-hero">
