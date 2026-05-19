@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,27 +9,37 @@
   <meta name="format-detection" content="telephone=no">
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
 
     :root {
-      --bg:      #0b0f14;
-      --text:    rgba(255,255,255,.92);
-      --muted:   rgba(255,255,255,.72);
-      --line:    rgba(255,255,255,.12);
-      --card:    rgba(255,255,255,.06);
-      --card2:   rgba(255,255,255,.085);
-      --shadow:  0 18px 60px rgba(0,0,0,.45);
-      --radius:  18px;
-      --accent:  #ff7a18;
+      --bg: #0b0f14;
+      --text: rgba(255, 255, 255, .92);
+      --muted: rgba(255, 255, 255, .72);
+      --line: rgba(255, 255, 255, .12);
+      --card: rgba(255, 255, 255, .06);
+      --card2: rgba(255, 255, 255, .085);
+      --shadow: 0 18px 60px rgba(0, 0, 0, .45);
+      --radius: 18px;
+      --accent: #ff7a18;
       --accent2: #ffb26b;
     }
 
     html {
       min-height: 100%;
       background:
-        radial-gradient(1200px 700px at 15% 0%, rgba(255,122,24,.18), transparent 55%),
-        radial-gradient(900px 600px at 90% 10%, rgba(255,178,107,.12), transparent 55%),
+        radial-gradient(1200px 700px at 15% 0%, rgba(255, 122, 24, .18), transparent 55%),
+        radial-gradient(900px 600px at 90% 10%, rgba(255, 178, 107, .12), transparent 55%),
         var(--bg);
       background-attachment: fixed;
     }
@@ -68,13 +79,16 @@
 
     .gw-kicker {
       display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 7px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(255,122,24,.30);
-      background: rgba(255,122,24,.10);
+      border: 1px solid rgba(255, 122, 24, .30);
+      background: rgba(255, 122, 24, .10);
       color: var(--muted);
       font-size: 13px;
       letter-spacing: .04em;
+      line-height: 1;
       margin-bottom: 18px;
     }
 
@@ -94,40 +108,52 @@
     }
 
     .gw-pulse {
-      display: inline-block;
+      display: block;
       width: 8px;
       height: 8px;
       border-radius: 50%;
       background: var(--accent);
-      margin-right: 8px;
-      vertical-align: middle;
       animation: pulse 1.8s ease-in-out infinite;
     }
+
     @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%      { opacity: .35; transform: scale(.85); }
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: .35;
+        transform: scale(.85);
+      }
     }
 
     footer {
-      border-top: 1px solid rgba(255,255,255,.08);
-      color: rgba(255,255,255,.45);
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      color: rgba(255, 255, 255, .45);
       padding: 20px;
       text-align: center;
       font-size: 13px;
     }
 
     @media (max-width: 640px) {
-      .gw-card { padding: 32px 22px; }
+      .gw-card {
+        padding: 32px 22px;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <main>
     <div class="gw-container">
       <div class="gw-card">
         <div class="gw-kicker">
-          <span class="gw-pulse"></span>Epic Outdoors
+          <span class="gw-pulse"></span>
+          <span>Epic Outdoors</span>
         </div>
         <h1>Site Under Maintenance</h1>
         <p class="gw-sub">We're making some improvements. Check back soon.</p>
@@ -144,4 +170,5 @@
   </script>
 
 </body>
+
 </html>
