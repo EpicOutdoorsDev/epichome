@@ -55,6 +55,32 @@
       flex-direction: column;
     }
 
+    /* ── HERO ── */
+    .gw-hero {
+      width: 100%;
+      line-height: 0;
+      position: relative;
+    }
+
+    .gw-hero img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Subtle fade from hero into the page background so the orange sky
+       doesn't end on a hard edge against the dark body. */
+    .gw-hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--bg));
+      pointer-events: none;
+    }
+
     .gw-container {
       width: min(720px, calc(100% - 32px));
       margin: 0 auto;
@@ -62,7 +88,7 @@
 
     main {
       flex: 1;
-      padding: 64px 0 48px;
+      padding: 40px 0 48px;
     }
 
     /* ── MAINTENANCE CARD ── */
@@ -214,7 +240,7 @@
 
     @media (max-width: 640px) {
       main {
-        padding: 40px 0 32px;
+        padding: 28px 0 32px;
       }
 
       .gw-card {
@@ -224,11 +250,21 @@
       .gw-action-card {
         padding: 20px;
       }
+
+      .gw-hero::after {
+        height: 50px;
+      }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- Hero banner -->
+  <div class="gw-hero">
+    <img src="assets/26Website-HeroHeader1.jpeg" alt="Epic Outdoors — Your key to hunting the West" width="2200"
+      height="800" fetchpriority="high">
+  </div>
 
   <main>
     <div class="gw-container">
