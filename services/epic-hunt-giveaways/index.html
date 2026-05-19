@@ -59,7 +59,6 @@
             min-height: 100%;
             display: flex;
             flex-direction: column;
-            padding-top: 52px;
         }
 
         a {
@@ -81,25 +80,20 @@
         }
 
         /* ──────────────────────────────────────────────────────────
-       BACK BAR
+       HERO  (black background, contained image, back pill inside)
     ────────────────────────────────────────────────────────── */
-        #eo-back-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 9999;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 12px 20px;
-            transition: opacity .25s ease, transform .25s ease;
+        .gw-hero {
+            position: relative;
+            background: #000;
+            padding-bottom: 32px;
         }
 
-        #eo-back-bar.hidden {
-            opacity: 0;
-            transform: translateY(-100%);
-            pointer-events: none;
+        /* Back pill positioned inside the hero, top-left */
+        .gw-hero-back {
+            position: absolute;
+            top: 16px;
+            left: 20px;
+            z-index: 10;
         }
 
         .eo-back-btn {
@@ -123,14 +117,6 @@
             border-color: rgba(255, 122, 24, .40);
             background: rgba(255, 122, 24, .12);
             color: var(--accent2) !important;
-        }
-
-        /* ──────────────────────────────────────────────────────────
-       HERO  (black background, contained image)
-    ────────────────────────────────────────────────────────── */
-        .gw-hero {
-            background: #000;
-            padding-bottom: 32px;
         }
 
         .gw-hero-image-wrap {
@@ -771,8 +757,9 @@
        MOBILE
     ────────────────────────────────────────────────────────── */
         @media (max-width: 640px) {
-            body {
-                padding-top: 48px;
+            .gw-hero-back {
+                top: 12px;
+                left: 12px;
             }
 
             .gw-hero {
@@ -812,23 +799,24 @@
 
 <body>
 
-    <!-- ── BACK BAR ── -->
-    <div id="eo-back-bar">
-        <a href="/" class="eo-back-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-            epicoutdoors.com
-        </a>
-    </div>
-
     <main>
 
         <!-- ────────────────────────────────────────────────────
          HERO
     ──────────────────────────────────────────────────── -->
         <section class="gw-hero">
+
+            <!-- Back pill, absolutely positioned inside hero -->
+            <div class="gw-hero-back">
+                <a href="/" class="eo-back-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    epicoutdoors.com
+                </a>
+            </div>
+
             <div class="gw-hero-image-wrap">
                 <img src="assets/26S-Website_HeroHeader.png"
                     alt="2026 Summer Epic Hunt &amp; Optics Giveaway — Win an Epic Hunt. 8 dream hunts available.">
@@ -1300,22 +1288,6 @@
 
     <script>
         document.getElementById('y').textContent = new Date().getFullYear();
-
-        // Back bar: hide on scroll down, show on scroll up
-        (function () {
-            var bar = document.getElementById('eo-back-bar');
-            var lastY = 0;
-            var threshold = 60;
-            window.addEventListener('scroll', function () {
-                var y = window.scrollY || window.pageYOffset;
-                if (y > threshold && y > lastY) {
-                    bar.classList.add('hidden');
-                } else {
-                    bar.classList.remove('hidden');
-                }
-                lastY = y;
-            }, { passive: true });
-        })();
     </script>
 
 </body>
