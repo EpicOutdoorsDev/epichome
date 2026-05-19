@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Epic Hunt Giveaway — Epic Outdoors</title>
+    <meta name="format-detection" content="telephone=no">
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        :root {
+            --bg: #0b0f14;
+            --text: rgba(255, 255, 255, .92);
+            --muted: rgba(255, 255, 255, .72);
+            --line: rgba(255, 255, 255, .12);
+            --card: rgba(255, 255, 255, .06);
+            --card2: rgba(255, 255, 255, .085);
+            --shadow: 0 18px 60px rgba(0, 0, 0, .45);
+            --radius: 18px;
+            --accent: #ff7a18;
+            --accent2: #ffb26b;
+        }
+
+        html {
+            min-height: 100%;
+            background:
+                radial-gradient(1200px 700px at 15% 0%, rgba(255, 122, 24, .18), transparent 55%),
+                radial-gradient(900px 600px at 90% 10%, rgba(255, 178, 107, .12), transparent 55%),
+                var(--bg);
+            background-attachment: fixed;
+        }
+
+        body {
+            background: transparent;
+            color: var(--text);
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.6;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-top: 52px;
+        }
+
+        /* ── BACK BAR ── */
+        #eo-back-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 12px 20px;
+            transition: opacity .25s ease, transform .25s ease;
+        }
+
+        #eo-back-bar.hidden {
+            opacity: 0;
+            transform: translateY(-100%);
+            pointer-events: none;
+        }
+
+        .eo-back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(11, 15, 20, .70);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: rgba(255, 255, 255, .78) !important;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none !important;
+            transition: border-color .15s, background .15s, color .15s;
+        }
+
+        .eo-back-btn:hover {
+            border-color: rgba(255, 122, 24, .40);
+            background: rgba(255, 122, 24, .12);
+            color: var(--accent2) !important;
+        }
+
+        .gw-container {
+            width: min(720px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        main {
+            flex: 1;
+            padding: 48px 0 48px;
+        }
+
+        /* ── HERO ── */
+        .gw-hero {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .gw-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 122, 24, .30);
+            background: rgba(255, 122, 24, .10);
+            color: var(--muted);
+            font-size: 13px;
+            letter-spacing: .04em;
+            line-height: 1;
+            margin-bottom: 18px;
+        }
+
+        .gw-pulse {
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            animation: pulse 1.8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: .35;
+                transform: scale(.85);
+            }
+        }
+
+        h1 {
+            font-size: clamp(30px, 4vw, 46px);
+            font-weight: 900;
+            letter-spacing: -.02em;
+            line-height: 1.08;
+            margin-bottom: 14px;
+        }
+
+        .gw-hero-sub {
+            color: var(--muted);
+            font-size: 16px;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        /* ── PLACEHOLDER CARD ── */
+        .gw-card {
+            background: linear-gradient(180deg, var(--card2), var(--card));
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 40px 36px;
+            text-align: center;
+        }
+
+        .gw-placeholder-label {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid var(--line);
+            color: rgba(255, 255, 255, .65);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .gw-placeholder-title {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -.01em;
+            margin-bottom: 10px;
+        }
+
+        .gw-placeholder-body {
+            color: var(--muted);
+            font-size: 15px;
+            max-width: 460px;
+            margin: 0 auto 24px;
+        }
+
+        /* ── CTA ── */
+        .gw-cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .gw-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 11px 22px;
+            border-radius: 999px;
+            font-weight: 800;
+            font-size: 14px;
+            text-decoration: none !important;
+            transition: filter .12s, transform .08s, border-color .15s, background .15s;
+        }
+
+        .gw-cta-primary {
+            border: 1px solid rgba(255, 122, 24, .40);
+            background: linear-gradient(180deg, rgba(255, 122, 24, .95), rgba(255, 122, 24, .78));
+            color: #101318 !important;
+        }
+
+        .gw-cta-primary:hover {
+            filter: brightness(1.06);
+        }
+
+        .gw-cta-primary:active {
+            transform: translateY(1px);
+        }
+
+        .gw-cta-ghost {
+            border: 1px solid rgba(255, 255, 255, .14);
+            background: rgba(255, 255, 255, .04);
+            color: var(--text) !important;
+        }
+
+        .gw-cta-ghost:hover {
+            border-color: rgba(255, 122, 24, .40);
+            background: rgba(255, 122, 24, .10);
+            color: var(--accent2) !important;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, .08);
+            color: rgba(255, 255, 255, .45);
+            padding: 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        @media (max-width: 640px) {
+            main {
+                padding: 28px 0 32px;
+            }
+
+            .gw-card {
+                padding: 32px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ── BACK BAR ── -->
+    <div id="eo-back-bar">
+        <a href="/" class="eo-back-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            epicoutdoors.com
+        </a>
+    </div>
+
+    <main>
+        <div class="gw-container">
+
+            <!-- Hero -->
+            <div class="gw-hero">
+                <div class="gw-kicker">
+                    <span class="gw-pulse"></span>
+                    <span>Epic Outdoors</span>
+                </div>
+                <h1>Epic Hunt Giveaway</h1>
+                <p class="gw-hero-sub">Premier western big game hunts. Awarded each year to Epic Outdoors members.</p>
+            </div>
+
+            <!-- Placeholder content -->
+            <div class="gw-card">
+                <span class="gw-placeholder-label">Page Updating</span>
+                <div class="gw-placeholder-title">Giveaway details coming soon</div>
+                <p class="gw-placeholder-body">
+                    We're refreshing this page with the latest giveaway info — prizes, entry details, and how to
+                    qualify. Check back shortly, or log in to your member portal for the most up-to-date information.
+                </p>
+
+                <div class="gw-cta-row">
+                    <a href="https://epicoutdoorsmember.com" class="gw-cta gw-cta-primary">
+                        Log in to member portal →
+                    </a>
+                    <a href="/" class="gw-cta gw-cta-ghost">
+                        ← Back to home
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        Copyright &copy; 2017&ndash;<span id="y"></span> Epic Outdoors | All Rights Reserved
+    </footer>
+
+    <script>
+        document.getElementById('y').textContent = new Date().getFullYear();
+
+        // Hide back bar on scroll down, show on scroll up
+        (function () {
+            var bar = document.getElementById('eo-back-bar');
+            var lastY = 0;
+            var threshold = 60;
+            window.addEventListener('scroll', function () {
+                var y = window.scrollY || window.pageYOffset;
+                if (y > threshold && y > lastY) {
+                    bar.classList.add('hidden');
+                } else {
+                    bar.classList.remove('hidden');
+                }
+                lastY = y;
+            }, { passive: true });
+        })();
+    </script>
+
+</body>
+
+</html>
