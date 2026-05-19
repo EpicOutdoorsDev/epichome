@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Epic Hunt Giveaways — Epic Outdoors</title>
+    <title>2026 Summer Epic Hunt Giveaway — Epic Outdoors</title>
     <meta name="description"
-        content="Win one of eight premier hunt and gear packages. Plus a bonus Winner's Choice Hunt worth $15,000. Buy tickets at epicoutdoorsmember.com.">
+        content="Win one of eight premier hunt and gear packages. Plus a bonus Winner's Choice Hunt worth $15,000. Deadline June 22, 2026.">
     <meta name="format-detection" content="telephone=no">
 
     <style>
@@ -76,6 +76,18 @@
             margin: 0 auto;
         }
 
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
         main {
             flex: 1;
         }
@@ -128,14 +140,18 @@
         /* ──────────────────────────────────────────────────────────
        HERO
     ────────────────────────────────────────────────────────── */
-        .gw-hero-media {
+        .gw-hero-image-wrap {
             width: 100%;
-            aspect-ratio: 21 / 9;
-            max-height: 460px;
-            background: linear-gradient(135deg, rgba(255, 122, 24, .22), rgba(11, 15, 20, .6) 70%), var(--card2);
-            background-size: cover;
-            background-position: center;
+            background:
+                linear-gradient(135deg, rgba(255, 122, 24, .18), rgba(255, 178, 107, .04)),
+                var(--card2);
             border-bottom: 1px solid var(--line);
+        }
+
+        .gw-hero-image-wrap img {
+            display: block;
+            width: 100%;
+            height: auto;
         }
 
         .gw-hero-content {
@@ -182,18 +198,41 @@
         }
 
         .gw-hero h1 {
-            font-size: clamp(34px, 5vw, 56px);
+            font-size: clamp(28px, 3.4vw, 40px);
             font-weight: 900;
-            letter-spacing: -.025em;
-            line-height: 1.04;
-            margin-bottom: 16px;
+            letter-spacing: -.02em;
+            line-height: 1.08;
+            margin-bottom: 14px;
         }
 
         .gw-hero-sub {
             color: var(--muted);
-            font-size: clamp(15px, 1.6vw, 18px);
+            font-size: clamp(15px, 1.5vw, 17px);
             max-width: 620px;
-            margin: 0 auto 26px;
+            margin: 0 auto 22px;
+        }
+
+        .gw-hero-sub strong {
+            color: var(--text);
+        }
+
+        .gw-deadline-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 122, 24, .45);
+            background: rgba(255, 122, 24, .12);
+            color: var(--accent2);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .04em;
+            margin-bottom: 22px;
+        }
+
+        .gw-deadline-pill svg {
+            flex-shrink: 0;
         }
 
         .gw-cta-row {
@@ -304,17 +343,24 @@
 
         .gw-prize-media {
             width: 100%;
-            aspect-ratio: 3 / 2;
+            aspect-ratio: 1406 / 978;
+            /* exact ratio of the supplied images */
             background:
                 linear-gradient(135deg, rgba(255, 122, 24, .18), rgba(255, 178, 107, .04)),
                 var(--card2);
-            background-size: cover;
-            background-position: center;
+            overflow: hidden;
             border-bottom: 1px solid var(--line-soft);
         }
 
+        .gw-prize-media img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .gw-prize-body {
-            padding: 24px 24px 26px;
+            padding: 22px 24px 26px;
             display: flex;
             flex-direction: column;
             flex: 1;
@@ -324,7 +370,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .gw-badge {
@@ -348,29 +394,22 @@
             color: var(--accent2);
         }
 
-        .gw-prize-title {
-            font-size: 20px;
-            font-weight: 900;
-            letter-spacing: -.015em;
-            line-height: 1.2;
-            margin-bottom: 8px;
+        .gw-prize-meta {
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 12px;
         }
 
-        .gw-prize-meta {
-            color: var(--muted);
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 14px;
+        .gw-prize-meta .gw-prize-meta-dot {
+            color: var(--accent);
+            margin: 0 6px;
         }
 
         .gw-prize-desc {
             color: var(--muted);
             font-size: 14.5px;
             line-height: 1.6;
-        }
-
-        .gw-prize-desc+.gw-prize-desc {
-            margin-top: 10px;
         }
 
         .gw-gear-list {
@@ -425,12 +464,11 @@
         }
 
         .gw-wc-media {
-            aspect-ratio: 3 / 2;
+            aspect-ratio: 1406 / 978;
             background:
                 linear-gradient(135deg, rgba(255, 122, 24, .22), rgba(255, 178, 107, .06)),
                 var(--card2);
-            background-size: cover;
-            background-position: center;
+            overflow: hidden;
         }
 
         @media (min-width: 820px) {
@@ -440,12 +478,15 @@
             }
         }
 
-        .gw-wc-body {
-            padding: 32px 32px 36px;
+        .gw-wc-media img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .gw-wc-body .gw-prize-title {
-            font-size: 24px;
+        .gw-wc-body {
+            padding: 32px 32px 36px;
         }
 
         .gw-wc-callout {
@@ -461,102 +502,107 @@
         }
 
         /* ──────────────────────────────────────────────────────────
-       TICKETS
+       PRICING TIERS
     ────────────────────────────────────────────────────────── */
-        .gw-tickets-card {
+        .gw-pricing-grid {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: 1fr;
+            margin-bottom: 30px;
+        }
+
+        @media (min-width: 640px) {
+            .gw-pricing-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 960px) {
+            .gw-pricing-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .gw-tier {
+            position: relative;
             background: linear-gradient(180deg, var(--card2), var(--card));
             border: 1px solid var(--line);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            padding: 36px 32px 40px;
-            max-width: 740px;
-            margin: 0 auto;
+            border-radius: var(--radius-sm);
+            padding: 22px 20px;
             text-align: center;
-        }
-
-        .gw-ticket-price {
             display: flex;
-            align-items: baseline;
-            justify-content: center;
-            gap: 8px;
-            margin: 12px 0 4px;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: var(--shadow-sm);
         }
 
-        .gw-ticket-price-num {
-            font-size: 64px;
+        .gw-tier-count {
+            color: var(--soft);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .gw-tier-price {
+            font-size: 38px;
             font-weight: 900;
-            letter-spacing: -.04em;
+            letter-spacing: -.025em;
             line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .gw-tier-save {
+            color: var(--accent2);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            min-height: 16px;
+        }
+
+        .gw-tier-bonus {
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px dashed rgba(255, 122, 24, .30);
+            color: var(--accent2);
+            font-size: 12.5px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .gw-tier-best {
+            border-color: rgba(255, 122, 24, .55);
+            background:
+                linear-gradient(180deg, rgba(255, 122, 24, .12), rgba(255, 122, 24, .04));
+        }
+
+        .gw-tier-best-flag {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 4px 12px;
+            border-radius: 999px;
+            background: linear-gradient(180deg, var(--accent), rgba(255, 122, 24, .85));
+            color: #101318;
+            font-size: 10.5px;
+            font-weight: 900;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(255, 122, 24, .35);
+        }
+
+        .gw-tier-best .gw-tier-price {
             background: linear-gradient(180deg, var(--accent2), var(--accent));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .gw-ticket-price-cur {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--accent2);
-        }
-
-        .gw-ticket-price-suffix {
-            font-size: 16px;
-            color: var(--muted);
-            font-weight: 700;
-        }
-
-        .gw-ticket-savings {
-            display: inline-block;
-            margin-bottom: 16px;
-            padding: 4px 12px;
-            border-radius: 999px;
-            background: rgba(255, 122, 24, .12);
-            border: 1px solid rgba(255, 122, 24, .35);
-            color: var(--accent2);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: .06em;
-            text-transform: uppercase;
-        }
-
-        .gw-ticket-explainer {
-            color: var(--muted);
-            font-size: 15px;
-            max-width: 540px;
-            margin: 0 auto 22px;
-        }
-
-        .gw-ticket-bullets {
-            display: grid;
-            gap: 10px;
-            max-width: 480px;
-            margin: 0 auto 28px;
-            text-align: left;
-        }
-
-        .gw-ticket-bullets .gw-tb-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.55;
-        }
-
-        .gw-ticket-bullets .gw-tb-item::before {
-            content: "";
-            display: block;
-            width: 6px;
-            height: 6px;
-            margin-top: 9px;
-            border-radius: 50%;
-            background: var(--accent);
-            flex-shrink: 0;
-        }
-
-        .gw-ticket-bullets strong {
-            color: var(--text);
-            font-weight: 700;
+        .gw-tickets-cta-wrap {
+            text-align: center;
         }
 
         .gw-cta-large {
@@ -566,8 +612,93 @@
 
         .gw-fine-print {
             color: var(--soft);
+            font-size: 12.5px;
+            margin-top: 14px;
+        }
+
+        /* ──────────────────────────────────────────────────────────
+       OTHER WAYS TO ENTER
+    ────────────────────────────────────────────────────────── */
+        .gw-methods-grid {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 720px) {
+            .gw-methods-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .gw-method {
+            background: linear-gradient(180deg, var(--card2), var(--card));
+            border: 1px solid var(--line);
+            border-radius: var(--radius-sm);
+            padding: 22px 22px 24px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+
+        .gw-method-icon-wrap {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 999px;
+            background: rgba(255, 122, 24, .12);
+            border: 1px solid rgba(255, 122, 24, .30);
+            color: var(--accent2);
+            margin-bottom: 12px;
+        }
+
+        .gw-method-label {
             font-size: 12px;
-            margin-top: 16px;
+            font-weight: 800;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--soft);
+            margin-bottom: 6px;
+        }
+
+        .gw-method-value {
+            font-size: 17px;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 4px;
+            word-break: break-word;
+        }
+
+        .gw-method-value a {
+            color: var(--text) !important;
+        }
+
+        .gw-method-value a:hover {
+            color: var(--accent2) !important;
+        }
+
+        .gw-method-detail {
+            color: var(--muted);
+            font-size: 13.5px;
+            line-height: 1.5;
+        }
+
+        .gw-perks {
+            margin-top: 28px;
+            padding: 18px 22px;
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid var(--line-soft);
+            border-radius: var(--radius-sm);
+            color: var(--muted);
+            font-size: 14px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .gw-perks strong {
+            color: var(--text);
+            font-weight: 800;
         }
 
         /* ──────────────────────────────────────────────────────────
@@ -590,7 +721,7 @@
             }
 
             .gw-hero-content {
-                padding: 28px 16px 4px;
+                padding: 24px 16px 4px;
             }
 
             .gw-section {
@@ -601,20 +732,16 @@
                 padding: 20px 20px 22px;
             }
 
-            .gw-prize-title {
-                font-size: 18px;
-            }
-
             .gw-wc-body {
                 padding: 24px 22px 28px;
             }
 
-            .gw-tickets-card {
-                padding: 28px 20px 32px;
+            .gw-tier {
+                padding: 20px 16px;
             }
 
-            .gw-ticket-price-num {
-                font-size: 52px;
+            .gw-tier-price {
+                font-size: 34px;
             }
         }
     </style>
@@ -639,25 +766,35 @@
          HERO
     ──────────────────────────────────────────────────── -->
         <section class="gw-hero">
-            <div class="gw-hero-media" style="background-image: url('assets/26S-Website_HeroHeader.png');" role="img"
-                aria-label="Epic Outdoors Hunt Giveaways"></div>
+            <div class="gw-hero-image-wrap">
+                <img src="assets/26S-Website_HeroHeader.png"
+                    alt="2026 Summer Epic Hunt &amp; Optics Giveaway — Win an Epic Hunt. 8 dream hunts available.">
+            </div>
             <div class="gw-hero-content">
                 <div class="gw-kicker">
                     <span class="gw-pulse"></span>
                     <span>Epic Outdoors</span>
                 </div>
-                <h1>Epic Hunt Giveaways</h1>
+                <h1>Eight Dream Hunts. One Epic Gear Package. One Bonus Hunt.</h1>
                 <p class="gw-hero-sub">
-                    Eight world-class prize packages — seven once-in-a-lifetime guided hunts plus the Epic Gear Package
-                    — with a bonus <strong style="color:var(--text);">Winner's Choice Hunt</strong> worth $15,000.
+                    Buy tickets, pick your prizes, and let the drawing find your next adventure. Every $500 package also
+                    earns an entry into the <strong>$15,000 Winner's Choice Hunt</strong>.
                 </p>
+
+                <div class="gw-deadline-pill">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    Deadline: June 22, 2026
+                </div>
+
                 <div class="gw-cta-row">
-                    <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-cta gw-cta-primary">
-                        Buy Tickets →
-                    </a>
-                    <a href="#tickets" class="gw-cta gw-cta-ghost">
-                        How tickets work
-                    </a>
+                    <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-cta gw-cta-primary">Buy Tickets →</a>
+                    <a href="#tickets" class="gw-cta gw-cta-ghost">View pricing</a>
                 </div>
             </div>
         </section>
@@ -671,188 +808,204 @@
                 <div class="gw-section-head">
                     <div class="gw-eyebrow">Prize Packages</div>
                     <h2 class="gw-section-h">Eight Ways to Win</h2>
-                    <p class="gw-section-lede">Each ticket package buys 30 entries — apply them all to one hunt or
-                        spread them across the lineup.</p>
+                    <p class="gw-section-lede">Apply your tickets to a single hunt or split them across the lineup —
+                        your call.</p>
                 </div>
 
                 <div class="gw-prize-grid">
 
                     <!-- 1. YUKON DALL -->
                     <article class="gw-prize-card">
-                        <div class="gw-prize-media" style="background-image: url('assets/26S-Website_YT_Dall.jpeg');"
-                            role="img" aria-label="2027 Yukon Dall Sheep Hunt"></div>
+                        <div class="gw-prize-media">
+                            <img src="assets/26S-Website_YT_Dall.jpeg" alt="Win a 2027 Yukon Dall Sheep Hunt"
+                                onerror="this.style.display='none'">
+                        </div>
+                        <h3 class="sr-only">2027 Yukon Dall Sheep Hunt</h3>
                         <div class="gw-prize-body">
                             <div class="gw-prize-badges">
                                 <span class="gw-badge gw-badge-accent">$40,000 Value</span>
                                 <span class="gw-badge">10 Days</span>
                             </div>
-                            <h3 class="gw-prize-title">2027 Dall Sheep Hunt in the Yukon</h3>
-                            <div class="gw-prize-meta">North Curl Outfitters · July 28 – Aug 7, 2027</div>
+                            <div class="gw-prize-meta">North Curl Outfitters <span class="gw-prize-meta-dot">·</span>
+                                July 28 – Aug 7, 2027</div>
                             <p class="gw-prize-desc">
-                                Win a 10-day Dall sheep hunt with a third-generation outfitter known for remote
-                                horseback/backpack trips in the Kluane and Southern Lakes regions — areas with high
-                                densities of Dall sheep. As the first hunt of the year, conditions are typically
-                                incredible. Hunts run from multiple cabin-equipped camps with a likely spike camp during
-                                your trip. Expect a very high success rate on quality rams.
+                                A third-generation outfitter specializing in remote horseback/backpack trips in the
+                                Kluane and Southern Lakes regions — areas with high Dall sheep densities. As the first
+                                hunt of the year, conditions are typically incredible. Multiple cabin-equipped camps
+                                with a likely spike camp. Expect a very high success rate on quality rams.
                             </p>
                         </div>
                     </article>
 
                     <!-- 2. BC COMBO -->
                     <article class="gw-prize-card">
-                        <div class="gw-prize-media" style="background-image: url('assets/26S-Website_BC_Combo.jpeg');"
-                            role="img" aria-label="2026 British Columbia Super Combo Hunt"></div>
+                        <div class="gw-prize-media">
+                            <img src="assets/26S-Website_BC_Combo.jpeg"
+                                alt="Win a 2026 British Columbia Super Combo Hunt" onerror="this.style.display='none'">
+                        </div>
+                        <h3 class="sr-only">2026 British Columbia Super Combo Hunt</h3>
                         <div class="gw-prize-body">
                             <div class="gw-prize-badges">
                                 <span class="gw-badge">13 Days</span>
                                 <span class="gw-badge">6 Species</span>
                                 <span class="gw-badge gw-badge-accent">No Harvest Fees</span>
                             </div>
-                            <h3 class="gw-prize-title">2026 British Columbia Super Combo Hunt</h3>
-                            <div class="gw-prize-meta">Terminus Mountain Outfitters · Sept 16 – 28, 2026</div>
+                            <div class="gw-prize-meta">Terminus Mountain Outfitters <span
+                                    class="gw-prize-meta-dot">·</span> Sept 16 – 28, 2026</div>
                             <p class="gw-prize-desc">
                                 A 13-day, 1x1 true combo hunt for Canadian Moose, Mountain Caribou, Elk, Mountain Goat,
-                                Black Bear, and Wolf in some of the most breathtaking country in northern British
-                                Columbia. Conducted by horseback with stays in heated wall tents, wooden cabins, and
-                                occasional spike camps for targeting specific species. The area consistently produces
-                                record-book Canadian moose and is one of the few places you can still hunt Mountain
-                                caribou in BC. Quite simply one of the best combo hunts Canada has to offer.
+                                Black Bear, and Wolf in northern BC. Conducted by horseback with heated wall tents,
+                                wooden cabins, and occasional spike camps. The area consistently produces record-book
+                                moose and is one of the few places you can still hunt Mountain caribou in BC.
                             </p>
                         </div>
                     </article>
 
                     <!-- 3. AK COMBO -->
                     <article class="gw-prize-card">
-                        <div class="gw-prize-media" style="background-image: url('assets/26S-Website_AK_Combo.jpeg');"
-                            role="img" aria-label="2026 Alaska Arctic Grizzly & Caribou Combo Hunt"></div>
+                        <div class="gw-prize-media">
+                            <img src="assets/26S-Website_AK_Combo.jpeg"
+                                alt="Win a 2026 Alaska Arctic Grizzly and Barren Ground Caribou Combo Hunt"
+                                onerror="this.style.display='none'">
+                        </div>
+                        <h3 class="sr-only">2026 Alaska Arctic Grizzly &amp; Barren Ground Caribou Combo Hunt</h3>
                         <div class="gw-prize-body">
                             <div class="gw-prize-badges">
                                 <span class="gw-badge">13 Days</span>
                                 <span class="gw-badge gw-badge-accent">Air Charter Covered</span>
                                 <span class="gw-badge gw-badge-accent">No Harvest Fees</span>
                             </div>
-                            <h3 class="gw-prize-title">2026 Alaska Arctic Grizzly &amp; Barren Ground Caribou Combo</h3>
-                            <div class="gw-prize-meta">Alaskan Perimeter Expeditions · Sept 1 – 13, 2026</div>
+                            <div class="gw-prize-meta">Alaskan Perimeter Expeditions <span
+                                    class="gw-prize-meta-dot">·</span> Sept 1 – 13, 2026</div>
                             <p class="gw-prize-desc">
-                                Hunt the Arctic National Wildlife Refuge in an exclusive guide use area for both Arctic
+                                Hunt the Arctic National Wildlife Refuge in an exclusive guide use area for Arctic
                                 Grizzly and Barren Ground Caribou. Bears have ranged 7'6"–8'6" with coloration from
-                                classic blonde-and-dark-legs to chocolate. The area also produces great caribou bulls.
-                                Conducted from a temporary base camp where you hike and glass for both species
-                                simultaneously. As a bonus, the $5,000 round-trip air charter is covered, and Dall sheep
-                                can be added for a trophy fee.
+                                classic blonde-and-dark-legs to chocolate. Hike-and-glass from a temporary base camp. As
+                                a bonus, the $5,000 round-trip air charter is covered, and Dall sheep can be added for a
+                                trophy fee.
                             </p>
                         </div>
                     </article>
 
                     <!-- 4. MEXICO COMBO -->
                     <article class="gw-prize-card">
-                        <div class="gw-prize-media" style="background-image: url('assets/26S-Website_MX_Combo.jpeg');"
-                            role="img" aria-label="2026-2027 Mexico Mule Deer & Coues Deer Combo Hunt"></div>
+                        <div class="gw-prize-media">
+                            <img src="assets/26S-Website_MX_Combo.jpeg"
+                                alt="Win a 2026-2027 Mexico Mule Deer and Coues Deer Combo Hunt"
+                                onerror="this.style.display='none'">
+                        </div>
+                        <h3 class="sr-only">2026–2027 Mexico Mule Deer &amp; Coues Deer Combo Hunt</h3>
                         <div class="gw-prize-body">
                             <div class="gw-prize-badges">
                                 <span class="gw-badge">6 Days</span>
                                 <span class="gw-badge gw-badge-accent">All Inclusive</span>
                                 <span class="gw-badge gw-badge-accent">No Harvest Fees</span>
                             </div>
-                            <h3 class="gw-prize-title">2026–2027 Mexico Mule Deer &amp; Coues Deer Combo Hunt</h3>
-                            <div class="gw-prize-meta">FA Sonoran Hunts · Dec 28, 2026 – Jan 2, 2027</div>
+                            <div class="gw-prize-meta">FA Sonoran Hunts <span class="gw-prize-meta-dot">·</span> Dec 28,
+                                2026 – Jan 2, 2027</div>
                             <p class="gw-prize-desc">
-                                Start the new year hunting Sonora, Mexico for both trophy Mule deer and Coues deer on
-                                the same hunt. This first-class operation runs multiple ranches across nearly 400,000
-                                acres of free-range desert country with 80+ feeders maintained year-round and strict
-                                trophy management — they use only half their allotted tags annually. English-speaking
-                                guides and a comfortable ranch house. Includes round-trip airport transportation, gun
-                                permit, tags, and paperwork to bring your buck home.
+                                Hunt Sonora, Mexico for trophy Mule deer and Coues deer on the same trip. A first-class
+                                operation across ~400,000 acres of free-range desert with 80+ feeders maintained
+                                year-round and strict trophy management — they use only half their allotted tags.
+                                English-speaking guides, comfortable ranch house, and includes round-trip airport
+                                transport, gun permit, tags, and paperwork.
                             </p>
                         </div>
                     </article>
 
                     <!-- 5. NM ELK -->
                     <article class="gw-prize-card">
-                        <div class="gw-prize-media" style="background-image: url('assets/26S-Website_NM_Elk.jpeg');"
-                            role="img" aria-label="2026 Acoma Reservation New Mexico Elk Hunt"></div>
+                        <div class="gw-prize-media">
+                            <img src="assets/26S-Website_NM_Elk.jpeg"
+                                alt="Win a 2026 Acoma Reservation New Mexico Elk Hunt"
+                                onerror="this.style.display='none'">
+                        </div>
+                        <h3 class="sr-only">2026 Acoma Reservation New Mexico Elk Hunt</h3>
                         <div class="gw-prize-body">
                             <div class="gw-prize-badges">
                                 <span class="gw-badge">5 Days</span>
                                 <span class="gw-badge gw-badge-accent">Prime Rut</span>
                                 <span class="gw-badge">Any Weapon</span>
                             </div>
-                            <h3 class="gw-prize-title">2026 Acoma Reservation New Mexico Elk Hunt</h3>
-                            <div class="gw-prize-meta">Sept 28 – Oct 2, 2026 (arrive Sept 27, depart Oct 3)</div>
+                            <div class="gw-prize-meta">Acoma Big Game Hunts <span class="gw-prize-meta-dot">·</span>
+                                Sept 28 – Oct 2, 2026</div>
                             <p class="gw-prize-desc">
                                 A unique chance to hunt big bulls during the rut on the Acoma Reservation, where elk are
-                                managed for trophy quality. Our last winner killed a giant — you can see past harvests
-                                at acomabiggamehunts.com. We've secured prime rut dates and you can choose your weapon:
-                                rifle, muzzleloader, or bow. A great chance to hunt big bulls in the rut, with serious
-                                potential for a giant.
+                                managed for trophy quality. Our last winner killed a giant — see past harvests at
+                                acomabiggamehunts.com. We've secured prime rut dates and you can choose your weapon:
+                                rifle, muzzleloader, or bow.
                             </p>
                         </div>
                     </article>
 
                     <!-- 6. CO DEER -->
                     <article class="gw-prize-card">
-                        <div class="gw-prize-media" style="background-image: url('assets/26S-Website_CO_Deer.jpeg');"
-                            role="img" aria-label="2026 Colorado Unit 61 Mule Deer Hunt"></div>
+                        <div class="gw-prize-media">
+                            <img src="assets/26S-Website_CO_Deer.jpeg" alt="Win a 2026 Colorado Mule Deer Hunt"
+                                onerror="this.style.display='none'">
+                        </div>
+                        <h3 class="sr-only">2026 Colorado Unit 61 Mule Deer Hunt</h3>
                         <div class="gw-prize-body">
                             <div class="gw-prize-badges">
                                 <span class="gw-badge">7 Days</span>
                                 <span class="gw-badge gw-badge-accent">Landowner Tag Included</span>
                                 <span class="gw-badge">3rd Rifle Season</span>
                             </div>
-                            <h3 class="gw-prize-title">2026 Colorado Unit 61 Mule Deer Hunt</h3>
-                            <div class="gw-prize-meta">Garvey Brothers Outfitters · Nov 9 – 15, 2026</div>
+                            <div class="gw-prize-meta">Garvey Brothers Outfitters <span
+                                    class="gw-prize-meta-dot">·</span> Nov 9 – 15, 2026</div>
                             <p class="gw-prize-desc">
                                 Hunt the famed Uncompahgre Plateau in western Colorado with a multi-generation
-                                outfitting family during 3rd rifle season. In addition to public land, the Garvey family
-                                hunts great private land in unit 61 with decades of experience guiding to trophy Mule
-                                deer. These dates catch the last 7 days of 3rd season, which should bring some rutting
-                                activity. Includes the 3rd season landowner tag, guide fees, meals, and cabin-style
-                                lodging. The unit isn't remote or physically difficult this time of year, making it
-                                accessible for hunters of all abilities.
+                                outfitting family during 3rd rifle season. Public land plus the Garvey family's private
+                                land in Unit 61. These dates catch the last 7 days of 3rd season, which should bring
+                                some rutting activity. Includes 3rd season landowner tag, guide fees, meals, and
+                                cabin-style lodging. Accessible for hunters of all abilities.
                             </p>
                         </div>
                     </article>
 
                     <!-- 7. AB WHITETAIL -->
                     <article class="gw-prize-card">
-                        <div class="gw-prize-media"
-                            style="background-image: url('assets/26S-Website_AB_Whitetail.jpeg');" role="img"
-                            aria-label="2026 Alberta Trophy Whitetail Deer Hunt"></div>
+                        <div class="gw-prize-media">
+                            <img src="assets/26S-Website_AB_Whitetail.jpeg" alt="Win a 2026 Alberta Whitetail Hunt"
+                                onerror="this.style.display='none'">
+                        </div>
+                        <h3 class="sr-only">2026 Alberta Trophy Whitetail Deer Hunt</h3>
                         <div class="gw-prize-body">
                             <div class="gw-prize-badges">
                                 <span class="gw-badge">9 Days</span>
                                 <span class="gw-badge gw-badge-accent">All Inclusive</span>
                                 <span class="gw-badge">Rut Hunt</span>
                             </div>
-                            <h3 class="gw-prize-title">2026 Alberta Trophy Whitetail Deer Hunt</h3>
-                            <div class="gw-prize-meta">Alberta Dark Horn · Nov 11 – 19, 2026</div>
+                            <div class="gw-prize-meta">Alberta Dark Horn <span class="gw-prize-meta-dot">·</span> Nov 11
+                                – 19, 2026</div>
                             <p class="gw-prize-desc">
                                 A true trophy buck hunt in northern Alberta during the rut. Nine days gives hunters
                                 ample time in enclosed stands to hold out for the right buck across nearly 9,000 square
-                                miles of prime habitat — more than enough area to target specific, next-level bucks. Fly
-                                into Edmonton then drive to camp HQ. If you tag out early, transition to hunting wolves
-                                and coyotes at no additional cost. Stays in a comfortable modern lodge with private
-                                rooms. Truly one of the best Whitetail hunts Canada has to offer.
+                                miles of prime habitat. Fly into Edmonton then drive to camp HQ. If you tag out early,
+                                transition to wolves and coyotes at no additional cost. Stays in a modern lodge with
+                                private rooms.
                             </p>
                         </div>
                     </article>
 
                     <!-- 8. EPIC GEAR PACKAGE -->
                     <article class="gw-prize-card">
-                        <div class="gw-prize-media" style="background-image: url('assets/26S-Website_EpicGear.png');"
-                            role="img" aria-label="Epic Gear Package"></div>
+                        <div class="gw-prize-media">
+                            <img src="assets/26S-Website_EpicGear.jpeg" alt="Win the Epic Gear Package"
+                                onerror="this.style.display='none'">
+                        </div>
+                        <h3 class="sr-only">Epic Gear Package</h3>
                         <div class="gw-prize-body">
                             <div class="gw-prize-badges">
                                 <span class="gw-badge gw-badge-accent">7-Piece Package</span>
                             </div>
-                            <h3 class="gw-prize-title">Epic Gear Package</h3>
-                            <div class="gw-prize-meta">Premium rifles, optics, and accessories</div>
+                            <div class="gw-prize-meta">Epic Gear Package</div>
                             <ul class="gw-gear-list">
                                 <li>Fierce Twisted Rage LR 7MM PRC Rifle</li>
                                 <li>Leupold VX-5HD 3-15x44 Riflescope</li>
                                 <li>CVA Accura MR-X 50-cal Muzzleloader</li>
                                 <li>Zeiss Harpia 23-70x 95mm Spotting Scope + Stay-on Case</li>
-                                <li>Swarovski NL Pure Binoculars (winner's choice: 10x, 12x, or 14x)</li>
+                                <li>Swarovski NL Pure Binoculars (10x, 12x, or 14x)</li>
                                 <li>Sig Sauer Kilo 8K Rangefinder</li>
                                 <li>Epic Ultra Tripod + Head Combo</li>
                             </ul>
@@ -873,27 +1026,32 @@
                 <div class="gw-section-head">
                     <div class="gw-eyebrow">Bonus Prize</div>
                     <h2 class="gw-section-h">Winner's Choice Hunt</h2>
-                    <p class="gw-section-lede">Every $500 ticket package earns you one entry into the bonus drawing — no
-                        other way in.</p>
+                    <p class="gw-section-lede">Every $500 ticket package earns one entry into this bonus drawing —
+                        there's no other way in.</p>
                 </div>
 
                 <article class="gw-wc-card">
-                    <div class="gw-wc-media" style="background-image: url('assets/26S-Website_BonusHunt.png');"
-                        role="img" aria-label="Winner's Choice Hunt"></div>
+                    <div class="gw-wc-media">
+                        <img src="assets/26S-Website_WinnersChoice.jpeg"
+                            alt="Winner's Choice Hunt — $15,000 toward your hunt of choice"
+                            onerror="this.style.display='none'">
+                    </div>
                     <div class="gw-wc-body">
                         <div class="gw-prize-badges">
                             <span class="gw-badge gw-badge-accent">$15,000 Toward Your Hunt</span>
                             <span class="gw-badge">Bonus Drawing</span>
                         </div>
-                        <h3 class="gw-prize-title">The "Winner's Choice" Hunt</h3>
+                        <h3
+                            style="font-size:24px;font-weight:900;letter-spacing:-.015em;line-height:1.2;margin-bottom:10px;">
+                            The "Winner's Choice" Hunt</h3>
                         <p class="gw-prize-desc">
                             The Winner's Choice winner receives $15,000 to put toward the hunt of their choice — from
                             one of our Epic Approved outfitted hunts or any outfitter of their choosing. The Epic
                             Outdoors staff will help the winner book the perfect hunt for their wish list.
                         </p>
                         <div class="gw-wc-callout">
-                            Winner's Choice entries cannot be purchased individually. Every $500 ticket package
-                            automatically earns one entry.
+                            Winner's Choice entries are earned only with $500 (30-ticket) packages. Each $500 you spend
+                            = 1 Winner's Choice entry.
                         </div>
                     </div>
                 </article>
@@ -902,7 +1060,7 @@
         </section>
 
         <!-- ────────────────────────────────────────────────────
-         TICKETS
+         TICKET PRICING
     ──────────────────────────────────────────────────── -->
         <section class="gw-section" id="tickets">
             <div class="gw-container">
@@ -910,44 +1068,119 @@
                 <div class="gw-section-head">
                     <div class="gw-eyebrow">How to Enter</div>
                     <h2 class="gw-section-h">Ticket Packages</h2>
+                    <p class="gw-section-lede">Buy as many as you want and apply them however you like across the eight
+                        prizes.</p>
                 </div>
 
-                <div class="gw-tickets-card">
+                <div class="gw-pricing-grid">
 
-                    <div class="gw-ticket-price">
-                        <span class="gw-ticket-price-cur">$</span>
-                        <span class="gw-ticket-price-num">500</span>
-                        <span class="gw-ticket-price-suffix">/ 30 tickets</span>
-                    </div>
-                    <div class="gw-ticket-savings">Save $250</div>
-
-                    <p class="gw-ticket-explainer">
-                        Every $500 you spend buys a 30-ticket package — apply your tickets to any one prize or split
-                        them across the eight giveaway packages however you like.
-                    </p>
-
-                    <div class="gw-ticket-bullets">
-                        <div class="gw-tb-item">
-                            <span><strong>30 entries</strong> to use across any of the 8 prize packages</span>
-                        </div>
-                        <div class="gw-tb-item">
-                            <span><strong>1 bonus entry</strong> into the Winner's Choice drawing for every $500
-                                spent</span>
-                        </div>
-                        <div class="gw-tb-item">
-                            <span>Winner's Choice tickets <strong>cannot be purchased individually</strong> — they're
-                                earned only with $500 ticket packages</span>
-                        </div>
+                    <div class="gw-tier">
+                        <div class="gw-tier-count">1 Ticket</div>
+                        <div class="gw-tier-price">$30</div>
+                        <div class="gw-tier-save">&nbsp;</div>
                     </div>
 
+                    <div class="gw-tier">
+                        <div class="gw-tier-count">5 Tickets</div>
+                        <div class="gw-tier-price">$125</div>
+                        <div class="gw-tier-save">Save $25</div>
+                    </div>
+
+                    <div class="gw-tier">
+                        <div class="gw-tier-count">10 Tickets</div>
+                        <div class="gw-tier-price">$250</div>
+                        <div class="gw-tier-save">Save $50</div>
+                    </div>
+
+                    <div class="gw-tier gw-tier-best">
+                        <div class="gw-tier-best-flag">Best Value</div>
+                        <div class="gw-tier-count">30 Tickets</div>
+                        <div class="gw-tier-price">$500</div>
+                        <div class="gw-tier-save">Save $400</div>
+                        <div class="gw-tier-bonus">+ 1 Entry into the<br>Winner's Choice Hunt</div>
+                    </div>
+
+                </div>
+
+                <div class="gw-tickets-cta-wrap">
                     <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-cta gw-cta-primary gw-cta-large">
                         Buy Tickets →
                     </a>
-
                     <p class="gw-fine-print">
-                        Tickets are purchased through your member portal at epicoutdoorsmember.com
+                        Deadline to enter: <strong style="color:var(--accent2);">June 22, 2026</strong>
                     </p>
+                </div>
 
+            </div>
+        </section>
+
+        <!-- ────────────────────────────────────────────────────
+         OTHER WAYS TO ENTER
+    ──────────────────────────────────────────────────── -->
+        <section class="gw-section" id="other-ways">
+            <div class="gw-container">
+
+                <div class="gw-section-head">
+                    <div class="gw-eyebrow">Three Ways to Enter</div>
+                    <h2 class="gw-section-h">Buy Online, by Phone, or by Mail</h2>
+                </div>
+
+                <div class="gw-methods-grid">
+
+                    <div class="gw-method">
+                        <div class="gw-method-icon-wrap">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="gw-method-label">Online</div>
+                        <div class="gw-method-value">
+                            <a href="https://epicoutdoorsmember.com/tickets.asp">Member portal</a>
+                        </div>
+                        <div class="gw-method-detail">epicoutdoorsmember.com/tickets.asp</div>
+                    </div>
+
+                    <div class="gw-method">
+                        <div class="gw-method-icon-wrap">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="gw-method-label">By Phone</div>
+                        <div class="gw-method-value">
+                            <a href="tel:+14352630777">435-263-0777</a>
+                        </div>
+                        <div class="gw-method-detail">Call to purchase tickets</div>
+                    </div>
+
+                    <div class="gw-method">
+                        <div class="gw-method-icon-wrap">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="gw-method-label">By Mail</div>
+                        <div class="gw-method-value">Epic Outdoors</div>
+                        <div class="gw-method-detail">PO Box 2978<br>Cedar City, UT 84721</div>
+                    </div>
+
+                </div>
+
+                <div class="gw-perks">
+                    <strong>Members get more.</strong> New members receive 1 free ticket on signup ($150). Existing
+                    members earn 1 free ticket for each new member they refer. Either way — that's another shot at the
+                    prize lineup.
                 </div>
 
             </div>
