@@ -340,6 +340,19 @@
       transform: translateX(3px);
     }
 
+    .gw-service-callout {
+      align-self: flex-start;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .01em;
+    }
+
+    .gw-service-callout-number {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
     /* Stack the service card vertically once the horizontal layout
        gets tight. */
     @media (max-width: 720px) {
@@ -630,10 +643,9 @@
             <li class="gw-service-tag">Washington</li>
             <li class="gw-service-tag">Wyoming</li>
           </ul>
-          <a class="gw-service-cta" href="https://epicoutdoors.com/joinlicenseapp-forms">
-            <span>Get Started</span>
-            <span class="gw-service-cta-arrow" aria-hidden="true">&rarr;</span>
-          </a>
+          <div class="gw-service-callout">
+            Call <span class="gw-service-callout-number">435-263-0777</span> to Get Started
+          </div>
         </div>
       </article>
 
