@@ -76,18 +76,6 @@
             margin: 0 auto;
         }
 
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-
         main {
             flex: 1;
         }
@@ -138,25 +126,29 @@
         }
 
         /* ──────────────────────────────────────────────────────────
-       HERO
+       HERO  (black background, contained image)
     ────────────────────────────────────────────────────────── */
+        .gw-hero {
+            background: #000;
+            padding-bottom: 32px;
+        }
+
         .gw-hero-image-wrap {
-            width: 100%;
-            background:
-                linear-gradient(135deg, rgba(255, 122, 24, .18), rgba(255, 178, 107, .04)),
-                var(--card2);
-            border-bottom: 1px solid var(--line);
+            text-align: center;
+            padding: 0;
         }
 
         .gw-hero-image-wrap img {
             display: block;
+            margin: 0 auto;
             width: 100%;
+            max-width: 800px;
             height: auto;
         }
 
         .gw-hero-content {
             text-align: center;
-            padding: 36px 16px 8px;
+            padding: 28px 16px 0;
         }
 
         .gw-kicker {
@@ -198,18 +190,18 @@
         }
 
         .gw-hero h1 {
-            font-size: clamp(28px, 3.4vw, 40px);
+            font-size: clamp(26px, 3vw, 36px);
             font-weight: 900;
             letter-spacing: -.02em;
-            line-height: 1.08;
-            margin-bottom: 14px;
+            line-height: 1.1;
+            margin-bottom: 12px;
         }
 
         .gw-hero-sub {
             color: var(--muted);
-            font-size: clamp(15px, 1.5vw, 17px);
-            max-width: 620px;
-            margin: 0 auto 22px;
+            font-size: clamp(14px, 1.4vw, 16px);
+            max-width: 580px;
+            margin: 0 auto 20px;
         }
 
         .gw-hero-sub strong {
@@ -228,7 +220,7 @@
             font-size: 13px;
             font-weight: 800;
             letter-spacing: .04em;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
 
         .gw-deadline-pill svg {
@@ -344,7 +336,6 @@
         .gw-prize-media {
             width: 100%;
             aspect-ratio: 1406 / 978;
-            /* exact ratio of the supplied images */
             background:
                 linear-gradient(135deg, rgba(255, 122, 24, .18), rgba(255, 178, 107, .04)),
                 var(--card2);
@@ -360,7 +351,7 @@
         }
 
         .gw-prize-body {
-            padding: 22px 24px 26px;
+            padding: 22px 24px 22px;
             display: flex;
             flex-direction: column;
             flex: 1;
@@ -370,7 +361,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
 
         .gw-badge {
@@ -394,11 +385,19 @@
             color: var(--accent2);
         }
 
+        .gw-prize-title {
+            font-size: 19px;
+            font-weight: 900;
+            letter-spacing: -.015em;
+            line-height: 1.22;
+            margin-bottom: 6px;
+        }
+
         .gw-prize-meta {
-            color: var(--text);
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 12px;
+            color: var(--muted);
+            font-size: 13.5px;
+            font-weight: 600;
+            margin-bottom: 14px;
         }
 
         .gw-prize-meta .gw-prize-meta-dot {
@@ -437,6 +436,45 @@
             top: 7px;
             color: var(--accent);
             font-weight: 800;
+        }
+
+        /* Per-card "Buy Tickets" pill (bottom-right) */
+        .gw-prize-cta-row {
+            margin-top: auto;
+            padding-top: 18px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .gw-prize-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 122, 24, .40);
+            background: rgba(255, 122, 24, .10);
+            color: var(--accent2) !important;
+            font-size: 12.5px;
+            font-weight: 800;
+            letter-spacing: .02em;
+            text-decoration: none !important;
+            transition: background .15s ease, border-color .15s ease, color .15s ease;
+        }
+
+        .gw-prize-cta:hover {
+            background: rgba(255, 122, 24, .20);
+            border-color: rgba(255, 122, 24, .65);
+            color: var(--accent) !important;
+        }
+
+        .gw-prize-cta-arrow {
+            display: inline-block;
+            transition: transform .15s ease;
+        }
+
+        .gw-prize-cta:hover .gw-prize-cta-arrow {
+            transform: translateX(3px);
         }
 
         /* ──────────────────────────────────────────────────────────
@@ -486,7 +524,17 @@
         }
 
         .gw-wc-body {
-            padding: 32px 32px 36px;
+            padding: 32px 32px 32px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gw-wc-title {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: -.015em;
+            line-height: 1.2;
+            margin-bottom: 10px;
         }
 
         .gw-wc-callout {
@@ -499,6 +547,13 @@
             font-size: 13.5px;
             font-weight: 600;
             line-height: 1.5;
+        }
+
+        .gw-wc-cta-row {
+            margin-top: auto;
+            padding-top: 18px;
+            display: flex;
+            justify-content: flex-end;
         }
 
         /* ──────────────────────────────────────────────────────────
@@ -720,8 +775,12 @@
                 padding-top: 48px;
             }
 
+            .gw-hero {
+                padding-bottom: 24px;
+            }
+
             .gw-hero-content {
-                padding: 24px 16px 4px;
+                padding: 22px 16px 0;
             }
 
             .gw-section {
@@ -729,11 +788,15 @@
             }
 
             .gw-prize-body {
-                padding: 20px 20px 22px;
+                padding: 20px 20px 20px;
+            }
+
+            .gw-prize-title {
+                font-size: 17px;
             }
 
             .gw-wc-body {
-                padding: 24px 22px 28px;
+                padding: 24px 22px 24px;
             }
 
             .gw-tier {
@@ -820,12 +883,12 @@
                             <img src="assets/26S-Website_YT_Dall.jpeg" alt="Win a 2027 Yukon Dall Sheep Hunt"
                                 onerror="this.style.display='none'">
                         </div>
-                        <h3 class="sr-only">2027 Yukon Dall Sheep Hunt</h3>
                         <div class="gw-prize-body">
                             <div class="gw-prize-badges">
                                 <span class="gw-badge gw-badge-accent">$40,000 Value</span>
                                 <span class="gw-badge">10 Days</span>
                             </div>
+                            <h3 class="gw-prize-title">2027 Yukon Dall Sheep Hunt</h3>
                             <div class="gw-prize-meta">North Curl Outfitters <span class="gw-prize-meta-dot">·</span>
                                 July 28 – Aug 7, 2027</div>
                             <p class="gw-prize-desc">
@@ -834,6 +897,11 @@
                                 hunt of the year, conditions are typically incredible. Multiple cabin-equipped camps
                                 with a likely spike camp. Expect a very high success rate on quality rams.
                             </p>
+                            <div class="gw-prize-cta-row">
+                                <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
+                                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
+                                </a>
+                            </div>
                         </div>
                     </article>
 
@@ -843,13 +911,13 @@
                             <img src="assets/26S-Website_BC_Combo.jpeg"
                                 alt="Win a 2026 British Columbia Super Combo Hunt" onerror="this.style.display='none'">
                         </div>
-                        <h3 class="sr-only">2026 British Columbia Super Combo Hunt</h3>
                         <div class="gw-prize-body">
                             <div class="gw-prize-badges">
                                 <span class="gw-badge">13 Days</span>
                                 <span class="gw-badge">6 Species</span>
                                 <span class="gw-badge gw-badge-accent">No Harvest Fees</span>
                             </div>
+                            <h3 class="gw-prize-title">2026 British Columbia Super Combo Hunt</h3>
                             <div class="gw-prize-meta">Terminus Mountain Outfitters <span
                                     class="gw-prize-meta-dot">·</span> Sept 16 – 28, 2026</div>
                             <p class="gw-prize-desc">
@@ -858,6 +926,11 @@
                                 wooden cabins, and occasional spike camps. The area consistently produces record-book
                                 moose and is one of the few places you can still hunt Mountain caribou in BC.
                             </p>
+                            <div class="gw-prize-cta-row">
+                                <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
+                                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
+                                </a>
+                            </div>
                         </div>
                     </article>
 
@@ -868,13 +941,13 @@
                                 alt="Win a 2026 Alaska Arctic Grizzly and Barren Ground Caribou Combo Hunt"
                                 onerror="this.style.display='none'">
                         </div>
-                        <h3 class="sr-only">2026 Alaska Arctic Grizzly &amp; Barren Ground Caribou Combo Hunt</h3>
                         <div class="gw-prize-body">
                             <div class="gw-prize-badges">
                                 <span class="gw-badge">13 Days</span>
                                 <span class="gw-badge gw-badge-accent">Air Charter Covered</span>
                                 <span class="gw-badge gw-badge-accent">No Harvest Fees</span>
                             </div>
+                            <h3 class="gw-prize-title">2026 Alaska Arctic Grizzly &amp; Barren Ground Caribou Combo</h3>
                             <div class="gw-prize-meta">Alaskan Perimeter Expeditions <span
                                     class="gw-prize-meta-dot">·</span> Sept 1 – 13, 2026</div>
                             <p class="gw-prize-desc">
@@ -884,6 +957,11 @@
                                 a bonus, the $5,000 round-trip air charter is covered, and Dall sheep can be added for a
                                 trophy fee.
                             </p>
+                            <div class="gw-prize-cta-row">
+                                <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
+                                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
+                                </a>
+                            </div>
                         </div>
                     </article>
 
@@ -894,13 +972,13 @@
                                 alt="Win a 2026-2027 Mexico Mule Deer and Coues Deer Combo Hunt"
                                 onerror="this.style.display='none'">
                         </div>
-                        <h3 class="sr-only">2026–2027 Mexico Mule Deer &amp; Coues Deer Combo Hunt</h3>
                         <div class="gw-prize-body">
                             <div class="gw-prize-badges">
                                 <span class="gw-badge">6 Days</span>
                                 <span class="gw-badge gw-badge-accent">All Inclusive</span>
                                 <span class="gw-badge gw-badge-accent">No Harvest Fees</span>
                             </div>
+                            <h3 class="gw-prize-title">2026–2027 Mexico Mule Deer &amp; Coues Deer Combo</h3>
                             <div class="gw-prize-meta">FA Sonoran Hunts <span class="gw-prize-meta-dot">·</span> Dec 28,
                                 2026 – Jan 2, 2027</div>
                             <p class="gw-prize-desc">
@@ -910,6 +988,11 @@
                                 English-speaking guides, comfortable ranch house, and includes round-trip airport
                                 transport, gun permit, tags, and paperwork.
                             </p>
+                            <div class="gw-prize-cta-row">
+                                <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
+                                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
+                                </a>
+                            </div>
                         </div>
                     </article>
 
@@ -920,13 +1003,13 @@
                                 alt="Win a 2026 Acoma Reservation New Mexico Elk Hunt"
                                 onerror="this.style.display='none'">
                         </div>
-                        <h3 class="sr-only">2026 Acoma Reservation New Mexico Elk Hunt</h3>
                         <div class="gw-prize-body">
                             <div class="gw-prize-badges">
                                 <span class="gw-badge">5 Days</span>
                                 <span class="gw-badge gw-badge-accent">Prime Rut</span>
                                 <span class="gw-badge">Any Weapon</span>
                             </div>
+                            <h3 class="gw-prize-title">2026 Acoma Reservation New Mexico Elk Hunt</h3>
                             <div class="gw-prize-meta">Acoma Big Game Hunts <span class="gw-prize-meta-dot">·</span>
                                 Sept 28 – Oct 2, 2026</div>
                             <p class="gw-prize-desc">
@@ -935,6 +1018,11 @@
                                 acomabiggamehunts.com. We've secured prime rut dates and you can choose your weapon:
                                 rifle, muzzleloader, or bow.
                             </p>
+                            <div class="gw-prize-cta-row">
+                                <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
+                                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
+                                </a>
+                            </div>
                         </div>
                     </article>
 
@@ -944,13 +1032,13 @@
                             <img src="assets/26S-Website_CO_Deer.jpeg" alt="Win a 2026 Colorado Mule Deer Hunt"
                                 onerror="this.style.display='none'">
                         </div>
-                        <h3 class="sr-only">2026 Colorado Unit 61 Mule Deer Hunt</h3>
                         <div class="gw-prize-body">
                             <div class="gw-prize-badges">
                                 <span class="gw-badge">7 Days</span>
                                 <span class="gw-badge gw-badge-accent">Landowner Tag Included</span>
                                 <span class="gw-badge">3rd Rifle Season</span>
                             </div>
+                            <h3 class="gw-prize-title">2026 Colorado Unit 61 Mule Deer Hunt</h3>
                             <div class="gw-prize-meta">Garvey Brothers Outfitters <span
                                     class="gw-prize-meta-dot">·</span> Nov 9 – 15, 2026</div>
                             <p class="gw-prize-desc">
@@ -960,6 +1048,11 @@
                                 some rutting activity. Includes 3rd season landowner tag, guide fees, meals, and
                                 cabin-style lodging. Accessible for hunters of all abilities.
                             </p>
+                            <div class="gw-prize-cta-row">
+                                <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
+                                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
+                                </a>
+                            </div>
                         </div>
                     </article>
 
@@ -969,13 +1062,13 @@
                             <img src="assets/26S-Website_AB_Whitetail.jpeg" alt="Win a 2026 Alberta Whitetail Hunt"
                                 onerror="this.style.display='none'">
                         </div>
-                        <h3 class="sr-only">2026 Alberta Trophy Whitetail Deer Hunt</h3>
                         <div class="gw-prize-body">
                             <div class="gw-prize-badges">
                                 <span class="gw-badge">9 Days</span>
                                 <span class="gw-badge gw-badge-accent">All Inclusive</span>
                                 <span class="gw-badge">Rut Hunt</span>
                             </div>
+                            <h3 class="gw-prize-title">2026 Alberta Trophy Whitetail Deer Hunt</h3>
                             <div class="gw-prize-meta">Alberta Dark Horn <span class="gw-prize-meta-dot">·</span> Nov 11
                                 – 19, 2026</div>
                             <p class="gw-prize-desc">
@@ -985,6 +1078,11 @@
                                 transition to wolves and coyotes at no additional cost. Stays in a modern lodge with
                                 private rooms.
                             </p>
+                            <div class="gw-prize-cta-row">
+                                <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
+                                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
+                                </a>
+                            </div>
                         </div>
                     </article>
 
@@ -994,12 +1092,12 @@
                             <img src="assets/26S-Website_EpicGear.jpeg" alt="Win the Epic Gear Package"
                                 onerror="this.style.display='none'">
                         </div>
-                        <h3 class="sr-only">Epic Gear Package</h3>
                         <div class="gw-prize-body">
                             <div class="gw-prize-badges">
                                 <span class="gw-badge gw-badge-accent">7-Piece Package</span>
                             </div>
-                            <div class="gw-prize-meta">Epic Gear Package</div>
+                            <h3 class="gw-prize-title">Epic Gear Package</h3>
+                            <div class="gw-prize-meta">Premium rifles, optics, and accessories</div>
                             <ul class="gw-gear-list">
                                 <li>Fierce Twisted Rage LR 7MM PRC Rifle</li>
                                 <li>Leupold VX-5HD 3-15x44 Riflescope</li>
@@ -1009,6 +1107,11 @@
                                 <li>Sig Sauer Kilo 8K Rangefinder</li>
                                 <li>Epic Ultra Tripod + Head Combo</li>
                             </ul>
+                            <div class="gw-prize-cta-row">
+                                <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
+                                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
+                                </a>
+                            </div>
                         </div>
                     </article>
 
@@ -1041,9 +1144,7 @@
                             <span class="gw-badge gw-badge-accent">$15,000 Toward Your Hunt</span>
                             <span class="gw-badge">Bonus Drawing</span>
                         </div>
-                        <h3
-                            style="font-size:24px;font-weight:900;letter-spacing:-.015em;line-height:1.2;margin-bottom:10px;">
-                            The "Winner's Choice" Hunt</h3>
+                        <h3 class="gw-wc-title">The "Winner's Choice" Hunt</h3>
                         <p class="gw-prize-desc">
                             The Winner's Choice winner receives $15,000 to put toward the hunt of their choice — from
                             one of our Epic Approved outfitted hunts or any outfitter of their choosing. The Epic
@@ -1052,6 +1153,11 @@
                         <div class="gw-wc-callout">
                             Winner's Choice entries are earned only with $500 (30-ticket) packages. Each $500 you spend
                             = 1 Winner's Choice entry.
+                        </div>
+                        <div class="gw-wc-cta-row">
+                            <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
+                                Buy Tickets <span class="gw-prize-cta-arrow">→</span>
+                            </a>
                         </div>
                     </div>
                 </article>
