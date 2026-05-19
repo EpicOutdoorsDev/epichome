@@ -134,6 +134,115 @@
       pointer-events: none;
     }
 
+    /* ── SERVICES SECTION ── */
+    .gw-services {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto 48px;
+    }
+
+    .gw-services-title {
+      text-align: center;
+      color: rgba(255, 255, 255, .55);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .gw-service-card {
+      display: flex;
+      align-items: stretch;
+      gap: 28px;
+      padding: 24px;
+      background: linear-gradient(180deg, var(--card2), var(--card));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .gw-service-graphic {
+      flex-shrink: 0;
+      width: 280px;
+      aspect-ratio: 1 / 1;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .gw-service-graphic img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gw-service-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .gw-service-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .gw-service-name {
+      font-size: clamp(22px, 2.4vw, 28px);
+      font-weight: 900;
+      letter-spacing: -.02em;
+      line-height: 1.15;
+    }
+
+    .gw-service-price {
+      display: inline-flex;
+      align-items: center;
+      padding: 9px 16px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      box-shadow: 0 6px 18px rgba(255, 122, 24, .35);
+    }
+
+    .gw-service-body {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 70ch;
+    }
+
+    /* Stack the service card vertically once the horizontal layout
+       gets tight. */
+    @media (max-width: 720px) {
+      .gw-service-card {
+        flex-direction: column;
+        padding: 16px;
+        gap: 16px;
+      }
+
+      .gw-service-graphic {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+      }
+
+      .gw-service-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
     .gw-container {
       width: min(720px, calc(100% - 32px));
       margin: 0 auto;
@@ -351,7 +460,6 @@
       <nav class="gw-header-nav" aria-label="Primary">
         <a href="/services/epic-hunt-giveaways/">Giveaway</a>
         <a href="https://epicoutdoorsmember.com">Login</a>
-        <a href="https://epicoutdoorsmember.com/join.asp">Join</a>
         <a href="https://store.epicoutdoors.com">Store</a>
       </nav>
     </div>
@@ -359,11 +467,42 @@
 
   <!-- Hero banner -->
   <div class="gw-hero">
-    <img src="assets/26Website-HeroHeader.jpeg" alt="Epic Outdoors — Your key to hunting the West" width="2200"
+    <img src="assets/26Website-HeroHeader1.jpeg" alt="Epic Outdoors — Your key to hunting the West" width="2200"
       height="800" fetchpriority="high">
   </div>
 
   <main>
+
+    <!-- Services -->
+    <section class="gw-services" aria-labelledby="services-heading">
+      <h2 class="gw-services-title" id="services-heading">Our Services</h2>
+
+      <article class="gw-service-card">
+        <div class="gw-service-graphic">
+          <img src="assets/26Website-Section_Membership.jpeg"
+            alt="Epic Membership — magazines, digital tools, and hunt consultants" width="800" height="800"
+            loading="lazy">
+        </div>
+        <div class="gw-service-content">
+          <div class="gw-service-header">
+            <h3 class="gw-service-name">Epic Membership</h3>
+            <span class="gw-service-price">Only $150 / year</span>
+          </div>
+          <p class="gw-service-body">
+            Everything you need to research and plan western big game hunts.
+            Members receive nine issues per year of our research magazine with
+            in-depth state-by-state, species-by-species analysis, unlimited
+            access to eight full-time hunt consultants, the Epic Outdoors app
+            for draw odds and application planning, member-only pricing on
+            premium optics through Epic Optics, our trusted network of Epic
+            Approved Outfitters, and the Member Experience Program &mdash;
+            connecting you with members who've already hunted the unit you drew.
+          </p>
+        </div>
+      </article>
+
+    </section>
+
     <div class="gw-container">
 
       <!-- Maintenance card -->
