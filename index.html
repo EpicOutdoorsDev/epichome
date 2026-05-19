@@ -56,18 +56,16 @@
     }
 
     .gw-container {
-      width: min(640px, calc(100% - 32px));
+      width: min(720px, calc(100% - 32px));
       margin: 0 auto;
     }
 
     main {
       flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 32px 0;
+      padding: 64px 0 48px;
     }
 
+    /* ── MAINTENANCE CARD ── */
     .gw-card {
       background: linear-gradient(180deg, var(--card2), var(--card));
       border: 1px solid var(--line);
@@ -130,6 +128,82 @@
       }
     }
 
+    /* ── "YOU CAN STILL:" SECTION ── */
+    .gw-section-title {
+      text-align: center;
+      color: rgba(255, 255, 255, .55);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin: 40px 0 18px;
+    }
+
+    .gw-actions-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 640px) {
+      .gw-actions-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .gw-action-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 24px;
+      background: linear-gradient(180deg, var(--card2), var(--card));
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      color: var(--text) !important;
+      text-decoration: none !important;
+      transition: border-color .15s ease, transform .15s ease, background .15s ease;
+    }
+
+    .gw-action-card:hover {
+      border-color: rgba(255, 122, 24, .45);
+      background: linear-gradient(180deg, rgba(255, 122, 24, .10), rgba(255, 122, 24, .04));
+      transform: translateY(-2px);
+    }
+
+    .gw-action-text {
+      min-width: 0;
+    }
+
+    .gw-action-title {
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: -.005em;
+      line-height: 1.25;
+      margin-bottom: 4px;
+    }
+
+    .gw-action-sub {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .gw-action-arrow {
+      flex-shrink: 0;
+      color: var(--accent2);
+      font-size: 22px;
+      line-height: 1;
+      transition: transform .15s ease, color .15s ease;
+    }
+
+    .gw-action-card:hover .gw-action-arrow {
+      transform: translateX(4px);
+      color: var(--accent);
+    }
+
+    /* ── FOOTER ── */
     footer {
       border-top: 1px solid rgba(255, 255, 255, .08);
       color: rgba(255, 255, 255, .45);
@@ -139,8 +213,16 @@
     }
 
     @media (max-width: 640px) {
+      main {
+        padding: 40px 0 32px;
+      }
+
       .gw-card {
         padding: 32px 22px;
+      }
+
+      .gw-action-card {
+        padding: 20px;
       }
     }
   </style>
@@ -150,6 +232,8 @@
 
   <main>
     <div class="gw-container">
+
+      <!-- Maintenance card -->
       <div class="gw-card">
         <div class="gw-kicker">
           <span class="gw-pulse"></span>
@@ -158,6 +242,30 @@
         <h1>Site Under Maintenance</h1>
         <p class="gw-sub">We're making some improvements. Check back soon.</p>
       </div>
+
+      <!-- You can still: -->
+      <div class="gw-section-title">You Can Still</div>
+
+      <div class="gw-actions-grid">
+
+        <a class="gw-action-card" href="https://epicoutdoorsmember.com">
+          <div class="gw-action-text">
+            <div class="gw-action-title">Log in to your member portal</div>
+            <div class="gw-action-sub">Hunt research, draw odds, eMagazines, and your account.</div>
+          </div>
+          <span class="gw-action-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="gw-action-card" href="/giveaway/">
+          <div class="gw-action-text">
+            <div class="gw-action-title">View the hunt giveaway</div>
+            <div class="gw-action-sub">Entry details, prizes, and how to qualify.</div>
+          </div>
+          <span class="gw-action-arrow" aria-hidden="true">→</span>
+        </a>
+
+      </div>
+
     </div>
   </main>
 
