@@ -140,7 +140,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 14px;
-      padding-bottom: 56px;
+      padding-bottom: 32px;
     }
 
     .gw-quick-nav-pill {
@@ -178,6 +178,15 @@
       transform: translateX(3px);
     }
 
+    /* Small accent divider between pills and services */
+    .gw-divider {
+      width: 80px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 999px;
+      margin: 0 auto 36px;
+    }
+
     /* ── SERVICES SECTION ── */
     .gw-services {
       width: min(1100px, calc(100% - 32px));
@@ -212,6 +221,31 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
+    }
+
+    .gw-service-card+.gw-service-card {
+      margin-top: 20px;
+    }
+
+    .gw-service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .gw-service-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .02em;
+      white-space: nowrap;
     }
 
     .gw-service-graphic {
@@ -434,7 +468,7 @@
       }
 
       .gw-quick-nav {
-        padding-bottom: 40px;
+        padding-bottom: 24px;
         gap: 10px;
       }
 
@@ -487,7 +521,7 @@
 
   <!-- Hero banner -->
   <div class="gw-hero">
-    <img src="assets/26Website-HeroHeader.jpeg" alt="Epic Outdoors — Your key to hunting the West" width="2200"
+    <img src="assets/26Website-HeroHeader.jpeg" alt="Epic Outdoors. Your key to hunting the West." width="2200"
       height="800" fetchpriority="high">
   </div>
 
@@ -509,6 +543,8 @@
       </a>
     </nav>
 
+    <div class="gw-divider" aria-hidden="true"></div>
+
     <!-- Services -->
     <section class="gw-services" aria-labelledby="services-heading">
       <div class="gw-services-heading">
@@ -519,7 +555,7 @@
       <article class="gw-service-card">
         <div class="gw-service-graphic">
           <img src="assets/26Website-Section_Membership2.jpeg"
-            alt="Epic Membership — magazines, digital tools, and hunt consultants" width="800" height="800"
+            alt="Epic Membership: magazines, digital tools, and hunt consultants" width="800" height="800"
             loading="lazy">
         </div>
         <div class="gw-service-content">
@@ -534,11 +570,45 @@
             access to eight full-time hunt consultants, the Epic Outdoors app
             for draw odds and application planning, member-only pricing on
             premium optics through Epic Optics, our trusted network of Epic
-            Approved Outfitters, and the Member Experience Program &mdash;
-            connecting you with members who've already hunted the unit you drew.
+            Approved Outfitters, and the Member Experience Program, which
+            connects you with members who've already hunted the unit you drew.
           </p>
           <a class="gw-service-cta" href="https://epicoutdoorsmember.com/join.asp">
             <span>Join</span>
+            <span class="gw-service-cta-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="gw-service-card">
+        <div class="gw-service-graphic">
+          <img src="assets/26Website-Section_Giveaways.jpeg"
+            alt="Epic Hunt Giveaways: eight dream hunts and an Epic Gear Package" width="800" height="800"
+            loading="lazy">
+        </div>
+        <div class="gw-service-content">
+          <div class="gw-service-header">
+            <h3 class="gw-service-name">Hunt Giveaways</h3>
+          </div>
+          <p class="gw-service-body">
+            Get your name in the hat for a true dream hunt. New members receive
+            one free ticket on signup, and any member who refers a new sign-up
+            earns another. Apply tickets to a single prize or spread them across
+            the lineup. Every $500 ticket package also enters you into the
+            bonus $15,000 Winner's Choice drawing.
+          </p>
+          <ul class="gw-service-tags">
+            <li class="gw-service-tag">Yukon Dall Sheep</li>
+            <li class="gw-service-tag">BC Super Combo</li>
+            <li class="gw-service-tag">AK Grizzly &amp; Caribou</li>
+            <li class="gw-service-tag">Mexico Mule &amp; Coues</li>
+            <li class="gw-service-tag">NM Acoma Elk</li>
+            <li class="gw-service-tag">CO Unit 61 Mule Deer</li>
+            <li class="gw-service-tag">Alberta Whitetail</li>
+            <li class="gw-service-tag">Epic Gear Package</li>
+          </ul>
+          <a class="gw-service-cta" href="/services/epic-hunt-giveaways/">
+            <span>View Hunts</span>
             <span class="gw-service-cta-arrow" aria-hidden="true">&rarr;</span>
           </a>
         </div>
