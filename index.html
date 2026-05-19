@@ -37,11 +37,7 @@
 
     html {
       min-height: 100%;
-      background:
-        radial-gradient(1200px 700px at 15% 0%, rgba(255, 122, 24, .18), transparent 55%),
-        radial-gradient(900px 600px at 90% 10%, rgba(255, 178, 107, .12), transparent 55%),
-        var(--bg);
-      background-attachment: fixed;
+      background: var(--bg);
     }
 
     body {
@@ -127,7 +123,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      height: 80px;
+      height: 25px;
       background: linear-gradient(to bottom, transparent, var(--bg));
       pointer-events: none;
     }
@@ -449,21 +445,16 @@
 
     @media (max-width: 640px) {
       .gw-header-inner {
-        padding: 12px 14px;
-        gap: 10px;
+        padding: 14px 16px;
+        justify-content: center;
       }
 
       .gw-header-logo img {
-        height: 24px;
+        height: 30px;
       }
 
       .gw-header-nav {
-        gap: 14px;
-      }
-
-      .gw-header-nav a {
-        font-size: 11px;
-        letter-spacing: .06em;
+        display: none;
       }
 
       .gw-quick-nav {
@@ -485,18 +476,14 @@
       }
 
       .gw-hero::after {
-        height: 50px;
+        height: 12px;
       }
     }
 
     /* Extra-narrow fallback (older iPhone SE etc.) */
     @media (max-width: 380px) {
       .gw-header-logo img {
-        height: 22px;
-      }
-
-      .gw-header-nav {
-        gap: 10px;
+        height: 26px;
       }
     }
   </style>
@@ -564,13 +551,10 @@
           </div>
           <p class="gw-service-body">
             Everything you need to research and plan western big game hunts.
-            Members receive nine issues per year of our research magazine with
-            in-depth state-by-state, species-by-species analysis, unlimited
-            access to eight full-time hunt consultants, the Epic Outdoors app
-            for draw odds and application planning, member-only pricing on
-            premium optics through Epic Optics, our trusted network of Epic
-            Approved Outfitters, and the Member Experience Program, which
-            connects you with members who've already hunted the unit you drew.
+            Members get nine annual magazine issues, unlimited consultant
+            access, the Epic Outdoors app, member-only optics pricing, our
+            Epic Approved Outfitters network, and the Member Experience
+            Program.
           </p>
           <a class="gw-service-cta" href="https://epicoutdoorsmember.com/join.asp">
             <span>Join</span>
@@ -590,11 +574,10 @@
             <h3 class="gw-service-name">Hunt Giveaways</h3>
           </div>
           <p class="gw-service-body">
-            Get your name in the hat for a true dream hunt. New members receive
-            one free ticket on signup, and any member who refers a new sign-up
-            earns another. Apply tickets to a single prize or spread them across
-            the lineup. Every $500 ticket package also enters you into the
-            bonus $15,000 Winner's Choice drawing.
+            Get your name in the hat for a true dream hunt. New members get
+            one free ticket on signup, referrers earn another. Every $500
+            ticket package also enters the bonus $15,000 Winner's Choice
+            drawing.
           </p>
           <ul class="gw-service-tags">
             <li class="gw-service-tag">Yukon Dall Sheep</li>
@@ -608,6 +591,47 @@
           </ul>
           <a class="gw-service-cta" href="/services/epic-hunt-giveaways/">
             <span>View Hunts</span>
+            <span class="gw-service-cta-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="gw-service-card">
+        <div class="gw-service-graphic">
+          <img src="assets/26Website-Section_LicApp.jpeg"
+            alt="License Application Service: done-for-you western state hunt applications" width="800" height="800"
+            loading="lazy">
+        </div>
+        <div class="gw-service-content">
+          <div class="gw-service-header">
+            <h3 class="gw-service-name">License Application Service</h3>
+            <span class="gw-service-price">From $50 / state</span>
+          </div>
+          <p class="gw-service-body">
+            Hand off your western state applications. Our consultants have
+            filed thousands for hunters over 25+ years, securing the best tags
+            and finding hidden opportunities. We file each one as if we were
+            you, then you draw tags directly.
+          </p>
+          <ul class="gw-service-tags">
+            <li class="gw-service-tag">Alaska</li>
+            <li class="gw-service-tag">Arizona</li>
+            <li class="gw-service-tag">California</li>
+            <li class="gw-service-tag">Colorado</li>
+            <li class="gw-service-tag">Idaho</li>
+            <li class="gw-service-tag">Iowa</li>
+            <li class="gw-service-tag">Kansas</li>
+            <li class="gw-service-tag">Montana</li>
+            <li class="gw-service-tag">Nevada</li>
+            <li class="gw-service-tag">New Mexico</li>
+            <li class="gw-service-tag">Oregon</li>
+            <li class="gw-service-tag">Texas</li>
+            <li class="gw-service-tag">Utah</li>
+            <li class="gw-service-tag">Washington</li>
+            <li class="gw-service-tag">Wyoming</li>
+          </ul>
+          <a class="gw-service-cta" href="https://epicoutdoors.com/joinlicenseapp-forms">
+            <span>Get Started</span>
             <span class="gw-service-cta-arrow" aria-hidden="true">&rarr;</span>
           </a>
         </div>
