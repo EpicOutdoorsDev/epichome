@@ -121,8 +121,6 @@
       height: auto;
     }
 
-    /* Subtle fade from hero into the page background so the orange sky
-       doesn't end on a hard edge against the dark body. */
     .gw-hero::after {
       content: "";
       position: absolute;
@@ -134,20 +132,75 @@
       pointer-events: none;
     }
 
+    /* ── QUICK-NAV PILLS (under hero) ── */
+    .gw-quick-nav {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      padding-bottom: 56px;
+    }
+
+    .gw-quick-nav-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 122, 24, .45);
+      background: transparent;
+      color: var(--accent2);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background .15s ease, border-color .15s ease, color .15s ease, transform .15s ease;
+    }
+
+    .gw-quick-nav-pill:hover {
+      background: rgba(255, 122, 24, .10);
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .gw-quick-nav-pill-arrow {
+      color: var(--accent);
+      font-size: 16px;
+      line-height: 1;
+      transition: transform .15s ease;
+    }
+
+    .gw-quick-nav-pill:hover .gw-quick-nav-pill-arrow {
+      transform: translateX(3px);
+    }
+
     /* ── SERVICES SECTION ── */
     .gw-services {
       width: min(1100px, calc(100% - 32px));
-      margin: 0 auto 48px;
+      margin: 0 auto 56px;
+    }
+
+    .gw-services-heading {
+      text-align: center;
+      margin-bottom: 28px;
     }
 
     .gw-services-title {
-      text-align: center;
-      color: rgba(255, 255, 255, .55);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      margin-bottom: 22px;
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 800;
+      letter-spacing: -.015em;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .gw-services-intro {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
     }
 
     .gw-service-card {
@@ -279,6 +332,7 @@
       }
     }
 
+    /* ── MAINTENANCE CARD ── */
     .gw-container {
       width: min(720px, calc(100% - 32px));
       margin: 0 auto;
@@ -286,10 +340,9 @@
 
     main {
       flex: 1;
-      padding: 40px 0 48px;
+      padding: 24px 0 48px;
     }
 
-    /* ── MAINTENANCE CARD ── */
     .gw-card {
       background: linear-gradient(180deg, var(--card2), var(--card));
       border: 1px solid var(--line);
@@ -352,81 +405,6 @@
       }
     }
 
-    /* ── "YOU CAN STILL:" SECTION ── */
-    .gw-section-title {
-      text-align: center;
-      color: rgba(255, 255, 255, .55);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      margin: 40px 0 18px;
-    }
-
-    .gw-actions-grid {
-      display: grid;
-      gap: 16px;
-      grid-template-columns: 1fr;
-    }
-
-    @media (min-width: 640px) {
-      .gw-actions-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .gw-action-card {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 22px 24px;
-      background: linear-gradient(180deg, var(--card2), var(--card));
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-      color: var(--text) !important;
-      text-decoration: none !important;
-      transition: border-color .15s ease, transform .15s ease, background .15s ease;
-    }
-
-    .gw-action-card:hover {
-      border-color: rgba(255, 122, 24, .45);
-      background: linear-gradient(180deg, rgba(255, 122, 24, .10), rgba(255, 122, 24, .04));
-      transform: translateY(-2px);
-    }
-
-    .gw-action-text {
-      min-width: 0;
-    }
-
-    .gw-action-title {
-      font-weight: 800;
-      font-size: 15px;
-      letter-spacing: -.005em;
-      line-height: 1.25;
-      margin-bottom: 4px;
-    }
-
-    .gw-action-sub {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.45;
-    }
-
-    .gw-action-arrow {
-      flex-shrink: 0;
-      color: var(--accent2);
-      font-size: 22px;
-      line-height: 1;
-      transition: transform .15s ease, color .15s ease;
-    }
-
-    .gw-action-card:hover .gw-action-arrow {
-      transform: translateX(4px);
-      color: var(--accent);
-    }
-
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid rgba(255, 255, 255, .08);
@@ -455,16 +433,22 @@
         letter-spacing: .06em;
       }
 
+      .gw-quick-nav {
+        padding-bottom: 40px;
+        gap: 10px;
+      }
+
+      .gw-quick-nav-pill {
+        padding: 10px 18px;
+        font-size: 12px;
+      }
+
       main {
-        padding: 28px 0 32px;
+        padding: 18px 0 32px;
       }
 
       .gw-card {
         padding: 32px 22px;
-      }
-
-      .gw-action-card {
-        padding: 20px;
       }
 
       .gw-hero::after {
@@ -503,19 +487,38 @@
 
   <!-- Hero banner -->
   <div class="gw-hero">
-    <img src="assets/26Website-HeroHeader.jpeg" alt="Epic Outdoors — Your key to hunting the West" width="2200"
+    <img src="assets/26Website-HeroHeader1.jpeg" alt="Epic Outdoors — Your key to hunting the West" width="2200"
       height="800" fetchpriority="high">
   </div>
 
   <main>
 
+    <!-- Quick-nav pills (bridges hero → services) -->
+    <nav class="gw-quick-nav" aria-label="Quick actions">
+      <a class="gw-quick-nav-pill" href="/services/epic-hunt-giveaways/">
+        <span>Hunt Giveaway</span>
+        <span class="gw-quick-nav-pill-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="gw-quick-nav-pill" href="https://epicoutdoorsmember.com">
+        <span>Member Portal</span>
+        <span class="gw-quick-nav-pill-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="gw-quick-nav-pill" href="https://store.epicoutdoors.com">
+        <span>Optics Store</span>
+        <span class="gw-quick-nav-pill-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </nav>
+
     <!-- Services -->
     <section class="gw-services" aria-labelledby="services-heading">
-      <h2 class="gw-services-title" id="services-heading">Our Services</h2>
+      <div class="gw-services-heading">
+        <h2 class="gw-services-title" id="services-heading">Our Services</h2>
+        <p class="gw-services-intro">Tools, intel, and experts for western big game hunters.</p>
+      </div>
 
       <article class="gw-service-card">
         <div class="gw-service-graphic">
-          <img src="assets/26Website-Section_Membership2.jpeg"
+          <img src="assets/26Website-Section_Membership.jpeg"
             alt="Epic Membership — magazines, digital tools, and hunt consultants" width="800" height="800"
             loading="lazy">
         </div>
@@ -543,9 +546,8 @@
 
     </section>
 
+    <!-- Maintenance note -->
     <div class="gw-container">
-
-      <!-- Maintenance card -->
       <div class="gw-card">
         <div class="gw-kicker">
           <span class="gw-pulse"></span>
@@ -554,39 +556,8 @@
         <h1>Site Under Maintenance</h1>
         <p class="gw-sub">We're making some improvements. Check back soon.</p>
       </div>
-
-      <!-- You can still: -->
-      <div class="gw-section-title">You Can Still</div>
-
-      <div class="gw-actions-grid">
-
-        <a class="gw-action-card" href="https://epicoutdoorsmember.com">
-          <div class="gw-action-text">
-            <div class="gw-action-title">Log in to your member portal</div>
-            <div class="gw-action-sub">Hunt research, draw odds, eMagazines, and your account.</div>
-          </div>
-          <span class="gw-action-arrow" aria-hidden="true">→</span>
-        </a>
-
-        <a class="gw-action-card" href="/services/epic-hunt-giveaways/">
-          <div class="gw-action-text">
-            <div class="gw-action-title">View the hunt giveaway</div>
-            <div class="gw-action-sub">Entry details, prizes, and how to qualify.</div>
-          </div>
-          <span class="gw-action-arrow" aria-hidden="true">→</span>
-        </a>
-
-        <a class="gw-action-card" href="https://store.epicoutdoors.com">
-          <div class="gw-action-text">
-            <div class="gw-action-title">Visit our Optics Store</div>
-            <div class="gw-action-sub">Shop optics at discount pricing.</div>
-          </div>
-          <span class="gw-action-arrow" aria-hidden="true">→</span>
-        </a>
-
-      </div>
-
     </div>
+
   </main>
 
   <footer>
