@@ -80,7 +80,7 @@
         }
 
         /* ──────────────────────────────────────────────────────────
-       HERO  (black background, contained image, back pill inside)
+       HERO
     ────────────────────────────────────────────────────────── */
         .gw-hero {
             position: relative;
@@ -88,7 +88,6 @@
             padding-bottom: 32px;
         }
 
-        /* Back pill positioned inside the hero, top-left */
         .gw-hero-back {
             position: absolute;
             top: 16px;
@@ -213,7 +212,6 @@
             flex-shrink: 0;
         }
 
-        /* Member perks callout, sits in hero under the deadline pill */
         .gw-hero-perks {
             display: inline-flex;
             align-items: flex-start;
@@ -441,6 +439,71 @@
             line-height: 1.6;
         }
 
+        .gw-prize-desc p+p {
+            margin-top: 10px;
+        }
+
+        /* ── Read more / clamp behavior ────────────────────────── */
+        .gw-prize-desc.gw-clamp {
+            position: relative;
+            max-height: 8.4em;
+            /* ~5 lines at 1.6 line-height */
+            overflow: hidden;
+        }
+
+        .gw-prize-desc.gw-clamp::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2.4em;
+            background: linear-gradient(to bottom, rgba(11, 15, 20, 0), rgba(11, 15, 20, 0.78));
+            pointer-events: none;
+            transition: opacity .2s ease;
+        }
+
+        .gw-prize-desc.gw-expanded {
+            max-height: none;
+        }
+
+        .gw-prize-desc.gw-expanded::after {
+            opacity: 0;
+        }
+
+        .gw-readmore {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 10px;
+            padding: 6px 0;
+            background: transparent;
+            border: 0;
+            color: var(--accent2);
+            font-family: inherit;
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: .02em;
+            cursor: pointer;
+            transition: color .15s ease;
+            align-self: flex-start;
+        }
+
+        .gw-readmore:hover {
+            color: var(--accent);
+        }
+
+        .gw-readmore::after {
+            content: "↓";
+            display: inline-block;
+            font-size: 12px;
+            transition: transform .2s ease;
+        }
+
+        .gw-readmore[aria-expanded="true"]::after {
+            transform: rotate(180deg);
+        }
+
         .gw-gear-list {
             list-style: none;
             padding: 0;
@@ -468,7 +531,6 @@
             font-weight: 800;
         }
 
-        /* Per-card "Buy Tickets" pill (bottom-right) */
         .gw-prize-cta-row {
             margin-top: auto;
             padding-top: 18px;
@@ -508,11 +570,10 @@
         }
 
         /* ──────────────────────────────────────────────────────────
-       WINNER'S CHOICE (featured)
+       WINNER'S CHOICE
     ────────────────────────────────────────────────────────── */
         .gw-section-wc {
-            background:
-                radial-gradient(800px 400px at 50% 0%, rgba(255, 122, 24, .08), transparent 70%);
+            background: radial-gradient(800px 400px at 50% 0%, rgba(255, 122, 24, .08), transparent 70%);
         }
 
         .gw-wc-card {
@@ -659,8 +720,7 @@
 
         .gw-tier-best {
             border-color: rgba(255, 122, 24, .55);
-            background:
-                linear-gradient(180deg, rgba(255, 122, 24, .12), rgba(255, 122, 24, .04));
+            background: linear-gradient(180deg, rgba(255, 122, 24, .12), rgba(255, 122, 24, .04));
         }
 
         .gw-tier-best-flag {
@@ -828,12 +888,9 @@
 
     <main>
 
-        <!-- ────────────────────────────────────────────────────
-         HERO
-    ──────────────────────────────────────────────────── -->
+        <!-- ────────────────── HERO ────────────────── -->
         <section class="gw-hero">
 
-            <!-- Back pill, absolutely positioned inside hero -->
             <div class="gw-hero-back">
                 <a href="/" class="eo-back-btn">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -870,7 +927,6 @@
                     Deadline: June 22, 2026
                 </div>
 
-                <!-- Member perks callout -->
                 <div class="gw-hero-perks">
                     <svg class="gw-hero-perks-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -894,9 +950,7 @@
             </div>
         </section>
 
-        <!-- ────────────────────────────────────────────────────
-         PRIZE GRID
-    ──────────────────────────────────────────────────── -->
+        <!-- ────────────────── PRIZE GRID ────────────────── -->
         <section class="gw-section" id="prizes">
             <div class="gw-container">
 
@@ -920,12 +974,20 @@
                             <h3 class="gw-prize-title">2027 Yukon Dall Sheep Hunt</h3>
                             <div class="gw-prize-meta">North Curl Outfitters <span class="gw-prize-meta-dot">·</span>
                                 July 28 – Aug 7, 2027</div>
-                            <p class="gw-prize-desc">
-                                A third-generation outfitter specializing in remote horseback/backpack trips in the
-                                Kluane and Southern Lakes regions — areas with high Dall sheep densities. As the first
-                                hunt of the year, conditions are typically incredible. Multiple cabin-equipped camps
-                                with a likely spike camp. Expect a very high success rate on quality rams.
-                            </p>
+                            <div class="gw-prize-desc gw-clamp">
+                                <p>Win this 10 day Dall sheep hunt with North Curl Outfitters in the Yukon—a $40,000
+                                    value! Hunt dates are July 28-August 7, 2027.</p>
+                                <p>This outfitter is a third-generation outfitter and has a great reputation. They
+                                    specialize in remote horseback/backpack hunting trips in the Kluane and Southern
+                                    Lakes regions, known for high densities of Dall sheep. Their goal is to provide each
+                                    and every client with a hunting adventure of a lifetime. This hunt is the first hunt
+                                    of the year, which is usually incredible. This hunt is 10 days, including fly-in
+                                    days. They have multiple camps with cabins and will most likely set up a spike camp
+                                    during your hunt, as well. We expect this to be a very high success hunt on quality
+                                    rams!</p>
+                            </div>
+                            <button type="button" class="gw-readmore" aria-expanded="false"><span>Read
+                                    more</span></button>
                             <div class="gw-prize-cta-row">
                                 <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
                                     Buy Tickets <span class="gw-prize-cta-arrow">→</span>
@@ -949,12 +1011,21 @@
                             <h3 class="gw-prize-title">2026 British Columbia Super Combo Hunt</h3>
                             <div class="gw-prize-meta">Terminus Mountain Outfitters <span
                                     class="gw-prize-meta-dot">·</span> Sept 16 – 28, 2026</div>
-                            <p class="gw-prize-desc">
-                                A 13-day, 1x1 true combo hunt for Canadian Moose, Mountain Caribou, Elk, Mountain Goat,
-                                Black Bear, and Wolf in northern BC. Conducted by horseback with heated wall tents,
-                                wooden cabins, and occasional spike camps. The area consistently produces record-book
-                                moose and is one of the few places you can still hunt Mountain caribou in BC.
-                            </p>
+                            <div class="gw-prize-desc gw-clamp">
+                                <p>Win this 13-day Canadian Moose, Mountain Caribou, Elk, Mountain Goat, Black Bear, and
+                                    Wolf hunt with Terminus Mountain Outfitters. Hunt dates are Sept 16-28, 2026.</p>
+                                <p>This hunt is truly an adventure in some of the most breathtaking country in northern
+                                    British Columbia. This is a longer, 13-day, 1x1 hunt that is a true combo hunt for
+                                    all species you encounter. This is quite literally the dream hunt for anyone looking
+                                    to experience the diversity that British Columbia has to offer! This hunt is
+                                    conducted by horseback, while you stay either in a heated wall tent or wooden cabin,
+                                    or an occasional spike camp to target a certain species. This area is known for
+                                    consistently producing record book Canadian moose and is one of the few places you
+                                    can still hunt Mountain caribou in BC. This is quite simply one of the best combo
+                                    hunts Canada has to offer, and there are NO harvest fees for these species!</p>
+                            </div>
+                            <button type="button" class="gw-readmore" aria-expanded="false"><span>Read
+                                    more</span></button>
                             <div class="gw-prize-cta-row">
                                 <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
                                     Buy Tickets <span class="gw-prize-cta-arrow">→</span>
@@ -979,13 +1050,22 @@
                             <h3 class="gw-prize-title">2026 Alaska Arctic Grizzly &amp; Barren Ground Caribou Combo</h3>
                             <div class="gw-prize-meta">Alaskan Perimeter Expeditions <span
                                     class="gw-prize-meta-dot">·</span> Sept 1 – 13, 2026</div>
-                            <p class="gw-prize-desc">
-                                Hunt the Arctic National Wildlife Refuge in an exclusive guide use area for Arctic
-                                Grizzly and Barren Ground Caribou. Bears have ranged 7'6"–8'6" with coloration from
-                                classic blonde-and-dark-legs to chocolate. Hike-and-glass from a temporary base camp. As
-                                a bonus, the $5,000 round-trip air charter is covered, and Dall sheep can be added for a
-                                trophy fee.
-                            </p>
+                            <div class="gw-prize-desc gw-clamp">
+                                <p>Win this 13-day Arctic Grizzly bear and Barren Ground Caribou Combo hunt with Alaskan
+                                    Perimeter Expeditions. Hunt dates are Sept 1-13, 2026.</p>
+                                <p>Hunt northern Alaska's Arctic National Wildlife Refuge, for Arctic Grizzlies and
+                                    Barren Ground caribou in an exclusive guide use area. These bears have been in the
+                                    7'6" to 8'6" range, and have coloration ranging from the classic blonde body with
+                                    dark legs to chocolate-colored bears. Some great caribou bulls are also found in
+                                    this area, and you can harvest both species with NO harvest fees! This hunt is
+                                    conducted out of a temporary base camp, where you will hike and glass for bears and
+                                    caribou simultaneously. This is a great opportunity to experience the vast
+                                    wilderness of Alaska while hunting two iconic Alaskan species. As a bonus, we will
+                                    also cover the $5,000 round trip air charter for this hunt! Dall sheep can also be
+                                    added for a trophy fee.</p>
+                            </div>
+                            <button type="button" class="gw-readmore" aria-expanded="false"><span>Read
+                                    more</span></button>
                             <div class="gw-prize-cta-row">
                                 <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
                                     Buy Tickets <span class="gw-prize-cta-arrow">→</span>
@@ -1010,13 +1090,21 @@
                             <h3 class="gw-prize-title">2026–2027 Mexico Mule Deer &amp; Coues Deer Combo</h3>
                             <div class="gw-prize-meta">FA Sonoran Hunts <span class="gw-prize-meta-dot">·</span> Dec 28,
                                 2026 – Jan 2, 2027</div>
-                            <p class="gw-prize-desc">
-                                Hunt Sonora, Mexico for trophy Mule deer and Coues deer on the same trip. A first-class
-                                operation across ~400,000 acres of free-range desert with 80+ feeders maintained
-                                year-round and strict trophy management — they use only half their allotted tags.
-                                English-speaking guides, comfortable ranch house, and includes round-trip airport
-                                transport, gun permit, tags, and paperwork.
-                            </p>
+                            <div class="gw-prize-desc gw-clamp">
+                                <p>Win this 6-day Mule Deer/Coues Deer hunt with FA Sonoran Hunts. Dec 28, 2026-Jan 2,
+                                    2027.</p>
+                                <p>Start the new year by hunting Sonora, Mexico for both trophy Mule deer and Coues deer
+                                    on the same hunt! This first-class operation has multiple different ranches with
+                                    nearly 400,000 acres of huntable, free-range desert country. The outfitter has been
+                                    strictly managing the ranches with limited harvest for several years, and it is
+                                    paying off. They have been using only half the tags they are issued each year. They
+                                    have 80+ feeders that are maintained year-round. All guides are English speaking.
+                                    Hunters will stay in a comfortable ranch house. The hunt winner may take both deer
+                                    species and there are NO harvest fees. Hunts are 6 days, and include to and from
+                                    airport transportation, gun permit, tags, and paperwork to get your buck home.</p>
+                            </div>
+                            <button type="button" class="gw-readmore" aria-expanded="false"><span>Read
+                                    more</span></button>
                             <div class="gw-prize-cta-row">
                                 <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
                                     Buy Tickets <span class="gw-prize-cta-arrow">→</span>
@@ -1041,12 +1129,20 @@
                             <h3 class="gw-prize-title">2026 Acoma Reservation New Mexico Elk Hunt</h3>
                             <div class="gw-prize-meta">Acoma Big Game Hunts <span class="gw-prize-meta-dot">·</span>
                                 Sept 28 – Oct 2, 2026</div>
-                            <p class="gw-prize-desc">
-                                A unique chance to hunt big bulls during the rut on the Acoma Reservation, where elk are
-                                managed for trophy quality. Our last winner killed a giant — see past harvests at
-                                acomabiggamehunts.com. We've secured prime rut dates and you can choose your weapon:
-                                rifle, muzzleloader, or bow.
-                            </p>
+                            <div class="gw-prize-desc gw-clamp">
+                                <p>Win this 5 day New Mexico prime rut elk hunt on the Acoma Reservation. Winner gets to
+                                    hunt with their choice of weapon Sept 28-Oct 2, 2026.</p>
+                                <p>The Acoma Reservation in New Mexico offers a unique opportunity to hunt big bulls
+                                    during the rut! Once again, we've secured a trophy bull hunt here where they manage
+                                    their elk for quality bulls. Our last hunt winner killed a giant bull! You can also
+                                    see many trophy bulls they have harvested in the past by going to
+                                    acomabiggamehunts.com. We've secured prime rut dates for the winner of this guided
+                                    hunt, and you can hunt with a rifle, muzzleloader, or bow. This is a great chance to
+                                    hunt big bulls, in the rut, with the potential to take a giant! The winner will
+                                    arrive on Sept 27, hunt Sept 28-Oct 2, and depart on Oct 3.</p>
+                            </div>
+                            <button type="button" class="gw-readmore" aria-expanded="false"><span>Read
+                                    more</span></button>
                             <div class="gw-prize-cta-row">
                                 <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
                                     Buy Tickets <span class="gw-prize-cta-arrow">→</span>
@@ -1070,13 +1166,21 @@
                             <h3 class="gw-prize-title">2026 Colorado Unit 61 Mule Deer Hunt</h3>
                             <div class="gw-prize-meta">Garvey Brothers Outfitters <span
                                     class="gw-prize-meta-dot">·</span> Nov 9 – 15, 2026</div>
-                            <p class="gw-prize-desc">
-                                Hunt the famed Uncompahgre Plateau in western Colorado with a multi-generation
-                                outfitting family during 3rd rifle season. Public land plus the Garvey family's private
-                                land in Unit 61. These dates catch the last 7 days of 3rd season, which should bring
-                                some rutting activity. Includes 3rd season landowner tag, guide fees, meals, and
-                                cabin-style lodging. Accessible for hunters of all abilities.
-                            </p>
+                            <div class="gw-prize-desc gw-clamp">
+                                <p>Win this 7 day guided Colorado Mule Deer hunt with landowner tag included, in unit 61
+                                    for the 3rd rifle season, with Garvey Brothers Outfitters November 9-15, 2026.</p>
+                                <p>This is your chance to hunt the famed Uncompahgre Plateau in western Colorado with a
+                                    multi-generation outfitting family during the 3rd season. In addition to the public
+                                    land access, the Garvey family also has some great private land in unit 61 and has
+                                    decades of experience guiding hunters to great Mule deer there. The season dates on
+                                    this hunt are the last 7 days of the 3rd season, and should allow the hunter to
+                                    experience some rutting activity. We expect the winner of this hunt to have the
+                                    chance to pursue a trophy buck! This hunt includes a 3rd season landowner tag, guide
+                                    fees, meals, and cabin-style lodging. The unit is not remote or physically difficult
+                                    to hunt this time of year, making it appealing for hunters of all abilities.</p>
+                            </div>
+                            <button type="button" class="gw-readmore" aria-expanded="false"><span>Read
+                                    more</span></button>
                             <div class="gw-prize-cta-row">
                                 <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
                                     Buy Tickets <span class="gw-prize-cta-arrow">→</span>
@@ -1100,13 +1204,20 @@
                             <h3 class="gw-prize-title">2026 Alberta Trophy Whitetail Deer Hunt</h3>
                             <div class="gw-prize-meta">Alberta Dark Horn <span class="gw-prize-meta-dot">·</span> Nov 11
                                 – 19, 2026</div>
-                            <p class="gw-prize-desc">
-                                A true trophy buck hunt in northern Alberta during the rut. Nine days gives hunters
-                                ample time in enclosed stands to hold out for the right buck across nearly 9,000 square
-                                miles of prime habitat. Fly into Edmonton then drive to camp HQ. If you tag out early,
-                                transition to wolves and coyotes at no additional cost. Stays in a modern lodge with
-                                private rooms.
-                            </p>
+                            <div class="gw-prize-desc gw-clamp">
+                                <p>Win this 9 day rifle hunt in northern Alberta, with Alberta Dark Horn, during the rut
+                                    Nov 11-19, 2026.</p>
+                                <p>This all-inclusive Canadian Whitetail hunt with Alberta Dark Horn is a true trophy
+                                    buck hunt! This 9 day hunt offers hunters ample amounts of time in enclosed stands,
+                                    to hunt for the right buck. Nearly 9,000 square miles of prime habitat provides more
+                                    than enough area to target specific, next-level bucks. Hunter arrives in Edmonton
+                                    where you will need to drive to the camp headquarters. In the event you finish your
+                                    hunt early, you can transition to hunting wolves and coyotes, at no cost. Hunters
+                                    stay in a comfortable modern lodge, with private rooms. This is truly one of the
+                                    best Whitetail hunts Canada has to offer!</p>
+                            </div>
+                            <button type="button" class="gw-readmore" aria-expanded="false"><span>Read
+                                    more</span></button>
                             <div class="gw-prize-cta-row">
                                 <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
                                     Buy Tickets <span class="gw-prize-cta-arrow">→</span>
@@ -1126,15 +1237,15 @@
                                 <span class="gw-badge gw-badge-accent">7-Piece Package</span>
                             </div>
                             <h3 class="gw-prize-title">Epic Gear Package</h3>
-                            <div class="gw-prize-meta">Premium rifles, optics, and accessories</div>
+                            <div class="gw-prize-meta">This package includes:</div>
                             <ul class="gw-gear-list">
                                 <li>Fierce Twisted Rage LR 7MM PRC Rifle</li>
                                 <li>Leupold VX-5HD 3-15x44 Riflescope</li>
                                 <li>CVA Accura MR-X 50-cal Muzzleloader</li>
-                                <li>Zeiss Harpia 23-70x 95mm Spotting Scope + Stay-on Case</li>
-                                <li>Swarovski NL Pure Binoculars (10x, 12x, or 14x)</li>
+                                <li>Zeiss Harpia 23-70x 95 mm Spotting Scope and Stay on Case</li>
+                                <li>Swarovski NL Pure Binoculars choose either 10x, 12x, or 14x</li>
                                 <li>Sig Sauer Kilo 8K Rangefinder</li>
-                                <li>Epic Ultra Tripod + Head Combo</li>
+                                <li>Epic Ultra Tripod and Head Combo</li>
                             </ul>
                             <div class="gw-prize-cta-row">
                                 <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
@@ -1149,9 +1260,7 @@
             </div>
         </section>
 
-        <!-- ────────────────────────────────────────────────────
-         WINNER'S CHOICE (BONUS)
-    ──────────────────────────────────────────────────── -->
+        <!-- ────────────────── WINNER'S CHOICE ────────────────── -->
         <section class="gw-section gw-section-wc" id="winners-choice">
             <div class="gw-container">
 
@@ -1173,14 +1282,18 @@
                             <span class="gw-badge">Bonus Drawing</span>
                         </div>
                         <h3 class="gw-wc-title">The "Winner's Choice" Hunt</h3>
-                        <p class="gw-prize-desc">
-                            The Winner's Choice winner receives $15,000 to put toward the hunt of their choice — from
-                            one of our Epic Approved outfitted hunts or any outfitter of their choosing. The Epic
-                            Outdoors staff will help the winner book the perfect hunt for their wish list.
-                        </p>
+                        <div class="gw-prize-desc">
+                            <p>Purchase a 30 ticket option for $500 (a $250 savings) and get 30 tickets for your choice
+                                in the 8 giveaway packages. Also receive 1 ticket (for each $500 you spend) for the
+                                bonus "Winner's Choice" hunt.</p>
+                            <p>Winner of the Bonus Hunt will get $15,000 to put toward their choice of hunts from one of
+                                our Epic Approved outfitted hunts or an outfitter of your choice. There are many quality
+                                hunts available. Photos shown here showcase some of the great hunts in this price range.
+                                The Epic Outdoors staff will help the winner book the perfect hunt for their wish list.
+                            </p>
+                        </div>
                         <div class="gw-wc-callout">
-                            Winner's Choice entries are earned only with $500 (30-ticket) packages. Each $500 you spend
-                            = 1 Winner's Choice entry.
+                            There is no way to buy individual tickets for the Winner's Choice hunt.
                         </div>
                         <div class="gw-wc-cta-row">
                             <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
@@ -1193,9 +1306,7 @@
             </div>
         </section>
 
-        <!-- ────────────────────────────────────────────────────
-         TICKET PRICING
-    ──────────────────────────────────────────────────── -->
+        <!-- ────────────────── TICKET PRICING ────────────────── -->
         <section class="gw-section" id="tickets">
             <div class="gw-container">
 
@@ -1248,9 +1359,7 @@
             </div>
         </section>
 
-        <!-- ────────────────────────────────────────────────────
-         OTHER WAYS TO ENTER
-    ──────────────────────────────────────────────────── -->
+        <!-- ────────────────── OTHER WAYS TO ENTER ────────────────── -->
         <section class="gw-section" id="other-ways">
             <div class="gw-container">
 
@@ -1321,7 +1430,30 @@
     </footer>
 
     <script>
+        // Footer year
         document.getElementById('y').textContent = new Date().getFullYear();
+
+        // Read more / read less toggle
+        document.querySelectorAll('.gw-readmore').forEach(function (btn) {
+            // Find the description right before this button
+            var desc = btn.previousElementSibling;
+            if (!desc || !desc.classList.contains('gw-prize-desc')) return;
+
+            // If the content doesn't actually overflow the clamp, hide the button
+            // (the gear card already has no button, but this is a safeguard for short
+            //  text descriptions if they're ever added in the future)
+            if (desc.scrollHeight <= desc.clientHeight + 2) {
+                btn.style.display = 'none';
+                desc.classList.remove('gw-clamp');
+                return;
+            }
+
+            btn.addEventListener('click', function () {
+                var expanded = desc.classList.toggle('gw-expanded');
+                btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+                btn.querySelector('span').textContent = expanded ? 'Read less' : 'Read more';
+            });
+        });
     </script>
 
 </body>
