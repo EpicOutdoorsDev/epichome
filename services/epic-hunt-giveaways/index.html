@@ -213,6 +213,50 @@
             flex-shrink: 0;
         }
 
+        /* Member perks callout, sits in hero under the deadline pill */
+        .gw-hero-perks {
+            display: inline-flex;
+            align-items: flex-start;
+            gap: 12px;
+            max-width: 560px;
+            padding: 14px 20px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .10);
+            margin-bottom: 22px;
+            text-align: left;
+        }
+
+        .gw-hero-perks-icon {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            color: var(--accent2);
+            margin-top: 2px;
+        }
+
+        .gw-hero-perks-content {
+            color: var(--muted);
+            font-size: 13.5px;
+            line-height: 1.55;
+        }
+
+        .gw-hero-perks-content strong {
+            color: var(--accent2);
+            font-weight: 800;
+        }
+
+        @media (max-width: 560px) {
+            .gw-hero-perks {
+                padding: 12px 16px;
+                gap: 10px;
+            }
+
+            .gw-hero-perks-content {
+                font-size: 13px;
+            }
+        }
+
         .gw-cta-row {
             display: flex;
             flex-wrap: wrap;
@@ -725,23 +769,6 @@
             line-height: 1.5;
         }
 
-        .gw-perks {
-            margin-top: 28px;
-            padding: 18px 22px;
-            background: rgba(255, 255, 255, .03);
-            border: 1px solid var(--line-soft);
-            border-radius: var(--radius-sm);
-            color: var(--muted);
-            font-size: 14px;
-            text-align: center;
-            line-height: 1.6;
-        }
-
-        .gw-perks strong {
-            color: var(--text);
-            font-weight: 800;
-        }
-
         /* ──────────────────────────────────────────────────────────
        FOOTER
     ────────────────────────────────────────────────────────── */
@@ -841,6 +868,23 @@
                         <line x1="3" y1="10" x2="21" y2="10"></line>
                     </svg>
                     Deadline: June 22, 2026
+                </div>
+
+                <!-- Member perks callout -->
+                <div class="gw-hero-perks">
+                    <svg class="gw-hero-perks-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                        <rect x="2" y="7" width="20" height="5"></rect>
+                        <line x1="12" y1="22" x2="12" y2="7"></line>
+                        <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                        <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                    </svg>
+                    <div class="gw-hero-perks-content">
+                        New members receive <strong>1 free ticket</strong> on signup ($150). Existing members earn
+                        <strong>1 free ticket</strong> for each new member they refer. Either way — that's another shot
+                        at the prize lineup.
+                    </div>
                 </div>
 
                 <div class="gw-cta-row">
@@ -1265,12 +1309,6 @@
                         <div class="gw-method-detail">PO Box 2978<br>Cedar City, UT 84721</div>
                     </div>
 
-                </div>
-
-                <div class="gw-perks">
-                    <strong>Members get more.</strong> New members receive 1 free ticket on signup ($150). Existing
-                    members earn 1 free ticket for each new member they refer. Either way — that's another shot at the
-                    prize lineup.
                 </div>
 
             </div>
