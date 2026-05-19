@@ -222,6 +222,42 @@
       max-width: 70ch;
     }
 
+    .gw-service-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      align-self: flex-start;
+      padding: 11px 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 122, 24, .45);
+      background: transparent;
+      color: var(--accent2);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background .15s ease, border-color .15s ease, color .15s ease, transform .15s ease;
+    }
+
+    .gw-service-cta:hover {
+      background: rgba(255, 122, 24, .10);
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .gw-service-cta-arrow {
+      color: var(--accent);
+      font-size: 16px;
+      line-height: 1;
+      transition: transform .15s ease;
+    }
+
+    .gw-service-cta:hover .gw-service-cta-arrow {
+      transform: translateX(3px);
+    }
+
     /* Stack the service card vertically once the horizontal layout
        gets tight. */
     @media (max-width: 720px) {
@@ -498,6 +534,10 @@
             Approved Outfitters, and the Member Experience Program &mdash;
             connecting you with members who've already hunted the unit you drew.
           </p>
+          <a class="gw-service-cta" href="https://epicoutdoorsmember.com/join.asp">
+            <span>Join</span>
+            <span class="gw-service-cta-arrow" aria-hidden="true">&rarr;</span>
+          </a>
         </div>
       </article>
 
