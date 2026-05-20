@@ -1,8 +1,8 @@
-/* PostHog analytics — shared across every page of epicoutdoors.com.
-   Project: Epic Outdoors Website (US cloud).
-   To add tracking to a new page, put this in its <head>:
-       <script src="/analytics.js"></script>
-*/
+/* PostHog analytics — shared by epicoutdoors.com, the Shopify store,
+   and the epicoutdoorsmember.com member portal.
+   Project: Epic Outdoors Website (US cloud, project 433382).
+   Marketing/store pages load this directly; the portal loads it via
+   inc/analytics.asp (see that file for member identify + logout reset). */
 !(function (t, e) {
   var o, n, p, r;
   e.__SV ||
@@ -55,12 +55,89 @@
     }),
     (e.__SV = 1));
 })(document, window.posthog || []);
-posthog.init("phc_DeyPGkMvEUzFczrCcxdkuRPCrN6m5a6FnjVwEiqHXwpE", {
+/* ── Cross-domain handoff ──────────────────────────────────────────
+   epicoutdoors.com / the Shopify store and epicoutdoorsmember.com are
+   different root domains, so the PostHog cookie can't follow a visitor
+   across them. This carries the distinct_id + session_id across that
+   boundary in the URL hash, so a visitor stays one continuous person.
+   Generic and bidirectional; epicoutdoors.com <-> store links are left
+   alone since those share a root domain (and already share the cookie). */
+function epicRoot(host) {
+  host = (host || "").toLowerCase();
+  if (
+    host === "epicoutdoorsmember.com" ||
+    host.endsWith(".epicoutdoorsmember.com")
+  )
+    return "member";
+  if (host === "epicoutdoors.com" || host.endsWith(".epicoutdoors.com"))
+    return "main";
+  return null;
+}
+
+/* Receiver: if this page was opened via a decorated cross-domain link,
+   adopt the incoming identity, then strip it back out of the URL. */
+var epicBootstrap = null;
+try {
+  var epicHash = (location.hash || "").replace(/^#/, "");
+  if (epicHash.indexOf("distinct_id=") !== -1) {
+    var epicParams = new URLSearchParams(epicHash);
+    var inDistinctId = epicParams.get("distinct_id");
+    var inSessionId = epicParams.get("session_id");
+    if (inDistinctId) {
+      epicBootstrap = { distinctID: inDistinctId };
+      if (inSessionId) epicBootstrap.sessionID = inSessionId;
+      history.replaceState(null, "", location.pathname + location.search);
+    }
+  }
+} catch (e) {}
+
+var epicInit = {
   api_host: "https://us.i.posthog.com",
   defaults: "2026-01-30",
   person_profiles: "identified_only",
   enable_heatmaps: true,
-});
+  loaded: function (ph) {
+    /* Decorator: when a link is about to be followed to the OTHER Epic
+       root domain, tag its hash with the current IDs so the destination
+       can pick the visitor up as the same person. */
+    try {
+      var here = epicRoot(location.hostname);
+      if (!here) return;
+      var tagLink = function (evt) {
+        var a =
+          evt.target && evt.target.closest
+            ? evt.target.closest("a[href]")
+            : null;
+        if (!a) return;
+        var dest;
+        try {
+          dest = epicRoot(new URL(a.href, location.href).hostname);
+        } catch (err) {
+          return;
+        }
+        if (!dest || dest === here) return;
+        try {
+          var u = new URL(a.href, location.href);
+          var did = ph.get_distinct_id();
+          if (!did) return;
+          var sid = ph.get_session_id();
+          var parts = ["distinct_id=" + encodeURIComponent(did)];
+          if (sid) parts.push("session_id=" + encodeURIComponent(sid));
+          u.hash = parts.join("&");
+          a.href = u.toString();
+        } catch (err) {}
+      };
+      /* mousedown catches middle/modifier clicks, click catches
+         left-click and keyboard activation; both fire before the
+         browser navigates, and re-tagging a link is harmless. */
+      document.addEventListener("mousedown", tagLink, true);
+      document.addEventListener("click", tagLink, true);
+    } catch (err) {}
+  },
+};
+if (epicBootstrap) epicInit.bootstrap = epicBootstrap;
+
+posthog.init("phc_DeyPGkMvEUzFczrCcxdkuRPCrN6m5a6FnjVwEiqHXwpE", epicInit);
 
 /* ── Member identification (Epic Outdoors member portal) ──────────
    On the member portal, inc/analytics.asp sets these globals
