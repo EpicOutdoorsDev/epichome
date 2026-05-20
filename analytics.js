@@ -59,4 +59,30 @@ posthog.init("phc_DeyPGkMvEUzFczrCcxdkuRPCrN6m5a6FnjVwEiqHXwpE", {
   api_host: "https://us.i.posthog.com",
   defaults: "2026-01-30",
   person_profiles: "identified_only",
+  enable_heatmaps: true,
 });
+
+/* ── Member identification (Epic Outdoors member portal) ──────────
+   On the member portal, inc/analytics.asp sets these globals
+   server-side from the ASP Session, before this file loads:
+       window.__epicMember — a logged-in member's id / email / name
+       window.__epicReset  — true on the post-logout landing page
+   Both are portal-only: the marketing site and Shopify store load
+   this same file but never set them, so this block is a no-op there. */
+try {
+  if (window.__epicReset) {
+    posthog.reset();
+  }
+  var epicM = window.__epicMember;
+  if (epicM && epicM.id) {
+    var epicProps = { epic_id: epicM.id };
+    if (epicM.email) epicProps.email = epicM.email;
+    var epicName = ((epicM.firstName || "") + " " + (epicM.lastName || ""))
+      .replace(/\s+/g, " ")
+      .trim();
+    if (epicName) epicProps.name = epicName;
+    if (epicM.firstName) epicProps.first_name = epicM.firstName;
+    if (epicM.lastName) epicProps.last_name = epicM.lastName;
+    posthog.identify(String(epicM.id), epicProps);
+  }
+} catch (e) {}
