@@ -16,7 +16,9 @@
     <meta property="og:description"
         content="Done-for-you western state hunt applications, filed by Epic Outdoors consultants.">
 
-    <link rel="icon" href="/assets/favicon.png" sizes="any">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <style>
         *,
@@ -222,26 +224,42 @@
             margin-top: 8px;
         }
 
-        /* ── HOW IT WORKS / STEPS ── */
+        /* ── HOW IT WORKS / STEPS (vertical timeline) ── */
         .gw-steps {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
         .gw-step {
             display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            padding: 24px;
-            background: linear-gradient(180deg, var(--card2), var(--card));
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
+            align-items: stretch;
+            gap: 20px;
+        }
+
+        .gw-step-marker {
+            position: relative;
+            flex-shrink: 0;
+            width: 42px;
+        }
+
+        /* orange line connecting each step badge to the next */
+        .gw-step:not(:last-child) .gw-step-marker::before {
+            content: "";
+            position: absolute;
+            top: 36px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: calc(100% + 20px);
+            background: var(--accent);
+            border-radius: 3px;
         }
 
         .gw-step-num {
-            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+            margin-top: 15px;
             width: 42px;
             height: 42px;
             border-radius: 50%;
@@ -254,11 +272,20 @@
             box-shadow: 0 6px 18px rgba(255, 122, 24, .35);
         }
 
+        .gw-step-card {
+            flex: 1;
+            min-width: 0;
+            padding: 24px;
+            background: linear-gradient(180deg, var(--card2), var(--card));
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
         .gw-step-text {
             font-size: 15px;
             line-height: 1.55;
             color: var(--text);
-            padding-top: 7px;
         }
 
         .gw-step-text a {
@@ -607,10 +634,6 @@
 
         /* ── RESPONSIVE ── */
         @media (max-width: 720px) {
-            .gw-steps {
-                grid-template-columns: 1fr;
-            }
-
             .gw-pricing {
                 grid-template-columns: 1fr;
             }
@@ -707,30 +730,46 @@
             </div>
             <div class="gw-steps">
                 <div class="gw-step">
-                    <span class="gw-step-num" aria-hidden="true">1</span>
-                    <p class="gw-step-text">
-                        Fill out our <a href="/joinlicenseapp-forms">License Application Form</a>.
-                    </p>
+                    <div class="gw-step-marker">
+                        <span class="gw-step-num" aria-hidden="true">1</span>
+                    </div>
+                    <div class="gw-step-card">
+                        <p class="gw-step-text">
+                            Fill out our <a href="/joinlicenseapp-forms">License Application Form</a>.
+                        </p>
+                    </div>
                 </div>
                 <div class="gw-step">
-                    <span class="gw-step-num" aria-hidden="true">2</span>
-                    <p class="gw-step-text">
-                        Our professional hunting consultants review your profile and preferences and call you to review
-                        your
-                        strategy.
-                    </p>
+                    <div class="gw-step-marker">
+                        <span class="gw-step-num" aria-hidden="true">2</span>
+                    </div>
+                    <div class="gw-step-card">
+                        <p class="gw-step-text">
+                            Our professional hunting consultants review your profile and preferences and call you to
+                            review your
+                            strategy.
+                        </p>
+                    </div>
                 </div>
                 <div class="gw-step">
-                    <span class="gw-step-num" aria-hidden="true">3</span>
-                    <p class="gw-step-text">
-                        We submit each of your state applications and apply for each state as if we were you.
-                    </p>
+                    <div class="gw-step-marker">
+                        <span class="gw-step-num" aria-hidden="true">3</span>
+                    </div>
+                    <div class="gw-step-card">
+                        <p class="gw-step-text">
+                            We submit each of your state applications and apply for each state as if we were you.
+                        </p>
+                    </div>
                 </div>
                 <div class="gw-step">
-                    <span class="gw-step-num" aria-hidden="true">4</span>
-                    <p class="gw-step-text">
-                        You draw tags or receive state refunds directly on your card.
-                    </p>
+                    <div class="gw-step-marker">
+                        <span class="gw-step-num" aria-hidden="true">4</span>
+                    </div>
+                    <div class="gw-step-card">
+                        <p class="gw-step-text">
+                            You draw tags or receive state refunds directly on your card.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
