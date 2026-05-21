@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Membership | Epic Outdoors</title>
+    <meta name="description"
+        content="Epic Outdoors membership is $150 per year and includes nine research magazine issues, full-time hunt consultants, the Hunt Planner, member optics pricing, and more.">
+    <meta name="format-detection" content="telephone=no">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Epic Outdoors">
+    <meta property="og:title" content="Epic Outdoors Membership">
+    <meta property="og:description"
+        content="Everything you need to research and plan western big game hunts, for $150 per year.">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        :root {
+            --bg: #0b0f14;
+            --text: rgba(255, 255, 255, .92);
+            --muted: rgba(255, 255, 255, .72);
+            --line: rgba(255, 255, 255, .12);
+            --card: rgba(255, 255, 255, .06);
+            --card2: rgba(255, 255, 255, .085);
+            --shadow: 0 18px 60px rgba(0, 0, 0, .45);
+            --radius: 18px;
+            --accent: #ff7a18;
+            --accent2: #ffb26b;
+        }
+
+        html {
+            min-height: 100%;
+            background: var(--bg);
+        }
+
+        body {
+            background: transparent;
+            color: var(--text);
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.6;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            color: var(--accent2);
+        }
+
+        /* ── HEADER ── */
+        .gw-header {
+            background: var(--bg);
+            border-bottom: 1px solid var(--line);
+            position: relative;
+            z-index: 2;
+        }
+
+        .gw-header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .gw-header-logo {
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+            flex-shrink: 0;
+        }
+
+        .gw-header-logo img {
+            height: 36px;
+            width: auto;
+            display: block;
+        }
+
+        .gw-header-nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .gw-header-nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            transition: color .15s ease;
+        }
+
+        .gw-header-nav a:hover {
+            color: var(--accent);
+        }
+
+        /* ── PAGE HERO ── */
+        .gw-page-hero {
+            position: relative;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            background: #0a0d12;
+            line-height: 0;
+        }
+
+        .gw-page-hero img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .gw-page-hero::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 25px;
+            background: linear-gradient(to bottom, transparent, var(--bg));
+            pointer-events: none;
+        }
+
+        /* ── PAGE TITLE ── */
+        .gw-page-title {
+            width: min(1100px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 32px 0 22px;
+            text-align: center;
+        }
+
+        .gw-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 122, 24, .30);
+            background: rgba(255, 122, 24, .12);
+            color: var(--accent2);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .10em;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .gw-page-title h1 {
+            font-size: clamp(30px, 4.4vw, 52px);
+            font-weight: 900;
+            letter-spacing: -.02em;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .gw-page-title p {
+            color: var(--muted);
+            font-size: clamp(15px, 1.6vw, 18px);
+            max-width: 52ch;
+            margin: 0 auto;
+        }
+
+        .gw-price-pill {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 18px;
+            padding: 11px 22px;
+            border-radius: 999px;
+            background: var(--accent);
+            color: #fff;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            box-shadow: 0 6px 18px rgba(255, 122, 24, .35);
+        }
+
+        /* ── MAIN / SECTIONS ── */
+        main {
+            flex: 1;
+            padding: 0 0 8px;
+        }
+
+        .gw-section {
+            width: min(1100px, calc(100% - 32px));
+            margin: 0 auto 56px;
+        }
+
+        .gw-section-head {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .gw-eyebrow {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .gw-section-title {
+            font-size: clamp(26px, 3vw, 36px);
+            font-weight: 800;
+            letter-spacing: -.015em;
+            line-height: 1.2;
+        }
+
+        .gw-section-intro {
+            color: var(--muted);
+            font-size: 15px;
+            margin-top: 8px;
+        }
+
+        /* ── BENEFITS GRID ── */
+        .gw-benefits {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .gw-benefit {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 24px;
+            background: linear-gradient(180deg, var(--card2), var(--card));
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .gw-benefit-check {
+            flex-shrink: 0;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--accent);
+            color: #fff;
+            font-size: 17px;
+            font-weight: 900;
+            box-shadow: 0 6px 18px rgba(255, 122, 24, .35);
+        }
+
+        .gw-benefit-body {
+            min-width: 0;
+        }
+
+        .gw-benefit-title {
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: -.01em;
+            line-height: 1.25;
+            margin-bottom: 6px;
+        }
+
+        .gw-benefit-text {
+            color: var(--muted);
+            font-size: 14.5px;
+            line-height: 1.6;
+        }
+
+        /* ── CTA BAND ── */
+        .gw-cta-band {
+            width: min(1100px, calc(100% - 32px));
+            margin: 0 auto 56px;
+            padding: 38px 28px;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 122, 24, .32);
+            background: linear-gradient(180deg, rgba(255, 122, 24, .14), rgba(255, 122, 24, .04));
+            box-shadow: var(--shadow);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .gw-cta-band h2 {
+            font-size: clamp(22px, 2.6vw, 30px);
+            font-weight: 900;
+            letter-spacing: -.015em;
+            line-height: 1.2;
+        }
+
+        .gw-cta-sub {
+            color: var(--muted);
+            font-size: 14px;
+            margin-top: -4px;
+        }
+
+        .gw-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            background: var(--accent);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid var(--accent);
+            box-shadow: 0 6px 18px rgba(255, 122, 24, .35);
+            transition: background .15s ease, transform .15s ease;
+        }
+
+        .gw-btn-primary:hover {
+            background: #ff8a33;
+            transform: translateY(-1px);
+        }
+
+        .gw-btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            align-self: flex-start;
+            padding: 12px 24px;
+            border-radius: 999px;
+            background: transparent;
+            color: var(--accent2);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid rgba(255, 122, 24, .45);
+            transition: background .15s ease, border-color .15s ease, color .15s ease, transform .15s ease;
+        }
+
+        .gw-btn-outline:hover {
+            background: rgba(255, 122, 24, .10);
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        .gw-arrow {
+            font-size: 16px;
+            line-height: 1;
+            transition: transform .15s ease;
+        }
+
+        .gw-btn-primary:hover .gw-arrow,
+        .gw-btn-outline:hover .gw-arrow {
+            transform: translateX(3px);
+        }
+
+        /* ── ABOUT (text + image) ── */
+        .gw-about {
+            display: flex;
+            align-items: stretch;
+            gap: 28px;
+            width: min(1100px, calc(100% - 32px));
+            margin: 0 auto 56px;
+            padding: 24px;
+            background: linear-gradient(180deg, var(--card2), var(--card));
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .gw-about-graphic {
+            flex-shrink: 0;
+            width: 320px;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .gw-about-graphic img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gw-about-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 14px;
+            min-width: 0;
+        }
+
+        .gw-about-content h2 {
+            font-size: clamp(22px, 2.4vw, 28px);
+            font-weight: 900;
+            letter-spacing: -.02em;
+            line-height: 1.18;
+        }
+
+        .gw-about-content p {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, .08);
+            color: rgba(255, 255, 255, .45);
+            padding: 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 720px) {
+            .gw-benefits {
+                grid-template-columns: 1fr;
+            }
+
+            .gw-about {
+                flex-direction: column;
+                padding: 16px;
+                gap: 18px;
+            }
+
+            .gw-about-graphic {
+                width: 100%;
+                aspect-ratio: 16 / 10;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .gw-header-inner {
+                padding: 14px 16px;
+                justify-content: center;
+            }
+
+            .gw-header-logo img {
+                height: 30px;
+            }
+
+            .gw-header-nav {
+                display: none;
+            }
+
+            main {
+                padding: 0 0 8px;
+            }
+
+            .gw-page-title {
+                padding: 24px 0 18px;
+            }
+
+            .gw-cta-band {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .gw-header-logo img {
+                height: 26px;
+            }
+        }
+    </style>
+
+    <!-- PostHog analytics (shared across all pages) -->
+    <script src="/analytics.js"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="gw-header">
+        <div class="gw-header-inner">
+            <a class="gw-header-logo" href="/" aria-label="Epic Outdoors home">
+                <img src="/assets/00-emailLogoWideH_eurostile.png" alt="Epic Outdoors" width="2000" height="261">
+            </a>
+            <nav class="gw-header-nav" aria-label="Primary">
+                <a href="/services/epic-hunt-giveaways/">Giveaway</a>
+                <a href="https://epicoutdoorsmember.com">Login</a>
+                <a href="https://store.epicoutdoors.com">Store</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page hero -->
+    <div class="gw-page-hero">
+        <img src="/assets/26Website-HeroHeader.jpeg" alt="Epic Outdoors. Your key to hunting the West." width="2200"
+            height="800" fetchpriority="high">
+    </div>
+
+    <main>
+
+        <!-- Page title -->
+        <div class="gw-page-title">
+            <span class="gw-kicker">Epic Outdoors Service</span>
+            <h1>Epic Outdoors Membership</h1>
+            <p>Everything you need to research and plan western big game hunts.</p>
+            <span class="gw-price-pill">$150 per year</span>
+        </div>
+
+        <!-- Benefits -->
+        <section class="gw-section" aria-labelledby="benefits-heading">
+            <div class="gw-section-head">
+                <span class="gw-eyebrow">Membership</span>
+                <h2 class="gw-section-title" id="benefits-heading">Membership Benefits</h2>
+                <p class="gw-section-intro">Your $150 annual membership includes all of the following.</p>
+            </div>
+            <div class="gw-benefits">
+
+                <div class="gw-benefit">
+                    <span class="gw-benefit-check" aria-hidden="true">&#10003;</span>
+                    <div class="gw-benefit-body">
+                        <h3 class="gw-benefit-title">Research Magazine</h3>
+                        <p class="gw-benefit-text">
+                            Receive 9 issues a year with in-depth, state-by-state and species-by-species analysis to
+                            plan your
+                            western big game hunts. A hunt application strategy is only as good as the research it is
+                            based on.
+                            Issues publish in January, February, March, April, May, June/July, Aug/Sept, Oct/Nov, and
+                            December.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="gw-benefit">
+                    <span class="gw-benefit-check" aria-hidden="true">&#10003;</span>
+                    <div class="gw-benefit-body">
+                        <h3 class="gw-benefit-title">Hunting Consultants &amp; Staff</h3>
+                        <p class="gw-benefit-text">
+                            You get access to our full-time hunt consultants: Jason Carter, Adam Bronson, Wyatt Bowles,
+                            Devin
+                            Archibald, Cache Lynn, John Petersen, and Logan Marshall. They are not only consultants but
+                            professional
+                            hunters who practice what they preach.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="gw-benefit">
+                    <span class="gw-benefit-check" aria-hidden="true">&#10003;</span>
+                    <div class="gw-benefit-body">
+                        <h3 class="gw-benefit-title">Hunt Planner&trade;</h3>
+                        <p class="gw-benefit-text">
+                            Access our member's only digital research tools. Look up specific states, species, drawing
+                            odds,
+                            unit-specific information, and customizable maps.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="gw-benefit">
+                    <span class="gw-benefit-check" aria-hidden="true">&#10003;</span>
+                    <div class="gw-benefit-body">
+                        <h3 class="gw-benefit-title">Member's Only Pricing</h3>
+                        <p class="gw-benefit-text">
+                            Members get exclusive pricing on optics and gear from the Epic Gear Store.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="gw-benefit">
+                    <span class="gw-benefit-check" aria-hidden="true">&#10003;</span>
+                    <div class="gw-benefit-body">
+                        <h3 class="gw-benefit-title">Epic Approved Outfitters</h3>
+                        <p class="gw-benefit-text">
+                            If you are looking for a guided hunt, you can trust our network of approved outfitters.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="gw-benefit">
+                    <span class="gw-benefit-check" aria-hidden="true">&#10003;</span>
+                    <div class="gw-benefit-body">
+                        <h3 class="gw-benefit-title">Landowner Tags</h3>
+                        <p class="gw-benefit-text">
+                            Members have access to our landowner tags and exclusive hunting opportunities.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="gw-benefit">
+                    <span class="gw-benefit-check" aria-hidden="true">&#10003;</span>
+                    <div class="gw-benefit-body">
+                        <h3 class="gw-benefit-title">Online Magazine</h3>
+                        <p class="gw-benefit-text">
+                            Every membership includes the digital version of the magazine. Log in to your account and
+                            read the
+                            eMagazines any time you want.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="gw-benefit">
+                    <span class="gw-benefit-check" aria-hidden="true">&#10003;</span>
+                    <div class="gw-benefit-body">
+                        <h3 class="gw-benefit-title">Member Experience</h3>
+                        <p class="gw-benefit-text">
+                            When you draw a tag, call the office for a list of fellow members who have held that tag
+                            before. Reach
+                            out to them to learn about the experience firsthand.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Join CTA band -->
+        <div class="gw-cta-band">
+            <h2>Join Epic Outdoors</h2>
+            <a class="gw-btn-primary" href="https://epicoutdoorsmember.com/join.asp">
+                <span>Join Now</span>
+                <span class="gw-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+        </div>
+
+        <!-- Sample issue -->
+        <article class="gw-about">
+            <div class="gw-about-graphic">
+                <img src="/assets/26Website-Section_Membership2.jpeg"
+                    alt="Epic Outdoors research magazine and digital tools" width="800" height="800" loading="lazy">
+            </div>
+            <div class="gw-about-content">
+                <h2>Preview the Research Magazine</h2>
+                <p>
+                    Your membership includes nine research magazine issues a year, packed with state-by-state,
+                    species-by-species draw analysis. Take a look at a full sample issue before you join.
+                </p>
+                <a class="gw-btn-outline" href="https://epicoutdoorsmember.com/emag/sample/index.html" target="_blank"
+                    rel="noopener">
+                    <span>View a Sample Issue</span>
+                    <span class="gw-arrow" aria-hidden="true">&rarr;</span>
+                </a>
+            </div>
+        </article>
+
+        <!-- Final CTA -->
+        <div class="gw-cta-band">
+            <h2>Ready to Join?</h2>
+            <p class="gw-cta-sub">$150 per year for everything above.</p>
+            <a class="gw-btn-primary" href="https://epicoutdoorsmember.com/join.asp">
+                <span>Join Now</span>
+                <span class="gw-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+        </div>
+
+    </main>
+
+    <footer>
+        Copyright &copy; 2017&ndash;<span id="y"></span> Epic Outdoors | All Rights Reserved
+    </footer>
+
+    <script>
+        document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>
