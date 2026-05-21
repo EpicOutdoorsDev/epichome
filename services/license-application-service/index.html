@@ -17,7 +17,6 @@
         content="Done-for-you western state hunt applications, filed by Epic Outdoors consultants.">
 
     <link rel="icon" href="/assets/favicon.png" sizes="any">
-
     <style>
         *,
         *::before,
@@ -621,6 +620,78 @@
             font-size: 14px;
         }
 
+        /* ── CONTACT FORM ── */
+        .gw-form-card {
+            padding: 32px 28px;
+            background: linear-gradient(180deg, var(--card2), var(--card));
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .gw-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .gw-field label {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .02em;
+            color: var(--text);
+            margin-bottom: 7px;
+        }
+
+        .gw-field input {
+            width: 100%;
+            padding: 12px 14px;
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            color: var(--text);
+            font-size: 15px;
+            font-family: inherit;
+            transition: border-color .15s ease, background .15s ease;
+        }
+
+        .gw-field input:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, .06);
+        }
+
+        /* honeypot, hidden from people */
+        .gw-hp {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        button.gw-btn-primary {
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .gw-form-card .gw-btn-primary {
+            width: 100%;
+            justify-content: center;
+        }
+
+        @media (max-width: 560px) {
+            .gw-form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gw-form-card {
+                padding: 24px 20px;
+            }
+        }
+
         /* ── FOOTER ── */
         footer {
             border-top: 1px solid rgba(255, 255, 255, .08);
@@ -876,6 +947,49 @@
                     <li class="gw-state-tag">Washington</li>
                     <li class="gw-state-tag">Wyoming</li>
                 </ul>
+            </div>
+        </section>
+
+        <!-- Request information -->
+        <section class="gw-section" aria-labelledby="contact-heading">
+            <div class="gw-section-head">
+                <span class="gw-eyebrow">Get In Touch</span>
+                <h2 class="gw-section-title" id="contact-heading">Request Information</h2>
+                <p class="gw-section-intro">Send us your info and we'll reach out to you soon.</p>
+            </div>
+            <div class="gw-form-card">
+                <form action="https://epicoutdoorsmember.com/license_app_contact.asp" method="POST">
+                    <div class="gw-form-grid">
+                        <div class="gw-field">
+                            <label for="gw-first">First Name</label>
+                            <input type="text" id="gw-first" name="firstName" autocomplete="given-name" maxlength="100"
+                                required>
+                        </div>
+                        <div class="gw-field">
+                            <label for="gw-last">Last Name</label>
+                            <input type="text" id="gw-last" name="lastName" autocomplete="family-name" maxlength="100"
+                                required>
+                        </div>
+                        <div class="gw-field">
+                            <label for="gw-phone">Phone</label>
+                            <input type="tel" id="gw-phone" name="phone" autocomplete="tel" maxlength="50" required>
+                        </div>
+                        <div class="gw-field">
+                            <label for="gw-email">Email</label>
+                            <input type="email" id="gw-email" name="email" autocomplete="email" maxlength="200"
+                                required>
+                        </div>
+                    </div>
+                    <!-- honeypot: anti-spam, leave empty -->
+                    <div class="gw-hp" aria-hidden="true">
+                        <label for="gw-company">Company</label>
+                        <input type="text" id="gw-company" name="company" tabindex="-1" autocomplete="off">
+                    </div>
+                    <button type="submit" class="gw-btn-primary">
+                        <span>Send Request</span>
+                        <span class="gw-arrow" aria-hidden="true">&rarr;</span>
+                    </button>
+                </form>
             </div>
         </section>
 
