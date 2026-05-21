@@ -492,6 +492,325 @@
 
 <body>
 
+    <!--
+  ================================================================
+  EPIC OUTDOORS - SHARED NAV HEADER
+  ----------------------------------------------------------------
+  Paste this ENTIRE block immediately after the opening <body> tag
+  on every page.
+
+  - Fully self-contained: styles + markup + script all included.
+  - Uses root-relative paths (/assets/...), so it works correctly
+    no matter how deeply the page is nested.
+  - On pages that still have the old <header class="gw-header">,
+    delete that old header block first so you do not get two
+    headers stacked. The old .gw-header CSS can be left alone
+    (it just becomes unused) or cleaned up later.
+  - "Join" is a dropdown: tapping it reveals Membership and
+    Application Service. On phones the whole nav collapses into
+    the hamburger menu, so the dropdown still works on tap.
+  ================================================================
+-->
+    <style>
+        /* ===== Epic Outdoors shared nav header ===== */
+        .eo-header {
+            position: relative;
+            z-index: 100;
+            background: #0b0f14;
+            border-bottom: 1px solid rgba(255, 255, 255, .12);
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        .eo-header *,
+        .eo-header *::before,
+        .eo-header *::after {
+            box-sizing: border-box;
+        }
+
+        .eo-header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 16px 24px;
+        }
+
+        .eo-logo {
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+            flex-shrink: 0;
+        }
+
+        .eo-logo img {
+            display: block;
+            height: 36px;
+            width: auto;
+        }
+
+        /* nav */
+        .eo-nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .eo-nav-link {
+            color: rgba(255, 255, 255, .92);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: color .15s ease;
+        }
+
+        .eo-nav-link:hover {
+            color: #ff7a18;
+        }
+
+        /* Join button + dropdown */
+        .eo-join {
+            position: relative;
+        }
+
+        .eo-join-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 9px 18px;
+            border: 1px solid #ff7a18;
+            border-radius: 999px;
+            background: #ff7a18;
+            color: #101318;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: filter .12s ease;
+        }
+
+        .eo-join-btn:hover {
+            filter: brightness(1.07);
+        }
+
+        .eo-caret {
+            font-size: 10px;
+            line-height: 1;
+            transition: transform .18s ease;
+        }
+
+        .eo-join-btn[aria-expanded="true"] .eo-caret {
+            transform: rotate(180deg);
+        }
+
+        .eo-join-menu {
+            display: none;
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            min-width: 224px;
+            flex-direction: column;
+            padding: 8px;
+            background: #141a21;
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 14px;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, .55);
+        }
+
+        .eo-join-btn[aria-expanded="true"]+.eo-join-menu {
+            display: flex;
+        }
+
+        .eo-join-menu a {
+            padding: 11px 14px;
+            border-radius: 9px;
+            color: rgba(255, 255, 255, .92);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background .12s ease, color .12s ease;
+        }
+
+        .eo-join-menu a:hover {
+            background: rgba(255, 122, 24, .14);
+            color: #ffb26b;
+        }
+
+        /* hamburger (mobile only) */
+        .eo-burger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 42px;
+            height: 42px;
+            padding: 0;
+            border: 1px solid rgba(255, 255, 255, .14);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, .04);
+            cursor: pointer;
+        }
+
+        .eo-burger span {
+            display: block;
+            width: 18px;
+            height: 2px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, .92);
+            border-radius: 2px;
+            transition: transform .18s ease, opacity .18s ease;
+        }
+
+        .eo-header.eo-open .eo-burger span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .eo-header.eo-open .eo-burger span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .eo-header.eo-open .eo-burger span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* ===== mobile layout ===== */
+        @media (max-width: 720px) {
+            .eo-header-inner {
+                padding: 14px 16px;
+            }
+
+            .eo-logo img {
+                height: 30px;
+            }
+
+            .eo-burger {
+                display: flex;
+            }
+
+            .eo-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 6px 16px 16px;
+                background: #0b0f14;
+                border-bottom: 1px solid rgba(255, 255, 255, .12);
+                box-shadow: 0 24px 50px rgba(0, 0, 0, .55);
+            }
+
+            .eo-header.eo-open .eo-nav {
+                display: flex;
+            }
+
+            .eo-nav-link {
+                padding: 14px 6px;
+                border-bottom: 1px solid rgba(255, 255, 255, .07);
+            }
+
+            .eo-join {
+                width: 100%;
+            }
+
+            .eo-join-btn {
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 14px;
+                padding: 14px 18px;
+            }
+
+            .eo-join-menu {
+                position: static;
+                min-width: 0;
+                margin-top: 8px;
+                background: rgba(255, 255, 255, .04);
+                box-shadow: none;
+            }
+        }
+    </style>
+
+    <header class="eo-header" id="eoHeader">
+        <div class="eo-header-inner">
+            <a class="eo-logo" href="/" aria-label="Epic Outdoors home">
+                <img src="/assets/00-emailLogoWideH_eurostile.png" alt="Epic Outdoors" width="2000" height="261">
+            </a>
+
+            <button class="eo-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="eoNav">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="eo-nav" id="eoNav" aria-label="Primary">
+                <a class="eo-nav-link" href="/services/epic-hunt-giveaways/">Giveaway</a>
+                <a class="eo-nav-link" href="https://epicoutdoorsmember.com">Login</a>
+                <a class="eo-nav-link" href="https://store.epicoutdoors.com">Store</a>
+                <div class="eo-join">
+                    <button class="eo-join-btn" type="button" aria-haspopup="true" aria-expanded="false">
+                        Join <span class="eo-caret" aria-hidden="true">&#9662;</span>
+                    </button>
+                    <div class="eo-join-menu" role="menu">
+                        <a role="menuitem" href="/membership/">Membership</a>
+                        <a role="menuitem" href="/services/license-application-service/">Application Service</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <script>
+        (function () {
+            var header = document.getElementById('eoHeader');
+            if (!header) return;
+
+            var burger = header.querySelector('.eo-burger');
+            var joinBtn = header.querySelector('.eo-join-btn');
+
+            function setJoin(open) {
+                if (joinBtn) joinBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            }
+
+            function setMenu(open) {
+                header.classList.toggle('eo-open', open);
+                if (burger) burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+                if (!open) setJoin(false);
+            }
+
+            if (burger) {
+                burger.addEventListener('click', function () {
+                    setMenu(!header.classList.contains('eo-open'));
+                });
+            }
+
+            if (joinBtn) {
+                joinBtn.addEventListener('click', function () {
+                    setJoin(joinBtn.getAttribute('aria-expanded') !== 'true');
+                });
+            }
+
+            // close the dropdown / menu when tapping outside of it
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('.eo-join')) setJoin(false);
+                if (!e.target.closest('.eo-header')) setMenu(false);
+            });
+
+            // close on Escape
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') setMenu(false);
+            });
+        })();
+    </script>
+    <!-- ===================== END EPIC OUTDOORS NAV HEADER ===================== -->
+
     <!-- Header -->
     <header class="gw-header">
         <div class="gw-header-inner">
