@@ -17,6 +17,7 @@
         content="Done-for-you western state hunt applications, filed by Epic Outdoors consultants.">
 
     <link rel="icon" href="/assets/favicon.png" sizes="any">
+
     <style>
         *,
         *::before,
@@ -47,6 +48,7 @@
         html {
             min-height: 100%;
             background: var(--bg);
+            scroll-behavior: smooth;
         }
 
         body {
@@ -622,6 +624,8 @@
 
         /* ── CONTACT FORM ── */
         .gw-form-card {
+            max-width: 520px;
+            margin: 0 auto;
             padding: 32px 28px;
             background: linear-gradient(180deg, var(--card2), var(--card));
             border: 1px solid var(--line);
@@ -629,9 +633,13 @@
             box-shadow: var(--shadow);
         }
 
+        #request-info {
+            scroll-margin-top: 24px;
+        }
+
         .gw-form-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 16px;
             margin-bottom: 18px;
         }
@@ -683,10 +691,6 @@
         }
 
         @media (max-width: 560px) {
-            .gw-form-grid {
-                grid-template-columns: 1fr;
-            }
-
             .gw-form-card {
                 padding: 24px 20px;
             }
@@ -846,7 +850,7 @@
         <!-- Join CTA band -->
         <div class="gw-cta-band">
             <h2>Join Our License Application Service</h2>
-            <a class="gw-btn-primary" href="/joinlicenseapp-forms">
+            <a class="gw-btn-primary" href="#request-info">
                 <span>Click to Join Now</span>
                 <span class="gw-arrow" aria-hidden="true">&rarr;</span>
             </a>
@@ -950,8 +954,19 @@
             </div>
         </section>
 
+        <!-- Final CTA -->
+        <div class="gw-final">
+            <h2>Ready to Get Started?</h2>
+            <p class="gw-final-phone">Call <a href="tel:4352630777">435-263-0777</a></p>
+            <p class="gw-final-sub">Call us with any questions or to sign up.</p>
+            <a class="gw-btn-primary" href="#request-info">
+                <span>Click to Join Now</span>
+                <span class="gw-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+        </div>
+
         <!-- Request information -->
-        <section class="gw-section" aria-labelledby="contact-heading">
+        <section class="gw-section" id="request-info" aria-labelledby="contact-heading">
             <div class="gw-section-head">
                 <span class="gw-eyebrow">Get In Touch</span>
                 <h2 class="gw-section-title" id="contact-heading">Request Information</h2>
@@ -992,17 +1007,6 @@
                 </form>
             </div>
         </section>
-
-        <!-- Final CTA -->
-        <div class="gw-final">
-            <h2>Ready to Get Started?</h2>
-            <p class="gw-final-phone">Call <a href="tel:4352630777">435-263-0777</a></p>
-            <p class="gw-final-sub">Call us with any questions or to sign up.</p>
-            <a class="gw-btn-primary" href="/joinlicenseapp-forms">
-                <span>Click to Join Now</span>
-                <span class="gw-arrow" aria-hidden="true">&rarr;</span>
-            </a>
-        </div>
 
     </main>
 
