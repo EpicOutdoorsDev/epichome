@@ -304,6 +304,32 @@
             color: var(--accent2) !important;
         }
 
+        /* ── EARLY BIRD BANNER ── */
+        .gw-earlybird {
+            display: block;
+            width: 100%;
+            max-width: 760px;
+            margin: 24px auto 0;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid rgba(255, 122, 24, .40);
+            box-shadow: var(--shadow);
+            line-height: 0;
+            transition: transform .12s ease, border-color .15s ease, filter .12s ease;
+        }
+
+        .gw-earlybird:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 122, 24, .70);
+            filter: brightness(1.04);
+        }
+
+        .gw-earlybird img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
         /* ──────────────────────────────────────────────────────────
        SECTION SHELL
     ────────────────────────────────────────────────────────── */
@@ -953,6 +979,14 @@
                     <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-cta gw-cta-primary">Buy Tickets →</a>
                     <a href="#tickets" class="gw-cta gw-cta-ghost">View pricing</a>
                 </div>
+
+                <!-- Early Bird Drawing -->
+                <a class="gw-earlybird" href="https://epicoutdoorsmember.com/tickets.asp"
+                    aria-label="Early Bird Drawing: buy tickets before May 31 to earn a bonus entry for a TS Customs precision rifle">
+                    <img src="/assets/earlybird_s26.jpg"
+                        alt="Early Bird Drawing. Get one bonus entry for every ticket you purchase before May 31. Win a TS Customs precision rifle, a $6,250 value."
+                        width="1000" height="380">
+                </a>
             </div>
         </section>
 
