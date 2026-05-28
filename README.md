@@ -84,6 +84,14 @@ No server-side processing is required. `analytics.js` (PostHog) loads on every p
 
 ## Outstanding items
 
+- [ ] **Build remaining pages** (use `terms.html` as the starter template — see
+      `PROJECT.md` §3):
+  - [ ] `about.html` — About Epic Outdoors
+  - [ ] `staff.html` — Staff / team
+  - [ ] `news.html` — News
+  - [ ] `podcast.html` — Podcast
+  - [ ] `submit.html` — Submit (member content / form)
+  - [ ] `member-draw.html` — Member draw
 - [ ] Apply the footer link edits to `index.html` (Terms & Conditions + Giveaway Rules).
       Snippets are in `PROJECT.md`.
 - [ ] Wire up placeholder links in `terms.html`: **Privacy Policy** (Section 10) and
