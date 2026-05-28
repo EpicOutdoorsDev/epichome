@@ -1,540 +1,540 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Epic Outdoors</title>
-    <meta name="format-detection" content="telephone=no" />
 
-    <link rel="icon" href="/assets/favicon.png" sizes="any" />
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Epic Outdoors</title>
+  <meta name="format-detection" content="telephone=no" />
 
-    <style>
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+  <link rel="icon" href="/assets/favicon.png" sizes="any" />
 
-      html,
-      body {
-        height: 100%;
-      }
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-      :root {
-        --bg: #0b0f14;
-        --text: rgba(255, 255, 255, 0.92);
-        --muted: rgba(255, 255, 255, 0.72);
-        --line: rgba(255, 255, 255, 0.12);
-        --card: rgba(255, 255, 255, 0.06);
-        --card2: rgba(255, 255, 255, 0.085);
-        --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
-        --radius: 18px;
-        --accent: #ff7a18;
-        --accent2: #ffb26b;
-      }
+    html,
+    body {
+      height: 100%;
+    }
 
-      html {
-        min-height: 100%;
-        background: var(--bg);
-      }
+    :root {
+      --bg: #0b0f14;
+      --text: rgba(255, 255, 255, 0.92);
+      --muted: rgba(255, 255, 255, 0.72);
+      --line: rgba(255, 255, 255, 0.12);
+      --card: rgba(255, 255, 255, 0.06);
+      --card2: rgba(255, 255, 255, 0.085);
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+      --radius: 18px;
+      --accent: #ff7a18;
+      --accent2: #ffb26b;
+    }
 
-      body {
-        background: transparent;
-        color: var(--text);
-        font-family:
-          system-ui,
-          -apple-system,
-          Segoe UI,
-          Roboto,
-          Helvetica,
-          Arial,
-          sans-serif;
-        font-size: 15px;
-        line-height: 1.6;
-        min-height: 100%;
-        display: flex;
-        flex-direction: column;
-      }
+    html {
+      min-height: 100%;
+      background: var(--bg);
+    }
 
-      /* ── HEADER ── */
-      .gw-header {
-        background: var(--bg);
-        border-bottom: 1px solid var(--line);
-        position: relative;
-        z-index: 2;
-      }
+    body {
+      background: transparent;
+      color: var(--text);
+      font-family:
+        system-ui,
+        -apple-system,
+        Segoe UI,
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
 
-      .gw-header-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-        padding: 16px 24px;
-        max-width: 1280px;
-        margin: 0 auto;
-      }
+    /* ── HEADER ── */
+    .gw-header {
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      z-index: 2;
+    }
 
-      .gw-header-logo {
-        display: inline-flex;
-        align-items: center;
-        line-height: 0;
-        flex-shrink: 0;
-      }
+    .gw-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 24px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
 
-      .gw-header-logo img {
-        height: 36px;
-        width: auto;
-        display: block;
-      }
+    .gw-header-logo {
+      display: inline-flex;
+      align-items: center;
+      line-height: 0;
+      flex-shrink: 0;
+    }
 
-      .gw-header-nav {
-        display: flex;
-        align-items: center;
-        gap: 28px;
-      }
+    .gw-header-logo img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
 
-      .gw-header-nav a {
-        color: var(--text);
-        text-decoration: none;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        transition: color 0.15s ease;
-      }
+    .gw-header-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
 
-      .gw-header-nav a:hover {
-        color: var(--accent);
-      }
+    .gw-header-nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.15s ease;
+    }
 
-      /* ── HERO ── */
-      .gw-hero {
-        width: 100%;
-        max-width: 1280px;
-        margin: 0 auto;
-        line-height: 0;
-        position: relative;
-      }
+    .gw-header-nav a:hover {
+      color: var(--accent);
+    }
 
-      .gw-hero img {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
+    /* ── HERO ── */
+    .gw-hero {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      line-height: 0;
+      position: relative;
+    }
 
-      .gw-hero::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 25px;
-        background: linear-gradient(to bottom, transparent, var(--bg));
-        pointer-events: none;
-      }
+    .gw-hero img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
 
-      /* ── QUICK-NAV PILLS (under hero) ── */
-      .gw-quick-nav {
-        width: min(1100px, calc(100% - 32px));
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 14px;
-        padding-bottom: 32px;
-      }
+    .gw-hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 25px;
+      background: linear-gradient(to bottom, transparent, var(--bg));
+      pointer-events: none;
+    }
 
-      .gw-quick-nav-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 12px 24px;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 122, 24, 0.45);
-        background: transparent;
-        color: var(--accent2);
-        font-size: 13px;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        text-decoration: none;
-        transition:
-          background 0.15s ease,
-          border-color 0.15s ease,
-          color 0.15s ease,
-          transform 0.15s ease;
-      }
+    /* ── QUICK-NAV PILLS (under hero) ── */
+    .gw-quick-nav {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      padding-bottom: 32px;
+    }
 
-      .gw-quick-nav-pill:hover {
-        background: rgba(255, 122, 24, 0.1);
-        border-color: var(--accent);
-        color: var(--accent);
-        transform: translateY(-1px);
-      }
+    .gw-quick-nav-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 122, 24, 0.45);
+      background: transparent;
+      color: var(--accent2);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease,
+        transform 0.15s ease;
+    }
 
-      .gw-quick-nav-pill-arrow {
-        color: var(--accent);
-        font-size: 16px;
-        line-height: 1;
-        transition: transform 0.15s ease;
-      }
+    .gw-quick-nav-pill:hover {
+      background: rgba(255, 122, 24, 0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
 
-      .gw-quick-nav-pill:hover .gw-quick-nav-pill-arrow {
-        transform: translateX(3px);
-      }
+    .gw-quick-nav-pill-arrow {
+      color: var(--accent);
+      font-size: 16px;
+      line-height: 1;
+      transition: transform 0.15s ease;
+    }
 
-      /* Small accent divider between pills and services */
-      .gw-divider {
-        width: 280px;
-        height: 1px;
-        background: linear-gradient(
-          to right,
+    .gw-quick-nav-pill:hover .gw-quick-nav-pill-arrow {
+      transform: translateX(3px);
+    }
+
+    /* Small accent divider between pills and services */
+    .gw-divider {
+      width: 280px;
+      height: 1px;
+      background: linear-gradient(to right,
           transparent,
           var(--accent2),
-          transparent
-        );
-        margin: 0 auto 36px;
-      }
+          transparent);
+      margin: 0 auto 36px;
+    }
 
-      /* ── SERVICES SECTION ── */
-      .gw-services {
-        width: min(1100px, calc(100% - 32px));
-        margin: 0 auto 56px;
-      }
+    /* ── SERVICES SECTION ── */
+    .gw-services {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto 56px;
+    }
 
-      .gw-services-heading {
-        text-align: center;
-        margin-bottom: 28px;
-      }
+    .gw-services-heading {
+      text-align: center;
+      margin-bottom: 28px;
+    }
 
-      .gw-services-title {
-        font-size: clamp(26px, 3vw, 36px);
-        font-weight: 800;
-        letter-spacing: -0.015em;
-        line-height: 1.2;
-        margin-bottom: 8px;
-      }
+    .gw-services-title {
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
 
-      .gw-services-intro {
-        color: var(--muted);
-        font-size: 15px;
-        line-height: 1.5;
-      }
+    .gw-services-intro {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+    }
 
+    .gw-service-card {
+      display: flex;
+      align-items: stretch;
+      gap: 28px;
+      padding: 24px;
+      background: linear-gradient(180deg, var(--card2), var(--card));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .gw-service-card+.gw-service-card {
+      margin-top: 20px;
+    }
+
+    .gw-service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .gw-service-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .gw-service-graphic {
+      flex-shrink: 0;
+      width: 280px;
+      aspect-ratio: 1 / 1;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .gw-service-graphic img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gw-service-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .gw-service-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .gw-service-name {
+      font-size: clamp(22px, 2.4vw, 28px);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .gw-service-price {
+      display: inline-flex;
+      align-items: center;
+      padding: 9px 16px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      box-shadow: 0 6px 18px rgba(255, 122, 24, 0.35);
+    }
+
+    .gw-service-body {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 70ch;
+    }
+
+    .gw-service-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      align-self: flex-start;
+      padding: 11px 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 122, 24, 0.45);
+      background: transparent;
+      color: var(--accent2);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease,
+        transform 0.15s ease;
+    }
+
+    .gw-service-cta:hover {
+      background: rgba(255, 122, 24, 0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .gw-service-cta-arrow {
+      color: var(--accent);
+      font-size: 16px;
+      line-height: 1;
+      transition: transform 0.15s ease;
+    }
+
+    .gw-service-cta:hover .gw-service-cta-arrow {
+      transform: translateX(3px);
+    }
+
+    /* Stack the service card vertically once the horizontal layout
+       gets tight. */
+    @media (max-width: 720px) {
       .gw-service-card {
-        display: flex;
-        align-items: stretch;
-        gap: 28px;
-        padding: 24px;
-        background: linear-gradient(180deg, var(--card2), var(--card));
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-      }
-
-      .gw-service-card + .gw-service-card {
-        margin-top: 20px;
-      }
-
-      .gw-service-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        list-style: none;
-      }
-
-      .gw-service-tag {
-        display: inline-flex;
-        align-items: center;
-        padding: 5px 11px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid var(--line);
-        color: var(--text);
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.02em;
-        white-space: nowrap;
+        flex-direction: column;
+        padding: 16px;
+        gap: 16px;
       }
 
       .gw-service-graphic {
-        flex-shrink: 0;
-        width: 280px;
-        aspect-ratio: 1 / 1;
-        border-radius: 14px;
-        overflow: hidden;
-        background: #000;
-      }
-
-      .gw-service-graphic img {
-        display: block;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .gw-service-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 14px;
-        min-width: 0;
+        max-width: 360px;
+        margin: 0 auto;
       }
 
       .gw-service-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* ── MAINTENANCE CARD ── */
+    .gw-container {
+      width: min(720px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    main {
+      flex: 1;
+      padding: 24px 0 48px;
+    }
+
+    .gw-card {
+      background: linear-gradient(180deg, var(--card2), var(--card));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 44px 36px;
+      text-align: center;
+    }
+
+    .gw-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 122, 24, 0.3);
+      background: rgba(255, 122, 24, 0.1);
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(26px, 3.2vw, 38px);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .gw-sub {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .gw-pulse {
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
       }
 
-      .gw-service-name {
-        font-size: clamp(22px, 2.4vw, 28px);
-        font-weight: 900;
-        letter-spacing: -0.02em;
-        line-height: 1.15;
+      50% {
+        opacity: 0.35;
+        transform: scale(0.85);
+      }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.45);
+      padding: 20px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .gw-footer-links {
+      margin-bottom: 10px;
+    }
+
+    .gw-footer-links span {
+      margin: 0 10px;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: color 0.15s ease;
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 640px) {
+      .gw-header-inner {
+        padding: 14px 16px;
+        justify-content: center;
       }
 
-      .gw-service-price {
-        display: inline-flex;
-        align-items: center;
-        padding: 9px 16px;
-        border-radius: 999px;
-        background: var(--accent);
-        color: #fff;
-        font-size: 13px;
-        font-weight: 800;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        white-space: nowrap;
-        box-shadow: 0 6px 18px rgba(255, 122, 24, 0.35);
+      .gw-header-logo img {
+        height: 30px;
       }
 
-      .gw-service-body {
-        color: var(--muted);
-        font-size: 15px;
-        line-height: 1.6;
-        max-width: 70ch;
+      .gw-header-nav {
+        display: none;
       }
 
-      .gw-service-cta {
-        display: inline-flex;
-        align-items: center;
+      .gw-quick-nav {
+        padding-bottom: 24px;
         gap: 10px;
-        align-self: flex-start;
-        padding: 11px 22px;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 122, 24, 0.45);
-        background: transparent;
-        color: var(--accent2);
-        font-size: 13px;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        text-decoration: none;
-        transition:
-          background 0.15s ease,
-          border-color 0.15s ease,
-          color 0.15s ease,
-          transform 0.15s ease;
       }
 
-      .gw-service-cta:hover {
-        background: rgba(255, 122, 24, 0.1);
-        border-color: var(--accent);
-        color: var(--accent);
-        transform: translateY(-1px);
-      }
-
-      .gw-service-cta-arrow {
-        color: var(--accent);
-        font-size: 16px;
-        line-height: 1;
-        transition: transform 0.15s ease;
-      }
-
-      .gw-service-cta:hover .gw-service-cta-arrow {
-        transform: translateX(3px);
-      }
-
-      /* Stack the service card vertically once the horizontal layout
-       gets tight. */
-      @media (max-width: 720px) {
-        .gw-service-card {
-          flex-direction: column;
-          padding: 16px;
-          gap: 16px;
-        }
-
-        .gw-service-graphic {
-          width: 100%;
-          max-width: 360px;
-          margin: 0 auto;
-        }
-
-        .gw-service-header {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      }
-
-      /* ── MAINTENANCE CARD ── */
-      .gw-container {
-        width: min(720px, calc(100% - 32px));
-        margin: 0 auto;
+      .gw-quick-nav-pill {
+        padding: 10px 18px;
+        font-size: 12px;
       }
 
       main {
-        flex: 1;
-        padding: 24px 0 48px;
+        padding: 18px 0 32px;
       }
 
       .gw-card {
-        background: linear-gradient(180deg, var(--card2), var(--card));
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        padding: 44px 36px;
-        text-align: center;
+        padding: 32px 22px;
       }
 
-      .gw-kicker {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 7px 14px;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 122, 24, 0.3);
-        background: rgba(255, 122, 24, 0.1);
-        color: var(--muted);
-        font-size: 13px;
-        letter-spacing: 0.04em;
-        line-height: 1;
-        margin-bottom: 18px;
+      .gw-hero::after {
+        height: 12px;
       }
+    }
 
-      h1 {
-        font-size: clamp(26px, 3.2vw, 38px);
-        font-weight: 900;
-        letter-spacing: -0.02em;
-        line-height: 1.15;
-        margin-bottom: 12px;
+    /* Extra-narrow fallback (older iPhone SE etc.) */
+    @media (max-width: 380px) {
+      .gw-header-logo img {
+        height: 26px;
       }
+    }
+  </style>
 
-      .gw-sub {
-        color: var(--muted);
-        font-size: 15px;
-        max-width: 440px;
-        margin: 0 auto;
-      }
+  <!-- PostHog analytics (shared across all pages) -->
+  <script src="/analytics.js"></script>
+</head>
 
-      .gw-pulse {
-        display: block;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: var(--accent);
-        animation: pulse 1.8s ease-in-out infinite;
-      }
-
-      @keyframes pulse {
-        0%,
-        100% {
-          opacity: 1;
-          transform: scale(1);
-        }
-
-        50% {
-          opacity: 0.35;
-          transform: scale(0.85);
-        }
-      }
-
-      /* ── FOOTER ── */
-      footer {
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        color: rgba(255, 255, 255, 0.45);
-        padding: 20px;
-        text-align: center;
-        font-size: 13px;
-      }
-
-      .gw-footer-links {
-        margin-bottom: 10px;
-      }
-
-      .gw-footer-links span {
-        margin: 0 10px;
-        color: rgba(255, 255, 255, 0.3);
-      }
-
-      footer a {
-        color: rgba(255, 255, 255, 0.6);
-        text-decoration: none;
-        font-weight: 600;
-        letter-spacing: 0.02em;
-        transition: color 0.15s ease;
-      }
-
-      footer a:hover {
-        color: var(--accent);
-      }
-
-      @media (max-width: 640px) {
-        .gw-header-inner {
-          padding: 14px 16px;
-          justify-content: center;
-        }
-
-        .gw-header-logo img {
-          height: 30px;
-        }
-
-        .gw-header-nav {
-          display: none;
-        }
-
-        .gw-quick-nav {
-          padding-bottom: 24px;
-          gap: 10px;
-        }
-
-        .gw-quick-nav-pill {
-          padding: 10px 18px;
-          font-size: 12px;
-        }
-
-        main {
-          padding: 18px 0 32px;
-        }
-
-        .gw-card {
-          padding: 32px 22px;
-        }
-
-        .gw-hero::after {
-          height: 12px;
-        }
-      }
-
-      /* Extra-narrow fallback (older iPhone SE etc.) */
-      @media (max-width: 380px) {
-        .gw-header-logo img {
-          height: 26px;
-        }
-      }
-    </style>
-
-    <!-- PostHog analytics (shared across all pages) -->
-    <script src="/analytics.js"></script>
-  </head>
-
-  <body>
-    <!--
+<body>
+  <!--
   ================================================================
   EPIC OUTDOORS - SHARED NAV HEADER
   ----------------------------------------------------------------
@@ -553,569 +553,516 @@
     the hamburger menu, so the dropdown still works on tap.
   ================================================================
 -->
-    <style>
-      /* ===== Epic Outdoors shared nav header ===== */
-      .eo-header {
-        position: relative;
-        z-index: 100;
-        background: #0b0f14;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-        font-family:
-          system-ui,
-          -apple-system,
-          "Segoe UI",
-          Roboto,
-          Helvetica,
-          Arial,
-          sans-serif;
-      }
+  <style>
+    /* ===== Epic Outdoors shared nav header ===== */
+    .eo-header {
+      position: relative;
+      z-index: 100;
+      background: #0b0f14;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      font-family:
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+    }
 
-      .eo-header *,
-      .eo-header *::before,
-      .eo-header *::after {
-        box-sizing: border-box;
-      }
+    .eo-header *,
+    .eo-header *::before,
+    .eo-header *::after {
+      box-sizing: border-box;
+    }
 
+    .eo-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 16px 24px;
+    }
+
+    .eo-logo {
+      display: inline-flex;
+      align-items: center;
+      line-height: 0;
+      flex-shrink: 0;
+    }
+
+    .eo-logo img {
+      display: block;
+      height: 36px;
+      width: auto;
+    }
+
+    /* nav */
+    .eo-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .eo-nav-link {
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .eo-nav-link:hover {
+      color: #ff7a18;
+    }
+
+    /* Join button + dropdown */
+    .eo-join {
+      position: relative;
+    }
+
+    .eo-join-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 18px;
+      border: 1px solid #ff7a18;
+      border-radius: 999px;
+      background: #ff7a18;
+      color: #101318;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: filter 0.12s ease;
+    }
+
+    .eo-join-btn:hover {
+      filter: brightness(1.07);
+    }
+
+    .eo-caret {
+      font-size: 10px;
+      line-height: 1;
+      transition: transform 0.18s ease;
+    }
+
+    .eo-join-btn[aria-expanded="true"] .eo-caret {
+      transform: rotate(180deg);
+    }
+
+    .eo-join-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      min-width: 224px;
+      flex-direction: column;
+      padding: 8px;
+      background: #141a21;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+    }
+
+    .eo-join-btn[aria-expanded="true"]+.eo-join-menu {
+      display: flex;
+    }
+
+    .eo-join-menu a {
+      padding: 11px 14px;
+      border-radius: 9px;
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      transition:
+        background 0.12s ease,
+        color 0.12s ease;
+    }
+
+    .eo-join-menu a:hover {
+      background: rgba(255, 122, 24, 0.14);
+      color: #ffb26b;
+    }
+
+    /* hamburger (mobile only) */
+    .eo-burger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      cursor: pointer;
+    }
+
+    .eo-burger span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 2px;
+      transition:
+        transform 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .eo-header.eo-open .eo-burger span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .eo-header.eo-open .eo-burger span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .eo-header.eo-open .eo-burger span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ===== mobile layout ===== */
+    @media (max-width: 720px) {
       .eo-header-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 16px 24px;
-      }
-
-      .eo-logo {
-        display: inline-flex;
-        align-items: center;
-        line-height: 0;
-        flex-shrink: 0;
+        padding: 14px 16px;
       }
 
       .eo-logo img {
-        display: block;
-        height: 36px;
-        width: auto;
+        height: 30px;
       }
 
-      /* nav */
-      .eo-nav {
+      .eo-burger {
         display: flex;
-        align-items: center;
-        gap: 28px;
+      }
+
+      .eo-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 6px 16px 16px;
+        background: #0b0f14;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 24px 50px rgba(0, 0, 0, 0.55);
+      }
+
+      .eo-header.eo-open .eo-nav {
+        display: flex;
       }
 
       .eo-nav-link {
-        color: rgba(255, 255, 255, 0.92);
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        text-decoration: none;
-        transition: color 0.15s ease;
+        padding: 14px 6px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
       }
 
-      .eo-nav-link:hover {
-        color: #ff7a18;
-      }
-
-      /* Join button + dropdown */
       .eo-join {
-        position: relative;
+        width: 100%;
       }
 
       .eo-join-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 7px;
-        padding: 9px 18px;
-        border: 1px solid #ff7a18;
-        border-radius: 999px;
-        background: #ff7a18;
-        color: #101318;
-        font-family: inherit;
-        font-size: 13px;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: filter 0.12s ease;
-      }
-
-      .eo-join-btn:hover {
-        filter: brightness(1.07);
-      }
-
-      .eo-caret {
-        font-size: 10px;
-        line-height: 1;
-        transition: transform 0.18s ease;
-      }
-
-      .eo-join-btn[aria-expanded="true"] .eo-caret {
-        transform: rotate(180deg);
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 14px;
+        padding: 14px 18px;
       }
 
       .eo-join-menu {
-        display: none;
-        position: absolute;
-        top: calc(100% + 10px);
-        right: 0;
-        min-width: 224px;
-        flex-direction: column;
-        padding: 8px;
-        background: #141a21;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 14px;
-        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
-      }
-
-      .eo-join-btn[aria-expanded="true"] + .eo-join-menu {
-        display: flex;
-      }
-
-      .eo-join-menu a {
-        padding: 11px 14px;
-        border-radius: 9px;
-        color: rgba(255, 255, 255, 0.92);
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        text-decoration: none;
-        white-space: nowrap;
-        transition:
-          background 0.12s ease,
-          color 0.12s ease;
-      }
-
-      .eo-join-menu a:hover {
-        background: rgba(255, 122, 24, 0.14);
-        color: #ffb26b;
-      }
-
-      /* hamburger (mobile only) */
-      .eo-burger {
-        display: none;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5px;
-        width: 42px;
-        height: 42px;
-        padding: 0;
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        border-radius: 10px;
+        position: static;
+        min-width: 0;
+        margin-top: 8px;
         background: rgba(255, 255, 255, 0.04);
-        cursor: pointer;
+        box-shadow: none;
       }
+    }
+  </style>
 
-      .eo-burger span {
-        display: block;
-        width: 18px;
-        height: 2px;
-        margin: 0 auto;
-        background: rgba(255, 255, 255, 0.92);
-        border-radius: 2px;
-        transition:
-          transform 0.18s ease,
-          opacity 0.18s ease;
-      }
+  <header class="eo-header" id="eoHeader">
+    <div class="eo-header-inner">
+      <a class="eo-logo" href="/" aria-label="Epic Outdoors home">
+        <img src="/assets/00-emailLogoWideH_eurostile.png" alt="Epic Outdoors" width="2000" height="261" />
+      </a>
 
-      .eo-header.eo-open .eo-burger span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-      }
+      <button class="eo-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="eoNav">
+        <span></span><span></span><span></span>
+      </button>
 
-      .eo-header.eo-open .eo-burger span:nth-child(2) {
-        opacity: 0;
-      }
-
-      .eo-header.eo-open .eo-burger span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-      }
-
-      /* ===== mobile layout ===== */
-      @media (max-width: 720px) {
-        .eo-header-inner {
-          padding: 14px 16px;
-        }
-
-        .eo-logo img {
-          height: 30px;
-        }
-
-        .eo-burger {
-          display: flex;
-        }
-
-        .eo-nav {
-          display: none;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          right: 0;
-          flex-direction: column;
-          align-items: stretch;
-          gap: 0;
-          padding: 6px 16px 16px;
-          background: #0b0f14;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-          box-shadow: 0 24px 50px rgba(0, 0, 0, 0.55);
-        }
-
-        .eo-header.eo-open .eo-nav {
-          display: flex;
-        }
-
-        .eo-nav-link {
-          padding: 14px 6px;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-        }
-
-        .eo-join {
-          width: 100%;
-        }
-
-        .eo-join-btn {
-          width: 100%;
-          justify-content: space-between;
-          margin-top: 14px;
-          padding: 14px 18px;
-        }
-
-        .eo-join-menu {
-          position: static;
-          min-width: 0;
-          margin-top: 8px;
-          background: rgba(255, 255, 255, 0.04);
-          box-shadow: none;
-        }
-      }
-    </style>
-
-    <header class="eo-header" id="eoHeader">
-      <div class="eo-header-inner">
-        <a class="eo-logo" href="/" aria-label="Epic Outdoors home">
-          <img
-            src="/assets/00-emailLogoWideH_eurostile.png"
-            alt="Epic Outdoors"
-            width="2000"
-            height="261"
-          />
-        </a>
-
-        <button
-          class="eo-burger"
-          type="button"
-          aria-label="Menu"
-          aria-expanded="false"
-          aria-controls="eoNav"
-        >
-          <span></span><span></span><span></span>
-        </button>
-
-        <nav class="eo-nav" id="eoNav" aria-label="Primary">
-          <div class="eo-join">
-            <button
-              class="eo-join-btn"
-              type="button"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Join <span class="eo-caret" aria-hidden="true">&#9662;</span>
-            </button>
-            <div class="eo-join-menu" role="menu">
-              <a role="menuitem" href="/membership/">Membership</a>
-              <a role="menuitem" href="/services/license-application-service/"
-                >Application Service</a
-              >
-            </div>
+      <nav class="eo-nav" id="eoNav" aria-label="Primary">
+        <div class="eo-join">
+          <button class="eo-join-btn" type="button" aria-haspopup="true" aria-expanded="false">
+            Join <span class="eo-caret" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="eo-join-menu" role="menu">
+            <a role="menuitem" href="/membership/">Membership</a>
+            <a role="menuitem" href="/services/license-application-service/">Application Service</a>
           </div>
-          <a class="eo-nav-link" href="/services/epic-hunt-giveaways/"
-            >Giveaway</a
-          >
-          <a class="eo-nav-link" href="https://epicoutdoorsmember.com">Login</a>
-          <a class="eo-nav-link" href="https://store.epicoutdoors.com">Store</a>
-        </nav>
-      </div>
-    </header>
-
-    <script>
-      (function () {
-        var header = document.getElementById("eoHeader");
-        if (!header) return;
-
-        var burger = header.querySelector(".eo-burger");
-        var joinBtn = header.querySelector(".eo-join-btn");
-
-        function setJoin(open) {
-          if (joinBtn)
-            joinBtn.setAttribute("aria-expanded", open ? "true" : "false");
-        }
-
-        function setMenu(open) {
-          header.classList.toggle("eo-open", open);
-          if (burger)
-            burger.setAttribute("aria-expanded", open ? "true" : "false");
-          if (!open) setJoin(false);
-        }
-
-        if (burger) {
-          burger.addEventListener("click", function () {
-            setMenu(!header.classList.contains("eo-open"));
-          });
-        }
-
-        if (joinBtn) {
-          joinBtn.addEventListener("click", function () {
-            setJoin(joinBtn.getAttribute("aria-expanded") !== "true");
-          });
-        }
-
-        // close the dropdown / menu when tapping outside of it
-        document.addEventListener("click", function (e) {
-          if (!e.target.closest(".eo-join")) setJoin(false);
-          if (!e.target.closest(".eo-header")) setMenu(false);
-        });
-
-        // close on Escape
-        document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape") setMenu(false);
-        });
-      })();
-    </script>
-    <!-- ===================== END EPIC OUTDOORS NAV HEADER ===================== -->
-
-    <!-- Hero banner -->
-    <div class="gw-hero">
-      <img
-        src="assets/26Website-HeroHeader.jpeg"
-        alt="Epic Outdoors. Your key to hunting the West."
-        width="2200"
-        height="800"
-        fetchpriority="high"
-      />
+        </div>
+        <a class="eo-nav-link" href="/services/epic-hunt-giveaways/">Giveaway</a>
+        <a class="eo-nav-link" href="https://epicoutdoorsmember.com">Login</a>
+        <a class="eo-nav-link" href="https://store.epicoutdoors.com">Store</a>
+      </nav>
     </div>
+  </header>
 
-    <main>
-      <!-- Quick-nav pills (bridges hero → services) -->
-      <nav class="gw-quick-nav" aria-label="Quick actions">
-        <a class="gw-quick-nav-pill" href="/services/epic-hunt-giveaways/">
-          <span>Epic Hunt Giveaway</span>
-          <span class="gw-quick-nav-pill-arrow" aria-hidden="true">&rarr;</span>
-        </a>
-        <a class="gw-quick-nav-pill" href="https://epicoutdoorsmember.com">
-          <span>Member Portal</span>
-          <span class="gw-quick-nav-pill-arrow" aria-hidden="true">&rarr;</span>
-        </a>
-        <a class="gw-quick-nav-pill" href="https://store.epicoutdoors.com">
-          <span>Optics Store</span>
-          <span class="gw-quick-nav-pill-arrow" aria-hidden="true">&rarr;</span>
-        </a>
-      </nav>
+  <script>
+    (function () {
+      var header = document.getElementById("eoHeader");
+      if (!header) return;
 
-      <div class="gw-divider" aria-hidden="true"></div>
+      var burger = header.querySelector(".eo-burger");
+      var joinBtn = header.querySelector(".eo-join-btn");
 
-      <!-- Services -->
-      <section class="gw-services" aria-labelledby="services-heading">
-        <div class="gw-services-heading">
-          <h2 class="gw-services-title" id="services-heading">Our Services</h2>
-          <p class="gw-services-intro">
-            Tools, intel, and experts for western big game hunters.
-          </p>
-        </div>
+      function setJoin(open) {
+        if (joinBtn)
+          joinBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      }
 
-        <article class="gw-service-card">
-          <div class="gw-service-graphic">
-            <img
-              src="assets/26Website-Section_Membership2.jpeg"
-              alt="Epic Membership: magazines, digital tools, and hunt consultants"
-              width="800"
-              height="800"
-              loading="lazy"
-            />
-          </div>
-          <div class="gw-service-content">
-            <div class="gw-service-header">
-              <h3 class="gw-service-name">Epic Membership</h3>
-              <span class="gw-service-price">Only $150 / year</span>
-            </div>
-            <p class="gw-service-body">
-              Everything you need to research and plan western big game hunts.
-              Members get nine annual magazine issues, unlimited consultant
-              access, the Epic Outdoors app, member-only optics pricing, our
-              Epic Approved Outfitters network, and the Member Experience
-              Program.
-            </p>
-            <a class="gw-service-cta" href="/membership/">
-              <span>Join</span>
-              <span class="gw-service-cta-arrow" aria-hidden="true"
-                >&rarr;</span
-              >
-            </a>
-          </div>
-        </article>
+      function setMenu(open) {
+        header.classList.toggle("eo-open", open);
+        if (burger)
+          burger.setAttribute("aria-expanded", open ? "true" : "false");
+        if (!open) setJoin(false);
+      }
 
-        <article class="gw-service-card">
-          <div class="gw-service-graphic">
-            <img
-              src="assets/26Website-Section_Giveaways.jpeg"
-              alt="Epic Hunt Giveaways: eight dream hunts and an Epic Gear Package"
-              width="800"
-              height="800"
-              loading="lazy"
-            />
-          </div>
-          <div class="gw-service-content">
-            <div class="gw-service-header">
-              <h3 class="gw-service-name">Epic Hunt Giveaway&trade;</h3>
-            </div>
-            <p class="gw-service-body">
-              Get your name in the hat for a true dream hunt. New members get
-              one free ticket on signup, referrers earn another. Every $500
-              ticket package also enters the bonus $15,000 Winner's Choice
-              drawing.
-            </p>
-            <ul class="gw-service-tags">
-              <li class="gw-service-tag">Yukon Dall Sheep</li>
-              <li class="gw-service-tag">BC Super Combo</li>
-              <li class="gw-service-tag">AK Grizzly &amp; Caribou</li>
-              <li class="gw-service-tag">Mexico Mule &amp; Coues</li>
-              <li class="gw-service-tag">NM Acoma Elk</li>
-              <li class="gw-service-tag">CO Unit 61 Mule Deer</li>
-              <li class="gw-service-tag">Alberta Whitetail</li>
-              <li class="gw-service-tag">Epic Gear Package</li>
-            </ul>
-            <a class="gw-service-cta" href="/services/epic-hunt-giveaways/">
-              <span>View Hunts</span>
-              <span class="gw-service-cta-arrow" aria-hidden="true"
-                >&rarr;</span
-              >
-            </a>
-          </div>
-        </article>
+      if (burger) {
+        burger.addEventListener("click", function () {
+          setMenu(!header.classList.contains("eo-open"));
+        });
+      }
 
-        <article class="gw-service-card">
-          <div class="gw-service-graphic">
-            <img
-              src="assets/26Website-Section_LicApp.jpeg"
-              alt="License Application Service: done-for-you western state hunt applications"
-              width="800"
-              height="800"
-              loading="lazy"
-            />
-          </div>
-          <div class="gw-service-content">
-            <div class="gw-service-header">
-              <h3 class="gw-service-name">License Application Service</h3>
-              <span class="gw-service-price">From $50 / state</span>
-            </div>
-            <p class="gw-service-body">
-              Hand off your western state applications. Our consultants have
-              filed thousands for hunters over 25+ years, securing the best tags
-              and finding hidden opportunities. We file each one as if we were
-              you, then you draw tags directly.
-            </p>
-            <ul class="gw-service-tags">
-              <li class="gw-service-tag">Alaska</li>
-              <li class="gw-service-tag">Arizona</li>
-              <li class="gw-service-tag">California</li>
-              <li class="gw-service-tag">Colorado</li>
-              <li class="gw-service-tag">Idaho</li>
-              <li class="gw-service-tag">Iowa</li>
-              <li class="gw-service-tag">Kansas</li>
-              <li class="gw-service-tag">Montana</li>
-              <li class="gw-service-tag">Nevada</li>
-              <li class="gw-service-tag">New Mexico</li>
-              <li class="gw-service-tag">Oregon</li>
-              <li class="gw-service-tag">Texas</li>
-              <li class="gw-service-tag">Utah</li>
-              <li class="gw-service-tag">Washington</li>
-              <li class="gw-service-tag">Wyoming</li>
-            </ul>
-            <a
-              class="gw-service-cta"
-              href="/services/license-application-service/"
-            >
-              <span>Get Started</span>
-              <span class="gw-service-cta-arrow" aria-hidden="true"
-                >&rarr;</span
-              >
-            </a>
-          </div>
-        </article>
+      if (joinBtn) {
+        joinBtn.addEventListener("click", function () {
+          setJoin(joinBtn.getAttribute("aria-expanded") !== "true");
+        });
+      }
 
-        <article class="gw-service-card">
-          <div class="gw-service-graphic">
-            <img
-              src="assets/26Website-Section_GearStore.jpeg"
-              alt="Epic Gear Store: highest quality optics at the lowest possible prices"
-              width="800"
-              height="800"
-              loading="lazy"
-            />
-          </div>
-          <div class="gw-service-content">
-            <div class="gw-service-header">
-              <h3 class="gw-service-name">Epic Gear Store</h3>
-            </div>
-            <p class="gw-service-body">
-              Highest quality optics at the lowest possible prices. Shop the
-              full lineup of premier hunting optics and gear brands.
-            </p>
-            <ul class="gw-service-tags">
-              <li class="gw-service-tag">Swarovski</li>
-              <li class="gw-service-tag">Zeiss</li>
-              <li class="gw-service-tag">Kowa</li>
-              <li class="gw-service-tag">Nightforce</li>
-              <li class="gw-service-tag">Vortex</li>
-              <li class="gw-service-tag">Leica</li>
-              <li class="gw-service-tag">Leupold</li>
-              <li class="gw-service-tag">Sig Sauer</li>
-              <li class="gw-service-tag">Pulsar</li>
-              <li class="gw-service-tag">CVA</li>
-              <li class="gw-service-tag">Revic</li>
-              <li class="gw-service-tag">Element</li>
-              <li class="gw-service-tag">TS Custom</li>
-              <li class="gw-service-tag">Fierce</li>
-            </ul>
-            <a class="gw-service-cta" href="https://store.epicoutdoors.com">
-              <span>Shop Now</span>
-              <span class="gw-service-cta-arrow" aria-hidden="true"
-                >&rarr;</span
-              >
-            </a>
-          </div>
-        </article>
-      </section>
+      // close the dropdown / menu when tapping outside of it
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest(".eo-join")) setJoin(false);
+        if (!e.target.closest(".eo-header")) setMenu(false);
+      });
 
-      <!-- Maintenance note -->
-      <div class="gw-container">
-        <div class="gw-card">
-          <div class="gw-kicker">
-            <span class="gw-pulse"></span>
-            <span>Epic Outdoors</span>
-          </div>
-          <h1>Site Under Maintenance</h1>
-          <p class="gw-sub">We're making some improvements. Check back soon.</p>
-        </div>
+      // close on Escape
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") setMenu(false);
+      });
+    })();
+  </script>
+  <!-- ===================== END EPIC OUTDOORS NAV HEADER ===================== -->
+
+  <!-- Hero banner -->
+  <div class="gw-hero">
+    <img src="assets/26Website-HeroHeader.jpeg" alt="Epic Outdoors. Your key to hunting the West." width="2200"
+      height="800" fetchpriority="high" />
+  </div>
+
+  <main>
+    <!-- Quick-nav pills (bridges hero → services) -->
+    <nav class="gw-quick-nav" aria-label="Quick actions">
+      <a class="gw-quick-nav-pill" href="/services/epic-hunt-giveaways/">
+        <span>Epic Hunt Giveaway</span>
+        <span class="gw-quick-nav-pill-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="gw-quick-nav-pill" href="https://epicoutdoorsmember.com">
+        <span>Member Portal</span>
+        <span class="gw-quick-nav-pill-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="gw-quick-nav-pill" href="https://store.epicoutdoors.com">
+        <span>Optics Store</span>
+        <span class="gw-quick-nav-pill-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </nav>
+
+    <div class="gw-divider" aria-hidden="true"></div>
+
+    <!-- Services -->
+    <section class="gw-services" aria-labelledby="services-heading">
+      <div class="gw-services-heading">
+        <h2 class="gw-services-title" id="services-heading">Our Services</h2>
+        <p class="gw-services-intro">
+          Tools, intel, and experts for western big game hunters.
+        </p>
       </div>
-    </main>
 
-    <footer>
-      <nav class="gw-footer-links" aria-label="Footer">
-        <a href="/terms.html">Terms &amp; Conditions</a>
-        <span aria-hidden="true">&middot;</span>
-        <a href="/services/epic-hunt-giveaways/giveaway-rules.html"
-          >Giveaway Rules</a
-        >
-      </nav>
-      Copyright &copy; 2017&ndash;<span id="y"></span> Epic Outdoors | All
-      Rights Reserved
-    </footer>
+      <article class="gw-service-card">
+        <div class="gw-service-graphic">
+          <img src="assets/26Website-Section_Membership2.jpeg"
+            alt="Epic Membership: magazines, digital tools, and hunt consultants" width="800" height="800"
+            loading="lazy" />
+        </div>
+        <div class="gw-service-content">
+          <div class="gw-service-header">
+            <h3 class="gw-service-name">Epic Membership</h3>
+            <span class="gw-service-price">Only $150 / year</span>
+          </div>
+          <p class="gw-service-body">
+            Everything you need to research and plan western big game hunts.
+            Members get nine annual magazine issues, unlimited consultant
+            access, the Epic Outdoors app, member-only optics pricing, our
+            Epic Approved Outfitters network, and the Member Experience
+            Program.
+          </p>
+          <a class="gw-service-cta" href="/membership/">
+            <span>Join</span>
+            <span class="gw-service-cta-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </article>
 
-    <script>
-      document.getElementById("y").textContent = new Date().getFullYear();
-    </script>
-  </body>
+      <article class="gw-service-card">
+        <div class="gw-service-graphic">
+          <img src="assets/26Website-Section_Giveaways.jpeg"
+            alt="Epic Hunt Giveaways: eight dream hunts and an Epic Gear Package" width="800" height="800"
+            loading="lazy" />
+        </div>
+        <div class="gw-service-content">
+          <div class="gw-service-header">
+            <h3 class="gw-service-name">Epic Hunt Giveaway&trade;</h3>
+          </div>
+          <p class="gw-service-body">
+            Get your name in the hat for a true dream hunt. New members get
+            one free ticket on signup, referrers earn another. Every $500
+            ticket package also enters the bonus $15,000 Winner's Choice
+            drawing.
+          </p>
+          <ul class="gw-service-tags">
+            <li class="gw-service-tag">Yukon Dall Sheep</li>
+            <li class="gw-service-tag">BC Super Combo</li>
+            <li class="gw-service-tag">AK Grizzly &amp; Caribou</li>
+            <li class="gw-service-tag">Mexico Mule &amp; Coues</li>
+            <li class="gw-service-tag">NM Acoma Elk</li>
+            <li class="gw-service-tag">CO Unit 61 Mule Deer</li>
+            <li class="gw-service-tag">Alberta Whitetail</li>
+            <li class="gw-service-tag">Epic Gear Package</li>
+          </ul>
+          <a class="gw-service-cta" href="/services/epic-hunt-giveaways/">
+            <span>View Hunts</span>
+            <span class="gw-service-cta-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="gw-service-card">
+        <div class="gw-service-graphic">
+          <img src="assets/26Website-Section_LicApp.jpeg"
+            alt="License Application Service: done-for-you western state hunt applications" width="800" height="800"
+            loading="lazy" />
+        </div>
+        <div class="gw-service-content">
+          <div class="gw-service-header">
+            <h3 class="gw-service-name">License Application Service</h3>
+            <span class="gw-service-price">From $50 / state</span>
+          </div>
+          <p class="gw-service-body">
+            Hand off your western state applications. Our consultants have
+            filed thousands for hunters over 25+ years, securing the best tags
+            and finding hidden opportunities. We file each one as if we were
+            you, then you draw tags directly.
+          </p>
+          <ul class="gw-service-tags">
+            <li class="gw-service-tag">Alaska</li>
+            <li class="gw-service-tag">Arizona</li>
+            <li class="gw-service-tag">California</li>
+            <li class="gw-service-tag">Colorado</li>
+            <li class="gw-service-tag">Idaho</li>
+            <li class="gw-service-tag">Iowa</li>
+            <li class="gw-service-tag">Kansas</li>
+            <li class="gw-service-tag">Montana</li>
+            <li class="gw-service-tag">Nevada</li>
+            <li class="gw-service-tag">New Mexico</li>
+            <li class="gw-service-tag">Oregon</li>
+            <li class="gw-service-tag">Texas</li>
+            <li class="gw-service-tag">Utah</li>
+            <li class="gw-service-tag">Washington</li>
+            <li class="gw-service-tag">Wyoming</li>
+          </ul>
+          <a class="gw-service-cta" href="/services/license-application-service/">
+            <span>Get Started</span>
+            <span class="gw-service-cta-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="gw-service-card">
+        <div class="gw-service-graphic">
+          <img src="assets/26Website-Section_GearStore.jpeg"
+            alt="Epic Gear Store: highest quality optics at the lowest possible prices" width="800" height="800"
+            loading="lazy" />
+        </div>
+        <div class="gw-service-content">
+          <div class="gw-service-header">
+            <h3 class="gw-service-name">Epic Gear Store</h3>
+          </div>
+          <p class="gw-service-body">
+            Highest quality optics at the lowest possible prices. Shop the
+            full lineup of premier hunting optics and gear brands.
+          </p>
+          <ul class="gw-service-tags">
+            <li class="gw-service-tag">Swarovski</li>
+            <li class="gw-service-tag">Zeiss</li>
+            <li class="gw-service-tag">Kowa</li>
+            <li class="gw-service-tag">Nightforce</li>
+            <li class="gw-service-tag">Vortex</li>
+            <li class="gw-service-tag">Leica</li>
+            <li class="gw-service-tag">Leupold</li>
+            <li class="gw-service-tag">Sig Sauer</li>
+            <li class="gw-service-tag">Pulsar</li>
+            <li class="gw-service-tag">CVA</li>
+            <li class="gw-service-tag">Revic</li>
+            <li class="gw-service-tag">Element</li>
+            <li class="gw-service-tag">TS Custom</li>
+            <li class="gw-service-tag">Fierce</li>
+          </ul>
+          <a class="gw-service-cta" href="https://store.epicoutdoors.com">
+            <span>Shop Now</span>
+            <span class="gw-service-cta-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <!-- Maintenance note -->
+    <div class="gw-container">
+      <div class="gw-card">
+        <div class="gw-kicker">
+          <span class="gw-pulse"></span>
+          <span>Epic Outdoors</span>
+        </div>
+        <h1>Site Under Maintenance</h1>
+        <p class="gw-sub">We're making some improvements. Check back soon.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <nav class="gw-footer-links" aria-label="Footer">
+      <a href="/terms.html">Terms &amp; Conditions</a>
+      <span aria-hidden="true">&middot;</span>
+      <a href="/services/epic-hunt-giveaways/giveaway-rules.html">Giveaway Rules</a>
+    </nav>
+    Copyright &copy; 2017&ndash;<span id="y"></span> Epic Outdoors | All
+    Rights Reserved
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+
 </html>

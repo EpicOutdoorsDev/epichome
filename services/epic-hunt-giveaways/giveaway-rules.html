@@ -1,1137 +1,1112 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Giveaway Rules | Epic Outdoors</title>
-    <meta name="format-detection" content="telephone=no" />
 
-    <link rel="icon" href="/assets/favicon.png" sizes="any" />
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Giveaway Rules | Epic Outdoors</title>
+  <meta name="format-detection" content="telephone=no" />
 
-    <style>
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+  <link rel="icon" href="/assets/favicon.png" sizes="any" />
 
-      html,
-      body {
-        height: 100%;
-      }
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-      :root {
-        --bg: #0b0f14;
-        --text: rgba(255, 255, 255, 0.92);
-        --muted: rgba(255, 255, 255, 0.72);
-        --line: rgba(255, 255, 255, 0.12);
-        --card: rgba(255, 255, 255, 0.06);
-        --card2: rgba(255, 255, 255, 0.085);
-        --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
-        --radius: 18px;
-        --accent: #ff7a18;
-        --accent2: #ffb26b;
-      }
+    html,
+    body {
+      height: 100%;
+    }
 
-      html {
-        min-height: 100%;
-        background: var(--bg);
-        scroll-behavior: smooth;
-      }
+    :root {
+      --bg: #0b0f14;
+      --text: rgba(255, 255, 255, 0.92);
+      --muted: rgba(255, 255, 255, 0.72);
+      --line: rgba(255, 255, 255, 0.12);
+      --card: rgba(255, 255, 255, 0.06);
+      --card2: rgba(255, 255, 255, 0.085);
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+      --radius: 18px;
+      --accent: #ff7a18;
+      --accent2: #ffb26b;
+    }
 
-      body {
-        background: transparent;
-        color: var(--text);
-        font-family:
-          system-ui,
-          -apple-system,
-          Segoe UI,
-          Roboto,
-          Helvetica,
-          Arial,
-          sans-serif;
-        font-size: 15px;
-        line-height: 1.6;
-        min-height: 100%;
-        display: flex;
-        flex-direction: column;
-      }
+    html {
+      min-height: 100%;
+      background: var(--bg);
+      scroll-behavior: smooth;
+    }
 
-      /* ── PAGE LAYOUT ── */
-      main {
-        flex: 1;
-        padding: 0 0 56px;
-      }
+    body {
+      background: transparent;
+      color: var(--text);
+      font-family:
+        system-ui,
+        -apple-system,
+        Segoe UI,
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
 
-      .gw-container {
-        width: min(820px, calc(100% - 32px));
-        margin: 0 auto;
-      }
+    /* ── PAGE LAYOUT ── */
+    main {
+      flex: 1;
+      padding: 0 0 56px;
+    }
 
-      /* ── TITLE BAND ── */
-      .gw-page-head {
-        position: relative;
-        text-align: center;
-        padding: 56px 0 40px;
-      }
+    .gw-container {
+      width: min(820px, calc(100% - 32px));
+      margin: 0 auto;
+    }
 
-      .gw-page-head::after {
-        content: "";
-        display: block;
-        width: 280px;
-        max-width: 70%;
-        height: 1px;
-        margin: 32px auto 0;
-        background: linear-gradient(
-          to right,
+    /* ── TITLE BAND ── */
+    .gw-page-head {
+      position: relative;
+      text-align: center;
+      padding: 56px 0 40px;
+    }
+
+    .gw-page-head::after {
+      content: "";
+      display: block;
+      width: 280px;
+      max-width: 70%;
+      height: 1px;
+      margin: 32px auto 0;
+      background: linear-gradient(to right,
           transparent,
           var(--accent2),
-          transparent
-        );
-      }
+          transparent);
+    }
 
-      .gw-kicker {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 7px 14px;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 122, 24, 0.3);
-        background: rgba(255, 122, 24, 0.1);
-        color: var(--muted);
-        font-size: 13px;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        line-height: 1;
-        margin-bottom: 18px;
-      }
+    .gw-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 122, 24, 0.3);
+      background: rgba(255, 122, 24, 0.1);
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 18px;
+    }
 
-      .gw-pulse {
-        display: block;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: var(--accent);
-      }
+    .gw-pulse {
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
 
-      h1 {
-        font-size: clamp(28px, 3.4vw, 42px);
-        font-weight: 900;
-        letter-spacing: -0.02em;
-        line-height: 1.12;
-        margin-bottom: 12px;
-      }
+    h1 {
+      font-size: clamp(28px, 3.4vw, 42px);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+      margin-bottom: 12px;
+    }
 
-      .gw-updated {
-        color: var(--muted);
-        font-size: 14px;
-        max-width: 560px;
-        margin: 0 auto;
-      }
+    .gw-updated {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 560px;
+      margin: 0 auto;
+    }
 
-      /* ── NOTICE CALLOUT ── */
-      .gw-notice {
-        display: flex;
-        gap: 16px;
-        align-items: flex-start;
-        padding: 22px 24px;
-        margin-bottom: 36px;
-        border: 1px solid rgba(255, 122, 24, 0.3);
-        border-left: 3px solid var(--accent);
-        border-radius: var(--radius);
-        background: linear-gradient(
-          180deg,
+    /* ── NOTICE CALLOUT ── */
+    .gw-notice {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 22px 24px;
+      margin-bottom: 36px;
+      border: 1px solid rgba(255, 122, 24, 0.3);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg,
           rgba(255, 122, 24, 0.1),
-          rgba(255, 122, 24, 0.04)
-        );
-      }
+          rgba(255, 122, 24, 0.04));
+    }
 
-      .gw-notice-icon {
-        flex-shrink: 0;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        background: var(--accent);
-        color: #101318;
-        font-weight: 900;
-        font-size: 18px;
-        line-height: 1;
-      }
+    .gw-notice-icon {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      color: #101318;
+      font-weight: 900;
+      font-size: 18px;
+      line-height: 1;
+    }
 
-      .gw-notice-title {
-        font-size: 13px;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--accent2);
-        margin-bottom: 6px;
-      }
+    .gw-notice-title {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 6px;
+    }
 
-      .gw-notice p {
-        color: var(--muted);
-        font-size: 14.5px;
-      }
+    .gw-notice p {
+      color: var(--muted);
+      font-size: 14.5px;
+    }
 
-      /* ── TABLE OF CONTENTS ── */
-      .gw-toc {
-        padding: 26px 28px;
-        margin-bottom: 40px;
-        background: linear-gradient(180deg, var(--card2), var(--card));
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-      }
+    /* ── TABLE OF CONTENTS ── */
+    .gw-toc {
+      padding: 26px 28px;
+      margin-bottom: 40px;
+      background: linear-gradient(180deg, var(--card2), var(--card));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
 
-      .gw-toc-title {
-        font-size: 13px;
-        font-weight: 800;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--accent2);
-        margin-bottom: 16px;
+    .gw-toc-title {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 16px;
+    }
+
+    .gw-toc-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 4px 28px;
+    }
+
+    .gw-toc-list a {
+      display: block;
+      padding: 7px 0;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+      border-bottom: 1px solid transparent;
+      transition: color 0.15s ease;
+    }
+
+    .gw-toc-list a:hover {
+      color: var(--accent);
+    }
+
+    .gw-toc-num {
+      display: inline-block;
+      min-width: 26px;
+      color: var(--accent);
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ── CONTENT CARD ── */
+    .gw-card {
+      background: linear-gradient(180deg, var(--card2), var(--card));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px 40px 16px;
+    }
+
+    .gw-card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .gw-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .gw-card a {
+      color: var(--accent2);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 178, 107, 0.35);
+      transition:
+        color 0.15s ease,
+        border-color 0.15s ease;
+    }
+
+    .gw-card a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .gw-card address {
+      font-style: normal;
+      color: var(--text);
+      padding: 14px 18px;
+      margin: 0 0 18px;
+      border-left: 3px solid var(--accent);
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 0 10px 10px 0;
+    }
+
+    /* small inline sub-heading inside a section */
+    .gw-sub-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 6px;
+    }
+
+    .gw-section {
+      scroll-margin-top: 24px;
+      padding-top: 32px;
+      margin-top: 32px;
+      border-top: 1px solid var(--line);
+    }
+
+    .gw-section:first-of-type {
+      border-top: 0;
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    .gw-section h2 {
+      font-size: clamp(18px, 2vw, 22px);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+      margin-bottom: 14px;
+      color: var(--text);
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .gw-section h2 .gw-sec-num {
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 0.82em;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+
+    /* Back-to-top */
+    .gw-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 122, 24, 0.45);
+      background: transparent;
+      color: var(--accent2);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease,
+        transform 0.15s ease;
+    }
+
+    .gw-top:hover {
+      background: rgba(255, 122, 24, 0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .gw-top-wrap {
+      text-align: center;
+      margin-top: 36px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.45);
+      padding: 20px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .gw-footer-links {
+      margin-bottom: 10px;
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: color 0.15s ease;
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 640px) {
+      .gw-page-head {
+        padding: 36px 0 28px;
       }
 
       .gw-toc-list {
-        list-style: none;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 4px 28px;
+        grid-template-columns: 1fr;
       }
 
-      .gw-toc-list a {
-        display: block;
-        padding: 7px 0;
-        color: var(--text);
-        text-decoration: none;
-        font-size: 14px;
-        border-bottom: 1px solid transparent;
-        transition: color 0.15s ease;
-      }
-
-      .gw-toc-list a:hover {
-        color: var(--accent);
-      }
-
-      .gw-toc-num {
-        display: inline-block;
-        min-width: 26px;
-        color: var(--accent);
-        font-weight: 800;
-        font-variant-numeric: tabular-nums;
-      }
-
-      /* ── CONTENT CARD ── */
       .gw-card {
-        background: linear-gradient(180deg, var(--card2), var(--card));
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        padding: 40px 40px 16px;
+        padding: 28px 22px 12px;
       }
 
-      .gw-card p {
-        color: var(--muted);
-        margin-bottom: 18px;
+      .gw-toc {
+        padding: 22px 20px;
       }
+    }
+  </style>
 
-      .gw-card p:last-child {
-        margin-bottom: 0;
-      }
+  <!-- PostHog analytics (shared across all pages) -->
+  <script src="/analytics.js"></script>
+</head>
 
-      .gw-card a {
-        color: var(--accent2);
-        text-decoration: none;
-        border-bottom: 1px solid rgba(255, 178, 107, 0.35);
-        transition:
-          color 0.15s ease,
-          border-color 0.15s ease;
-      }
+<body>
+  <!-- ===================== EPIC OUTDOORS NAV HEADER ===================== -->
+  <style>
+    .eo-header {
+      position: relative;
+      z-index: 100;
+      background: #0b0f14;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      font-family:
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+    }
 
-      .gw-card a:hover {
-        color: var(--accent);
-        border-color: var(--accent);
-      }
+    .eo-header *,
+    .eo-header *::before,
+    .eo-header *::after {
+      box-sizing: border-box;
+    }
 
-      .gw-card address {
-        font-style: normal;
-        color: var(--text);
-        padding: 14px 18px;
-        margin: 0 0 18px;
-        border-left: 3px solid var(--accent);
-        background: rgba(255, 255, 255, 0.04);
-        border-radius: 0 10px 10px 0;
-      }
+    .eo-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 16px 24px;
+    }
 
-      /* small inline sub-heading inside a section */
-      .gw-sub-label {
-        display: block;
-        font-size: 12px;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--accent2);
-        margin-bottom: 6px;
-      }
+    .eo-logo {
+      display: inline-flex;
+      align-items: center;
+      line-height: 0;
+      flex-shrink: 0;
+    }
 
-      .gw-section {
-        scroll-margin-top: 24px;
-        padding-top: 32px;
-        margin-top: 32px;
-        border-top: 1px solid var(--line);
-      }
+    .eo-logo img {
+      display: block;
+      height: 36px;
+      width: auto;
+    }
 
-      .gw-section:first-of-type {
-        border-top: 0;
-        margin-top: 0;
-        padding-top: 0;
-      }
+    .eo-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
 
-      .gw-section h2 {
-        font-size: clamp(18px, 2vw, 22px);
-        font-weight: 800;
-        letter-spacing: -0.01em;
-        line-height: 1.25;
-        margin-bottom: 14px;
-        color: var(--text);
-        display: flex;
-        align-items: baseline;
-        gap: 12px;
-      }
+    .eo-nav-link {
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
 
-      .gw-section h2 .gw-sec-num {
-        color: var(--accent);
-        font-weight: 900;
-        font-size: 0.82em;
-        letter-spacing: 0.04em;
-        flex-shrink: 0;
-      }
+    .eo-nav-link:hover {
+      color: #ff7a18;
+    }
 
-      /* Back-to-top */
-      .gw-top {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        margin-top: 8px;
-        padding: 9px 18px;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 122, 24, 0.45);
-        background: transparent;
-        color: var(--accent2);
-        font-size: 12px;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        text-decoration: none;
-        transition:
-          background 0.15s ease,
-          border-color 0.15s ease,
-          color 0.15s ease,
-          transform 0.15s ease;
-      }
+    .eo-join {
+      position: relative;
+    }
 
-      .gw-top:hover {
-        background: rgba(255, 122, 24, 0.1);
-        border-color: var(--accent);
-        color: var(--accent);
-        transform: translateY(-1px);
-      }
+    .eo-join-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 18px;
+      border: 1px solid #ff7a18;
+      border-radius: 999px;
+      background: #ff7a18;
+      color: #101318;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: filter 0.12s ease;
+    }
 
-      .gw-top-wrap {
-        text-align: center;
-        margin-top: 36px;
-      }
+    .eo-join-btn:hover {
+      filter: brightness(1.07);
+    }
 
-      /* ── FOOTER ── */
-      footer {
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        color: rgba(255, 255, 255, 0.45);
-        padding: 20px;
-        text-align: center;
-        font-size: 13px;
-      }
+    .eo-caret {
+      font-size: 10px;
+      line-height: 1;
+      transition: transform 0.18s ease;
+    }
 
-      .gw-footer-links {
-        margin-bottom: 10px;
-      }
+    .eo-join-btn[aria-expanded="true"] .eo-caret {
+      transform: rotate(180deg);
+    }
 
-      footer a {
-        color: rgba(255, 255, 255, 0.6);
-        text-decoration: none;
-        font-weight: 600;
-        letter-spacing: 0.02em;
-        transition: color 0.15s ease;
-      }
+    .eo-join-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      min-width: 224px;
+      flex-direction: column;
+      padding: 8px;
+      background: #141a21;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+    }
 
-      footer a:hover {
-        color: var(--accent);
-      }
+    .eo-join-btn[aria-expanded="true"]+.eo-join-menu {
+      display: flex;
+    }
 
-      @media (max-width: 640px) {
-        .gw-page-head {
-          padding: 36px 0 28px;
-        }
+    .eo-join-menu a {
+      padding: 11px 14px;
+      border-radius: 9px;
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      transition:
+        background 0.12s ease,
+        color 0.12s ease;
+    }
 
-        .gw-toc-list {
-          grid-template-columns: 1fr;
-        }
+    .eo-join-menu a:hover {
+      background: rgba(255, 122, 24, 0.14);
+      color: #ffb26b;
+    }
 
-        .gw-card {
-          padding: 28px 22px 12px;
-        }
+    .eo-burger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      cursor: pointer;
+    }
 
-        .gw-toc {
-          padding: 22px 20px;
-        }
-      }
-    </style>
+    .eo-burger span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 2px;
+      transition:
+        transform 0.18s ease,
+        opacity 0.18s ease;
+    }
 
-    <!-- PostHog analytics (shared across all pages) -->
-    <script src="/analytics.js"></script>
-  </head>
+    .eo-header.eo-open .eo-burger span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
 
-  <body>
-    <!-- ===================== EPIC OUTDOORS NAV HEADER ===================== -->
-    <style>
-      .eo-header {
-        position: relative;
-        z-index: 100;
-        background: #0b0f14;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-        font-family:
-          system-ui,
-          -apple-system,
-          "Segoe UI",
-          Roboto,
-          Helvetica,
-          Arial,
-          sans-serif;
-      }
+    .eo-header.eo-open .eo-burger span:nth-child(2) {
+      opacity: 0;
+    }
 
-      .eo-header *,
-      .eo-header *::before,
-      .eo-header *::after {
-        box-sizing: border-box;
-      }
+    .eo-header.eo-open .eo-burger span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
 
+    @media (max-width: 720px) {
       .eo-header-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 16px 24px;
-      }
-
-      .eo-logo {
-        display: inline-flex;
-        align-items: center;
-        line-height: 0;
-        flex-shrink: 0;
+        padding: 14px 16px;
       }
 
       .eo-logo img {
-        display: block;
-        height: 36px;
-        width: auto;
-      }
-
-      .eo-nav {
-        display: flex;
-        align-items: center;
-        gap: 28px;
-      }
-
-      .eo-nav-link {
-        color: rgba(255, 255, 255, 0.92);
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        text-decoration: none;
-        transition: color 0.15s ease;
-      }
-
-      .eo-nav-link:hover {
-        color: #ff7a18;
-      }
-
-      .eo-join {
-        position: relative;
-      }
-
-      .eo-join-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 7px;
-        padding: 9px 18px;
-        border: 1px solid #ff7a18;
-        border-radius: 999px;
-        background: #ff7a18;
-        color: #101318;
-        font-family: inherit;
-        font-size: 13px;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: filter 0.12s ease;
-      }
-
-      .eo-join-btn:hover {
-        filter: brightness(1.07);
-      }
-
-      .eo-caret {
-        font-size: 10px;
-        line-height: 1;
-        transition: transform 0.18s ease;
-      }
-
-      .eo-join-btn[aria-expanded="true"] .eo-caret {
-        transform: rotate(180deg);
-      }
-
-      .eo-join-menu {
-        display: none;
-        position: absolute;
-        top: calc(100% + 10px);
-        right: 0;
-        min-width: 224px;
-        flex-direction: column;
-        padding: 8px;
-        background: #141a21;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 14px;
-        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
-      }
-
-      .eo-join-btn[aria-expanded="true"] + .eo-join-menu {
-        display: flex;
-      }
-
-      .eo-join-menu a {
-        padding: 11px 14px;
-        border-radius: 9px;
-        color: rgba(255, 255, 255, 0.92);
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        text-decoration: none;
-        white-space: nowrap;
-        transition:
-          background 0.12s ease,
-          color 0.12s ease;
-      }
-
-      .eo-join-menu a:hover {
-        background: rgba(255, 122, 24, 0.14);
-        color: #ffb26b;
+        height: 30px;
       }
 
       .eo-burger {
+        display: flex;
+      }
+
+      .eo-nav {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
         flex-direction: column;
-        justify-content: center;
-        gap: 5px;
-        width: 42px;
-        height: 42px;
-        padding: 0;
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        border-radius: 10px;
+        align-items: stretch;
+        gap: 0;
+        padding: 6px 16px 16px;
+        background: #0b0f14;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 24px 50px rgba(0, 0, 0, 0.55);
+      }
+
+      .eo-header.eo-open .eo-nav {
+        display: flex;
+      }
+
+      .eo-nav-link {
+        padding: 14px 6px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      }
+
+      .eo-join {
+        width: 100%;
+      }
+
+      .eo-join-btn {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 14px;
+        padding: 14px 18px;
+      }
+
+      .eo-join-menu {
+        position: static;
+        min-width: 0;
+        margin-top: 8px;
         background: rgba(255, 255, 255, 0.04);
-        cursor: pointer;
+        box-shadow: none;
       }
+    }
+  </style>
 
-      .eo-burger span {
-        display: block;
-        width: 18px;
-        height: 2px;
-        margin: 0 auto;
-        background: rgba(255, 255, 255, 0.92);
-        border-radius: 2px;
-        transition:
-          transform 0.18s ease,
-          opacity 0.18s ease;
-      }
+  <header class="eo-header" id="eoHeader">
+    <div class="eo-header-inner">
+      <a class="eo-logo" href="/" aria-label="Epic Outdoors home">
+        <img src="/assets/00-emailLogoWideH_eurostile.png" alt="Epic Outdoors" width="2000" height="261" />
+      </a>
 
-      .eo-header.eo-open .eo-burger span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-      }
+      <button class="eo-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="eoNav">
+        <span></span><span></span><span></span>
+      </button>
 
-      .eo-header.eo-open .eo-burger span:nth-child(2) {
-        opacity: 0;
-      }
-
-      .eo-header.eo-open .eo-burger span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-      }
-
-      @media (max-width: 720px) {
-        .eo-header-inner {
-          padding: 14px 16px;
-        }
-
-        .eo-logo img {
-          height: 30px;
-        }
-
-        .eo-burger {
-          display: flex;
-        }
-
-        .eo-nav {
-          display: none;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          right: 0;
-          flex-direction: column;
-          align-items: stretch;
-          gap: 0;
-          padding: 6px 16px 16px;
-          background: #0b0f14;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-          box-shadow: 0 24px 50px rgba(0, 0, 0, 0.55);
-        }
-
-        .eo-header.eo-open .eo-nav {
-          display: flex;
-        }
-
-        .eo-nav-link {
-          padding: 14px 6px;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-        }
-
-        .eo-join {
-          width: 100%;
-        }
-
-        .eo-join-btn {
-          width: 100%;
-          justify-content: space-between;
-          margin-top: 14px;
-          padding: 14px 18px;
-        }
-
-        .eo-join-menu {
-          position: static;
-          min-width: 0;
-          margin-top: 8px;
-          background: rgba(255, 255, 255, 0.04);
-          box-shadow: none;
-        }
-      }
-    </style>
-
-    <header class="eo-header" id="eoHeader">
-      <div class="eo-header-inner">
-        <a class="eo-logo" href="/" aria-label="Epic Outdoors home">
-          <img
-            src="/assets/00-emailLogoWideH_eurostile.png"
-            alt="Epic Outdoors"
-            width="2000"
-            height="261"
-          />
-        </a>
-
-        <button
-          class="eo-burger"
-          type="button"
-          aria-label="Menu"
-          aria-expanded="false"
-          aria-controls="eoNav"
-        >
-          <span></span><span></span><span></span>
-        </button>
-
-        <nav class="eo-nav" id="eoNav" aria-label="Primary">
-          <div class="eo-join">
-            <button
-              class="eo-join-btn"
-              type="button"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Join <span class="eo-caret" aria-hidden="true">&#9662;</span>
-            </button>
-            <div class="eo-join-menu" role="menu">
-              <a role="menuitem" href="/membership/">Membership</a>
-              <a role="menuitem" href="/services/license-application-service/"
-                >Application Service</a
-              >
-            </div>
+      <nav class="eo-nav" id="eoNav" aria-label="Primary">
+        <div class="eo-join">
+          <button class="eo-join-btn" type="button" aria-haspopup="true" aria-expanded="false">
+            Join <span class="eo-caret" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="eo-join-menu" role="menu">
+            <a role="menuitem" href="/membership/">Membership</a>
+            <a role="menuitem" href="/services/license-application-service/">Application Service</a>
           </div>
-          <a class="eo-nav-link" href="/services/epic-hunt-giveaways/"
-            >Giveaway</a
-          >
-          <a class="eo-nav-link" href="https://epicoutdoorsmember.com">Login</a>
-          <a class="eo-nav-link" href="https://store.epicoutdoors.com">Store</a>
-        </nav>
-      </div>
-    </header>
-
-    <script>
-      (function () {
-        var header = document.getElementById("eoHeader");
-        if (!header) return;
-
-        var burger = header.querySelector(".eo-burger");
-        var joinBtn = header.querySelector(".eo-join-btn");
-
-        function setJoin(open) {
-          if (joinBtn)
-            joinBtn.setAttribute("aria-expanded", open ? "true" : "false");
-        }
-
-        function setMenu(open) {
-          header.classList.toggle("eo-open", open);
-          if (burger)
-            burger.setAttribute("aria-expanded", open ? "true" : "false");
-          if (!open) setJoin(false);
-        }
-
-        if (burger) {
-          burger.addEventListener("click", function () {
-            setMenu(!header.classList.contains("eo-open"));
-          });
-        }
-
-        if (joinBtn) {
-          joinBtn.addEventListener("click", function () {
-            setJoin(joinBtn.getAttribute("aria-expanded") !== "true");
-          });
-        }
-
-        document.addEventListener("click", function (e) {
-          if (!e.target.closest(".eo-join")) setJoin(false);
-          if (!e.target.closest(".eo-header")) setMenu(false);
-        });
-
-        document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape") setMenu(false);
-        });
-      })();
-    </script>
-    <!-- ===================== END EPIC OUTDOORS NAV HEADER ===================== -->
-
-    <main>
-      <!-- Title band -->
-      <div class="gw-page-head" id="top">
-        <div class="gw-container">
-          <span class="gw-kicker">
-            <span class="gw-pulse"></span>
-            <span>Official Rules</span>
-          </span>
-          <h1>Epic Hunt Giveaway Rules</h1>
-          <p class="gw-updated">
-            No purchase necessary to enter or win. Please read these Official
-            Rules carefully before entering the Sweepstakes. Epic Outdoors, LLC.
-            (&ldquo;Sponsor&rdquo;) will conduct the Epic Outdoors Hunt Giveaway
-            (hereinafter the &ldquo;Sweepstakes&rdquo;) substantially as
-            described in these Official Rules, and by participating, each
-            participant agrees to the rules set forth below.
-          </p>
         </div>
-      </div>
-
-      <div class="gw-container">
-        <!-- Rules content -->
-        <article class="gw-card">
-          <section class="gw-section" id="s1">
-            <h2><span class="gw-sec-num">1</span>Description of Sweepstakes</h2>
-            <p>
-              Winning participants will win one of 8 hunting trips. Actual
-              Retail Value (&ldquo;ARV&rdquo;) of each prize is approximately
-              $5,000 to $60,000. There is no cash value given to the winners.
-              All winners must pay for travel to and from the hunt location and
-              be willing to legally harvest an animal. ALL hunters must prove
-              they can legally hunt and provide proof of Hunter Safety.
-            </p>
-          </section>
-
-          <section class="gw-section" id="s2">
-            <h2><span class="gw-sec-num">2</span>Dates of Sweepstakes</h2>
-            <p>
-              There are two Sweepstakes periods annually. The &ldquo;winter
-              sweepstakes&rdquo; will begin around November 1 and end around
-              February 28 (dates vary from year to year, check epicoutdoors.com
-              for exact dates). The &ldquo;summer sweepstakes&rdquo; will begin
-              around April 22 and end around June 23rd. Mail-in entries must be
-              received by no later than 15 days prior to the end date, to allow
-              time for processing.
-            </p>
-          </section>
-
-          <section class="gw-section" id="s3">
-            <h2><span class="gw-sec-num">3</span>How to Enter</h2>
-            <p>
-              Enter three (3) ways: 1. Entrants receive a free entry if they
-              join or refer a new Epic Outdoors membership during the contest
-              period. The new member must mention your name when joining; or 2.
-              By purchasing tickets or 3. By sending in a (&ldquo;Mail-in
-              Entry&rdquo;) with a handwritten 3&Prime; X 5&Prime; card. The
-              3&times;5 card must include your Full Name, Address, City, State,
-              Zip Code, Phone Number, indicate which hunt the entry is for and
-              mail it to:
-            </p>
-            <address>
-              Epic Outdoors, LLC.<br />
-              ATTN: Epic Hunts Giveaway<br />
-              PO Box 2978<br />
-              Cedar City, UT 84721
-            </address>
-            <p>
-              ALL hunters must provide proof of hunter safety. If any hunter
-              cannot prove they are legal to hunt and have passed a hunter
-              safety course, they will forfeit any prizes and receive nothing.
-              Mail-in entries will receive all the same offers and eligibility
-              that purchased entries are entitled to. Sponsor is not responsible
-              for any incomplete, lost, late, illegible, mutilated, or
-              misdirected entries. Sponsor reserves the right, in its sole
-              discretion, to void any and all entries of an entrant who Sponsor
-              believes has attempted to tamper with or impair the
-              administration, fairness, security, or proper play of this
-              sweepstakes, or to cancel the sweepstakes. All entries become the
-              exclusive property of Sponsor and will not be returned or
-              acknowledged.
-            </p>
-            <p>
-              <span class="gw-sub-label">Winner&rsquo;s List</span>
-              For a list of winners, mail a self-addressed stamped envelope to
-              Winner&rsquo;s List to the address above. Mail must be received by
-              the Winner&rsquo;s List Request Deadline of no later than 12:00 PM
-              noon 15 days after the sweepstakes period. List will be sent once
-              all prizes have been awarded. The winner(s) will also be listed on
-              our website.
-            </p>
-            <p>
-              <span class="gw-sub-label">No Automated Entries</span>
-              Auto entries prohibited. You must fill out your own entry form
-              without the use of any automated sweepstakes entry filling
-              services or form filling services. The use of any automated,
-              programmed, robotic or similar system to enter is prohibited and
-              will result in disqualification. Entries filled out by anyone
-              other than you will be disqualified.
-            </p>
-            <p>
-              <span class="gw-sub-label">Limit on Entries</span>
-              The limit on the total number referral entries a person can be
-              rewarded is 8 during the Sweepstakes and the same limit to the
-              number of 3&times;5 Card Entries for each hunt during the
-              Sweepstakes, as defined herein.
-            </p>
-          </section>
-
-          <section class="gw-section" id="s4">
-            <h2><span class="gw-sec-num">4</span>No Purchase Necessary</h2>
-            <p>You must follow one of the three entry methods to enter.</p>
-          </section>
-
-          <section class="gw-section" id="s5">
-            <h2><span class="gw-sec-num">5</span>Other Requirements</h2>
-            <p>
-              All information must be present. No Purchase necessary. YOU MUST
-              BE AT LEAST 18 (EIGHTEEN) YEARS OF AGE AND A LEGAL RESIDENT OF THE
-              UNITED STATES OR CANADA TO PARTICIPATE.
-            </p>
-            <p>
-              <span class="gw-sub-label">Residents of Canada</span>
-              Before being declared an official winner, a potential winner who
-              is a resident of Canada must first, without assistance, correctly
-              answer, a time-limited skill-testing question by telephone within
-              2 weeks. If a selected entrant cannot be reached or fails to
-              answer the question correctly, he or she will forfeit the
-              opportunity to win and an alternate entrant will be selected as
-              outlined in the official rules.
-            </p>
-          </section>
-
-          <section class="gw-section" id="s6">
-            <h2>
-              <span class="gw-sec-num">6</span>Prize(s), Eligibility, and
-              Limitations
-            </h2>
-            <p>
-              U.S. laws shall govern this sweepstake. The sweepstake is offered
-              and open to legal residents of the United States (U.S.) and Canada
-              and is void where prohibited. Participants are solely responsible
-              for verifying that they are eligible in their location of
-              residence. Entrants outside of the U.S. are eligible but not
-              eligible to receive physical prizes or alternate prizes. No prizes
-              will be shipped outside of the U.S. Canadian residents must
-              complete a mathematical question administered by Epic Outdoors,
-              per Canadian law. The recipient is solely responsible for any
-              legal requirements in their state or country of origin and is void
-              where prohibited.
-            </p>
-            <p>
-              If it is determined that a winning entry is not valid, the hunt
-              will be forfeited and awarded to an alternate. In the event that a
-              winner is ineligible, the entrant will be refunded any fees.
-              Entrants must be at least 18 years or older, a licensed driver,
-              and have passed a hunter safety course and have a valid hunter
-              safety number on or before the drawing date. Minors may use a hunt
-              if they are mentored and accompanied by an eligible adult. Sponsor
-              is not responsible for any additional fees incurred by this
-              action. If a mentor arrangement is not possible the hunt is
-              forfeited and awarded to an alternate. By entering, you agree to
-              these Official Rules, which are binding in all respects.
-            </p>
-            <p>
-              Employees of Sponsor, Epic Outdoors, LLC, and members of the
-              immediate family of any such persons are not eligible to
-              participate and win. The term &ldquo;immediate family&rdquo;
-              includes spouses, siblings, parents, children, grandparents, and
-              grandchildren, whether as &ldquo;in-laws,&rdquo; or by current or
-              past marriage(s), remarriage(s), adoption, co-habitation or other
-              family extension, and any other persons residing at the same
-              household whether or not related. Due to the promotional nature of
-              the giveaway, employees of competing companies and members of the
-              immediate family of any such persons are not eligible to
-              participate and win. It is at the sole discretion of the sponsor
-              to determine &ldquo;competitor&rdquo; status and reserves the
-              right to refund and disqualify any entries it deems are from
-              competitors, competing individuals, or individuals that would
-              damage the business interests of the sponsor.
-            </p>
-            <p>
-              <span class="gw-sub-label">The Drawing</span>
-              Winner will be selected by random drawing from eligible entries.
-              Odds of winning depend on the number of eligible entries received.
-              Drawing date will be on or about two days after the promotion
-              period to allow time to process all entries.
-            </p>
-            <p>
-              <span class="gw-sub-label">Prize Notification</span>
-              Winner will be notified by phone within three (3) business days of
-              the drawing date. If after three (3) attempts by phone during a
-              twenty-four (24) hour time period (as determined by Sponsor in its
-              sole discretion) the Sponsor is unable to contact the winner, the
-              prize will be forfeited and an alternate winner will be selected.
-              Winner must confirm his/her ability to participate in the hunt on
-              the exact dates specified, within 24 hours of being notified. This
-              hunt is non-transferable. If the winner cannot go, the hunt
-              defaults back to Epic Outdoors. If the winner doesn&rsquo;t
-              complete and return an affidavit of eligibility and liability with
-              a publicity release by two days after the drawing, the
-              winner&rsquo;s prize will be forfeited. Winner, by accepting these
-              rules, acknowledges and affirms that they meet the
-              sweepstake&rsquo;s rules eligibility requirements and agree to the
-              publicity/liability set forth below or prize will be forfeited. An
-              alternate winner for forfeited prizes may be selected at
-              sponsor&rsquo;s sole discretion.
-            </p>
-          </section>
-
-          <section class="gw-section" id="s7">
-            <h2>
-              <span class="gw-sec-num">7</span>Publicity: Use of Personal
-              Information
-            </h2>
-            <p>
-              By participating, all participants and winner(s) grant the Sponsor
-              EXCLUSIVE permission to use their names, characters, photographs,
-              voices, and likenesses in connection with the promotion of this
-              and other Sweepstakes and waive any claims to royalty, right, or
-              remuneration for such use. By participating in the Sweepstakes,
-              participants agree that the Sponsor may disclose personal
-              information obtained from participants in the Sweepstakes to third
-              parties and use such information for marketing and other purposes.
-              The winner must provide one harvest photo of the winner and a big
-              game animal from any previous big game hunt. The photo must
-              clearly show the face of the entrant.
-            </p>
-          </section>
-
-          <section class="gw-section" id="s8">
-            <h2>
-              <span class="gw-sec-num">8</span>Taxes, Tag Fees, Expenses, and
-              Additional Costs
-            </h2>
-            <p>
-              Any valuation of the prize(s) stated above is based on available
-              information provided to the Sponsor, and the value of any prize
-              awarded to a winner may be reported for tax purposes as required
-              by law. Each winner is solely responsible for reporting and paying
-              any and all applicable taxes related to the prize(s) and paying
-              any expenses associated with any prize that are not specifically
-              provided for in the official rules including, without limitation
-              to, tag fees, permit fees, government fees, or any other costs,
-              any travel or transportation costs, or tips, associated with
-              winning.
-            </p>
-          </section>
-
-          <section class="gw-section" id="s9">
-            <h2>
-              <span class="gw-sec-num">9</span>Binding Decisions &amp;
-              Disqualification
-            </h2>
-            <p>
-              By participating in the Sweepstakes, participants agree to be
-              bound by the decisions of Sponsor personnel. Sponsor reserves the
-              right to disqualify any participant or winner and may refuse to
-              award any prize to a person who is ineligible or who Sponsor
-              believes has violated any rule, gained unfair advantage in
-              participating in the Sweepstakes, or obtained winner status using
-              fraudulent means. Sponsor will interpret these rules and resolve
-              any disputes, conflicting claims or ambiguities concerning the
-              rules or the Sweepstakes and the Sponsor&rsquo;s decisions
-              concerning such disputes shall be final.
-            </p>
-            <p>
-              If the conduct or outcome of the Sweepstakes is affected by human
-              error, any mechanical malfunctions or failures of any kind,
-              intentional interference or any event beyond the control of the
-              Sponsor, Sponsor reserves the right to terminate this Sweepstakes,
-              or make such other decisions regarding the outcome, as Sponsor
-              deems appropriate. All decisions will be made by Sponsor and are
-              final. Sponsor may waive any of these rules in its sole
-              discretion.
-            </p>
-          </section>
-
-          <section class="gw-section" id="s10">
-            <h2><span class="gw-sec-num">10</span>Miscellaneous</h2>
-            <p>
-              During the entry period, the exact number of tickets sold will not
-              be released to prevent individual odds manipulation. Prizes are
-              non-transferable. Sponsor may substitute prizes. Sponsor may amend
-              the rules or discontinue the Sweepstakes at any time. Sponsor
-              disclaims any responsibility to notify participants of any aspect
-              related to the conduct of the Sweepstakes. Written copies of these
-              rules are available by mail with a written request with a stamped,
-              self-addressed return envelope at the address indicated above, or
-              may be read on this website
-              <a href="https://www.epicoutdoors.com"
-                >https://www.epicoutdoors.com</a
-              >. All entries become the property of Sponsor and will not be
-              returned.
-            </p>
-            <p>
-              <span class="gw-sub-label">Release of Liability</span>
-              IN ORDER TO RECEIVE A PRIZE, WINNERS MUST SIGN AN OFFICIAL WAIVER
-              FORM. BY ENTERING OR PARTICIPATING IN THE SWEEPSTAKES, EACH
-              ENTRANT, PARTICIPANT OR WINNER AGREE THAT IN NO EVENT WILL
-              SPONSOR, PRESENTER, SWEEPSTAKES PARTIES, SWEEPSTAKES PROVIDERS AND
-              ALL THEIR RESPECTIVE DIRECTORS, OFFICERS, SHAREHOLDERS, OWNERS,
-              AGENTS, AFFILIATES, SUBSIDIARIES, EMPLOYEES, OR ANY OTHER SPONSOR
-              OR PRIZE PROVIDER (COLLECTIVELY &ldquo;RELEASEE(S)&rdquo;) BE
-              RESPONSIBLE OR LIABLE FOR, AND YOU HEREBY RELEASE THEM FROM ANY
-              AND ALL CLAIMS, ACTIONS, DAMAGES, LOSSES, COSTS, EXPENSE OR
-              LIABILITY OF ANY KIND (INCLUDING, BUT NOT LIMITED TO, PROPERTY
-              DAMAGE, PERSONAL INJURIES AND/OR DEATH, DIRECT, INDIRECT,
-              INCIDENTAL, CONSEQUENTIAL OR PUNITIVE DAMAGES, AND COUNSEL FEES
-              AND COURT COSTS) ARISING OR RESULTING FROM ANYTHING RELATING TO:
-              THE PRODUCTION, PROMOTION, ADMINISTRATION OR EXECUTION OF THE
-              SWEEPSTAKES (OR YOUR PARTICIPATION IN IT); CANCELLATION,
-              MODIFICATION OR RESCHEDULING OF ANY ASPECT OF THE SWEEPSTAKES; OF
-              ANY WEB SITE(S) RELATED TO THE SWEEPSTAKES OR MATERIALS ON THE WEB
-              SITE; ACCEPTANCE, POSSESSION, USE, MISUSE, OR NONUSE OF THE PRIZE;
-              OR PARTICIPATING IN OR TRAVELING TO ANY SWEEPSTAKES RELATED
-              ACTIVITY.
-            </p>
-            <p>
-              <span class="gw-sub-label">Limitations</span>
-              Neither Company or any other Releasees are responsible for: lost,
-              late, damaged, incomplete, illegible, stolen, misdirected, or
-              postage due mail, shipping or email; any website, computer,
-              telephone, satellite, cable, network, Internet or other equipment,
-              electronics, software, service, transmission, connection,
-              processing or other errors, failures, congestion, accessibility or
-              availability issues; unauthorized access, tampering, hacking,
-              theft or destruction; or other technical or human error in the
-              receipt or processing of entries, game piece requests or other
-              submissions (whether to or from) or otherwise related to the
-              production, promotion, administration or execution of the
-              Sweepstakes.
-            </p>
-            <p>
-              <span class="gw-sub-label"
-                >Tampering / Violations / Disruption</span
-              >
-              Sponsor may, in its sole determination, disqualify any person it
-              believes may be tampering with the entry or other operation of the
-              Sweepstakes or acting in violation of the rules, in a
-              non-sportsmanlike or disruptive manner or with intent to annoy,
-              abuse, threaten or harass any other person. CAUTION: ANY ATTEMPT
-              TO DELIBERATELY UNDERMINE THE LEGITIMATE OPERATION OF THE
-              SWEEPSTAKES IS A VIOLATION OF CRIMINAL AND CIVIL LAWS. SPONSOR
-              RESERVES THE RIGHT TO SEEK DAMAGES FROM ANY SUCH PERSON OR ENTITY
-              TO THE FULLEST EXTENT PERMITTED BY LAW.
-            </p>
-            <p>
-              <span class="gw-sub-label">Cancellation / Modification</span>
-              Sponsor may, in its sole discretion, cancel, terminate, modify or
-              suspend the Sweepstakes if the Sweepstakes is not capable of
-              running as Sponsor planned for any reason (including, but not
-              limited to, due to tampering, unauthorized intervention, computer
-              virus, fraud, technical or human error or any other causes which
-              Sponsor, in its sole opinion, deems could corrupt or affect the
-              administration, security, fairness, integrity or intended conduct
-              of this Sweepstakes).
-            </p>
-            <p>
-              <span class="gw-sub-label">Email Account Holder</span>
-              If the holder of an email account is disputed, entry will be
-              deemed made by the natural person who is assigned to the email
-              address by the internet access provider, online service provider
-              or other organization (e.g., business, school, etc.) that assigns
-              email addresses for the domain associated with the email address.
-            </p>
-            <p>
-              <span class="gw-sub-label">No Prize Warranty</span>
-              WITHOUT LIMITING THE FOREGOING, ALL PRIZES ARE PROVIDED &ldquo;AS
-              IS&rdquo; WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
-              INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-              MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR
-              NON-INFRINGEMENT.
-            </p>
-            <p>
-              <span class="gw-sub-label">Governing Law and Venue</span>
-              The laws of the State of Utah, excluding the rules of conflicts of
-              law, shall govern this and all matters arising out of or related
-              to this Sweepstakes. The parties, including Sweepstakes winners,
-              hereby submit to the jurisdiction of the state or federal courts
-              located in Iron County, Utah. Each party expressly agrees that it
-              is subject to the jurisdiction and venue of those courts for
-              purposes of such litigation. Each party hereby waives and
-              covenants not to assert any claim that is not subject to personal
-              jurisdiction in those courts or that venue in those courts is for
-              any reason improper, inconvenient, prejudicial or otherwise
-              inappropriate (including, without limitation, any claim under the
-              judicial doctrine of forum inconvenient).
-            </p>
-          </section>
-        </article>
-
-        <div class="gw-top-wrap">
-          <a class="gw-top" href="#top">
-            <span aria-hidden="true">&uarr;</span>
-            <span>Back to Top</span>
-          </a>
-        </div>
-      </div>
-    </main>
-
-    <footer>
-      <nav class="gw-footer-links" aria-label="Footer">
-        <a href="/terms.html">Terms &amp; Conditions</a>
+        <a class="eo-nav-link" href="/services/epic-hunt-giveaways/">Giveaway</a>
+        <a class="eo-nav-link" href="https://epicoutdoorsmember.com">Login</a>
+        <a class="eo-nav-link" href="https://store.epicoutdoors.com">Store</a>
       </nav>
-      Copyright &copy; 2017&ndash;<span id="y"></span> Epic Outdoors | All
-      Rights Reserved
-    </footer>
+    </div>
+  </header>
 
-    <script>
-      document.getElementById("y").textContent = new Date().getFullYear();
-    </script>
-  </body>
+  <script>
+    (function () {
+      var header = document.getElementById("eoHeader");
+      if (!header) return;
+
+      var burger = header.querySelector(".eo-burger");
+      var joinBtn = header.querySelector(".eo-join-btn");
+
+      function setJoin(open) {
+        if (joinBtn)
+          joinBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      }
+
+      function setMenu(open) {
+        header.classList.toggle("eo-open", open);
+        if (burger)
+          burger.setAttribute("aria-expanded", open ? "true" : "false");
+        if (!open) setJoin(false);
+      }
+
+      if (burger) {
+        burger.addEventListener("click", function () {
+          setMenu(!header.classList.contains("eo-open"));
+        });
+      }
+
+      if (joinBtn) {
+        joinBtn.addEventListener("click", function () {
+          setJoin(joinBtn.getAttribute("aria-expanded") !== "true");
+        });
+      }
+
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest(".eo-join")) setJoin(false);
+        if (!e.target.closest(".eo-header")) setMenu(false);
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") setMenu(false);
+      });
+    })();
+  </script>
+  <!-- ===================== END EPIC OUTDOORS NAV HEADER ===================== -->
+
+  <main>
+    <!-- Title band -->
+    <div class="gw-page-head" id="top">
+      <div class="gw-container">
+        <span class="gw-kicker">
+          <span class="gw-pulse"></span>
+          <span>Official Rules</span>
+        </span>
+        <h1>Epic Hunt Giveaway Rules</h1>
+        <p class="gw-updated">
+          No purchase necessary to enter or win. Please read these Official
+          Rules carefully before entering the Sweepstakes. Epic Outdoors, LLC.
+          (&ldquo;Sponsor&rdquo;) will conduct the Epic Outdoors Hunt Giveaway
+          (hereinafter the &ldquo;Sweepstakes&rdquo;) substantially as
+          described in these Official Rules, and by participating, each
+          participant agrees to the rules set forth below.
+        </p>
+      </div>
+    </div>
+
+    <div class="gw-container">
+      <!-- Rules content -->
+      <article class="gw-card">
+        <section class="gw-section" id="s1">
+          <h2><span class="gw-sec-num">1</span>Description of Sweepstakes</h2>
+          <p>
+            Winning participants will win one of 8 hunting trips. Actual
+            Retail Value (&ldquo;ARV&rdquo;) of each prize is approximately
+            $5,000 to $60,000. There is no cash value given to the winners.
+            All winners must pay for travel to and from the hunt location and
+            be willing to legally harvest an animal. ALL hunters must prove
+            they can legally hunt and provide proof of Hunter Safety.
+          </p>
+        </section>
+
+        <section class="gw-section" id="s2">
+          <h2><span class="gw-sec-num">2</span>Dates of Sweepstakes</h2>
+          <p>
+            There are two Sweepstakes periods annually. The &ldquo;winter
+            sweepstakes&rdquo; will begin around November 1 and end around
+            February 28 (dates vary from year to year, check epicoutdoors.com
+            for exact dates). The &ldquo;summer sweepstakes&rdquo; will begin
+            around April 22 and end around June 23rd. Mail-in entries must be
+            received by no later than 15 days prior to the end date, to allow
+            time for processing.
+          </p>
+        </section>
+
+        <section class="gw-section" id="s3">
+          <h2><span class="gw-sec-num">3</span>How to Enter</h2>
+          <p>
+            Enter three (3) ways: 1. Entrants receive a free entry if they
+            join or refer a new Epic Outdoors membership during the contest
+            period. The new member must mention your name when joining; or 2.
+            By purchasing tickets or 3. By sending in a (&ldquo;Mail-in
+            Entry&rdquo;) with a handwritten 3&Prime; X 5&Prime; card. The
+            3&times;5 card must include your Full Name, Address, City, State,
+            Zip Code, Phone Number, indicate which hunt the entry is for and
+            mail it to:
+          </p>
+          <address>
+            Epic Outdoors, LLC.<br />
+            ATTN: Epic Hunts Giveaway<br />
+            PO Box 2978<br />
+            Cedar City, UT 84721
+          </address>
+          <p>
+            ALL hunters must provide proof of hunter safety. If any hunter
+            cannot prove they are legal to hunt and have passed a hunter
+            safety course, they will forfeit any prizes and receive nothing.
+            Mail-in entries will receive all the same offers and eligibility
+            that purchased entries are entitled to. Sponsor is not responsible
+            for any incomplete, lost, late, illegible, mutilated, or
+            misdirected entries. Sponsor reserves the right, in its sole
+            discretion, to void any and all entries of an entrant who Sponsor
+            believes has attempted to tamper with or impair the
+            administration, fairness, security, or proper play of this
+            sweepstakes, or to cancel the sweepstakes. All entries become the
+            exclusive property of Sponsor and will not be returned or
+            acknowledged.
+          </p>
+          <p>
+            <span class="gw-sub-label">Winner&rsquo;s List</span>
+            For a list of winners, mail a self-addressed stamped envelope to
+            Winner&rsquo;s List to the address above. Mail must be received by
+            the Winner&rsquo;s List Request Deadline of no later than 12:00 PM
+            noon 15 days after the sweepstakes period. List will be sent once
+            all prizes have been awarded. The winner(s) will also be listed on
+            our website.
+          </p>
+          <p>
+            <span class="gw-sub-label">No Automated Entries</span>
+            Auto entries prohibited. You must fill out your own entry form
+            without the use of any automated sweepstakes entry filling
+            services or form filling services. The use of any automated,
+            programmed, robotic or similar system to enter is prohibited and
+            will result in disqualification. Entries filled out by anyone
+            other than you will be disqualified.
+          </p>
+          <p>
+            <span class="gw-sub-label">Limit on Entries</span>
+            The limit on the total number referral entries a person can be
+            rewarded is 8 during the Sweepstakes and the same limit to the
+            number of 3&times;5 Card Entries for each hunt during the
+            Sweepstakes, as defined herein.
+          </p>
+        </section>
+
+        <section class="gw-section" id="s4">
+          <h2><span class="gw-sec-num">4</span>No Purchase Necessary</h2>
+          <p>You must follow one of the three entry methods to enter.</p>
+        </section>
+
+        <section class="gw-section" id="s5">
+          <h2><span class="gw-sec-num">5</span>Other Requirements</h2>
+          <p>
+            All information must be present. No Purchase necessary. YOU MUST
+            BE AT LEAST 18 (EIGHTEEN) YEARS OF AGE AND A LEGAL RESIDENT OF THE
+            UNITED STATES OR CANADA TO PARTICIPATE.
+          </p>
+          <p>
+            <span class="gw-sub-label">Residents of Canada</span>
+            Before being declared an official winner, a potential winner who
+            is a resident of Canada must first, without assistance, correctly
+            answer, a time-limited skill-testing question by telephone within
+            2 weeks. If a selected entrant cannot be reached or fails to
+            answer the question correctly, he or she will forfeit the
+            opportunity to win and an alternate entrant will be selected as
+            outlined in the official rules.
+          </p>
+        </section>
+
+        <section class="gw-section" id="s6">
+          <h2>
+            <span class="gw-sec-num">6</span>Prize(s), Eligibility, and
+            Limitations
+          </h2>
+          <p>
+            U.S. laws shall govern this sweepstake. The sweepstake is offered
+            and open to legal residents of the United States (U.S.) and Canada
+            and is void where prohibited. Participants are solely responsible
+            for verifying that they are eligible in their location of
+            residence. Entrants outside of the U.S. are eligible but not
+            eligible to receive physical prizes or alternate prizes. No prizes
+            will be shipped outside of the U.S. Canadian residents must
+            complete a mathematical question administered by Epic Outdoors,
+            per Canadian law. The recipient is solely responsible for any
+            legal requirements in their state or country of origin and is void
+            where prohibited.
+          </p>
+          <p>
+            If it is determined that a winning entry is not valid, the hunt
+            will be forfeited and awarded to an alternate. In the event that a
+            winner is ineligible, the entrant will be refunded any fees.
+            Entrants must be at least 18 years or older, a licensed driver,
+            and have passed a hunter safety course and have a valid hunter
+            safety number on or before the drawing date. Minors may use a hunt
+            if they are mentored and accompanied by an eligible adult. Sponsor
+            is not responsible for any additional fees incurred by this
+            action. If a mentor arrangement is not possible the hunt is
+            forfeited and awarded to an alternate. By entering, you agree to
+            these Official Rules, which are binding in all respects.
+          </p>
+          <p>
+            Employees of Sponsor, Epic Outdoors, LLC, and members of the
+            immediate family of any such persons are not eligible to
+            participate and win. The term &ldquo;immediate family&rdquo;
+            includes spouses, siblings, parents, children, grandparents, and
+            grandchildren, whether as &ldquo;in-laws,&rdquo; or by current or
+            past marriage(s), remarriage(s), adoption, co-habitation or other
+            family extension, and any other persons residing at the same
+            household whether or not related. Due to the promotional nature of
+            the giveaway, employees of competing companies and members of the
+            immediate family of any such persons are not eligible to
+            participate and win. It is at the sole discretion of the sponsor
+            to determine &ldquo;competitor&rdquo; status and reserves the
+            right to refund and disqualify any entries it deems are from
+            competitors, competing individuals, or individuals that would
+            damage the business interests of the sponsor.
+          </p>
+          <p>
+            <span class="gw-sub-label">The Drawing</span>
+            Winner will be selected by random drawing from eligible entries.
+            Odds of winning depend on the number of eligible entries received.
+            Drawing date will be on or about two days after the promotion
+            period to allow time to process all entries.
+          </p>
+          <p>
+            <span class="gw-sub-label">Prize Notification</span>
+            Winner will be notified by phone within three (3) business days of
+            the drawing date. If after three (3) attempts by phone during a
+            twenty-four (24) hour time period (as determined by Sponsor in its
+            sole discretion) the Sponsor is unable to contact the winner, the
+            prize will be forfeited and an alternate winner will be selected.
+            Winner must confirm his/her ability to participate in the hunt on
+            the exact dates specified, within 24 hours of being notified. This
+            hunt is non-transferable. If the winner cannot go, the hunt
+            defaults back to Epic Outdoors. If the winner doesn&rsquo;t
+            complete and return an affidavit of eligibility and liability with
+            a publicity release by two days after the drawing, the
+            winner&rsquo;s prize will be forfeited. Winner, by accepting these
+            rules, acknowledges and affirms that they meet the
+            sweepstake&rsquo;s rules eligibility requirements and agree to the
+            publicity/liability set forth below or prize will be forfeited. An
+            alternate winner for forfeited prizes may be selected at
+            sponsor&rsquo;s sole discretion.
+          </p>
+        </section>
+
+        <section class="gw-section" id="s7">
+          <h2>
+            <span class="gw-sec-num">7</span>Publicity: Use of Personal
+            Information
+          </h2>
+          <p>
+            By participating, all participants and winner(s) grant the Sponsor
+            EXCLUSIVE permission to use their names, characters, photographs,
+            voices, and likenesses in connection with the promotion of this
+            and other Sweepstakes and waive any claims to royalty, right, or
+            remuneration for such use. By participating in the Sweepstakes,
+            participants agree that the Sponsor may disclose personal
+            information obtained from participants in the Sweepstakes to third
+            parties and use such information for marketing and other purposes.
+            The winner must provide one harvest photo of the winner and a big
+            game animal from any previous big game hunt. The photo must
+            clearly show the face of the entrant.
+          </p>
+        </section>
+
+        <section class="gw-section" id="s8">
+          <h2>
+            <span class="gw-sec-num">8</span>Taxes, Tag Fees, Expenses, and
+            Additional Costs
+          </h2>
+          <p>
+            Any valuation of the prize(s) stated above is based on available
+            information provided to the Sponsor, and the value of any prize
+            awarded to a winner may be reported for tax purposes as required
+            by law. Each winner is solely responsible for reporting and paying
+            any and all applicable taxes related to the prize(s) and paying
+            any expenses associated with any prize that are not specifically
+            provided for in the official rules including, without limitation
+            to, tag fees, permit fees, government fees, or any other costs,
+            any travel or transportation costs, or tips, associated with
+            winning.
+          </p>
+        </section>
+
+        <section class="gw-section" id="s9">
+          <h2>
+            <span class="gw-sec-num">9</span>Binding Decisions &amp;
+            Disqualification
+          </h2>
+          <p>
+            By participating in the Sweepstakes, participants agree to be
+            bound by the decisions of Sponsor personnel. Sponsor reserves the
+            right to disqualify any participant or winner and may refuse to
+            award any prize to a person who is ineligible or who Sponsor
+            believes has violated any rule, gained unfair advantage in
+            participating in the Sweepstakes, or obtained winner status using
+            fraudulent means. Sponsor will interpret these rules and resolve
+            any disputes, conflicting claims or ambiguities concerning the
+            rules or the Sweepstakes and the Sponsor&rsquo;s decisions
+            concerning such disputes shall be final.
+          </p>
+          <p>
+            If the conduct or outcome of the Sweepstakes is affected by human
+            error, any mechanical malfunctions or failures of any kind,
+            intentional interference or any event beyond the control of the
+            Sponsor, Sponsor reserves the right to terminate this Sweepstakes,
+            or make such other decisions regarding the outcome, as Sponsor
+            deems appropriate. All decisions will be made by Sponsor and are
+            final. Sponsor may waive any of these rules in its sole
+            discretion.
+          </p>
+        </section>
+
+        <section class="gw-section" id="s10">
+          <h2><span class="gw-sec-num">10</span>Miscellaneous</h2>
+          <p>
+            During the entry period, the exact number of tickets sold will not
+            be released to prevent individual odds manipulation. Prizes are
+            non-transferable. Sponsor may substitute prizes. Sponsor may amend
+            the rules or discontinue the Sweepstakes at any time. Sponsor
+            disclaims any responsibility to notify participants of any aspect
+            related to the conduct of the Sweepstakes. Written copies of these
+            rules are available by mail with a written request with a stamped,
+            self-addressed return envelope at the address indicated above, or
+            may be read on this website
+            <a href="https://www.epicoutdoors.com">https://www.epicoutdoors.com</a>. All entries become the property of
+            Sponsor and will not be
+            returned.
+          </p>
+          <p>
+            <span class="gw-sub-label">Release of Liability</span>
+            IN ORDER TO RECEIVE A PRIZE, WINNERS MUST SIGN AN OFFICIAL WAIVER
+            FORM. BY ENTERING OR PARTICIPATING IN THE SWEEPSTAKES, EACH
+            ENTRANT, PARTICIPANT OR WINNER AGREE THAT IN NO EVENT WILL
+            SPONSOR, PRESENTER, SWEEPSTAKES PARTIES, SWEEPSTAKES PROVIDERS AND
+            ALL THEIR RESPECTIVE DIRECTORS, OFFICERS, SHAREHOLDERS, OWNERS,
+            AGENTS, AFFILIATES, SUBSIDIARIES, EMPLOYEES, OR ANY OTHER SPONSOR
+            OR PRIZE PROVIDER (COLLECTIVELY &ldquo;RELEASEE(S)&rdquo;) BE
+            RESPONSIBLE OR LIABLE FOR, AND YOU HEREBY RELEASE THEM FROM ANY
+            AND ALL CLAIMS, ACTIONS, DAMAGES, LOSSES, COSTS, EXPENSE OR
+            LIABILITY OF ANY KIND (INCLUDING, BUT NOT LIMITED TO, PROPERTY
+            DAMAGE, PERSONAL INJURIES AND/OR DEATH, DIRECT, INDIRECT,
+            INCIDENTAL, CONSEQUENTIAL OR PUNITIVE DAMAGES, AND COUNSEL FEES
+            AND COURT COSTS) ARISING OR RESULTING FROM ANYTHING RELATING TO:
+            THE PRODUCTION, PROMOTION, ADMINISTRATION OR EXECUTION OF THE
+            SWEEPSTAKES (OR YOUR PARTICIPATION IN IT); CANCELLATION,
+            MODIFICATION OR RESCHEDULING OF ANY ASPECT OF THE SWEEPSTAKES; OF
+            ANY WEB SITE(S) RELATED TO THE SWEEPSTAKES OR MATERIALS ON THE WEB
+            SITE; ACCEPTANCE, POSSESSION, USE, MISUSE, OR NONUSE OF THE PRIZE;
+            OR PARTICIPATING IN OR TRAVELING TO ANY SWEEPSTAKES RELATED
+            ACTIVITY.
+          </p>
+          <p>
+            <span class="gw-sub-label">Limitations</span>
+            Neither Company or any other Releasees are responsible for: lost,
+            late, damaged, incomplete, illegible, stolen, misdirected, or
+            postage due mail, shipping or email; any website, computer,
+            telephone, satellite, cable, network, Internet or other equipment,
+            electronics, software, service, transmission, connection,
+            processing or other errors, failures, congestion, accessibility or
+            availability issues; unauthorized access, tampering, hacking,
+            theft or destruction; or other technical or human error in the
+            receipt or processing of entries, game piece requests or other
+            submissions (whether to or from) or otherwise related to the
+            production, promotion, administration or execution of the
+            Sweepstakes.
+          </p>
+          <p>
+            <span class="gw-sub-label">Tampering / Violations / Disruption</span>
+            Sponsor may, in its sole determination, disqualify any person it
+            believes may be tampering with the entry or other operation of the
+            Sweepstakes or acting in violation of the rules, in a
+            non-sportsmanlike or disruptive manner or with intent to annoy,
+            abuse, threaten or harass any other person. CAUTION: ANY ATTEMPT
+            TO DELIBERATELY UNDERMINE THE LEGITIMATE OPERATION OF THE
+            SWEEPSTAKES IS A VIOLATION OF CRIMINAL AND CIVIL LAWS. SPONSOR
+            RESERVES THE RIGHT TO SEEK DAMAGES FROM ANY SUCH PERSON OR ENTITY
+            TO THE FULLEST EXTENT PERMITTED BY LAW.
+          </p>
+          <p>
+            <span class="gw-sub-label">Cancellation / Modification</span>
+            Sponsor may, in its sole discretion, cancel, terminate, modify or
+            suspend the Sweepstakes if the Sweepstakes is not capable of
+            running as Sponsor planned for any reason (including, but not
+            limited to, due to tampering, unauthorized intervention, computer
+            virus, fraud, technical or human error or any other causes which
+            Sponsor, in its sole opinion, deems could corrupt or affect the
+            administration, security, fairness, integrity or intended conduct
+            of this Sweepstakes).
+          </p>
+          <p>
+            <span class="gw-sub-label">Email Account Holder</span>
+            If the holder of an email account is disputed, entry will be
+            deemed made by the natural person who is assigned to the email
+            address by the internet access provider, online service provider
+            or other organization (e.g., business, school, etc.) that assigns
+            email addresses for the domain associated with the email address.
+          </p>
+          <p>
+            <span class="gw-sub-label">No Prize Warranty</span>
+            WITHOUT LIMITING THE FOREGOING, ALL PRIZES ARE PROVIDED &ldquo;AS
+            IS&rdquo; WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+            INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+            MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR
+            NON-INFRINGEMENT.
+          </p>
+          <p>
+            <span class="gw-sub-label">Governing Law and Venue</span>
+            The laws of the State of Utah, excluding the rules of conflicts of
+            law, shall govern this and all matters arising out of or related
+            to this Sweepstakes. The parties, including Sweepstakes winners,
+            hereby submit to the jurisdiction of the state or federal courts
+            located in Iron County, Utah. Each party expressly agrees that it
+            is subject to the jurisdiction and venue of those courts for
+            purposes of such litigation. Each party hereby waives and
+            covenants not to assert any claim that is not subject to personal
+            jurisdiction in those courts or that venue in those courts is for
+            any reason improper, inconvenient, prejudicial or otherwise
+            inappropriate (including, without limitation, any claim under the
+            judicial doctrine of forum inconvenient).
+          </p>
+        </section>
+      </article>
+
+      <div class="gw-top-wrap">
+        <a class="gw-top" href="#top">
+          <span aria-hidden="true">&uarr;</span>
+          <span>Back to Top</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <nav class="gw-footer-links" aria-label="Footer">
+      <a href="/terms.html">Terms &amp; Conditions</a>
+    </nav>
+    Copyright &copy; 2017&ndash;<span id="y"></span> Epic Outdoors | All
+    Rights Reserved
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+
 </html>
