@@ -1,923 +1,989 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>2026 Summer Epic Hunt Giveaway — Epic Outdoors</title>
-    <meta name="description"
-        content="Win one of eight premier hunt and gear packages. Plus a bonus Winner's Choice Hunt worth $15,000. Deadline June 22, 2026.">
-    <meta name="format-detection" content="telephone=no">
+    <meta
+      name="description"
+      content="Win one of eight premier hunt and gear packages. Plus a bonus Winner's Choice Hunt worth $15,000. Deadline June 22, 2026."
+    />
+    <meta name="format-detection" content="telephone=no" />
 
-    <link rel="icon" href="/assets/favicon-dark.png" media="(prefers-color-scheme: light)" type="image/png">
-    <link rel="icon" href="/assets/favicon-light.png" media="(prefers-color-scheme: dark)" type="image/png">
+    <link
+      rel="icon"
+      href="/assets/favicon-dark.png"
+      media="(prefers-color-scheme: light)"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="/assets/favicon-light.png"
+      media="(prefers-color-scheme: dark)"
+      type="image/png"
+    />
 
     <style>
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-        html,
-        body {
-            height: 100%;
-        }
+      html,
+      body {
+        height: 100%;
+      }
 
-        :root {
-            --bg: #0b0f14;
-            --text: rgba(255, 255, 255, .92);
-            --muted: rgba(255, 255, 255, .72);
-            --soft: rgba(255, 255, 255, .55);
-            --line: rgba(255, 255, 255, .12);
-            --line-soft: rgba(255, 255, 255, .06);
-            --card: rgba(255, 255, 255, .06);
-            --card2: rgba(255, 255, 255, .085);
-            --shadow: 0 18px 60px rgba(0, 0, 0, .45);
-            --shadow-sm: 0 8px 24px rgba(0, 0, 0, .35);
-            --radius: 18px;
-            --radius-sm: 14px;
-            --accent: #ff7a18;
-            --accent2: #ffb26b;
-        }
+      :root {
+        --bg: #0b0f14;
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.72);
+        --soft: rgba(255, 255, 255, 0.55);
+        --line: rgba(255, 255, 255, 0.12);
+        --line-soft: rgba(255, 255, 255, 0.06);
+        --card: rgba(255, 255, 255, 0.06);
+        --card2: rgba(255, 255, 255, 0.085);
+        --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+        --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.35);
+        --radius: 18px;
+        --radius-sm: 14px;
+        --accent: #ff7a18;
+        --accent2: #ffb26b;
+      }
 
-        html {
-            min-height: 100%;
-            background:
-                radial-gradient(1200px 700px at 15% 0%, rgba(255, 122, 24, .18), transparent 55%),
-                radial-gradient(900px 600px at 90% 10%, rgba(255, 178, 107, .12), transparent 55%),
-                var(--bg);
-            background-attachment: fixed;
-        }
+      html {
+        min-height: 100%;
+        background:
+          radial-gradient(
+            1200px 700px at 15% 0%,
+            rgba(255, 122, 24, 0.18),
+            transparent 55%
+          ),
+          radial-gradient(
+            900px 600px at 90% 10%,
+            rgba(255, 178, 107, 0.12),
+            transparent 55%
+          ),
+          var(--bg);
+        background-attachment: fixed;
+      }
 
-        body {
-            background: transparent;
-            color: var(--text);
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-            font-size: 15px;
-            line-height: 1.6;
-            min-height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
+      body {
+        background: transparent;
+        color: var(--text);
+        font-family:
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        font-size: 15px;
+        line-height: 1.6;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
 
-        a {
-            color: var(--accent2);
-            text-decoration: none;
-        }
+      a {
+        color: var(--accent2);
+        text-decoration: none;
+      }
 
-        a:hover {
-            color: var(--accent);
-        }
+      a:hover {
+        color: var(--accent);
+      }
 
-        .gw-container {
-            width: min(1080px, calc(100% - 32px));
-            margin: 0 auto;
-        }
+      .gw-container {
+        width: min(1080px, calc(100% - 32px));
+        margin: 0 auto;
+      }
 
-        main {
-            flex: 1;
-        }
+      main {
+        flex: 1;
+      }
 
-        /* ──────────────────────────────────────────────────────────
+      /* ──────────────────────────────────────────────────────────
        HERO
     ────────────────────────────────────────────────────────── */
-        .gw-hero {
-            position: relative;
-            background: #000;
-            padding-bottom: 32px;
+      .gw-hero {
+        position: relative;
+        background: #000;
+        padding-bottom: 32px;
+      }
+
+      .gw-hero-back {
+        position: absolute;
+        top: 16px;
+        left: 20px;
+        z-index: 10;
+      }
+
+      .eo-back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 8px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(11, 15, 20, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: rgba(255, 255, 255, 0.78) !important;
+        font-size: 13px;
+        font-weight: 700;
+        text-decoration: none !important;
+        transition:
+          border-color 0.15s,
+          background 0.15s,
+          color 0.15s;
+      }
+
+      .eo-back-btn:hover {
+        border-color: rgba(255, 122, 24, 0.4);
+        background: rgba(255, 122, 24, 0.12);
+        color: var(--accent2) !important;
+      }
+
+      .gw-hero-image-wrap {
+        text-align: center;
+        padding: 0;
+      }
+
+      .gw-hero-image-wrap img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1200px;
+        height: auto;
+      }
+
+      .gw-hero-content {
+        text-align: center;
+        padding: 28px 16px 0;
+      }
+
+      .gw-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 122, 24, 0.3);
+        background: rgba(255, 122, 24, 0.1);
+        color: var(--muted);
+        font-size: 13px;
+        letter-spacing: 0.04em;
+        line-height: 1;
+        margin-bottom: 18px;
+      }
+
+      .gw-pulse {
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+        animation: pulse 1.8s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
         }
 
-        .gw-hero-back {
-            position: absolute;
-            top: 16px;
-            left: 20px;
-            z-index: 10;
+        50% {
+          opacity: 0.35;
+          transform: scale(0.85);
         }
+      }
 
-        .eo-back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            padding: 8px 16px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, .12);
-            background: rgba(11, 15, 20, .70);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            color: rgba(255, 255, 255, .78) !important;
-            font-size: 13px;
-            font-weight: 700;
-            text-decoration: none !important;
-            transition: border-color .15s, background .15s, color .15s;
-        }
+      .gw-hero h1 {
+        font-size: clamp(26px, 3vw, 36px);
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        margin-bottom: 12px;
+      }
 
-        .eo-back-btn:hover {
-            border-color: rgba(255, 122, 24, .40);
-            background: rgba(255, 122, 24, .12);
-            color: var(--accent2) !important;
-        }
+      .gw-hero-sub {
+        color: var(--muted);
+        font-size: clamp(14px, 1.4vw, 16px);
+        max-width: 580px;
+        margin: 0 auto 20px;
+      }
 
-        .gw-hero-image-wrap {
-            text-align: center;
-            padding: 0;
-        }
+      .gw-hero-sub strong {
+        color: var(--text);
+      }
 
-        .gw-hero-image-wrap img {
-            display: block;
-            margin: 0 auto;
-            width: 100%;
-            max-width: 1200px;
-            height: auto;
-        }
+      .gw-deadline-pill {
+        display: flex;
+        width: fit-content;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 122, 24, 0.45);
+        background: rgba(255, 122, 24, 0.12);
+        color: var(--accent2);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        margin: 0 auto 20px;
+      }
 
-        .gw-hero-content {
-            text-align: center;
-            padding: 28px 16px 0;
-        }
+      .gw-deadline-pill svg {
+        flex-shrink: 0;
+      }
 
-        .gw-kicker {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 7px 14px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 122, 24, .30);
-            background: rgba(255, 122, 24, .10);
-            color: var(--muted);
-            font-size: 13px;
-            letter-spacing: .04em;
-            line-height: 1;
-            margin-bottom: 18px;
-        }
+      .gw-hero-perks {
+        display: flex;
+        width: fit-content;
+        align-items: flex-start;
+        gap: 12px;
+        max-width: 560px;
+        padding: 14px 20px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        margin: 0 auto 22px;
+        text-align: left;
+      }
 
-        .gw-pulse {
-            display: block;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--accent);
-            animation: pulse 1.8s ease-in-out infinite;
-        }
+      .gw-hero-perks-icon {
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        color: var(--accent2);
+        margin-top: 2px;
+      }
 
-        @keyframes pulse {
+      .gw-hero-perks-content {
+        color: var(--muted);
+        font-size: 13.5px;
+        line-height: 1.55;
+      }
 
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
+      .gw-hero-perks-content strong {
+        color: var(--accent2);
+        font-weight: 800;
+      }
 
-            50% {
-                opacity: .35;
-                transform: scale(.85);
-            }
-        }
-
-        .gw-hero h1 {
-            font-size: clamp(26px, 3vw, 36px);
-            font-weight: 900;
-            letter-spacing: -.02em;
-            line-height: 1.1;
-            margin-bottom: 12px;
-        }
-
-        .gw-hero-sub {
-            color: var(--muted);
-            font-size: clamp(14px, 1.4vw, 16px);
-            max-width: 580px;
-            margin: 0 auto 20px;
-        }
-
-        .gw-hero-sub strong {
-            color: var(--text);
-        }
-
-        .gw-deadline-pill {
-            display: flex;
-            width: fit-content;
-            align-items: center;
-            gap: 8px;
-            padding: 7px 14px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 122, 24, .45);
-            background: rgba(255, 122, 24, .12);
-            color: var(--accent2);
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: .04em;
-            margin: 0 auto 20px;
-        }
-
-        .gw-deadline-pill svg {
-            flex-shrink: 0;
-        }
-
+      @media (max-width: 560px) {
         .gw-hero-perks {
-            display: flex;
-            width: fit-content;
-            align-items: flex-start;
-            gap: 12px;
-            max-width: 560px;
-            padding: 14px 20px;
-            border-radius: 14px;
-            background: rgba(255, 255, 255, .04);
-            border: 1px solid rgba(255, 255, 255, .10);
-            margin: 0 auto 22px;
-            text-align: left;
-        }
-
-        .gw-hero-perks-icon {
-            flex-shrink: 0;
-            width: 20px;
-            height: 20px;
-            color: var(--accent2);
-            margin-top: 2px;
+          padding: 12px 16px;
+          gap: 10px;
         }
 
         .gw-hero-perks-content {
-            color: var(--muted);
-            font-size: 13.5px;
-            line-height: 1.55;
+          font-size: 13px;
         }
+      }
 
-        .gw-hero-perks-content strong {
-            color: var(--accent2);
-            font-weight: 800;
-        }
+      .gw-cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+      }
 
-        @media (max-width: 560px) {
-            .gw-hero-perks {
-                padding: 12px 16px;
-                gap: 10px;
-            }
+      .gw-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 13px 24px;
+        border-radius: 999px;
+        font-weight: 800;
+        font-size: 14px;
+        text-decoration: none !important;
+        transition:
+          filter 0.12s,
+          transform 0.08s,
+          border-color 0.15s,
+          background 0.15s;
+      }
 
-            .gw-hero-perks-content {
-                font-size: 13px;
-            }
-        }
+      .gw-cta-primary {
+        border: 1px solid rgba(255, 122, 24, 0.4);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 122, 24, 0.95),
+          rgba(255, 122, 24, 0.78)
+        );
+        color: #101318 !important;
+      }
 
-        .gw-cta-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-        }
+      .gw-cta-primary:hover {
+        filter: brightness(1.06);
+      }
 
-        .gw-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 13px 24px;
-            border-radius: 999px;
-            font-weight: 800;
-            font-size: 14px;
-            text-decoration: none !important;
-            transition: filter .12s, transform .08s, border-color .15s, background .15s;
-        }
+      .gw-cta-primary:active {
+        transform: translateY(1px);
+      }
 
-        .gw-cta-primary {
-            border: 1px solid rgba(255, 122, 24, .40);
-            background: linear-gradient(180deg, rgba(255, 122, 24, .95), rgba(255, 122, 24, .78));
-            color: #101318 !important;
-        }
+      .gw-cta-ghost {
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text) !important;
+      }
 
-        .gw-cta-primary:hover {
-            filter: brightness(1.06);
-        }
+      .gw-cta-ghost:hover {
+        border-color: rgba(255, 122, 24, 0.4);
+        background: rgba(255, 122, 24, 0.1);
+        color: var(--accent2) !important;
+      }
 
-        .gw-cta-primary:active {
-            transform: translateY(1px);
-        }
+      /* ── EARLY BIRD BANNER ── */
+      .gw-earlybird {
+        display: block;
+        width: 100%;
+        max-width: 760px;
+        margin: 24px auto 0;
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+        border: 1px solid rgba(255, 122, 24, 0.4);
+        box-shadow: var(--shadow);
+        line-height: 0;
+        transition:
+          transform 0.12s ease,
+          border-color 0.15s ease,
+          filter 0.12s ease;
+      }
 
-        .gw-cta-ghost {
-            border: 1px solid rgba(255, 255, 255, .14);
-            background: rgba(255, 255, 255, .04);
-            color: var(--text) !important;
-        }
+      .gw-earlybird:hover {
+        transform: translateY(-2px);
+        border-color: rgba(255, 122, 24, 0.7);
+        filter: brightness(1.04);
+      }
 
-        .gw-cta-ghost:hover {
-            border-color: rgba(255, 122, 24, .40);
-            background: rgba(255, 122, 24, .10);
-            color: var(--accent2) !important;
-        }
+      .gw-earlybird img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
 
-        /* ── EARLY BIRD BANNER ── */
-        .gw-earlybird {
-            display: block;
-            width: 100%;
-            max-width: 760px;
-            margin: 24px auto 0;
-            border-radius: var(--radius-sm);
-            overflow: hidden;
-            border: 1px solid rgba(255, 122, 24, .40);
-            box-shadow: var(--shadow);
-            line-height: 0;
-            transition: transform .12s ease, border-color .15s ease, filter .12s ease;
-        }
-
-        .gw-earlybird:hover {
-            transform: translateY(-2px);
-            border-color: rgba(255, 122, 24, .70);
-            filter: brightness(1.04);
-        }
-
-        .gw-earlybird img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        /* ──────────────────────────────────────────────────────────
+      /* ──────────────────────────────────────────────────────────
        SECTION SHELL
     ────────────────────────────────────────────────────────── */
-        .gw-section {
-            padding: 64px 0;
-        }
+      .gw-section {
+        padding: 64px 0;
+      }
 
-        .gw-section-head {
-            text-align: center;
-            max-width: 680px;
-            margin: 0 auto 36px;
-        }
+      .gw-section-head {
+        text-align: center;
+        max-width: 680px;
+        margin: 0 auto 36px;
+      }
 
-        .gw-eyebrow {
-            display: inline-block;
-            color: var(--soft);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: .16em;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
+      .gw-eyebrow {
+        display: inline-block;
+        color: var(--soft);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
 
-        .gw-section-h {
-            font-size: clamp(26px, 3vw, 38px);
-            font-weight: 900;
-            letter-spacing: -.02em;
-            line-height: 1.1;
-            margin-bottom: 12px;
-        }
+      .gw-section-h {
+        font-size: clamp(26px, 3vw, 38px);
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        margin-bottom: 12px;
+      }
 
-        .gw-section-lede {
-            color: var(--muted);
-            font-size: 16px;
-        }
+      .gw-section-lede {
+        color: var(--muted);
+        font-size: 16px;
+      }
 
-        /* ──────────────────────────────────────────────────────────
+      /* ──────────────────────────────────────────────────────────
        PRIZE GRID
     ────────────────────────────────────────────────────────── */
+      .gw-prize-grid {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 1fr;
+      }
+
+      @media (min-width: 820px) {
         .gw-prize-grid {
-            display: grid;
-            gap: 24px;
-            grid-template-columns: 1fr;
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .gw-prize-card {
+        background: linear-gradient(180deg, var(--card2), var(--card));
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .gw-prize-media {
+        width: 100%;
+        aspect-ratio: 1406 / 978;
+        background:
+          linear-gradient(
+            135deg,
+            rgba(255, 122, 24, 0.18),
+            rgba(255, 178, 107, 0.04)
+          ),
+          var(--card2);
+        overflow: hidden;
+        border-bottom: 1px solid var(--line-soft);
+      }
+
+      .gw-prize-media img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .gw-prize-body {
+        padding: 22px 24px 22px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+
+      .gw-prize-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+
+      .gw-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 4px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--soft);
+        font-size: 10.5px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        line-height: 1.4;
+      }
+
+      .gw-badge-accent {
+        border-color: rgba(255, 122, 24, 0.45);
+        background: rgba(255, 122, 24, 0.12);
+        color: var(--accent2);
+      }
+
+      .gw-prize-title {
+        font-size: 19px;
+        font-weight: 900;
+        letter-spacing: -0.015em;
+        line-height: 1.22;
+        margin-bottom: 6px;
+      }
+
+      .gw-prize-meta {
+        color: var(--muted);
+        font-size: 13.5px;
+        font-weight: 600;
+        margin-bottom: 14px;
+      }
+
+      .gw-prize-meta .gw-prize-meta-dot {
+        color: var(--accent);
+        margin: 0 6px;
+      }
+
+      .gw-prize-desc {
+        color: var(--muted);
+        font-size: 14.5px;
+        line-height: 1.6;
+      }
+
+      .gw-prize-desc p + p {
+        margin-top: 10px;
+      }
+
+      /* ── Read more / clamp behavior ────────────────────────── */
+      .gw-prize-desc.gw-clamp {
+        position: relative;
+        max-height: 8.4em;
+        /* ~5 lines at 1.6 line-height */
+        overflow: hidden;
+      }
+
+      .gw-prize-desc.gw-clamp::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2.4em;
+        background: linear-gradient(
+          to bottom,
+          rgba(11, 15, 20, 0),
+          rgba(11, 15, 20, 0.78)
+        );
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+      }
+
+      .gw-prize-desc.gw-expanded {
+        max-height: none;
+      }
+
+      .gw-prize-desc.gw-expanded::after {
+        opacity: 0;
+      }
+
+      .gw-readmore {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        margin-top: 10px;
+        padding: 6px 0;
+        background: transparent;
+        border: 0;
+        color: var(--accent2);
+        font-family: inherit;
+        font-weight: 800;
+        font-size: 13px;
+        letter-spacing: 0.02em;
+        cursor: pointer;
+        transition: color 0.15s ease;
+        align-self: flex-start;
+      }
+
+      .gw-readmore:hover {
+        color: var(--accent);
+      }
+
+      .gw-readmore::after {
+        content: "↓";
+        display: inline-block;
+        font-size: 12px;
+        transition: transform 0.2s ease;
+      }
+
+      .gw-readmore[aria-expanded="true"]::after {
+        transform: rotate(180deg);
+      }
+
+      .gw-gear-list {
+        list-style: none;
+        padding: 0;
+        margin: 4px 0 0;
+        color: var(--muted);
+        font-size: 14.5px;
+      }
+
+      .gw-gear-list li {
+        padding: 8px 0 8px 18px;
+        border-bottom: 1px solid var(--line-soft);
+        position: relative;
+      }
+
+      .gw-gear-list li:last-child {
+        border-bottom: 0;
+      }
+
+      .gw-gear-list li::before {
+        content: "›";
+        position: absolute;
+        left: 0;
+        top: 7px;
+        color: var(--accent);
+        font-weight: 800;
+      }
+
+      .gw-prize-cta-row {
+        margin-top: auto;
+        padding-top: 18px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .gw-prize-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 122, 24, 0.4);
+        background: rgba(255, 122, 24, 0.1);
+        color: var(--accent2) !important;
+        font-size: 12.5px;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        text-decoration: none !important;
+        transition:
+          background 0.15s ease,
+          border-color 0.15s ease,
+          color 0.15s ease;
+      }
+
+      .gw-prize-cta:hover {
+        background: rgba(255, 122, 24, 0.2);
+        border-color: rgba(255, 122, 24, 0.65);
+        color: var(--accent) !important;
+      }
+
+      .gw-prize-cta-arrow {
+        display: inline-block;
+        transition: transform 0.15s ease;
+      }
+
+      .gw-prize-cta:hover .gw-prize-cta-arrow {
+        transform: translateX(3px);
+      }
+
+      /* ──────────────────────────────────────────────────────────
+       WINNER'S CHOICE
+    ────────────────────────────────────────────────────────── */
+      .gw-section-wc {
+        background: radial-gradient(
+          800px 400px at 50% 0%,
+          rgba(255, 122, 24, 0.08),
+          transparent 70%
+        );
+      }
+
+      .gw-wc-card {
+        background: linear-gradient(180deg, var(--card2), var(--card));
+        border: 1px solid rgba(255, 122, 24, 0.3);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      @media (min-width: 820px) {
+        .gw-wc-card {
+          grid-template-columns: 1fr 1.1fr;
+        }
+      }
+
+      .gw-wc-media {
+        aspect-ratio: 1406 / 978;
+        background:
+          linear-gradient(
+            135deg,
+            rgba(255, 122, 24, 0.22),
+            rgba(255, 178, 107, 0.06)
+          ),
+          var(--card2);
+        overflow: hidden;
+      }
+
+      @media (min-width: 820px) {
+        .gw-wc-media {
+          aspect-ratio: auto;
+          min-height: 100%;
+        }
+      }
+
+      .gw-wc-media img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .gw-wc-body {
+        padding: 32px 32px 32px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .gw-wc-title {
+        font-size: 24px;
+        font-weight: 900;
+        letter-spacing: -0.015em;
+        line-height: 1.2;
+        margin-bottom: 10px;
+      }
+
+      .gw-wc-callout {
+        margin-top: 18px;
+        padding: 14px 16px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 122, 24, 0.3);
+        background: rgba(255, 122, 24, 0.08);
+        color: var(--accent2);
+        font-size: 13.5px;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .gw-wc-cta-row {
+        margin-top: auto;
+        padding-top: 18px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      /* ──────────────────────────────────────────────────────────
+       PRICING TIERS
+    ────────────────────────────────────────────────────────── */
+      .gw-pricing-grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: 1fr;
+        margin-bottom: 30px;
+      }
+
+      @media (min-width: 640px) {
+        .gw-pricing-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (min-width: 960px) {
+        .gw-pricing-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      .gw-tier {
+        position: relative;
+        background: linear-gradient(180deg, var(--card2), var(--card));
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        padding: 22px 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .gw-tier-count {
+        color: var(--soft);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .gw-tier-price {
+        font-size: 38px;
+        font-weight: 900;
+        letter-spacing: -0.025em;
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+
+      .gw-tier-save {
+        color: var(--accent2);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        min-height: 16px;
+      }
+
+      .gw-tier-bonus {
+        margin-top: 14px;
+        padding-top: 14px;
+        border-top: 1px dashed rgba(255, 122, 24, 0.3);
+        color: var(--accent2);
+        font-size: 12.5px;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+
+      .gw-tier-best {
+        border-color: rgba(255, 122, 24, 0.55);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 122, 24, 0.12),
+          rgba(255, 122, 24, 0.04)
+        );
+      }
+
+      .gw-tier-best-flag {
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 4px 12px;
+        border-radius: 999px;
+        background: linear-gradient(
+          180deg,
+          var(--accent),
+          rgba(255, 122, 24, 0.85)
+        );
+        color: #101318;
+        font-size: 10.5px;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        box-shadow: 0 4px 12px rgba(255, 122, 24, 0.35);
+      }
+
+      .gw-tier-best .gw-tier-price {
+        background: linear-gradient(180deg, var(--accent2), var(--accent));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .gw-tickets-cta-wrap {
+        text-align: center;
+      }
+
+      .gw-cta-large {
+        font-size: 16px;
+        padding: 16px 32px;
+      }
+
+      .gw-fine-print {
+        color: var(--soft);
+        font-size: 12.5px;
+        margin-top: 14px;
+      }
+
+      /* ──────────────────────────────────────────────────────────
+       OTHER WAYS TO ENTER
+    ────────────────────────────────────────────────────────── */
+      .gw-methods-grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: 1fr;
+      }
+
+      @media (min-width: 720px) {
+        .gw-methods-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .gw-method {
+        background: linear-gradient(180deg, var(--card2), var(--card));
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        padding: 22px 22px 24px;
+        box-shadow: var(--shadow-sm);
+        text-align: center;
+      }
+
+      .gw-method-icon-wrap {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 999px;
+        background: rgba(255, 122, 24, 0.12);
+        border: 1px solid rgba(255, 122, 24, 0.3);
+        color: var(--accent2);
+        margin-bottom: 12px;
+      }
+
+      .gw-method-label {
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--soft);
+        margin-bottom: 6px;
+      }
+
+      .gw-method-value {
+        font-size: 17px;
+        font-weight: 800;
+        color: var(--text);
+        margin-bottom: 4px;
+        word-break: break-word;
+      }
+
+      .gw-method-value a {
+        color: var(--text) !important;
+      }
+
+      .gw-method-value a:hover {
+        color: var(--accent2) !important;
+      }
+
+      .gw-method-detail {
+        color: var(--muted);
+        font-size: 13.5px;
+        line-height: 1.5;
+      }
+
+      /* ──────────────────────────────────────────────────────────
+       FOOTER
+    ────────────────────────────────────────────────────────── */
+      footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        color: rgba(255, 255, 255, 0.45);
+        padding: 24px 20px;
+        text-align: center;
+        font-size: 13px;
+      }
+
+      /* ──────────────────────────────────────────────────────────
+       MOBILE
+    ────────────────────────────────────────────────────────── */
+      @media (max-width: 640px) {
+        .gw-hero-back {
+          top: 12px;
+          left: 12px;
         }
 
-        @media (min-width: 820px) {
-            .gw-prize-grid {
-                grid-template-columns: 1fr 1fr;
-            }
+        .gw-hero {
+          padding-bottom: 24px;
         }
 
-        .gw-prize-card {
-            background: linear-gradient(180deg, var(--card2), var(--card));
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
+        .gw-hero-content {
+          padding: 22px 16px 0;
         }
 
-        .gw-prize-media {
-            width: 100%;
-            aspect-ratio: 1406 / 978;
-            background:
-                linear-gradient(135deg, rgba(255, 122, 24, .18), rgba(255, 178, 107, .04)),
-                var(--card2);
-            overflow: hidden;
-            border-bottom: 1px solid var(--line-soft);
-        }
-
-        .gw-prize-media img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .gw-section {
+          padding: 48px 0;
         }
 
         .gw-prize-body {
-            padding: 22px 24px 22px;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-
-        .gw-prize-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 12px;
-        }
-
-        .gw-badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 4px 10px;
-            border-radius: 999px;
-            border: 1px solid var(--line);
-            background: rgba(255, 255, 255, .04);
-            color: var(--soft);
-            font-size: 10.5px;
-            font-weight: 800;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-            line-height: 1.4;
-        }
-
-        .gw-badge-accent {
-            border-color: rgba(255, 122, 24, .45);
-            background: rgba(255, 122, 24, .12);
-            color: var(--accent2);
+          padding: 20px 20px 20px;
         }
 
         .gw-prize-title {
-            font-size: 19px;
-            font-weight: 900;
-            letter-spacing: -.015em;
-            line-height: 1.22;
-            margin-bottom: 6px;
-        }
-
-        .gw-prize-meta {
-            color: var(--muted);
-            font-size: 13.5px;
-            font-weight: 600;
-            margin-bottom: 14px;
-        }
-
-        .gw-prize-meta .gw-prize-meta-dot {
-            color: var(--accent);
-            margin: 0 6px;
-        }
-
-        .gw-prize-desc {
-            color: var(--muted);
-            font-size: 14.5px;
-            line-height: 1.6;
-        }
-
-        .gw-prize-desc p+p {
-            margin-top: 10px;
-        }
-
-        /* ── Read more / clamp behavior ────────────────────────── */
-        .gw-prize-desc.gw-clamp {
-            position: relative;
-            max-height: 8.4em;
-            /* ~5 lines at 1.6 line-height */
-            overflow: hidden;
-        }
-
-        .gw-prize-desc.gw-clamp::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2.4em;
-            background: linear-gradient(to bottom, rgba(11, 15, 20, 0), rgba(11, 15, 20, 0.78));
-            pointer-events: none;
-            transition: opacity .2s ease;
-        }
-
-        .gw-prize-desc.gw-expanded {
-            max-height: none;
-        }
-
-        .gw-prize-desc.gw-expanded::after {
-            opacity: 0;
-        }
-
-        .gw-readmore {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            margin-top: 10px;
-            padding: 6px 0;
-            background: transparent;
-            border: 0;
-            color: var(--accent2);
-            font-family: inherit;
-            font-weight: 800;
-            font-size: 13px;
-            letter-spacing: .02em;
-            cursor: pointer;
-            transition: color .15s ease;
-            align-self: flex-start;
-        }
-
-        .gw-readmore:hover {
-            color: var(--accent);
-        }
-
-        .gw-readmore::after {
-            content: "↓";
-            display: inline-block;
-            font-size: 12px;
-            transition: transform .2s ease;
-        }
-
-        .gw-readmore[aria-expanded="true"]::after {
-            transform: rotate(180deg);
-        }
-
-        .gw-gear-list {
-            list-style: none;
-            padding: 0;
-            margin: 4px 0 0;
-            color: var(--muted);
-            font-size: 14.5px;
-        }
-
-        .gw-gear-list li {
-            padding: 8px 0 8px 18px;
-            border-bottom: 1px solid var(--line-soft);
-            position: relative;
-        }
-
-        .gw-gear-list li:last-child {
-            border-bottom: 0;
-        }
-
-        .gw-gear-list li::before {
-            content: "›";
-            position: absolute;
-            left: 0;
-            top: 7px;
-            color: var(--accent);
-            font-weight: 800;
-        }
-
-        .gw-prize-cta-row {
-            margin-top: auto;
-            padding-top: 18px;
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .gw-prize-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 7px 14px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 122, 24, .40);
-            background: rgba(255, 122, 24, .10);
-            color: var(--accent2) !important;
-            font-size: 12.5px;
-            font-weight: 800;
-            letter-spacing: .02em;
-            text-decoration: none !important;
-            transition: background .15s ease, border-color .15s ease, color .15s ease;
-        }
-
-        .gw-prize-cta:hover {
-            background: rgba(255, 122, 24, .20);
-            border-color: rgba(255, 122, 24, .65);
-            color: var(--accent) !important;
-        }
-
-        .gw-prize-cta-arrow {
-            display: inline-block;
-            transition: transform .15s ease;
-        }
-
-        .gw-prize-cta:hover .gw-prize-cta-arrow {
-            transform: translateX(3px);
-        }
-
-        /* ──────────────────────────────────────────────────────────
-       WINNER'S CHOICE
-    ────────────────────────────────────────────────────────── */
-        .gw-section-wc {
-            background: radial-gradient(800px 400px at 50% 0%, rgba(255, 122, 24, .08), transparent 70%);
-        }
-
-        .gw-wc-card {
-            background: linear-gradient(180deg, var(--card2), var(--card));
-            border: 1px solid rgba(255, 122, 24, .30);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            display: grid;
-            grid-template-columns: 1fr;
-        }
-
-        @media (min-width: 820px) {
-            .gw-wc-card {
-                grid-template-columns: 1fr 1.1fr;
-            }
-        }
-
-        .gw-wc-media {
-            aspect-ratio: 1406 / 978;
-            background:
-                linear-gradient(135deg, rgba(255, 122, 24, .22), rgba(255, 178, 107, .06)),
-                var(--card2);
-            overflow: hidden;
-        }
-
-        @media (min-width: 820px) {
-            .gw-wc-media {
-                aspect-ratio: auto;
-                min-height: 100%;
-            }
-        }
-
-        .gw-wc-media img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+          font-size: 17px;
         }
 
         .gw-wc-body {
-            padding: 32px 32px 32px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .gw-wc-title {
-            font-size: 24px;
-            font-weight: 900;
-            letter-spacing: -.015em;
-            line-height: 1.2;
-            margin-bottom: 10px;
-        }
-
-        .gw-wc-callout {
-            margin-top: 18px;
-            padding: 14px 16px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 122, 24, .30);
-            background: rgba(255, 122, 24, .08);
-            color: var(--accent2);
-            font-size: 13.5px;
-            font-weight: 600;
-            line-height: 1.5;
-        }
-
-        .gw-wc-cta-row {
-            margin-top: auto;
-            padding-top: 18px;
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        /* ──────────────────────────────────────────────────────────
-       PRICING TIERS
-    ────────────────────────────────────────────────────────── */
-        .gw-pricing-grid {
-            display: grid;
-            gap: 16px;
-            grid-template-columns: 1fr;
-            margin-bottom: 30px;
-        }
-
-        @media (min-width: 640px) {
-            .gw-pricing-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (min-width: 960px) {
-            .gw-pricing-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
+          padding: 24px 22px 24px;
         }
 
         .gw-tier {
-            position: relative;
-            background: linear-gradient(180deg, var(--card2), var(--card));
-            border: 1px solid var(--line);
-            border-radius: var(--radius-sm);
-            padding: 22px 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .gw-tier-count {
-            color: var(--soft);
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-            margin-bottom: 8px;
+          padding: 20px 16px;
         }
 
         .gw-tier-price {
-            font-size: 38px;
-            font-weight: 900;
-            letter-spacing: -.025em;
-            line-height: 1;
-            margin-bottom: 8px;
+          font-size: 34px;
         }
-
-        .gw-tier-save {
-            color: var(--accent2);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: .06em;
-            text-transform: uppercase;
-            min-height: 16px;
-        }
-
-        .gw-tier-bonus {
-            margin-top: 14px;
-            padding-top: 14px;
-            border-top: 1px dashed rgba(255, 122, 24, .30);
-            color: var(--accent2);
-            font-size: 12.5px;
-            font-weight: 700;
-            line-height: 1.4;
-        }
-
-        .gw-tier-best {
-            border-color: rgba(255, 122, 24, .55);
-            background: linear-gradient(180deg, rgba(255, 122, 24, .12), rgba(255, 122, 24, .04));
-        }
-
-        .gw-tier-best-flag {
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 4px 12px;
-            border-radius: 999px;
-            background: linear-gradient(180deg, var(--accent), rgba(255, 122, 24, .85));
-            color: #101318;
-            font-size: 10.5px;
-            font-weight: 900;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-            box-shadow: 0 4px 12px rgba(255, 122, 24, .35);
-        }
-
-        .gw-tier-best .gw-tier-price {
-            background: linear-gradient(180deg, var(--accent2), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .gw-tickets-cta-wrap {
-            text-align: center;
-        }
-
-        .gw-cta-large {
-            font-size: 16px;
-            padding: 16px 32px;
-        }
-
-        .gw-fine-print {
-            color: var(--soft);
-            font-size: 12.5px;
-            margin-top: 14px;
-        }
-
-        /* ──────────────────────────────────────────────────────────
-       OTHER WAYS TO ENTER
-    ────────────────────────────────────────────────────────── */
-        .gw-methods-grid {
-            display: grid;
-            gap: 16px;
-            grid-template-columns: 1fr;
-        }
-
-        @media (min-width: 720px) {
-            .gw-methods-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .gw-method {
-            background: linear-gradient(180deg, var(--card2), var(--card));
-            border: 1px solid var(--line);
-            border-radius: var(--radius-sm);
-            padding: 22px 22px 24px;
-            box-shadow: var(--shadow-sm);
-            text-align: center;
-        }
-
-        .gw-method-icon-wrap {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            border-radius: 999px;
-            background: rgba(255, 122, 24, .12);
-            border: 1px solid rgba(255, 122, 24, .30);
-            color: var(--accent2);
-            margin-bottom: 12px;
-        }
-
-        .gw-method-label {
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: .14em;
-            text-transform: uppercase;
-            color: var(--soft);
-            margin-bottom: 6px;
-        }
-
-        .gw-method-value {
-            font-size: 17px;
-            font-weight: 800;
-            color: var(--text);
-            margin-bottom: 4px;
-            word-break: break-word;
-        }
-
-        .gw-method-value a {
-            color: var(--text) !important;
-        }
-
-        .gw-method-value a:hover {
-            color: var(--accent2) !important;
-        }
-
-        .gw-method-detail {
-            color: var(--muted);
-            font-size: 13.5px;
-            line-height: 1.5;
-        }
-
-        /* ──────────────────────────────────────────────────────────
-       FOOTER
-    ────────────────────────────────────────────────────────── */
-        footer {
-            border-top: 1px solid rgba(255, 255, 255, .08);
-            color: rgba(255, 255, 255, .45);
-            padding: 24px 20px;
-            text-align: center;
-            font-size: 13px;
-        }
-
-        /* ──────────────────────────────────────────────────────────
-       MOBILE
-    ────────────────────────────────────────────────────────── */
-        @media (max-width: 640px) {
-            .gw-hero-back {
-                top: 12px;
-                left: 12px;
-            }
-
-            .gw-hero {
-                padding-bottom: 24px;
-            }
-
-            .gw-hero-content {
-                padding: 22px 16px 0;
-            }
-
-            .gw-section {
-                padding: 48px 0;
-            }
-
-            .gw-prize-body {
-                padding: 20px 20px 20px;
-            }
-
-            .gw-prize-title {
-                font-size: 17px;
-            }
-
-            .gw-wc-body {
-                padding: 24px 22px 24px;
-            }
-
-            .gw-tier {
-                padding: 20px 16px;
-            }
-
-            .gw-tier-price {
-                font-size: 34px;
-            }
-        }
+      }
     </style>
     <!-- PostHog analytics (shared across all pages) -->
     <script src="/analytics.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <!--
   ================================================================
   EPIC OUTDOORS - SHARED NAV HEADER
@@ -938,311 +1004,342 @@
   ================================================================
 -->
     <style>
-        /* ===== Epic Outdoors shared nav header ===== */
-        .eo-header {
-            position: relative;
-            z-index: 100;
-            background: #0b0f14;
-            border-bottom: 1px solid rgba(255, 255, 255, .12);
-            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
+      /* ===== Epic Outdoors shared nav header ===== */
+      .eo-header {
+        position: relative;
+        z-index: 100;
+        background: #0b0f14;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+      }
 
-        .eo-header *,
-        .eo-header *::before,
-        .eo-header *::after {
-            box-sizing: border-box;
-        }
+      .eo-header *,
+      .eo-header *::before,
+      .eo-header *::after {
+        box-sizing: border-box;
+      }
 
+      .eo-header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 16px 24px;
+      }
+
+      .eo-logo {
+        display: inline-flex;
+        align-items: center;
+        line-height: 0;
+        flex-shrink: 0;
+      }
+
+      .eo-logo img {
+        display: block;
+        height: 36px;
+        width: auto;
+      }
+
+      /* nav */
+      .eo-nav {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+      }
+
+      .eo-nav-link {
+        color: rgba(255, 255, 255, 0.92);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: color 0.15s ease;
+      }
+
+      .eo-nav-link:hover {
+        color: #ff7a18;
+      }
+
+      /* Join button + dropdown */
+      .eo-join {
+        position: relative;
+      }
+
+      .eo-join-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 9px 18px;
+        border: 1px solid #ff7a18;
+        border-radius: 999px;
+        background: #ff7a18;
+        color: #101318;
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: filter 0.12s ease;
+      }
+
+      .eo-join-btn:hover {
+        filter: brightness(1.07);
+      }
+
+      .eo-caret {
+        font-size: 10px;
+        line-height: 1;
+        transition: transform 0.18s ease;
+      }
+
+      .eo-join-btn[aria-expanded="true"] .eo-caret {
+        transform: rotate(180deg);
+      }
+
+      .eo-join-menu {
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        min-width: 224px;
+        flex-direction: column;
+        padding: 8px;
+        background: #141a21;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 14px;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+      }
+
+      .eo-join-btn[aria-expanded="true"] + .eo-join-menu {
+        display: flex;
+      }
+
+      .eo-join-menu a {
+        padding: 11px 14px;
+        border-radius: 9px;
+        color: rgba(255, 255, 255, 0.92);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        text-decoration: none;
+        white-space: nowrap;
+        transition:
+          background 0.12s ease,
+          color 0.12s ease;
+      }
+
+      .eo-join-menu a:hover {
+        background: rgba(255, 122, 24, 0.14);
+        color: #ffb26b;
+      }
+
+      /* hamburger (mobile only) */
+      .eo-burger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.04);
+        cursor: pointer;
+      }
+
+      .eo-burger span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 2px;
+        transition:
+          transform 0.18s ease,
+          opacity 0.18s ease;
+      }
+
+      .eo-header.eo-open .eo-burger span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      .eo-header.eo-open .eo-burger span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .eo-header.eo-open .eo-burger span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      /* ===== mobile layout ===== */
+      @media (max-width: 720px) {
         .eo-header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 16px 24px;
-        }
-
-        .eo-logo {
-            display: inline-flex;
-            align-items: center;
-            line-height: 0;
-            flex-shrink: 0;
+          padding: 14px 16px;
         }
 
         .eo-logo img {
-            display: block;
-            height: 36px;
-            width: auto;
+          height: 30px;
         }
 
-        /* nav */
+        .eo-burger {
+          display: flex;
+        }
+
         .eo-nav {
-            display: flex;
-            align-items: center;
-            gap: 28px;
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0;
+          padding: 6px 16px 16px;
+          background: #0b0f14;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+          box-shadow: 0 24px 50px rgba(0, 0, 0, 0.55);
+        }
+
+        .eo-header.eo-open .eo-nav {
+          display: flex;
         }
 
         .eo-nav-link {
-            color: rgba(255, 255, 255, .92);
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: color .15s ease;
+          padding: 14px 6px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.07);
         }
 
-        .eo-nav-link:hover {
-            color: #ff7a18;
-        }
-
-        /* Join button + dropdown */
         .eo-join {
-            position: relative;
+          width: 100%;
         }
 
         .eo-join-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            padding: 9px 18px;
-            border: 1px solid #ff7a18;
-            border-radius: 999px;
-            background: #ff7a18;
-            color: #101318;
-            font-family: inherit;
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: filter .12s ease;
-        }
-
-        .eo-join-btn:hover {
-            filter: brightness(1.07);
-        }
-
-        .eo-caret {
-            font-size: 10px;
-            line-height: 1;
-            transition: transform .18s ease;
-        }
-
-        .eo-join-btn[aria-expanded="true"] .eo-caret {
-            transform: rotate(180deg);
+          width: 100%;
+          justify-content: space-between;
+          margin-top: 14px;
+          padding: 14px 18px;
         }
 
         .eo-join-menu {
-            display: none;
-            position: absolute;
-            top: calc(100% + 10px);
-            right: 0;
-            min-width: 224px;
-            flex-direction: column;
-            padding: 8px;
-            background: #141a21;
-            border: 1px solid rgba(255, 255, 255, .12);
-            border-radius: 14px;
-            box-shadow: 0 18px 50px rgba(0, 0, 0, .55);
+          position: static;
+          min-width: 0;
+          margin-top: 8px;
+          background: rgba(255, 255, 255, 0.04);
+          box-shadow: none;
         }
-
-        .eo-join-btn[aria-expanded="true"]+.eo-join-menu {
-            display: flex;
-        }
-
-        .eo-join-menu a {
-            padding: 11px 14px;
-            border-radius: 9px;
-            color: rgba(255, 255, 255, .92);
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: .04em;
-            text-transform: uppercase;
-            text-decoration: none;
-            white-space: nowrap;
-            transition: background .12s ease, color .12s ease;
-        }
-
-        .eo-join-menu a:hover {
-            background: rgba(255, 122, 24, .14);
-            color: #ffb26b;
-        }
-
-        /* hamburger (mobile only) */
-        .eo-burger {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            gap: 5px;
-            width: 42px;
-            height: 42px;
-            padding: 0;
-            border: 1px solid rgba(255, 255, 255, .14);
-            border-radius: 10px;
-            background: rgba(255, 255, 255, .04);
-            cursor: pointer;
-        }
-
-        .eo-burger span {
-            display: block;
-            width: 18px;
-            height: 2px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, .92);
-            border-radius: 2px;
-            transition: transform .18s ease, opacity .18s ease;
-        }
-
-        .eo-header.eo-open .eo-burger span:nth-child(1) {
-            transform: translateY(7px) rotate(45deg);
-        }
-
-        .eo-header.eo-open .eo-burger span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .eo-header.eo-open .eo-burger span:nth-child(3) {
-            transform: translateY(-7px) rotate(-45deg);
-        }
-
-        /* ===== mobile layout ===== */
-        @media (max-width: 720px) {
-            .eo-header-inner {
-                padding: 14px 16px;
-            }
-
-            .eo-logo img {
-                height: 30px;
-            }
-
-            .eo-burger {
-                display: flex;
-            }
-
-            .eo-nav {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0;
-                padding: 6px 16px 16px;
-                background: #0b0f14;
-                border-bottom: 1px solid rgba(255, 255, 255, .12);
-                box-shadow: 0 24px 50px rgba(0, 0, 0, .55);
-            }
-
-            .eo-header.eo-open .eo-nav {
-                display: flex;
-            }
-
-            .eo-nav-link {
-                padding: 14px 6px;
-                border-bottom: 1px solid rgba(255, 255, 255, .07);
-            }
-
-            .eo-join {
-                width: 100%;
-            }
-
-            .eo-join-btn {
-                width: 100%;
-                justify-content: space-between;
-                margin-top: 14px;
-                padding: 14px 18px;
-            }
-
-            .eo-join-menu {
-                position: static;
-                min-width: 0;
-                margin-top: 8px;
-                background: rgba(255, 255, 255, .04);
-                box-shadow: none;
-            }
-        }
+      }
     </style>
 
     <header class="eo-header" id="eoHeader">
-        <div class="eo-header-inner">
-            <a class="eo-logo" href="/" aria-label="Epic Outdoors home">
-                <img src="/assets/00-emailLogoWideH_eurostile.png" alt="Epic Outdoors" width="2000" height="261">
-            </a>
+      <div class="eo-header-inner">
+        <a class="eo-logo" href="/" aria-label="Epic Outdoors home">
+          <img
+            src="/assets/00-emailLogoWideH_eurostile.png"
+            alt="Epic Outdoors"
+            width="2000"
+            height="261"
+          />
+        </a>
 
-            <button class="eo-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="eoNav">
-                <span></span><span></span><span></span>
+        <button
+          class="eo-burger"
+          type="button"
+          aria-label="Menu"
+          aria-expanded="false"
+          aria-controls="eoNav"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="eo-nav" id="eoNav" aria-label="Primary">
+          <div class="eo-join">
+            <button
+              class="eo-join-btn"
+              type="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Join <span class="eo-caret" aria-hidden="true">&#9662;</span>
             </button>
-
-            <nav class="eo-nav" id="eoNav" aria-label="Primary">
-                <div class="eo-join">
-                    <button class="eo-join-btn" type="button" aria-haspopup="true" aria-expanded="false">
-                        Join <span class="eo-caret" aria-hidden="true">&#9662;</span>
-                    </button>
-                    <div class="eo-join-menu" role="menu">
-                        <a role="menuitem" href="/membership/">Membership</a>
-                        <a role="menuitem" href="/services/license-application-service/">Application Service</a>
-                    </div>
-                </div>
-                <a class="eo-nav-link" href="/services/epic-hunt-giveaways/">Giveaway</a>
-                <a class="eo-nav-link" href="https://epicoutdoorsmember.com">Login</a>
-                <a class="eo-nav-link" href="https://store.epicoutdoors.com">Store</a>
-            </nav>
-        </div>
+            <div class="eo-join-menu" role="menu">
+              <a role="menuitem" href="/membership/">Membership</a>
+              <a role="menuitem" href="/services/license-application-service/"
+                >Application Service</a
+              >
+            </div>
+          </div>
+          <a class="eo-nav-link" href="/services/epic-hunt-giveaways/"
+            >Giveaway</a
+          >
+          <a class="eo-nav-link" href="https://epicoutdoorsmember.com">Login</a>
+          <a class="eo-nav-link" href="https://store.epicoutdoors.com">Store</a>
+        </nav>
+      </div>
     </header>
 
     <script>
-        (function () {
-            var header = document.getElementById('eoHeader');
-            if (!header) return;
+      (function () {
+        var header = document.getElementById("eoHeader");
+        if (!header) return;
 
-            var burger = header.querySelector('.eo-burger');
-            var joinBtn = header.querySelector('.eo-join-btn');
+        var burger = header.querySelector(".eo-burger");
+        var joinBtn = header.querySelector(".eo-join-btn");
 
-            function setJoin(open) {
-                if (joinBtn) joinBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-            }
+        function setJoin(open) {
+          if (joinBtn)
+            joinBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        }
 
-            function setMenu(open) {
-                header.classList.toggle('eo-open', open);
-                if (burger) burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-                if (!open) setJoin(false);
-            }
+        function setMenu(open) {
+          header.classList.toggle("eo-open", open);
+          if (burger)
+            burger.setAttribute("aria-expanded", open ? "true" : "false");
+          if (!open) setJoin(false);
+        }
 
-            if (burger) {
-                burger.addEventListener('click', function () {
-                    setMenu(!header.classList.contains('eo-open'));
-                });
-            }
+        if (burger) {
+          burger.addEventListener("click", function () {
+            setMenu(!header.classList.contains("eo-open"));
+          });
+        }
 
-            if (joinBtn) {
-                joinBtn.addEventListener('click', function () {
-                    setJoin(joinBtn.getAttribute('aria-expanded') !== 'true');
-                });
-            }
+        if (joinBtn) {
+          joinBtn.addEventListener("click", function () {
+            setJoin(joinBtn.getAttribute("aria-expanded") !== "true");
+          });
+        }
 
-            // close the dropdown / menu when tapping outside of it
-            document.addEventListener('click', function (e) {
-                if (!e.target.closest('.eo-join')) setJoin(false);
-                if (!e.target.closest('.eo-header')) setMenu(false);
-            });
+        // close the dropdown / menu when tapping outside of it
+        document.addEventListener("click", function (e) {
+          if (!e.target.closest(".eo-join")) setJoin(false);
+          if (!e.target.closest(".eo-header")) setMenu(false);
+        });
 
-            // close on Escape
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape') setMenu(false);
-            });
-        })();
+        // close on Escape
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") setMenu(false);
+        });
+      })();
     </script>
     <!-- ===================== END EPIC OUTDOORS NAV HEADER ===================== -->
 
     <main>
-
-        <!-- ────────────────── HERO ────────────────── -->
-        <section class="gw-hero">
-
-            <!-- <div class="gw-hero-back">
+      <!-- ────────────────── HERO ────────────────── -->
+      <section class="gw-hero">
+        <!-- <div class="gw-hero-back">
                 <a href="/" class="eo-back-btn">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -1252,569 +1349,782 @@
                 </a>
             </div> -->
 
-            <div class="gw-hero-image-wrap">
-                <img src="assets/26S-Website-NewHeroHeader.png"
-                    alt="2026 Summer Epic Hunt &amp; Optics Giveaway — Win an Epic Hunt. 8 dream hunts available.">
+        <div class="gw-hero-image-wrap">
+          <img
+            src="assets/26S-Website-NewHeroHeader.png"
+            alt="2026 Summer Epic Hunt &amp; Optics Giveaway — Win an Epic Hunt. 8 dream hunts available."
+          />
+        </div>
+        <div class="gw-hero-content">
+          <div class="gw-kicker">
+            <span class="gw-pulse"></span>
+            <span>Epic Outdoors</span>
+          </div>
+          <h1>Epic Hunts Giveaway&trade;. One Epic Gear Package.</h1>
+          <p class="gw-hero-sub">
+            Apply your tickets to a single hunt or split them across the lineup.
+            Every $500 package also earns an entry into the
+            <strong>$15,000 Winner's Choice Hunt</strong>.
+          </p>
+
+          <div class="gw-deadline-pill">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            Deadline: June 22, 2026
+          </div>
+
+          <div class="gw-hero-perks">
+            <svg
+              class="gw-hero-perks-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="20 12 20 22 4 22 4 12"></polyline>
+              <rect x="2" y="7" width="20" height="5"></rect>
+              <line x1="12" y1="22" x2="12" y2="7"></line>
+              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+            </svg>
+            <div class="gw-hero-perks-content">
+              New members receive <strong>1 free ticket</strong> on signup
+              ($150). Existing members earn <strong>1 free ticket</strong> for
+              each new member they refer. Either way — that's another shot at
+              the prize lineup.
             </div>
-            <div class="gw-hero-content">
-                <div class="gw-kicker">
-                    <span class="gw-pulse"></span>
-                    <span>Epic Outdoors</span>
+          </div>
+
+          <div class="gw-cta-row">
+            <a
+              href="https://epicoutdoorsmember.com/tickets.asp"
+              class="gw-cta gw-cta-primary"
+              >Buy Tickets →</a
+            >
+            <a href="#tickets" class="gw-cta gw-cta-ghost">View pricing</a>
+          </div>
+
+          <!-- Early Bird Drawing -->
+          <a
+            class="gw-earlybird"
+            href="https://epicoutdoorsmember.com/tickets.asp"
+            aria-label="Early Bird Drawing: buy tickets before May 31 to earn a bonus entry for a TS Customs precision rifle"
+          >
+            <img
+              src="/assets/26S_WeeklyZulu6_v1.jpeg"
+              alt="Early Bird Drawing. Get one bonus entry for every ticket you purchase before May 31. Win a TS Customs precision rifle, a $6,250 value."
+              width="1000"
+              height="380"
+            />
+          </a>
+        </div>
+      </section>
+
+      <!-- ────────────────── PRIZE GRID ────────────────── -->
+      <section class="gw-section" id="prizes">
+        <div class="gw-container">
+          <div class="gw-section-head">
+            <h2 class="gw-section-h">HUNT PACKAGES</h2>
+          </div>
+
+          <div class="gw-prize-grid">
+            <!-- 1. YUKON DALL -->
+            <article class="gw-prize-card">
+              <div class="gw-prize-media">
+                <img
+                  src="assets/26S-Website_YT_Dall.jpeg"
+                  alt="Win a 2027 Yukon Dall Sheep Hunt"
+                  onerror="this.style.display = 'none'"
+                />
+              </div>
+              <div class="gw-prize-body">
+                <div class="gw-prize-badges">
+                  <span class="gw-badge gw-badge-accent">$40,000 Value</span>
+                  <span class="gw-badge">10 Days</span>
                 </div>
-                <h1>Epic Hunts Giveaway&trade;. One Epic Gear Package.</h1>
-                <p class="gw-hero-sub">
-                    Apply your tickets to a single hunt or split them across the lineup. Every $500 package also
-                    earns an entry into the <strong>$15,000 Winner's Choice Hunt</strong>.
+                <h3 class="gw-prize-title">2027 Yukon Dall Sheep Hunt</h3>
+                <div class="gw-prize-meta">
+                  North Curl Outfitters
+                  <span class="gw-prize-meta-dot">·</span> July 28 – Aug 7, 2027
+                </div>
+                <div class="gw-prize-desc gw-clamp">
+                  <p>
+                    Win this 10 day Dall sheep hunt with North Curl Outfitters
+                    in the Yukon—a $40,000 value! Hunt dates are July 28-August
+                    7, 2027.
+                  </p>
+                  <p>
+                    This outfitter is a third-generation outfitter and has a
+                    great reputation. They specialize in remote
+                    horseback/backpack hunting trips in the Kluane and Southern
+                    Lakes regions, known for high densities of Dall sheep. Their
+                    goal is to provide each and every client with a hunting
+                    adventure of a lifetime. This hunt is the first hunt of the
+                    year, which is usually incredible. This hunt is 10 days,
+                    including fly-in days. They have multiple camps with cabins
+                    and will most likely set up a spike camp during your hunt,
+                    as well. We expect this to be a very high success hunt on
+                    quality rams!
+                  </p>
+                </div>
+                <button type="button" class="gw-readmore" aria-expanded="false">
+                  <span>Read more</span>
+                </button>
+                <div class="gw-prize-cta-row">
+                  <a
+                    href="https://epicoutdoorsmember.com/tickets.asp"
+                    class="gw-prize-cta"
+                  >
+                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- 2. BC COMBO -->
+            <article class="gw-prize-card">
+              <div class="gw-prize-media">
+                <img
+                  src="assets/26S-Website_BC_Combo.jpeg"
+                  alt="Win a 2026 British Columbia Super Combo Hunt"
+                  onerror="this.style.display = 'none'"
+                />
+              </div>
+              <div class="gw-prize-body">
+                <div class="gw-prize-badges">
+                  <span class="gw-badge">13 Days</span>
+                  <span class="gw-badge">6 Species</span>
+                  <span class="gw-badge gw-badge-accent">No Harvest Fees</span>
+                </div>
+                <h3 class="gw-prize-title">
+                  2026 British Columbia Super Combo Hunt
+                </h3>
+                <div class="gw-prize-meta">
+                  Terminus Mountain Outfitters
+                  <span class="gw-prize-meta-dot">·</span> Sept 16 – 28, 2026
+                </div>
+                <div class="gw-prize-desc gw-clamp">
+                  <p>
+                    Win this 13-day Canadian Moose, Mountain Caribou, Elk,
+                    Mountain Goat, Black Bear, and Wolf hunt with Terminus
+                    Mountain Outfitters. Hunt dates are Sept 16-28, 2026.
+                  </p>
+                  <p>
+                    This hunt is truly an adventure in some of the most
+                    breathtaking country in northern British Columbia. This is a
+                    longer, 13-day, 1x1 hunt that is a true combo hunt for all
+                    species you encounter. This is quite literally the dream
+                    hunt for anyone looking to experience the diversity that
+                    British Columbia has to offer! This hunt is conducted by
+                    horseback, while you stay either in a heated wall tent or
+                    wooden cabin, or an occasional spike camp to target a
+                    certain species. This area is known for consistently
+                    producing record book Canadian moose and is one of the few
+                    places you can still hunt Mountain caribou in BC. This is
+                    quite simply one of the best combo hunts Canada has to
+                    offer, and there are NO harvest fees for these species!
+                  </p>
+                </div>
+                <button type="button" class="gw-readmore" aria-expanded="false">
+                  <span>Read more</span>
+                </button>
+                <div class="gw-prize-cta-row">
+                  <a
+                    href="https://epicoutdoorsmember.com/tickets.asp"
+                    class="gw-prize-cta"
+                  >
+                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- 3. AK COMBO -->
+            <article class="gw-prize-card">
+              <div class="gw-prize-media">
+                <img
+                  src="assets/26S-Website_AK_Combo.jpeg"
+                  alt="Win a 2026 Alaska Arctic Grizzly and Barren Ground Caribou Combo Hunt"
+                  onerror="this.style.display = 'none'"
+                />
+              </div>
+              <div class="gw-prize-body">
+                <div class="gw-prize-badges">
+                  <span class="gw-badge">13 Days</span>
+                  <span class="gw-badge gw-badge-accent"
+                    >Air Charter Covered</span
+                  >
+                  <span class="gw-badge gw-badge-accent">No Harvest Fees</span>
+                </div>
+                <h3 class="gw-prize-title">
+                  2026 Alaska Arctic Grizzly &amp; Barren Ground Caribou Combo
+                </h3>
+                <div class="gw-prize-meta">
+                  Alaskan Perimeter Expeditions
+                  <span class="gw-prize-meta-dot">·</span> Sept 1 – 13, 2026
+                </div>
+                <div class="gw-prize-desc gw-clamp">
+                  <p>
+                    Win this 13-day Arctic Grizzly bear and Barren Ground
+                    Caribou Combo hunt with Alaskan Perimeter Expeditions. Hunt
+                    dates are Sept 1-13, 2026.
+                  </p>
+                  <p>
+                    Hunt northern Alaska's Arctic National Wildlife Refuge, for
+                    Arctic Grizzlies and Barren Ground caribou in an exclusive
+                    guide use area. These bears have been in the 7'6" to 8'6"
+                    range, and have coloration ranging from the classic blonde
+                    body with dark legs to chocolate-colored bears. Some great
+                    caribou bulls are also found in this area, and you can
+                    harvest both species with NO harvest fees! This hunt is
+                    conducted out of a temporary base camp, where you will hike
+                    and glass for bears and caribou simultaneously. This is a
+                    great opportunity to experience the vast wilderness of
+                    Alaska while hunting two iconic Alaskan species. As a bonus,
+                    we will also cover the $5,000 round trip air charter for
+                    this hunt! Dall sheep can also be added for a trophy fee.
+                  </p>
+                </div>
+                <button type="button" class="gw-readmore" aria-expanded="false">
+                  <span>Read more</span>
+                </button>
+                <div class="gw-prize-cta-row">
+                  <a
+                    href="https://epicoutdoorsmember.com/tickets.asp"
+                    class="gw-prize-cta"
+                  >
+                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- 4. MEXICO COMBO -->
+            <article class="gw-prize-card">
+              <div class="gw-prize-media">
+                <img
+                  src="assets/26S-Website_MX_Combo.jpeg"
+                  alt="Win a 2026-2027 Mexico Mule Deer and Coues Deer Combo Hunt"
+                  onerror="this.style.display = 'none'"
+                />
+              </div>
+              <div class="gw-prize-body">
+                <div class="gw-prize-badges">
+                  <span class="gw-badge">6 Days</span>
+                  <span class="gw-badge gw-badge-accent">All Inclusive</span>
+                  <span class="gw-badge gw-badge-accent">No Harvest Fees</span>
+                </div>
+                <h3 class="gw-prize-title">
+                  2026–2027 Mexico Mule Deer &amp; Coues Deer Combo
+                </h3>
+                <div class="gw-prize-meta">
+                  FA Sonoran Hunts <span class="gw-prize-meta-dot">·</span> Dec
+                  28, 2026 – Jan 2, 2027
+                </div>
+                <div class="gw-prize-desc gw-clamp">
+                  <p>
+                    Win this 6-day Mule Deer/Coues Deer hunt with FA Sonoran
+                    Hunts. Dec 28, 2026-Jan 2, 2027.
+                  </p>
+                  <p>
+                    Start the new year by hunting Sonora, Mexico for both trophy
+                    Mule deer and Coues deer on the same hunt! This first-class
+                    operation has multiple different ranches with nearly 400,000
+                    acres of huntable, free-range desert country. The outfitter
+                    has been strictly managing the ranches with limited harvest
+                    for several years, and it is paying off. They have been
+                    using only half the tags they are issued each year. They
+                    have 80+ feeders that are maintained year-round. All guides
+                    are English speaking. Hunters will stay in a comfortable
+                    ranch house. The hunt winner may take both deer species and
+                    there are NO harvest fees. Hunts are 6 days, and include to
+                    and from airport transportation, gun permit, tags, and
+                    paperwork to get your buck home.
+                  </p>
+                </div>
+                <button type="button" class="gw-readmore" aria-expanded="false">
+                  <span>Read more</span>
+                </button>
+                <div class="gw-prize-cta-row">
+                  <a
+                    href="https://epicoutdoorsmember.com/tickets.asp"
+                    class="gw-prize-cta"
+                  >
+                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- 5. NM ELK -->
+            <article class="gw-prize-card">
+              <div class="gw-prize-media">
+                <img
+                  src="assets/26S-Website_NM_Elk.jpeg"
+                  alt="Win a 2026 Acoma Reservation New Mexico Elk Hunt"
+                  onerror="this.style.display = 'none'"
+                />
+              </div>
+              <div class="gw-prize-body">
+                <div class="gw-prize-badges">
+                  <span class="gw-badge">5 Days</span>
+                  <span class="gw-badge gw-badge-accent">Prime Rut</span>
+                  <span class="gw-badge">Any Weapon</span>
+                </div>
+                <h3 class="gw-prize-title">
+                  2026 Acoma Reservation New Mexico Elk Hunt
+                </h3>
+                <div class="gw-prize-meta">
+                  Acoma Big Game Hunts
+                  <span class="gw-prize-meta-dot">·</span> Sept 28 – Oct 2, 2026
+                </div>
+                <div class="gw-prize-desc gw-clamp">
+                  <p>
+                    Win this 5 day New Mexico prime rut elk hunt on the Acoma
+                    Reservation. Winner gets to hunt with their choice of weapon
+                    Sept 28-Oct 2, 2026.
+                  </p>
+                  <p>
+                    The Acoma Reservation in New Mexico offers a unique
+                    opportunity to hunt big bulls during the rut! Once again,
+                    we've secured a trophy bull hunt here where they manage
+                    their elk for quality bulls. Our last hunt winner killed a
+                    giant bull! You can also see many trophy bulls they have
+                    harvested in the past by going to acomabiggamehunts.com.
+                    We've secured prime rut dates for the winner of this guided
+                    hunt, and you can hunt with a rifle, muzzleloader, or bow.
+                    This is a great chance to hunt big bulls, in the rut, with
+                    the potential to take a giant! The winner will arrive on
+                    Sept 27, hunt Sept 28-Oct 2, and depart on Oct 3.
+                  </p>
+                </div>
+                <button type="button" class="gw-readmore" aria-expanded="false">
+                  <span>Read more</span>
+                </button>
+                <div class="gw-prize-cta-row">
+                  <a
+                    href="https://epicoutdoorsmember.com/tickets.asp"
+                    class="gw-prize-cta"
+                  >
+                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- 6. CO DEER -->
+            <article class="gw-prize-card">
+              <div class="gw-prize-media">
+                <img
+                  src="assets/26S-Website_CO_Deer.jpeg"
+                  alt="Win a 2026 Colorado Mule Deer Hunt"
+                  onerror="this.style.display = 'none'"
+                />
+              </div>
+              <div class="gw-prize-body">
+                <div class="gw-prize-badges">
+                  <span class="gw-badge">7 Days</span>
+                  <span class="gw-badge gw-badge-accent"
+                    >Landowner Tag Included</span
+                  >
+                  <span class="gw-badge">3rd Rifle Season</span>
+                </div>
+                <h3 class="gw-prize-title">
+                  2026 Colorado Unit 61 Mule Deer Hunt
+                </h3>
+                <div class="gw-prize-meta">
+                  Garvey Brothers Outfitters
+                  <span class="gw-prize-meta-dot">·</span> Nov 9 – 15, 2026
+                </div>
+                <div class="gw-prize-desc gw-clamp">
+                  <p>
+                    Win this 7 day guided Colorado Mule Deer hunt with landowner
+                    tag included, in unit 61 for the 3rd rifle season, with
+                    Garvey Brothers Outfitters November 9-15, 2026.
+                  </p>
+                  <p>
+                    This is your chance to hunt the famed Uncompahgre Plateau in
+                    western Colorado with a multi-generation outfitting family
+                    during the 3rd season. In addition to the public land
+                    access, the Garvey family also has some great private land
+                    in unit 61 and has decades of experience guiding hunters to
+                    great Mule deer there. The season dates on this hunt are the
+                    last 7 days of the 3rd season, and should allow the hunter
+                    to experience some rutting activity. We expect the winner of
+                    this hunt to have the chance to pursue a trophy buck! This
+                    hunt includes a 3rd season landowner tag, guide fees, meals,
+                    and cabin-style lodging. The unit is not remote or
+                    physically difficult to hunt this time of year, making it
+                    appealing for hunters of all abilities.
+                  </p>
+                </div>
+                <button type="button" class="gw-readmore" aria-expanded="false">
+                  <span>Read more</span>
+                </button>
+                <div class="gw-prize-cta-row">
+                  <a
+                    href="https://epicoutdoorsmember.com/tickets.asp"
+                    class="gw-prize-cta"
+                  >
+                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- 7. AB WHITETAIL -->
+            <article class="gw-prize-card">
+              <div class="gw-prize-media">
+                <img
+                  src="assets/26S-Website_AB_Whitetail.jpeg"
+                  alt="Win a 2026 Alberta Whitetail Hunt"
+                  onerror="this.style.display = 'none'"
+                />
+              </div>
+              <div class="gw-prize-body">
+                <div class="gw-prize-badges">
+                  <span class="gw-badge">9 Days</span>
+                  <span class="gw-badge gw-badge-accent">All Inclusive</span>
+                  <span class="gw-badge">Rut Hunt</span>
+                </div>
+                <h3 class="gw-prize-title">
+                  2026 Alberta Trophy Whitetail Deer Hunt
+                </h3>
+                <div class="gw-prize-meta">
+                  Alberta Dark Horn <span class="gw-prize-meta-dot">·</span> Nov
+                  11 – 19, 2026
+                </div>
+                <div class="gw-prize-desc gw-clamp">
+                  <p>
+                    Win this 9 day rifle hunt in northern Alberta, with Alberta
+                    Dark Horn, during the rut Nov 11-19, 2026.
+                  </p>
+                  <p>
+                    This all-inclusive Canadian Whitetail hunt with Alberta Dark
+                    Horn is a true trophy buck hunt! This 9 day hunt offers
+                    hunters ample amounts of time in enclosed stands, to hunt
+                    for the right buck. Nearly 9,000 square miles of prime
+                    habitat provides more than enough area to target specific,
+                    next-level bucks. Hunter arrives in Edmonton where you will
+                    need to drive to the camp headquarters. In the event you
+                    finish your hunt early, you can transition to hunting wolves
+                    and coyotes, at no cost. Hunters stay in a comfortable
+                    modern lodge, with private rooms. This is truly one of the
+                    best Whitetail hunts Canada has to offer!
+                  </p>
+                </div>
+                <button type="button" class="gw-readmore" aria-expanded="false">
+                  <span>Read more</span>
+                </button>
+                <div class="gw-prize-cta-row">
+                  <a
+                    href="https://epicoutdoorsmember.com/tickets.asp"
+                    class="gw-prize-cta"
+                  >
+                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- 8. EPIC GEAR PACKAGE -->
+            <article class="gw-prize-card">
+              <div class="gw-prize-media">
+                <img
+                  src="assets/26S_GearPack-web_1406x978.png"
+                  alt="Win the Epic Gear Package"
+                  onerror="this.style.display = 'none'"
+                />
+              </div>
+              <div class="gw-prize-body">
+                <div class="gw-prize-badges">
+                  <span class="gw-badge gw-badge-accent">7-Piece Package</span>
+                </div>
+                <h3 class="gw-prize-title">Epic Gear Package</h3>
+                <div class="gw-prize-meta">This package includes:</div>
+                <ul class="gw-gear-list">
+                  <li>Fierce Twisted Rage LR 7MM PRC Rifle</li>
+                  <li>Leupold VX-5HD 3-15x44 Riflescope</li>
+                  <li>CVA Accura MR-X 50-cal Muzzleloader</li>
+                  <li>
+                    Zeiss Harpia 23-70x 95 mm Spotting Scope and Stay on Case
+                  </li>
+                  <li>
+                    Swarovski NL Pure Binoculars choose either 10x, 12x, or 14x
+                  </li>
+                  <li>Sig Sauer Kilo 8K Rangefinder</li>
+                  <li>Epic Ultra Tripod and Head Combo</li>
+                </ul>
+                <div class="gw-prize-cta-row">
+                  <a
+                    href="https://epicoutdoorsmember.com/tickets.asp"
+                    class="gw-prize-cta"
+                  >
+                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ────────────────── WINNER'S CHOICE ────────────────── -->
+      <section class="gw-section gw-section-wc" id="winners-choice">
+        <div class="gw-container">
+          <div class="gw-section-head">
+            <div class="gw-eyebrow">Bonus Prize</div>
+            <h2 class="gw-section-h">Winner's Choice Hunt</h2>
+            <p class="gw-section-lede">
+              Every $500 ticket package earns one entry into this bonus drawing.
+            </p>
+          </div>
+
+          <article class="gw-wc-card">
+            <div class="gw-wc-media">
+              <img
+                src="assets/26S-Website_BonusHunt.png"
+                alt="Winner's Choice Hunt — $15,000 toward your hunt of choice"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="gw-wc-body">
+              <div class="gw-prize-badges">
+                <span class="gw-badge gw-badge-accent"
+                  >$15,000 Toward Your Hunt</span
+                >
+                <span class="gw-badge">Bonus Drawing</span>
+              </div>
+              <h3 class="gw-wc-title">The "Winner's Choice" Hunt</h3>
+              <div class="gw-prize-desc">
+                <p>
+                  Purchase a 30 ticket option for $500 (a $250 savings) and get
+                  30 tickets for your choice in the 8 giveaway packages. Also
+                  receive 1 ticket (for each $500 you spend) for the bonus
+                  "Winner's Choice" hunt.
                 </p>
-
-                <div class="gw-deadline-pill">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                        <line x1="16" y1="2" x2="16" y2="6"></line>
-                        <line x1="8" y1="2" x2="8" y2="6"></line>
-                        <line x1="3" y1="10" x2="21" y2="10"></line>
-                    </svg>
-                    Deadline: June 22, 2026
-                </div>
-
-                <div class="gw-hero-perks">
-                    <svg class="gw-hero-perks-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 12 20 22 4 22 4 12"></polyline>
-                        <rect x="2" y="7" width="20" height="5"></rect>
-                        <line x1="12" y1="22" x2="12" y2="7"></line>
-                        <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
-                        <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
-                    </svg>
-                    <div class="gw-hero-perks-content">
-                        New members receive <strong>1 free ticket</strong> on signup ($150). Existing members earn
-                        <strong>1 free ticket</strong> for each new member they refer. Either way — that's another shot
-                        at the prize lineup.
-                    </div>
-                </div>
-
-                <div class="gw-cta-row">
-                    <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-cta gw-cta-primary">Buy Tickets →</a>
-                    <a href="#tickets" class="gw-cta gw-cta-ghost">View pricing</a>
-                </div>
-
-                <!-- Early Bird Drawing -->
-                <a class="gw-earlybird" href="https://epicoutdoorsmember.com/tickets.asp"
-                    aria-label="Early Bird Drawing: buy tickets before May 31 to earn a bonus entry for a TS Customs precision rifle">
-                    <img src="/assets/26S_WeeklyZulu6_v1.jpeg"
-                        alt="Early Bird Drawing. Get one bonus entry for every ticket you purchase before May 31. Win a TS Customs precision rifle, a $6,250 value."
-                        width="1000" height="380">
+                <p>
+                  Winner of the Bonus Hunt will get $15,000 to put toward their
+                  choice of hunts from one of our Epic Approved outfitted hunts
+                  or an outfitter of your choice. There are many quality hunts
+                  available. Photos shown here showcase some of the great hunts
+                  in this price range. The Epic Outdoors staff will help the
+                  winner book the perfect hunt for their wish list.
+                </p>
+              </div>
+              <div class="gw-wc-callout">
+                There is no way to buy individual tickets for the Winner's
+                Choice hunt.
+              </div>
+              <div class="gw-wc-cta-row">
+                <a
+                  href="https://epicoutdoorsmember.com/tickets.asp"
+                  class="gw-prize-cta"
+                >
+                  Buy Tickets <span class="gw-prize-cta-arrow">→</span>
                 </a>
+              </div>
             </div>
-        </section>
+          </article>
+        </div>
+      </section>
 
-        <!-- ────────────────── PRIZE GRID ────────────────── -->
-        <section class="gw-section" id="prizes">
-            <div class="gw-container">
+      <!-- ────────────────── TICKET PRICING ────────────────── -->
+      <section class="gw-section" id="tickets">
+        <div class="gw-container">
+          <div class="gw-section-head">
+            <div class="gw-eyebrow">How to Enter</div>
+            <h2 class="gw-section-h">Ticket Packages</h2>
+            <p class="gw-section-lede">
+              Buy as many as you want and apply them however you like across the
+              eight prizes.
+            </p>
+          </div>
 
-                <div class="gw-section-head">
-                    <h2 class="gw-section-h">HUNT PACKAGES</h2>
-                </div>
-
-                <div class="gw-prize-grid">
-
-                    <!-- 1. YUKON DALL -->
-                    <article class="gw-prize-card">
-                        <div class="gw-prize-media">
-                            <img src="assets/26S-Website_YT_Dall.jpeg" alt="Win a 2027 Yukon Dall Sheep Hunt"
-                                onerror="this.style.display='none'">
-                        </div>
-                        <div class="gw-prize-body">
-                            <div class="gw-prize-badges">
-                                <span class="gw-badge gw-badge-accent">$40,000 Value</span>
-                                <span class="gw-badge">10 Days</span>
-                            </div>
-                            <h3 class="gw-prize-title">2027 Yukon Dall Sheep Hunt</h3>
-                            <div class="gw-prize-meta">North Curl Outfitters <span class="gw-prize-meta-dot">·</span>
-                                July 28 – Aug 7, 2027</div>
-                            <div class="gw-prize-desc gw-clamp">
-                                <p>Win this 10 day Dall sheep hunt with North Curl Outfitters in the Yukon—a $40,000
-                                    value! Hunt dates are July 28-August 7, 2027.</p>
-                                <p>This outfitter is a third-generation outfitter and has a great reputation. They
-                                    specialize in remote horseback/backpack hunting trips in the Kluane and Southern
-                                    Lakes regions, known for high densities of Dall sheep. Their goal is to provide each
-                                    and every client with a hunting adventure of a lifetime. This hunt is the first hunt
-                                    of the year, which is usually incredible. This hunt is 10 days, including fly-in
-                                    days. They have multiple camps with cabins and will most likely set up a spike camp
-                                    during your hunt, as well. We expect this to be a very high success hunt on quality
-                                    rams!</p>
-                            </div>
-                            <button type="button" class="gw-readmore" aria-expanded="false"><span>Read
-                                    more</span></button>
-                            <div class="gw-prize-cta-row">
-                                <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
-                                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 2. BC COMBO -->
-                    <article class="gw-prize-card">
-                        <div class="gw-prize-media">
-                            <img src="assets/26S-Website_BC_Combo.jpeg"
-                                alt="Win a 2026 British Columbia Super Combo Hunt" onerror="this.style.display='none'">
-                        </div>
-                        <div class="gw-prize-body">
-                            <div class="gw-prize-badges">
-                                <span class="gw-badge">13 Days</span>
-                                <span class="gw-badge">6 Species</span>
-                                <span class="gw-badge gw-badge-accent">No Harvest Fees</span>
-                            </div>
-                            <h3 class="gw-prize-title">2026 British Columbia Super Combo Hunt</h3>
-                            <div class="gw-prize-meta">Terminus Mountain Outfitters <span
-                                    class="gw-prize-meta-dot">·</span> Sept 16 – 28, 2026</div>
-                            <div class="gw-prize-desc gw-clamp">
-                                <p>Win this 13-day Canadian Moose, Mountain Caribou, Elk, Mountain Goat, Black Bear, and
-                                    Wolf hunt with Terminus Mountain Outfitters. Hunt dates are Sept 16-28, 2026.</p>
-                                <p>This hunt is truly an adventure in some of the most breathtaking country in northern
-                                    British Columbia. This is a longer, 13-day, 1x1 hunt that is a true combo hunt for
-                                    all species you encounter. This is quite literally the dream hunt for anyone looking
-                                    to experience the diversity that British Columbia has to offer! This hunt is
-                                    conducted by horseback, while you stay either in a heated wall tent or wooden cabin,
-                                    or an occasional spike camp to target a certain species. This area is known for
-                                    consistently producing record book Canadian moose and is one of the few places you
-                                    can still hunt Mountain caribou in BC. This is quite simply one of the best combo
-                                    hunts Canada has to offer, and there are NO harvest fees for these species!</p>
-                            </div>
-                            <button type="button" class="gw-readmore" aria-expanded="false"><span>Read
-                                    more</span></button>
-                            <div class="gw-prize-cta-row">
-                                <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
-                                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 3. AK COMBO -->
-                    <article class="gw-prize-card">
-                        <div class="gw-prize-media">
-                            <img src="assets/26S-Website_AK_Combo.jpeg"
-                                alt="Win a 2026 Alaska Arctic Grizzly and Barren Ground Caribou Combo Hunt"
-                                onerror="this.style.display='none'">
-                        </div>
-                        <div class="gw-prize-body">
-                            <div class="gw-prize-badges">
-                                <span class="gw-badge">13 Days</span>
-                                <span class="gw-badge gw-badge-accent">Air Charter Covered</span>
-                                <span class="gw-badge gw-badge-accent">No Harvest Fees</span>
-                            </div>
-                            <h3 class="gw-prize-title">2026 Alaska Arctic Grizzly &amp; Barren Ground Caribou Combo</h3>
-                            <div class="gw-prize-meta">Alaskan Perimeter Expeditions <span
-                                    class="gw-prize-meta-dot">·</span> Sept 1 – 13, 2026</div>
-                            <div class="gw-prize-desc gw-clamp">
-                                <p>Win this 13-day Arctic Grizzly bear and Barren Ground Caribou Combo hunt with Alaskan
-                                    Perimeter Expeditions. Hunt dates are Sept 1-13, 2026.</p>
-                                <p>Hunt northern Alaska's Arctic National Wildlife Refuge, for Arctic Grizzlies and
-                                    Barren Ground caribou in an exclusive guide use area. These bears have been in the
-                                    7'6" to 8'6" range, and have coloration ranging from the classic blonde body with
-                                    dark legs to chocolate-colored bears. Some great caribou bulls are also found in
-                                    this area, and you can harvest both species with NO harvest fees! This hunt is
-                                    conducted out of a temporary base camp, where you will hike and glass for bears and
-                                    caribou simultaneously. This is a great opportunity to experience the vast
-                                    wilderness of Alaska while hunting two iconic Alaskan species. As a bonus, we will
-                                    also cover the $5,000 round trip air charter for this hunt! Dall sheep can also be
-                                    added for a trophy fee.</p>
-                            </div>
-                            <button type="button" class="gw-readmore" aria-expanded="false"><span>Read
-                                    more</span></button>
-                            <div class="gw-prize-cta-row">
-                                <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
-                                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 4. MEXICO COMBO -->
-                    <article class="gw-prize-card">
-                        <div class="gw-prize-media">
-                            <img src="assets/26S-Website_MX_Combo.jpeg"
-                                alt="Win a 2026-2027 Mexico Mule Deer and Coues Deer Combo Hunt"
-                                onerror="this.style.display='none'">
-                        </div>
-                        <div class="gw-prize-body">
-                            <div class="gw-prize-badges">
-                                <span class="gw-badge">6 Days</span>
-                                <span class="gw-badge gw-badge-accent">All Inclusive</span>
-                                <span class="gw-badge gw-badge-accent">No Harvest Fees</span>
-                            </div>
-                            <h3 class="gw-prize-title">2026–2027 Mexico Mule Deer &amp; Coues Deer Combo</h3>
-                            <div class="gw-prize-meta">FA Sonoran Hunts <span class="gw-prize-meta-dot">·</span> Dec 28,
-                                2026 – Jan 2, 2027</div>
-                            <div class="gw-prize-desc gw-clamp">
-                                <p>Win this 6-day Mule Deer/Coues Deer hunt with FA Sonoran Hunts. Dec 28, 2026-Jan 2,
-                                    2027.</p>
-                                <p>Start the new year by hunting Sonora, Mexico for both trophy Mule deer and Coues deer
-                                    on the same hunt! This first-class operation has multiple different ranches with
-                                    nearly 400,000 acres of huntable, free-range desert country. The outfitter has been
-                                    strictly managing the ranches with limited harvest for several years, and it is
-                                    paying off. They have been using only half the tags they are issued each year. They
-                                    have 80+ feeders that are maintained year-round. All guides are English speaking.
-                                    Hunters will stay in a comfortable ranch house. The hunt winner may take both deer
-                                    species and there are NO harvest fees. Hunts are 6 days, and include to and from
-                                    airport transportation, gun permit, tags, and paperwork to get your buck home.</p>
-                            </div>
-                            <button type="button" class="gw-readmore" aria-expanded="false"><span>Read
-                                    more</span></button>
-                            <div class="gw-prize-cta-row">
-                                <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
-                                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 5. NM ELK -->
-                    <article class="gw-prize-card">
-                        <div class="gw-prize-media">
-                            <img src="assets/26S-Website_NM_Elk.jpeg"
-                                alt="Win a 2026 Acoma Reservation New Mexico Elk Hunt"
-                                onerror="this.style.display='none'">
-                        </div>
-                        <div class="gw-prize-body">
-                            <div class="gw-prize-badges">
-                                <span class="gw-badge">5 Days</span>
-                                <span class="gw-badge gw-badge-accent">Prime Rut</span>
-                                <span class="gw-badge">Any Weapon</span>
-                            </div>
-                            <h3 class="gw-prize-title">2026 Acoma Reservation New Mexico Elk Hunt</h3>
-                            <div class="gw-prize-meta">Acoma Big Game Hunts <span class="gw-prize-meta-dot">·</span>
-                                Sept 28 – Oct 2, 2026</div>
-                            <div class="gw-prize-desc gw-clamp">
-                                <p>Win this 5 day New Mexico prime rut elk hunt on the Acoma Reservation. Winner gets to
-                                    hunt with their choice of weapon Sept 28-Oct 2, 2026.</p>
-                                <p>The Acoma Reservation in New Mexico offers a unique opportunity to hunt big bulls
-                                    during the rut! Once again, we've secured a trophy bull hunt here where they manage
-                                    their elk for quality bulls. Our last hunt winner killed a giant bull! You can also
-                                    see many trophy bulls they have harvested in the past by going to
-                                    acomabiggamehunts.com. We've secured prime rut dates for the winner of this guided
-                                    hunt, and you can hunt with a rifle, muzzleloader, or bow. This is a great chance to
-                                    hunt big bulls, in the rut, with the potential to take a giant! The winner will
-                                    arrive on Sept 27, hunt Sept 28-Oct 2, and depart on Oct 3.</p>
-                            </div>
-                            <button type="button" class="gw-readmore" aria-expanded="false"><span>Read
-                                    more</span></button>
-                            <div class="gw-prize-cta-row">
-                                <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
-                                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 6. CO DEER -->
-                    <article class="gw-prize-card">
-                        <div class="gw-prize-media">
-                            <img src="assets/26S-Website_CO_Deer.jpeg" alt="Win a 2026 Colorado Mule Deer Hunt"
-                                onerror="this.style.display='none'">
-                        </div>
-                        <div class="gw-prize-body">
-                            <div class="gw-prize-badges">
-                                <span class="gw-badge">7 Days</span>
-                                <span class="gw-badge gw-badge-accent">Landowner Tag Included</span>
-                                <span class="gw-badge">3rd Rifle Season</span>
-                            </div>
-                            <h3 class="gw-prize-title">2026 Colorado Unit 61 Mule Deer Hunt</h3>
-                            <div class="gw-prize-meta">Garvey Brothers Outfitters <span
-                                    class="gw-prize-meta-dot">·</span> Nov 9 – 15, 2026</div>
-                            <div class="gw-prize-desc gw-clamp">
-                                <p>Win this 7 day guided Colorado Mule Deer hunt with landowner tag included, in unit 61
-                                    for the 3rd rifle season, with Garvey Brothers Outfitters November 9-15, 2026.</p>
-                                <p>This is your chance to hunt the famed Uncompahgre Plateau in western Colorado with a
-                                    multi-generation outfitting family during the 3rd season. In addition to the public
-                                    land access, the Garvey family also has some great private land in unit 61 and has
-                                    decades of experience guiding hunters to great Mule deer there. The season dates on
-                                    this hunt are the last 7 days of the 3rd season, and should allow the hunter to
-                                    experience some rutting activity. We expect the winner of this hunt to have the
-                                    chance to pursue a trophy buck! This hunt includes a 3rd season landowner tag, guide
-                                    fees, meals, and cabin-style lodging. The unit is not remote or physically difficult
-                                    to hunt this time of year, making it appealing for hunters of all abilities.</p>
-                            </div>
-                            <button type="button" class="gw-readmore" aria-expanded="false"><span>Read
-                                    more</span></button>
-                            <div class="gw-prize-cta-row">
-                                <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
-                                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 7. AB WHITETAIL -->
-                    <article class="gw-prize-card">
-                        <div class="gw-prize-media">
-                            <img src="assets/26S-Website_AB_Whitetail.jpeg" alt="Win a 2026 Alberta Whitetail Hunt"
-                                onerror="this.style.display='none'">
-                        </div>
-                        <div class="gw-prize-body">
-                            <div class="gw-prize-badges">
-                                <span class="gw-badge">9 Days</span>
-                                <span class="gw-badge gw-badge-accent">All Inclusive</span>
-                                <span class="gw-badge">Rut Hunt</span>
-                            </div>
-                            <h3 class="gw-prize-title">2026 Alberta Trophy Whitetail Deer Hunt</h3>
-                            <div class="gw-prize-meta">Alberta Dark Horn <span class="gw-prize-meta-dot">·</span> Nov 11
-                                – 19, 2026</div>
-                            <div class="gw-prize-desc gw-clamp">
-                                <p>Win this 9 day rifle hunt in northern Alberta, with Alberta Dark Horn, during the rut
-                                    Nov 11-19, 2026.</p>
-                                <p>This all-inclusive Canadian Whitetail hunt with Alberta Dark Horn is a true trophy
-                                    buck hunt! This 9 day hunt offers hunters ample amounts of time in enclosed stands,
-                                    to hunt for the right buck. Nearly 9,000 square miles of prime habitat provides more
-                                    than enough area to target specific, next-level bucks. Hunter arrives in Edmonton
-                                    where you will need to drive to the camp headquarters. In the event you finish your
-                                    hunt early, you can transition to hunting wolves and coyotes, at no cost. Hunters
-                                    stay in a comfortable modern lodge, with private rooms. This is truly one of the
-                                    best Whitetail hunts Canada has to offer!</p>
-                            </div>
-                            <button type="button" class="gw-readmore" aria-expanded="false"><span>Read
-                                    more</span></button>
-                            <div class="gw-prize-cta-row">
-                                <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
-                                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 8. EPIC GEAR PACKAGE -->
-                    <article class="gw-prize-card">
-                        <div class="gw-prize-media">
-                            <img src="assets/26S-Website_EpicGear.png" alt="Win the Epic Gear Package"
-                                onerror="this.style.display='none'">
-                        </div>
-                        <div class="gw-prize-body">
-                            <div class="gw-prize-badges">
-                                <span class="gw-badge gw-badge-accent">7-Piece Package</span>
-                            </div>
-                            <h3 class="gw-prize-title">Epic Gear Package</h3>
-                            <div class="gw-prize-meta">This package includes:</div>
-                            <ul class="gw-gear-list">
-                                <li>Fierce Twisted Rage LR 7MM PRC Rifle</li>
-                                <li>Leupold VX-5HD 3-15x44 Riflescope</li>
-                                <li>CVA Accura MR-X 50-cal Muzzleloader</li>
-                                <li>Zeiss Harpia 23-70x 95 mm Spotting Scope and Stay on Case</li>
-                                <li>Swarovski NL Pure Binoculars choose either 10x, 12x, or 14x</li>
-                                <li>Sig Sauer Kilo 8K Rangefinder</li>
-                                <li>Epic Ultra Tripod and Head Combo</li>
-                            </ul>
-                            <div class="gw-prize-cta-row">
-                                <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
-                                    Buy Tickets <span class="gw-prize-cta-arrow">→</span>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                </div>
-
+          <div class="gw-pricing-grid">
+            <div class="gw-tier">
+              <div class="gw-tier-count">1 Ticket</div>
+              <div class="gw-tier-price">$30</div>
+              <div class="gw-tier-save">&nbsp;</div>
             </div>
-        </section>
 
-        <!-- ────────────────── WINNER'S CHOICE ────────────────── -->
-        <section class="gw-section gw-section-wc" id="winners-choice">
-            <div class="gw-container">
-
-                <div class="gw-section-head">
-                    <div class="gw-eyebrow">Bonus Prize</div>
-                    <h2 class="gw-section-h">Winner's Choice Hunt</h2>
-                    <p class="gw-section-lede">Every $500 ticket package earns one entry into this bonus drawing.</p>
-                </div>
-
-                <article class="gw-wc-card">
-                    <div class="gw-wc-media">
-                        <img src="assets/26S-Website_BonusHunt.png"
-                            alt="Winner's Choice Hunt — $15,000 toward your hunt of choice"
-                            onerror="this.style.display='none'">
-                    </div>
-                    <div class="gw-wc-body">
-                        <div class="gw-prize-badges">
-                            <span class="gw-badge gw-badge-accent">$15,000 Toward Your Hunt</span>
-                            <span class="gw-badge">Bonus Drawing</span>
-                        </div>
-                        <h3 class="gw-wc-title">The "Winner's Choice" Hunt</h3>
-                        <div class="gw-prize-desc">
-                            <p>Purchase a 30 ticket option for $500 (a $250 savings) and get 30 tickets for your choice
-                                in the 8 giveaway packages. Also receive 1 ticket (for each $500 you spend) for the
-                                bonus "Winner's Choice" hunt.</p>
-                            <p>Winner of the Bonus Hunt will get $15,000 to put toward their choice of hunts from one of
-                                our Epic Approved outfitted hunts or an outfitter of your choice. There are many quality
-                                hunts available. Photos shown here showcase some of the great hunts in this price range.
-                                The Epic Outdoors staff will help the winner book the perfect hunt for their wish list.
-                            </p>
-                        </div>
-                        <div class="gw-wc-callout">
-                            There is no way to buy individual tickets for the Winner's Choice hunt.
-                        </div>
-                        <div class="gw-wc-cta-row">
-                            <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-prize-cta">
-                                Buy Tickets <span class="gw-prize-cta-arrow">→</span>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
+            <div class="gw-tier">
+              <div class="gw-tier-count">5 Tickets</div>
+              <div class="gw-tier-price">$125</div>
+              <div class="gw-tier-save">Save $25</div>
             </div>
-        </section>
 
-        <!-- ────────────────── TICKET PRICING ────────────────── -->
-        <section class="gw-section" id="tickets">
-            <div class="gw-container">
-
-                <div class="gw-section-head">
-                    <div class="gw-eyebrow">How to Enter</div>
-                    <h2 class="gw-section-h">Ticket Packages</h2>
-                    <p class="gw-section-lede">Buy as many as you want and apply them however you like across the eight
-                        prizes.</p>
-                </div>
-
-                <div class="gw-pricing-grid">
-
-                    <div class="gw-tier">
-                        <div class="gw-tier-count">1 Ticket</div>
-                        <div class="gw-tier-price">$30</div>
-                        <div class="gw-tier-save">&nbsp;</div>
-                    </div>
-
-                    <div class="gw-tier">
-                        <div class="gw-tier-count">5 Tickets</div>
-                        <div class="gw-tier-price">$125</div>
-                        <div class="gw-tier-save">Save $25</div>
-                    </div>
-
-                    <div class="gw-tier">
-                        <div class="gw-tier-count">10 Tickets</div>
-                        <div class="gw-tier-price">$250</div>
-                        <div class="gw-tier-save">Save $50</div>
-                    </div>
-
-                    <div class="gw-tier gw-tier-best">
-                        <div class="gw-tier-best-flag">Best Value</div>
-                        <div class="gw-tier-count">30 Tickets</div>
-                        <div class="gw-tier-price">$500</div>
-                        <div class="gw-tier-save">Save $400</div>
-                        <div class="gw-tier-bonus">+ 1 Entry into the<br>Winner's Choice Hunt</div>
-                    </div>
-
-                </div>
-
-                <div class="gw-tickets-cta-wrap">
-                    <a href="https://epicoutdoorsmember.com/tickets.asp" class="gw-cta gw-cta-primary gw-cta-large">
-                        Buy Tickets →
-                    </a>
-                    <p class="gw-fine-print">
-                        Deadline to enter: <strong style="color:var(--accent2);">June 22, 2026</strong>
-                    </p>
-                </div>
-
+            <div class="gw-tier">
+              <div class="gw-tier-count">10 Tickets</div>
+              <div class="gw-tier-price">$250</div>
+              <div class="gw-tier-save">Save $50</div>
             </div>
-        </section>
 
-        <!-- ────────────────── OTHER WAYS TO ENTER ────────────────── -->
-        <section class="gw-section" id="other-ways">
-            <div class="gw-container">
-
-                <div class="gw-section-head">
-                    <div class="gw-eyebrow">Three Ways to Enter</div>
-                    <h2 class="gw-section-h">Buy Online, by Phone, or by Mail</h2>
-                </div>
-
-                <div class="gw-methods-grid">
-
-                    <div class="gw-method">
-                        <div class="gw-method-icon-wrap">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <path
-                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                                </path>
-                            </svg>
-                        </div>
-                        <div class="gw-method-label">Online</div>
-                        <div class="gw-method-value">
-                            <a href="https://epicoutdoorsmember.com/tickets.asp">Member portal</a>
-                        </div>
-                        <div class="gw-method-detail">epicoutdoorsmember.com/tickets.asp</div>
-                    </div>
-
-                    <div class="gw-method">
-                        <div class="gw-method-icon-wrap">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                                </path>
-                            </svg>
-                        </div>
-                        <div class="gw-method-label">By Phone</div>
-                        <div class="gw-method-value">
-                            <a href="tel:+14352630777">435-263-0777</a>
-                        </div>
-                        <div class="gw-method-detail">Call to purchase tickets</div>
-                    </div>
-
-                    <div class="gw-method">
-                        <div class="gw-method-icon-wrap">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                </path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </div>
-                        <div class="gw-method-label">By Mail</div>
-                        <div class="gw-method-value">Epic Outdoors</div>
-                        <div class="gw-method-detail">PO Box 2978<br>Cedar City, UT 84721</div>
-                    </div>
-
-                </div>
-
+            <div class="gw-tier gw-tier-best">
+              <div class="gw-tier-best-flag">Best Value</div>
+              <div class="gw-tier-count">30 Tickets</div>
+              <div class="gw-tier-price">$500</div>
+              <div class="gw-tier-save">Save $400</div>
+              <div class="gw-tier-bonus">
+                + 1 Entry into the<br />Winner's Choice Hunt
+              </div>
             </div>
-        </section>
+          </div>
 
+          <div class="gw-tickets-cta-wrap">
+            <a
+              href="https://epicoutdoorsmember.com/tickets.asp"
+              class="gw-cta gw-cta-primary gw-cta-large"
+            >
+              Buy Tickets →
+            </a>
+            <p class="gw-fine-print">
+              Deadline to enter:
+              <strong style="color: var(--accent2)">June 22, 2026</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ────────────────── OTHER WAYS TO ENTER ────────────────── -->
+      <section class="gw-section" id="other-ways">
+        <div class="gw-container">
+          <div class="gw-section-head">
+            <div class="gw-eyebrow">Three Ways to Enter</div>
+            <h2 class="gw-section-h">Buy Online, by Phone, or by Mail</h2>
+          </div>
+
+          <div class="gw-methods-grid">
+            <div class="gw-method">
+              <div class="gw-method-icon-wrap">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path
+                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="gw-method-label">Online</div>
+              <div class="gw-method-value">
+                <a href="https://epicoutdoorsmember.com/tickets.asp"
+                  >Member portal</a
+                >
+              </div>
+              <div class="gw-method-detail">
+                epicoutdoorsmember.com/tickets.asp
+              </div>
+            </div>
+
+            <div class="gw-method">
+              <div class="gw-method-icon-wrap">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="gw-method-label">By Phone</div>
+              <div class="gw-method-value">
+                <a href="tel:+14352630777">435-263-0777</a>
+              </div>
+              <div class="gw-method-detail">Call to purchase tickets</div>
+            </div>
+
+            <div class="gw-method">
+              <div class="gw-method-icon-wrap">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  ></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="gw-method-label">By Mail</div>
+              <div class="gw-method-value">Epic Outdoors</div>
+              <div class="gw-method-detail">
+                PO Box 2978<br />Cedar City, UT 84721
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
-        Copyright &copy; 2017&ndash;<span id="y"></span> Epic Outdoors | All Rights Reserved
+      Copyright &copy; 2017&ndash;<span id="y"></span> Epic Outdoors | All
+      Rights Reserved
     </footer>
 
     <script>
-        // Footer year
-        document.getElementById('y').textContent = new Date().getFullYear();
+      // Footer year
+      document.getElementById("y").textContent = new Date().getFullYear();
 
-        // Read more / read less toggle
-        document.querySelectorAll('.gw-readmore').forEach(function (btn) {
-            // Find the description right before this button
-            var desc = btn.previousElementSibling;
-            if (!desc || !desc.classList.contains('gw-prize-desc')) return;
+      // Read more / read less toggle
+      document.querySelectorAll(".gw-readmore").forEach(function (btn) {
+        // Find the description right before this button
+        var desc = btn.previousElementSibling;
+        if (!desc || !desc.classList.contains("gw-prize-desc")) return;
 
-            // If the content doesn't actually overflow the clamp, hide the button
-            // (the gear card already has no button, but this is a safeguard for short
-            //  text descriptions if they're ever added in the future)
-            if (desc.scrollHeight <= desc.clientHeight + 2) {
-                btn.style.display = 'none';
-                desc.classList.remove('gw-clamp');
-                return;
-            }
+        // If the content doesn't actually overflow the clamp, hide the button
+        // (the gear card already has no button, but this is a safeguard for short
+        //  text descriptions if they're ever added in the future)
+        if (desc.scrollHeight <= desc.clientHeight + 2) {
+          btn.style.display = "none";
+          desc.classList.remove("gw-clamp");
+          return;
+        }
 
-            btn.addEventListener('click', function () {
-                var expanded = desc.classList.toggle('gw-expanded');
-                btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-                btn.querySelector('span').textContent = expanded ? 'Read less' : 'Read more';
-            });
+        btn.addEventListener("click", function () {
+          var expanded = desc.classList.toggle("gw-expanded");
+          btn.setAttribute("aria-expanded", expanded ? "true" : "false");
+          btn.querySelector("span").textContent = expanded
+            ? "Read less"
+            : "Read more";
         });
+      });
     </script>
-
-</body>
-
+  </body>
 </html>
