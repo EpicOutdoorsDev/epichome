@@ -1,773 +1,953 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>License Application Service | Epic Outdoors</title>
-    <meta name="description"
-        content="Hand off your western state hunt applications to Epic Outdoors. Our consultants have filed applications for thousands of hunters over 25+ years across 16 western states.">
-    <meta name="format-detection" content="telephone=no">
+    <meta
+      name="description"
+      content="Hand off your western state hunt applications to Epic Outdoors. Our consultants have filed applications for thousands of hunters over 25+ years across 16 western states."
+    />
+    <meta name="format-detection" content="telephone=no" />
 
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Epic Outdoors">
-    <meta property="og:title" content="License Application Service">
-    <meta property="og:description"
-        content="Done-for-you western state hunt applications, filed by Epic Outdoors consultants.">
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Epic Outdoors" />
+    <meta property="og:title" content="License Application Service" />
+    <meta
+      property="og:description"
+      content="Done-for-you western state hunt applications, filed by Epic Outdoors consultants."
+    />
 
-    <link rel="icon" href="/assets/favicon-dark.png" media="(prefers-color-scheme: light)" type="image/png">
-    <link rel="icon" href="/assets/favicon-light.png" media="(prefers-color-scheme: dark)" type="image/png">
+    <link
+      rel="icon"
+      href="/assets/favicon-dark.png"
+      media="(prefers-color-scheme: light)"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="/assets/favicon-light.png"
+      media="(prefers-color-scheme: dark)"
+      type="image/png"
+    />
 
     <style>
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      :root {
+        --bg: #0b0f14;
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.72);
+        --line: rgba(255, 255, 255, 0.12);
+        --card: rgba(255, 255, 255, 0.06);
+        --card2: rgba(255, 255, 255, 0.085);
+        --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+        --radius: 18px;
+        --accent: #ff7a18;
+        --accent2: #ffb26b;
+      }
+
+      html {
+        min-height: 100%;
+        background: var(--bg);
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: transparent;
+        color: var(--text);
+        font-family:
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        font-size: 15px;
+        line-height: 1.6;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      a {
+        color: var(--accent2);
+      }
+
+      /* ── HEADER ── */
+      .gw-header {
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+        position: relative;
+        z-index: 2;
+      }
+
+      .gw-header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 16px 24px;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+
+      .gw-header-logo {
+        display: inline-flex;
+        align-items: center;
+        line-height: 0;
+        flex-shrink: 0;
+      }
+
+      .gw-header-logo img {
+        height: 36px;
+        width: auto;
+        display: block;
+      }
+
+      .gw-header-nav {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+      }
+
+      .gw-header-nav a {
+        color: var(--text);
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: color 0.15s ease;
+      }
+
+      .gw-header-nav a:hover {
+        color: var(--accent);
+      }
+
+      /* ── PAGE HERO ── */
+      .gw-page-hero {
+        position: relative;
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        background: #0a0d12;
+        line-height: 0;
+      }
+
+      .gw-page-hero img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .gw-page-hero::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 25px;
+        background: linear-gradient(to bottom, transparent, var(--bg));
+        pointer-events: none;
+      }
+
+      /* ── PAGE TITLE ── */
+      .gw-page-title {
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 32px 0 22px;
+        text-align: center;
+      }
+
+      .gw-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 122, 24, 0.3);
+        background: rgba(255, 122, 24, 0.12);
+        color: var(--accent2);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        line-height: 1;
+        margin-bottom: 16px;
+      }
+
+      .gw-page-title h1 {
+        font-size: clamp(30px, 4.4vw, 52px);
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        margin-bottom: 10px;
+      }
+
+      .gw-page-title p {
+        color: var(--muted);
+        font-size: clamp(15px, 1.6vw, 18px);
+        max-width: 52ch;
+        margin: 0 auto;
+      }
+
+      /* ── MAIN / SECTIONS ── */
+      main {
+        flex: 1;
+        padding: 0 0 8px;
+      }
+
+      .gw-section {
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto 56px;
+      }
+
+      .gw-section-head {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .gw-eyebrow {
+        display: inline-block;
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .gw-section-title {
+        font-size: clamp(26px, 3vw, 36px);
+        font-weight: 800;
+        letter-spacing: -0.015em;
+        line-height: 1.2;
+      }
+
+      .gw-section-intro {
+        color: var(--muted);
+        font-size: 15px;
+        margin-top: 8px;
+      }
+
+      /* ── HOW IT WORKS / STEPS (vertical timeline) ── */
+      .gw-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .gw-step {
+        display: flex;
+        align-items: stretch;
+        gap: 20px;
+      }
+
+      .gw-step-marker {
+        position: relative;
+        flex-shrink: 0;
+        width: 42px;
+      }
+
+      /* orange line connecting each step badge to the next */
+      .gw-step:not(:last-child) .gw-step-marker::before {
+        content: "";
+        position: absolute;
+        top: 36px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3px;
+        height: calc(100% + 20px);
+        background: var(--accent);
+        border-radius: 3px;
+      }
+
+      .gw-step-num {
+        position: relative;
+        z-index: 1;
+        margin-top: 15px;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: var(--accent);
+        color: #fff;
+        font-size: 18px;
+        font-weight: 900;
+        box-shadow: 0 6px 18px rgba(255, 122, 24, 0.35);
+      }
+
+      .gw-step-card {
+        flex: 1;
+        min-width: 0;
+        padding: 24px;
+        background: linear-gradient(180deg, var(--card2), var(--card));
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .gw-step-text {
+        font-size: 15px;
+        line-height: 1.55;
+        color: var(--text);
+      }
+
+      .gw-step-text a {
+        color: var(--accent2);
+        font-weight: 700;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 178, 107, 0.4);
+      }
+
+      .gw-step-text a:hover {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+      }
+
+      /* ── CTA BAND ── */
+      .gw-cta-band {
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto 56px;
+        padding: 38px 28px;
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 122, 24, 0.32);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 122, 24, 0.14),
+          rgba(255, 122, 24, 0.04)
+        );
+        box-shadow: var(--shadow);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .gw-cta-band h2 {
+        font-size: clamp(22px, 2.6vw, 30px);
+        font-weight: 900;
+        letter-spacing: -0.015em;
+        line-height: 1.2;
+      }
+
+      .gw-btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 28px;
+        border-radius: 999px;
+        background: var(--accent);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border: 1px solid var(--accent);
+        box-shadow: 0 6px 18px rgba(255, 122, 24, 0.35);
+        transition:
+          background 0.15s ease,
+          transform 0.15s ease;
+      }
+
+      .gw-btn-primary:hover {
+        background: #ff8a33;
+        transform: translateY(-1px);
+      }
+
+      .gw-btn-primary .gw-arrow {
+        font-size: 16px;
+        line-height: 1;
+        transition: transform 0.15s ease;
+      }
+
+      .gw-btn-primary:hover .gw-arrow {
+        transform: translateX(3px);
+      }
+
+      /* ── PRICING ── */
+      .gw-pricing {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .gw-tier {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        padding: 32px 22px 26px;
+        background: linear-gradient(180deg, var(--card2), var(--card));
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        text-align: center;
+      }
+
+      .gw-tier--featured {
+        border-color: rgba(255, 122, 24, 0.5);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 122, 24, 0.14),
+          rgba(255, 255, 255, 0.05)
+        );
+      }
+
+      .gw-tier-badge {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--accent);
+        color: #fff;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 5px 13px;
+        border-radius: 999px;
+        white-space: nowrap;
+        box-shadow: 0 6px 18px rgba(255, 122, 24, 0.35);
+      }
+
+      .gw-tier-price {
+        font-size: clamp(34px, 4.6vw, 46px);
+        font-weight: 900;
+        letter-spacing: -0.025em;
+        line-height: 1;
+      }
+
+      .gw-tier-unit {
+        color: var(--accent2);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .gw-tier-name {
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+      }
+
+      .gw-tier-desc {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* ── SWITCHING CALLOUT ── */
+      .gw-callout {
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto 56px;
+        padding: 26px 28px;
+        background: linear-gradient(180deg, var(--card2), var(--card));
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--accent);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .gw-callout h3 {
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: 0.01em;
+        margin-bottom: 6px;
+      }
+
+      .gw-callout p {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .gw-callout a {
+        color: var(--accent2);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .gw-callout a:hover {
+        color: var(--accent);
+      }
+
+      .gw-callout strong {
+        color: var(--text);
+      }
+
+      /* ── ABOUT (text + image) ── */
+      .gw-about {
+        display: flex;
+        align-items: stretch;
+        gap: 28px;
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto 24px;
+        padding: 24px;
+        background: linear-gradient(180deg, var(--card2), var(--card));
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .gw-about-graphic {
+        flex-shrink: 0;
+        width: 320px;
+        border-radius: 14px;
+        overflow: hidden;
+        background: #000;
+      }
+
+      .gw-about-graphic img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .gw-about-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .gw-about-content h2 {
+        font-size: clamp(22px, 2.4vw, 28px);
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        line-height: 1.18;
+      }
+
+      .gw-about-content p {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.65;
+      }
+
+      /* ── STATEMENT CARD ── */
+      .gw-statement {
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto 56px;
+        padding: 40px 32px;
+        background: linear-gradient(180deg, var(--card2), var(--card));
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        text-align: center;
+      }
+
+      .gw-statement h2 {
+        font-size: clamp(24px, 2.8vw, 32px);
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        margin-bottom: 12px;
+      }
+
+      .gw-statement p {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.65;
+        max-width: 68ch;
+        margin: 0 auto;
+      }
+
+      /* ── STATES ── */
+      .gw-states-card {
+        padding: 30px 26px;
+        background: linear-gradient(180deg, var(--card2), var(--card));
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .gw-states-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        list-style: none;
+      }
+
+      .gw-state-tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid var(--line);
+        color: var(--text);
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        white-space: nowrap;
+        transition:
+          border-color 0.15s ease,
+          background 0.15s ease;
+      }
+
+      .gw-state-tag:hover {
+        border-color: rgba(255, 122, 24, 0.45);
+        background: rgba(255, 122, 24, 0.08);
+      }
+
+      /* ── FINAL CTA ── */
+      .gw-final {
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto 8px;
+        padding: 40px 28px;
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 122, 24, 0.32);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 122, 24, 0.14),
+          rgba(255, 122, 24, 0.04)
+        );
+        box-shadow: var(--shadow);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .gw-final h2 {
+        font-size: clamp(22px, 2.6vw, 30px);
+        font-weight: 900;
+        letter-spacing: -0.015em;
+        line-height: 1.2;
+      }
+
+      .gw-final-phone {
+        font-size: clamp(24px, 3.4vw, 34px);
+        font-weight: 900;
+        letter-spacing: -0.01em;
+      }
+
+      .gw-final-phone a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .gw-final-phone a:hover {
+        color: var(--accent2);
+      }
+
+      .gw-final-sub {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* ── CONTACT FORM ── */
+      .gw-form-card {
+        max-width: 520px;
+        margin: 0 auto;
+        padding: 32px 28px;
+        background: linear-gradient(180deg, var(--card2), var(--card));
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      #request-info {
+        scroll-margin-top: 24px;
+      }
+
+      .gw-form-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .gw-field label {
+        display: block;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: var(--text);
+        margin-bottom: 7px;
+      }
+
+      .gw-field input {
+        width: 100%;
+        padding: 12px 14px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        color: var(--text);
+        font-size: 15px;
+        font-family: inherit;
+        transition:
+          border-color 0.15s ease,
+          background 0.15s ease;
+      }
+
+      .gw-field input:focus {
+        outline: none;
+        border-color: var(--accent);
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      /* honeypot, hidden from people */
+      .gw-hp {
+        position: absolute;
+        left: -9999px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+
+      button.gw-btn-primary {
+        cursor: pointer;
+        font-family: inherit;
+      }
+
+      .gw-form-card .gw-btn-primary {
+        width: 100%;
+        justify-content: center;
+      }
+
+      @media (max-width: 560px) {
+        .gw-form-card {
+          padding: 24px 20px;
+        }
+      }
+
+      /* ── REQUEST: TWO-COLUMN (form OR pdf) ── */
+      .gw-request-cols {
+        display: flex;
+        align-items: stretch;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .gw-request-col {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+      }
+
+      /* let the cards fill their column instead of centering at 520px */
+      .gw-request-col .gw-form-card,
+      .gw-request-col .gw-pdf-card {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+      }
+
+      /* OR divider */
+      .gw-or-divider {
+        position: relative;
+        flex-shrink: 0;
+        width: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .gw-or-divider::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        transform: translateX(-50%);
+        background: var(--line);
+      }
+
+      .gw-or-badge {
+        position: relative;
+        z-index: 1;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: var(--accent);
+        color: #fff;
+        font-size: 18px;
+        font-weight: 900;
+        letter-spacing: 0.06em;
+        border: 4px solid var(--bg);
+        box-shadow: 0 6px 18px rgba(255, 122, 24, 0.35);
+      }
+
+      /* PDF card */
+      .gw-pdf-card {
+        display: flex;
+        flex-direction: column;
+        padding: 32px 28px;
+        background: linear-gradient(180deg, var(--card2), var(--card));
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        text-align: center;
+      }
+
+      .gw-pdf-card h3 {
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        margin-bottom: 6px;
+      }
+
+      .gw-pdf-card p {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 18px;
+      }
+
+      .gw-pdf-preview {
+        flex: 1;
+        width: 100%;
+        min-height: 280px;
+        margin-bottom: 18px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fff;
+      }
+
+      .gw-pdf-doc {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 280px;
+        border: 0;
+      }
+
+      .gw-pdf-fallback {
+        display: grid;
+        place-items: center;
+        height: 100%;
+        min-height: 280px;
+        padding: 20px;
+        color: #555;
+        font-size: 14px;
+      }
+
+      .gw-pdf-card .gw-btn-primary {
+        width: 100%;
+        justify-content: center;
+        margin-top: auto;
+      }
+
+      /* stack on small screens; rotate the OR divider to horizontal */
+      @media (max-width: 720px) {
+        .gw-request-cols {
+          flex-direction: column;
         }
 
-        html,
-        body {
-            height: 100%;
+        .gw-or-divider {
+          width: 100%;
+          height: 64px;
         }
 
-        :root {
-            --bg: #0b0f14;
-            --text: rgba(255, 255, 255, .92);
-            --muted: rgba(255, 255, 255, .72);
-            --line: rgba(255, 255, 255, .12);
-            --card: rgba(255, 255, 255, .06);
-            --card2: rgba(255, 255, 255, .085);
-            --shadow: 0 18px 60px rgba(0, 0, 0, .45);
-            --radius: 18px;
-            --accent: #ff7a18;
-            --accent2: #ffb26b;
+        .gw-or-divider::before {
+          top: 50%;
+          bottom: auto;
+          left: 0;
+          right: 0;
+          width: auto;
+          height: 2px;
+          transform: translateY(-50%);
         }
+      }
 
-        html {
-            min-height: 100%;
-            background: var(--bg);
-            scroll-behavior: smooth;
-        }
+      /* ── FOOTER ── */
+      footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        color: rgba(255, 255, 255, 0.45);
+        padding: 20px;
+        text-align: center;
+        font-size: 13px;
+      }
 
-        body {
-            background: transparent;
-            color: var(--text);
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-            font-size: 15px;
-            line-height: 1.6;
-            min-height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        a {
-            color: var(--accent2);
-        }
-
-        /* ── HEADER ── */
-        .gw-header {
-            background: var(--bg);
-            border-bottom: 1px solid var(--line);
-            position: relative;
-            z-index: 2;
-        }
-
-        .gw-header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            padding: 16px 24px;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .gw-header-logo {
-            display: inline-flex;
-            align-items: center;
-            line-height: 0;
-            flex-shrink: 0;
-        }
-
-        .gw-header-logo img {
-            height: 36px;
-            width: auto;
-            display: block;
-        }
-
-        .gw-header-nav {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-        }
-
-        .gw-header-nav a {
-            color: var(--text);
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-            transition: color .15s ease;
-        }
-
-        .gw-header-nav a:hover {
-            color: var(--accent);
-        }
-
-        /* ── PAGE HERO ── */
-        .gw-page-hero {
-            position: relative;
-            width: 100%;
-            max-width: 1280px;
-            margin: 0 auto;
-            background: #0a0d12;
-            line-height: 0;
-        }
-
-        .gw-page-hero img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .gw-page-hero::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: 25px;
-            background: linear-gradient(to bottom, transparent, var(--bg));
-            pointer-events: none;
-        }
-
-        /* ── PAGE TITLE ── */
-        .gw-page-title {
-            width: min(1100px, calc(100% - 32px));
-            margin: 0 auto;
-            padding: 32px 0 22px;
-            text-align: center;
-        }
-
-        .gw-kicker {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 7px 14px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 122, 24, .30);
-            background: rgba(255, 122, 24, .12);
-            color: var(--accent2);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: .10em;
-            text-transform: uppercase;
-            line-height: 1;
-            margin-bottom: 16px;
-        }
-
-        .gw-page-title h1 {
-            font-size: clamp(30px, 4.4vw, 52px);
-            font-weight: 900;
-            letter-spacing: -.02em;
-            line-height: 1.1;
-            margin-bottom: 10px;
-        }
-
-        .gw-page-title p {
-            color: var(--muted);
-            font-size: clamp(15px, 1.6vw, 18px);
-            max-width: 52ch;
-            margin: 0 auto;
-        }
-
-        /* ── MAIN / SECTIONS ── */
-        main {
-            flex: 1;
-            padding: 0 0 8px;
-        }
-
-        .gw-section {
-            width: min(1100px, calc(100% - 32px));
-            margin: 0 auto 56px;
-        }
-
-        .gw-section-head {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .gw-eyebrow {
-            display: inline-block;
-            color: var(--accent);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: .14em;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .gw-section-title {
-            font-size: clamp(26px, 3vw, 36px);
-            font-weight: 800;
-            letter-spacing: -.015em;
-            line-height: 1.2;
-        }
-
-        .gw-section-intro {
-            color: var(--muted);
-            font-size: 15px;
-            margin-top: 8px;
-        }
-
-        /* ── HOW IT WORKS / STEPS (vertical timeline) ── */
-        .gw-steps {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .gw-step {
-            display: flex;
-            align-items: stretch;
-            gap: 20px;
-        }
-
-        .gw-step-marker {
-            position: relative;
-            flex-shrink: 0;
-            width: 42px;
-        }
-
-        /* orange line connecting each step badge to the next */
-        .gw-step:not(:last-child) .gw-step-marker::before {
-            content: "";
-            position: absolute;
-            top: 36px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 3px;
-            height: calc(100% + 20px);
-            background: var(--accent);
-            border-radius: 3px;
-        }
-
-        .gw-step-num {
-            position: relative;
-            z-index: 1;
-            margin-top: 15px;
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            background: var(--accent);
-            color: #fff;
-            font-size: 18px;
-            font-weight: 900;
-            box-shadow: 0 6px 18px rgba(255, 122, 24, .35);
-        }
-
-        .gw-step-card {
-            flex: 1;
-            min-width: 0;
-            padding: 24px;
-            background: linear-gradient(180deg, var(--card2), var(--card));
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-
-        .gw-step-text {
-            font-size: 15px;
-            line-height: 1.55;
-            color: var(--text);
-        }
-
-        .gw-step-text a {
-            color: var(--accent2);
-            font-weight: 700;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255, 178, 107, .4);
-        }
-
-        .gw-step-text a:hover {
-            color: var(--accent);
-            border-bottom-color: var(--accent);
-        }
-
-        /* ── CTA BAND ── */
-        .gw-cta-band {
-            width: min(1100px, calc(100% - 32px));
-            margin: 0 auto 56px;
-            padding: 38px 28px;
-            border-radius: var(--radius);
-            border: 1px solid rgba(255, 122, 24, .32);
-            background: linear-gradient(180deg, rgba(255, 122, 24, .14), rgba(255, 122, 24, .04));
-            box-shadow: var(--shadow);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 18px;
-        }
-
-        .gw-cta-band h2 {
-            font-size: clamp(22px, 2.6vw, 30px);
-            font-weight: 900;
-            letter-spacing: -.015em;
-            line-height: 1.2;
-        }
-
-        .gw-btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 28px;
-            border-radius: 999px;
-            background: var(--accent);
-            color: #fff;
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: .06em;
-            text-transform: uppercase;
-            text-decoration: none;
-            border: 1px solid var(--accent);
-            box-shadow: 0 6px 18px rgba(255, 122, 24, .35);
-            transition: background .15s ease, transform .15s ease;
-        }
-
-        .gw-btn-primary:hover {
-            background: #ff8a33;
-            transform: translateY(-1px);
-        }
-
-        .gw-btn-primary .gw-arrow {
-            font-size: 16px;
-            line-height: 1;
-            transition: transform .15s ease;
-        }
-
-        .gw-btn-primary:hover .gw-arrow {
-            transform: translateX(3px);
-        }
-
-        /* ── PRICING ── */
+      /* ── RESPONSIVE ── */
+      @media (max-width: 720px) {
         .gw-pricing {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
+          grid-template-columns: 1fr;
         }
 
-        .gw-tier {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            padding: 32px 22px 26px;
-            background: linear-gradient(180deg, var(--card2), var(--card));
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            text-align: center;
-        }
-
-        .gw-tier--featured {
-            border-color: rgba(255, 122, 24, .5);
-            background: linear-gradient(180deg, rgba(255, 122, 24, .14), rgba(255, 255, 255, .05));
-        }
-
-        .gw-tier-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent);
-            color: #fff;
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-            padding: 5px 13px;
-            border-radius: 999px;
-            white-space: nowrap;
-            box-shadow: 0 6px 18px rgba(255, 122, 24, .35);
-        }
-
-        .gw-tier-price {
-            font-size: clamp(34px, 4.6vw, 46px);
-            font-weight: 900;
-            letter-spacing: -.025em;
-            line-height: 1;
-        }
-
-        .gw-tier-unit {
-            color: var(--accent2);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-        }
-
-        .gw-tier-name {
-            margin-top: 10px;
-            font-size: 16px;
-            font-weight: 800;
-            letter-spacing: -.01em;
-        }
-
-        .gw-tier-desc {
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        /* ── SWITCHING CALLOUT ── */
-        .gw-callout {
-            width: min(1100px, calc(100% - 32px));
-            margin: 0 auto 56px;
-            padding: 26px 28px;
-            background: linear-gradient(180deg, var(--card2), var(--card));
-            border: 1px solid var(--line);
-            border-left: 4px solid var(--accent);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-
-        .gw-callout h3 {
-            font-size: 17px;
-            font-weight: 800;
-            letter-spacing: .01em;
-            margin-bottom: 6px;
-        }
-
-        .gw-callout p {
-            color: var(--muted);
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        .gw-callout a {
-            color: var(--accent2);
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .gw-callout a:hover {
-            color: var(--accent);
-        }
-
-        .gw-callout strong {
-            color: var(--text);
-        }
-
-        /* ── ABOUT (text + image) ── */
         .gw-about {
-            display: flex;
-            align-items: stretch;
-            gap: 28px;
-            width: min(1100px, calc(100% - 32px));
-            margin: 0 auto 24px;
-            padding: 24px;
-            background: linear-gradient(180deg, var(--card2), var(--card));
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
+          flex-direction: column;
+          padding: 16px;
+          gap: 18px;
         }
 
         .gw-about-graphic {
-            flex-shrink: 0;
-            width: 320px;
-            border-radius: 14px;
-            overflow: hidden;
-            background: #000;
+          width: 100%;
+          aspect-ratio: 16 / 10;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .gw-header-inner {
+          padding: 14px 16px;
+          justify-content: center;
         }
 
-        .gw-about-graphic img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .gw-header-logo img {
+          height: 30px;
         }
 
-        .gw-about-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 12px;
-            min-width: 0;
+        .gw-header-nav {
+          display: none;
         }
 
-        .gw-about-content h2 {
-            font-size: clamp(22px, 2.4vw, 28px);
-            font-weight: 900;
-            letter-spacing: -.02em;
-            line-height: 1.18;
+        main {
+          padding: 0 0 8px;
         }
 
-        .gw-about-content p {
-            color: var(--muted);
-            font-size: 15px;
-            line-height: 1.65;
+        .gw-page-title {
+          padding: 24px 0 18px;
         }
 
-        /* ── STATEMENT CARD ── */
-        .gw-statement {
-            width: min(1100px, calc(100% - 32px));
-            margin: 0 auto 56px;
-            padding: 40px 32px;
-            background: linear-gradient(180deg, var(--card2), var(--card));
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            text-align: center;
-        }
-
-        .gw-statement h2 {
-            font-size: clamp(24px, 2.8vw, 32px);
-            font-weight: 900;
-            letter-spacing: -.02em;
-            line-height: 1.2;
-            margin-bottom: 12px;
-        }
-
-        .gw-statement p {
-            color: var(--muted);
-            font-size: 15px;
-            line-height: 1.65;
-            max-width: 68ch;
-            margin: 0 auto;
-        }
-
-        /* ── STATES ── */
-        .gw-states-card {
-            padding: 30px 26px;
-            background: linear-gradient(180deg, var(--card2), var(--card));
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-
-        .gw-states-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            list-style: none;
-        }
-
-        .gw-state-tag {
-            display: inline-flex;
-            align-items: center;
-            padding: 8px 16px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, .06);
-            border: 1px solid var(--line);
-            color: var(--text);
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: .01em;
-            white-space: nowrap;
-            transition: border-color .15s ease, background .15s ease;
-        }
-
-        .gw-state-tag:hover {
-            border-color: rgba(255, 122, 24, .45);
-            background: rgba(255, 122, 24, .08);
-        }
-
-        /* ── FINAL CTA ── */
+        .gw-cta-band,
         .gw-final {
-            width: min(1100px, calc(100% - 32px));
-            margin: 0 auto 8px;
-            padding: 40px 28px;
-            border-radius: var(--radius);
-            border: 1px solid rgba(255, 122, 24, .32);
-            background: linear-gradient(180deg, rgba(255, 122, 24, .14), rgba(255, 122, 24, .04));
-            box-shadow: var(--shadow);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 14px;
+          padding: 30px 20px;
         }
+      }
 
-        .gw-final h2 {
-            font-size: clamp(22px, 2.6vw, 30px);
-            font-weight: 900;
-            letter-spacing: -.015em;
-            line-height: 1.2;
+      @media (max-width: 380px) {
+        .gw-header-logo img {
+          height: 26px;
         }
-
-        .gw-final-phone {
-            font-size: clamp(24px, 3.4vw, 34px);
-            font-weight: 900;
-            letter-spacing: -.01em;
-        }
-
-        .gw-final-phone a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .gw-final-phone a:hover {
-            color: var(--accent2);
-        }
-
-        .gw-final-sub {
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        /* ── CONTACT FORM ── */
-        .gw-form-card {
-            max-width: 520px;
-            margin: 0 auto;
-            padding: 32px 28px;
-            background: linear-gradient(180deg, var(--card2), var(--card));
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-
-        #request-info {
-            scroll-margin-top: 24px;
-        }
-
-        .gw-form-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-            margin-bottom: 18px;
-        }
-
-        .gw-field label {
-            display: block;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: .02em;
-            color: var(--text);
-            margin-bottom: 7px;
-        }
-
-        .gw-field input {
-            width: 100%;
-            padding: 12px 14px;
-            background: rgba(255, 255, 255, .04);
-            border: 1px solid var(--line);
-            border-radius: 10px;
-            color: var(--text);
-            font-size: 15px;
-            font-family: inherit;
-            transition: border-color .15s ease, background .15s ease;
-        }
-
-        .gw-field input:focus {
-            outline: none;
-            border-color: var(--accent);
-            background: rgba(255, 255, 255, .06);
-        }
-
-        /* honeypot, hidden from people */
-        .gw-hp {
-            position: absolute;
-            left: -9999px;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-        }
-
-        button.gw-btn-primary {
-            cursor: pointer;
-            font-family: inherit;
-        }
-
-        .gw-form-card .gw-btn-primary {
-            width: 100%;
-            justify-content: center;
-        }
-
-        @media (max-width: 560px) {
-            .gw-form-card {
-                padding: 24px 20px;
-            }
-        }
-
-        /* ── FOOTER ── */
-        footer {
-            border-top: 1px solid rgba(255, 255, 255, .08);
-            color: rgba(255, 255, 255, .45);
-            padding: 20px;
-            text-align: center;
-            font-size: 13px;
-        }
-
-        /* ── RESPONSIVE ── */
-        @media (max-width: 720px) {
-            .gw-pricing {
-                grid-template-columns: 1fr;
-            }
-
-            .gw-about {
-                flex-direction: column;
-                padding: 16px;
-                gap: 18px;
-            }
-
-            .gw-about-graphic {
-                width: 100%;
-                aspect-ratio: 16 / 10;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .gw-header-inner {
-                padding: 14px 16px;
-                justify-content: center;
-            }
-
-            .gw-header-logo img {
-                height: 30px;
-            }
-
-            .gw-header-nav {
-                display: none;
-            }
-
-            main {
-                padding: 0 0 8px;
-            }
-
-            .gw-page-title {
-                padding: 24px 0 18px;
-            }
-
-            .gw-cta-band,
-            .gw-final {
-                padding: 30px 20px;
-            }
-        }
-
-        @media (max-width: 380px) {
-            .gw-header-logo img {
-                height: 26px;
-            }
-        }
+      }
     </style>
 
     <!-- PostHog analytics (shared across all pages) -->
     <script src="/analytics.js"></script>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!--
   ================================================================
   EPIC OUTDOORS - SHARED NAV HEADER
@@ -788,543 +968,678 @@
   ================================================================
 -->
     <style>
-        /* ===== Epic Outdoors shared nav header ===== */
-        .eo-header {
-            position: relative;
-            z-index: 100;
-            background: #0b0f14;
-            border-bottom: 1px solid rgba(255, 255, 255, .12);
-            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
+      /* ===== Epic Outdoors shared nav header ===== */
+      .eo-header {
+        position: relative;
+        z-index: 100;
+        background: #0b0f14;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+      }
 
-        .eo-header *,
-        .eo-header *::before,
-        .eo-header *::after {
-            box-sizing: border-box;
-        }
+      .eo-header *,
+      .eo-header *::before,
+      .eo-header *::after {
+        box-sizing: border-box;
+      }
 
+      .eo-header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 16px 24px;
+      }
+
+      .eo-logo {
+        display: inline-flex;
+        align-items: center;
+        line-height: 0;
+        flex-shrink: 0;
+      }
+
+      .eo-logo img {
+        display: block;
+        height: 36px;
+        width: auto;
+      }
+
+      /* nav */
+      .eo-nav {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+      }
+
+      .eo-nav-link {
+        color: rgba(255, 255, 255, 0.92);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: color 0.15s ease;
+      }
+
+      .eo-nav-link:hover {
+        color: #ff7a18;
+      }
+
+      /* Join button + dropdown */
+      .eo-join {
+        position: relative;
+      }
+
+      .eo-join-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 9px 18px;
+        border: 1px solid #ff7a18;
+        border-radius: 999px;
+        background: #ff7a18;
+        color: #101318;
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: filter 0.12s ease;
+      }
+
+      .eo-join-btn:hover {
+        filter: brightness(1.07);
+      }
+
+      .eo-caret {
+        font-size: 10px;
+        line-height: 1;
+        transition: transform 0.18s ease;
+      }
+
+      .eo-join-btn[aria-expanded="true"] .eo-caret {
+        transform: rotate(180deg);
+      }
+
+      .eo-join-menu {
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        min-width: 224px;
+        flex-direction: column;
+        padding: 8px;
+        background: #141a21;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 14px;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+      }
+
+      .eo-join-btn[aria-expanded="true"] + .eo-join-menu {
+        display: flex;
+      }
+
+      .eo-join-menu a {
+        padding: 11px 14px;
+        border-radius: 9px;
+        color: rgba(255, 255, 255, 0.92);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        text-decoration: none;
+        white-space: nowrap;
+        transition:
+          background 0.12s ease,
+          color 0.12s ease;
+      }
+
+      .eo-join-menu a:hover {
+        background: rgba(255, 122, 24, 0.14);
+        color: #ffb26b;
+      }
+
+      /* hamburger (mobile only) */
+      .eo-burger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.04);
+        cursor: pointer;
+      }
+
+      .eo-burger span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 2px;
+        transition:
+          transform 0.18s ease,
+          opacity 0.18s ease;
+      }
+
+      .eo-header.eo-open .eo-burger span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      .eo-header.eo-open .eo-burger span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .eo-header.eo-open .eo-burger span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      /* ===== mobile layout ===== */
+      @media (max-width: 720px) {
         .eo-header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 16px 24px;
-        }
-
-        .eo-logo {
-            display: inline-flex;
-            align-items: center;
-            line-height: 0;
-            flex-shrink: 0;
+          padding: 14px 16px;
         }
 
         .eo-logo img {
-            display: block;
-            height: 36px;
-            width: auto;
+          height: 30px;
         }
 
-        /* nav */
+        .eo-burger {
+          display: flex;
+        }
+
         .eo-nav {
-            display: flex;
-            align-items: center;
-            gap: 28px;
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0;
+          padding: 6px 16px 16px;
+          background: #0b0f14;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+          box-shadow: 0 24px 50px rgba(0, 0, 0, 0.55);
+        }
+
+        .eo-header.eo-open .eo-nav {
+          display: flex;
         }
 
         .eo-nav-link {
-            color: rgba(255, 255, 255, .92);
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: color .15s ease;
+          padding: 14px 6px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.07);
         }
 
-        .eo-nav-link:hover {
-            color: #ff7a18;
-        }
-
-        /* Join button + dropdown */
         .eo-join {
-            position: relative;
+          width: 100%;
         }
 
         .eo-join-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            padding: 9px 18px;
-            border: 1px solid #ff7a18;
-            border-radius: 999px;
-            background: #ff7a18;
-            color: #101318;
-            font-family: inherit;
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: filter .12s ease;
-        }
-
-        .eo-join-btn:hover {
-            filter: brightness(1.07);
-        }
-
-        .eo-caret {
-            font-size: 10px;
-            line-height: 1;
-            transition: transform .18s ease;
-        }
-
-        .eo-join-btn[aria-expanded="true"] .eo-caret {
-            transform: rotate(180deg);
+          width: 100%;
+          justify-content: space-between;
+          margin-top: 14px;
+          padding: 14px 18px;
         }
 
         .eo-join-menu {
-            display: none;
-            position: absolute;
-            top: calc(100% + 10px);
-            right: 0;
-            min-width: 224px;
-            flex-direction: column;
-            padding: 8px;
-            background: #141a21;
-            border: 1px solid rgba(255, 255, 255, .12);
-            border-radius: 14px;
-            box-shadow: 0 18px 50px rgba(0, 0, 0, .55);
+          position: static;
+          min-width: 0;
+          margin-top: 8px;
+          background: rgba(255, 255, 255, 0.04);
+          box-shadow: none;
         }
-
-        .eo-join-btn[aria-expanded="true"]+.eo-join-menu {
-            display: flex;
-        }
-
-        .eo-join-menu a {
-            padding: 11px 14px;
-            border-radius: 9px;
-            color: rgba(255, 255, 255, .92);
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: .04em;
-            text-transform: uppercase;
-            text-decoration: none;
-            white-space: nowrap;
-            transition: background .12s ease, color .12s ease;
-        }
-
-        .eo-join-menu a:hover {
-            background: rgba(255, 122, 24, .14);
-            color: #ffb26b;
-        }
-
-        /* hamburger (mobile only) */
-        .eo-burger {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            gap: 5px;
-            width: 42px;
-            height: 42px;
-            padding: 0;
-            border: 1px solid rgba(255, 255, 255, .14);
-            border-radius: 10px;
-            background: rgba(255, 255, 255, .04);
-            cursor: pointer;
-        }
-
-        .eo-burger span {
-            display: block;
-            width: 18px;
-            height: 2px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, .92);
-            border-radius: 2px;
-            transition: transform .18s ease, opacity .18s ease;
-        }
-
-        .eo-header.eo-open .eo-burger span:nth-child(1) {
-            transform: translateY(7px) rotate(45deg);
-        }
-
-        .eo-header.eo-open .eo-burger span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .eo-header.eo-open .eo-burger span:nth-child(3) {
-            transform: translateY(-7px) rotate(-45deg);
-        }
-
-        /* ===== mobile layout ===== */
-        @media (max-width: 720px) {
-            .eo-header-inner {
-                padding: 14px 16px;
-            }
-
-            .eo-logo img {
-                height: 30px;
-            }
-
-            .eo-burger {
-                display: flex;
-            }
-
-            .eo-nav {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0;
-                padding: 6px 16px 16px;
-                background: #0b0f14;
-                border-bottom: 1px solid rgba(255, 255, 255, .12);
-                box-shadow: 0 24px 50px rgba(0, 0, 0, .55);
-            }
-
-            .eo-header.eo-open .eo-nav {
-                display: flex;
-            }
-
-            .eo-nav-link {
-                padding: 14px 6px;
-                border-bottom: 1px solid rgba(255, 255, 255, .07);
-            }
-
-            .eo-join {
-                width: 100%;
-            }
-
-            .eo-join-btn {
-                width: 100%;
-                justify-content: space-between;
-                margin-top: 14px;
-                padding: 14px 18px;
-            }
-
-            .eo-join-menu {
-                position: static;
-                min-width: 0;
-                margin-top: 8px;
-                background: rgba(255, 255, 255, .04);
-                box-shadow: none;
-            }
-        }
+      }
     </style>
 
     <header class="eo-header" id="eoHeader">
-        <div class="eo-header-inner">
-            <a class="eo-logo" href="/" aria-label="Epic Outdoors home">
-                <img src="/assets/00-emailLogoWideH_eurostile.png" alt="Epic Outdoors" width="2000" height="261">
-            </a>
+      <div class="eo-header-inner">
+        <a class="eo-logo" href="/" aria-label="Epic Outdoors home">
+          <img
+            src="/assets/00-emailLogoWideH_eurostile.png"
+            alt="Epic Outdoors"
+            width="2000"
+            height="261"
+          />
+        </a>
 
-            <button class="eo-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="eoNav">
-                <span></span><span></span><span></span>
+        <button
+          class="eo-burger"
+          type="button"
+          aria-label="Menu"
+          aria-expanded="false"
+          aria-controls="eoNav"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="eo-nav" id="eoNav" aria-label="Primary">
+          <div class="eo-join">
+            <button
+              class="eo-join-btn"
+              type="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Join <span class="eo-caret" aria-hidden="true">&#9662;</span>
             </button>
-
-            <nav class="eo-nav" id="eoNav" aria-label="Primary">
-                <div class="eo-join">
-                    <button class="eo-join-btn" type="button" aria-haspopup="true" aria-expanded="false">
-                        Join <span class="eo-caret" aria-hidden="true">&#9662;</span>
-                    </button>
-                    <div class="eo-join-menu" role="menu">
-                        <a role="menuitem" href="/membership/">Membership</a>
-                        <a role="menuitem" href="/services/license-application-service/">Application Service</a>
-                    </div>
-                </div>
-                <a class="eo-nav-link" href="/services/epic-hunt-giveaways/">Giveaway</a>
-                <a class="eo-nav-link" href="https://epicoutdoorsmember.com">Login</a>
-                <a class="eo-nav-link" href="https://store.epicoutdoors.com">Store</a>
-            </nav>
-        </div>
+            <div class="eo-join-menu" role="menu">
+              <a role="menuitem" href="/membership/">Membership</a>
+              <a role="menuitem" href="/services/license-application-service/"
+                >Application Service</a
+              >
+            </div>
+          </div>
+          <a class="eo-nav-link" href="/services/epic-hunt-giveaways/"
+            >Giveaway</a
+          >
+          <a class="eo-nav-link" href="https://epicoutdoorsmember.com">Login</a>
+          <a class="eo-nav-link" href="https://store.epicoutdoors.com">Store</a>
+        </nav>
+      </div>
     </header>
 
     <script>
-        (function () {
-            var header = document.getElementById('eoHeader');
-            if (!header) return;
+      (function () {
+        var header = document.getElementById("eoHeader");
+        if (!header) return;
 
-            var burger = header.querySelector('.eo-burger');
-            var joinBtn = header.querySelector('.eo-join-btn');
+        var burger = header.querySelector(".eo-burger");
+        var joinBtn = header.querySelector(".eo-join-btn");
 
-            function setJoin(open) {
-                if (joinBtn) joinBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-            }
+        function setJoin(open) {
+          if (joinBtn)
+            joinBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        }
 
-            function setMenu(open) {
-                header.classList.toggle('eo-open', open);
-                if (burger) burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-                if (!open) setJoin(false);
-            }
+        function setMenu(open) {
+          header.classList.toggle("eo-open", open);
+          if (burger)
+            burger.setAttribute("aria-expanded", open ? "true" : "false");
+          if (!open) setJoin(false);
+        }
 
-            if (burger) {
-                burger.addEventListener('click', function () {
-                    setMenu(!header.classList.contains('eo-open'));
-                });
-            }
+        if (burger) {
+          burger.addEventListener("click", function () {
+            setMenu(!header.classList.contains("eo-open"));
+          });
+        }
 
-            if (joinBtn) {
-                joinBtn.addEventListener('click', function () {
-                    setJoin(joinBtn.getAttribute('aria-expanded') !== 'true');
-                });
-            }
+        if (joinBtn) {
+          joinBtn.addEventListener("click", function () {
+            setJoin(joinBtn.getAttribute("aria-expanded") !== "true");
+          });
+        }
 
-            // close the dropdown / menu when tapping outside of it
-            document.addEventListener('click', function (e) {
-                if (!e.target.closest('.eo-join')) setJoin(false);
-                if (!e.target.closest('.eo-header')) setMenu(false);
-            });
+        // close the dropdown / menu when tapping outside of it
+        document.addEventListener("click", function (e) {
+          if (!e.target.closest(".eo-join")) setJoin(false);
+          if (!e.target.closest(".eo-header")) setMenu(false);
+        });
 
-            // close on Escape
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape') setMenu(false);
-            });
-        })();
+        // close on Escape
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") setMenu(false);
+        });
+      })();
     </script>
     <!-- ===================== END EPIC OUTDOORS NAV HEADER ===================== -->
 
     <!-- Page hero -->
     <div class="gw-page-hero">
-        <img src="/assets/LicAppWebHero-MikeCarp1800.jpg"
-            alt="License application client Michael Carpinito with his New Mexico bighorn sheep, tag drawn by Epic Outdoors"
-            width="1800" height="815" fetchpriority="high">
+      <img
+        src="/assets/LicAppWebHero-MikeCarp1800.jpg"
+        alt="License application client Michael Carpinito with his New Mexico bighorn sheep, tag drawn by Epic Outdoors"
+        width="1800"
+        height="815"
+        fetchpriority="high"
+      />
     </div>
 
     <main>
+      <!-- Page title -->
+      <div class="gw-page-title">
+        <span class="gw-kicker">Epic Outdoors Service</span>
+        <h1>License Application Service</h1>
+        <p>
+          Done-for-you western state hunt applications, filed by our
+          consultants.
+        </p>
+      </div>
 
-        <!-- Page title -->
-        <div class="gw-page-title">
-            <span class="gw-kicker">Epic Outdoors Service</span>
-            <h1>License Application Service</h1>
-            <p>Done-for-you western state hunt applications, filed by our consultants.</p>
+      <!-- How it works -->
+      <section class="gw-section" aria-labelledby="how-heading">
+        <div class="gw-section-head">
+          <span class="gw-eyebrow">New Clients</span>
+          <h2 class="gw-section-title" id="how-heading">How It Works</h2>
+          <p class="gw-section-intro">
+            Four steps from sign-up to drawing tags.
+          </p>
+        </div>
+        <div class="gw-steps">
+          <div class="gw-step">
+            <div class="gw-step-marker">
+              <span class="gw-step-num" aria-hidden="true">1</span>
+            </div>
+            <div class="gw-step-card">
+              <p class="gw-step-text">
+                Fill out our
+                <a href="#request-info">License Application Form</a>.
+              </p>
+            </div>
+          </div>
+          <div class="gw-step">
+            <div class="gw-step-marker">
+              <span class="gw-step-num" aria-hidden="true">2</span>
+            </div>
+            <div class="gw-step-card">
+              <p class="gw-step-text">
+                Our professional hunting consultants will call you to review
+                your strategy.
+              </p>
+            </div>
+          </div>
+          <div class="gw-step">
+            <div class="gw-step-marker">
+              <span class="gw-step-num" aria-hidden="true">3</span>
+            </div>
+            <div class="gw-step-card">
+              <p class="gw-step-text">
+                We submit each of your state applications and apply for each
+                state as if we were you.
+              </p>
+            </div>
+          </div>
+          <div class="gw-step">
+            <div class="gw-step-marker">
+              <span class="gw-step-num" aria-hidden="true">4</span>
+            </div>
+            <div class="gw-step-card">
+              <p class="gw-step-text">
+                You draw tags or receive state refunds directly on your card.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Join CTA band -->
+      <div class="gw-cta-band">
+        <h2>Join Our License Application Service</h2>
+        <a class="gw-btn-primary" href="#request-info">
+          <span>Click to Join Now</span>
+          <span class="gw-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+
+      <!-- Pricing -->
+      <section class="gw-section" aria-labelledby="pricing-heading">
+        <div class="gw-section-head">
+          <span class="gw-eyebrow">Pricing</span>
+          <h2 class="gw-section-title" id="pricing-heading">
+            Application Pricing
+          </h2>
+        </div>
+        <div class="gw-pricing">
+          <div class="gw-tier">
+            <span class="gw-tier-price">$50</span>
+            <span class="gw-tier-unit">per state</span>
+            <h3 class="gw-tier-name">First Species</h3>
+            <p class="gw-tier-desc">For your first species in each state.</p>
+          </div>
+          <div class="gw-tier">
+            <span class="gw-tier-price">$100</span>
+            <span class="gw-tier-unit">per state</span>
+            <h3 class="gw-tier-name">Multiple Species</h3>
+            <p class="gw-tier-desc">For 2 or more species in each state.</p>
+          </div>
+          <div class="gw-tier gw-tier--featured">
+            <span class="gw-tier-badge">Best Value</span>
+            <span class="gw-tier-price">$750</span>
+            <span class="gw-tier-unit">one flat rate</span>
+            <h3 class="gw-tier-name">Unlimited</h3>
+            <p class="gw-tier-desc">Unlimited species and unlimited states.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Switching services callout -->
+      <div class="gw-callout">
+        <h3>Switching Services</h3>
+        <p>
+          <strong>Simply send us your receipt or renewal form</strong> from your
+          previous license application service and we'll take care of the rest.
+          When switching application services, your points are YOURS!
+          <a href="tel:4352630777">Call us</a> with any questions.
+        </p>
+      </div>
+
+      <!-- What makes us the best -->
+      <article class="gw-about">
+        <div class="gw-about-graphic">
+          <img
+            src="/assets/26Website-Section_LicApp.jpeg"
+            alt="Epic Outdoors license application consultants"
+            width="800"
+            height="800"
+            loading="lazy"
+          />
+        </div>
+        <div class="gw-about-content">
+          <h2>What Makes Us the Best Application &amp; Tag Service</h2>
+          <p>
+            With 7 full-time consultants researching and providing cutting edge
+            information to our clients, no company has more real-time
+            information. Our clients consistently draw the best tags in Western
+            Big Game hunting. We are obsessed with obtaining the best tags and
+            opportunities for our clients.
+          </p>
+        </div>
+      </article>
+
+      <!-- Epic clients get great tags -->
+      <div class="gw-statement">
+        <h2>Epic Clients Get Great Tags!</h2>
+        <p>
+          We are veterans in the industry. For over 25 years we have helped
+          thousands of hunters get the best tags and find hidden opportunities.
+          We are the most knowledgeable, research-based service in the industry.
+          Let us personally take care of you.
+        </p>
+      </div>
+
+      <!-- States we apply for -->
+      <section class="gw-section" aria-labelledby="states-heading">
+        <div class="gw-section-head">
+          <span class="gw-eyebrow">Coverage</span>
+          <h2 class="gw-section-title" id="states-heading">
+            States We Apply For
+          </h2>
+          <p class="gw-section-intro">
+            We submit applications for the following 16 states.
+          </p>
+        </div>
+        <div class="gw-states-card">
+          <ul class="gw-states-list">
+            <li class="gw-state-tag">Alaska</li>
+            <li class="gw-state-tag">Arizona</li>
+            <li class="gw-state-tag">California</li>
+            <li class="gw-state-tag">Colorado</li>
+            <li class="gw-state-tag">Idaho</li>
+            <li class="gw-state-tag">Iowa</li>
+            <li class="gw-state-tag">Kansas</li>
+            <li class="gw-state-tag">Montana</li>
+            <li class="gw-state-tag">Nevada</li>
+            <li class="gw-state-tag">New Mexico</li>
+            <li class="gw-state-tag">Oregon</li>
+            <li class="gw-state-tag">South Dakota</li>
+            <li class="gw-state-tag">Texas (sheep)</li>
+            <li class="gw-state-tag">Utah</li>
+            <li class="gw-state-tag">Washington</li>
+            <li class="gw-state-tag">Wyoming</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <div class="gw-final">
+        <h2>Ready to Get Started?</h2>
+        <p class="gw-final-phone">
+          Call <a href="tel:4352630777">435-263-0777</a>
+        </p>
+        <p class="gw-final-sub">Call us with any questions or to sign up.</p>
+        <a class="gw-btn-primary" href="#request-info">
+          <span>Click to Join Now</span>
+          <span class="gw-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+
+      <!-- Request information -->
+      <section
+        class="gw-section"
+        id="request-info"
+        aria-labelledby="contact-heading"
+      >
+        <div class="gw-section-head">
+          <span class="gw-eyebrow">Get In Touch</span>
+          <h2 class="gw-section-title" id="contact-heading">
+            Request Information
+          </h2>
+          <p class="gw-section-intro">
+            Send us your info and we'll reach out to you soon.
+          </p>
         </div>
 
-        <!-- How it works -->
-        <section class="gw-section" aria-labelledby="how-heading">
-            <div class="gw-section-head">
-                <span class="gw-eyebrow">New Clients</span>
-                <h2 class="gw-section-title" id="how-heading">How It Works</h2>
-                <p class="gw-section-intro">Four steps from sign-up to drawing tags.</p>
-            </div>
-            <div class="gw-steps">
-                <div class="gw-step">
-                    <div class="gw-step-marker">
-                        <span class="gw-step-num" aria-hidden="true">1</span>
-                    </div>
-                    <div class="gw-step-card">
-                        <p class="gw-step-text">
-                            Fill out our <a href="#request-info">License Application Form</a>.
-                        </p>
-                    </div>
-                </div>
-                <div class="gw-step">
-                    <div class="gw-step-marker">
-                        <span class="gw-step-num" aria-hidden="true">2</span>
-                    </div>
-                    <div class="gw-step-card">
-                        <p class="gw-step-text">
-                            Our professional hunting consultants will call you to review your strategy.
-                        </p>
-                    </div>
-                </div>
-                <div class="gw-step">
-                    <div class="gw-step-marker">
-                        <span class="gw-step-num" aria-hidden="true">3</span>
-                    </div>
-                    <div class="gw-step-card">
-                        <p class="gw-step-text">
-                            We submit each of your state applications and apply for each state as if we were you.
-                        </p>
-                    </div>
-                </div>
-                <div class="gw-step">
-                    <div class="gw-step-marker">
-                        <span class="gw-step-num" aria-hidden="true">4</span>
-                    </div>
-                    <div class="gw-step-card">
-                        <p class="gw-step-text">
-                            You draw tags or receive state refunds directly on your card.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Join CTA band -->
-        <div class="gw-cta-band">
-            <h2>Join Our License Application Service</h2>
-            <a class="gw-btn-primary" href="#request-info">
-                <span>Click to Join Now</span>
-                <span class="gw-arrow" aria-hidden="true">&rarr;</span>
-            </a>
-        </div>
-
-        <!-- Pricing -->
-        <section class="gw-section" aria-labelledby="pricing-heading">
-            <div class="gw-section-head">
-                <span class="gw-eyebrow">Pricing</span>
-                <h2 class="gw-section-title" id="pricing-heading">Application Pricing</h2>
-            </div>
-            <div class="gw-pricing">
-                <div class="gw-tier">
-                    <span class="gw-tier-price">$50</span>
-                    <span class="gw-tier-unit">per state</span>
-                    <h3 class="gw-tier-name">First Species</h3>
-                    <p class="gw-tier-desc">For your first species in each state.</p>
-                </div>
-                <div class="gw-tier">
-                    <span class="gw-tier-price">$100</span>
-                    <span class="gw-tier-unit">per state</span>
-                    <h3 class="gw-tier-name">Multiple Species</h3>
-                    <p class="gw-tier-desc">For 2 or more species in each state.</p>
-                </div>
-                <div class="gw-tier gw-tier--featured">
-                    <span class="gw-tier-badge">Best Value</span>
-                    <span class="gw-tier-price">$750</span>
-                    <span class="gw-tier-unit">one flat rate</span>
-                    <h3 class="gw-tier-name">Unlimited</h3>
-                    <p class="gw-tier-desc">Unlimited species and unlimited states.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Switching services callout -->
-        <div class="gw-callout">
-            <h3>Switching Services</h3>
-            <p>
-                <strong>Simply send us your receipt or renewal form</strong> from your previous license application
-                service
-                and we'll take care of the rest. When switching application services, your points are YOURS!
-                <a href="tel:4352630777">Call us</a> with any questions.
-            </p>
-        </div>
-
-        <!-- What makes us the best -->
-        <article class="gw-about">
-            <div class="gw-about-graphic">
-                <img src="/assets/26Website-Section_LicApp.jpeg" alt="Epic Outdoors license application consultants"
-                    width="800" height="800" loading="lazy">
-            </div>
-            <div class="gw-about-content">
-                <h2>What Makes Us the Best Application &amp; Tag Service</h2>
-                <p>
-                    With 7 full-time consultants researching and providing cutting edge information to our clients, no
-                    company
-                    has more real-time information. Our clients consistently draw the best tags in Western Big Game
-                    hunting. We
-                    are obsessed with obtaining the best tags and opportunities for our clients.
-                </p>
-            </div>
-        </article>
-
-        <!-- Epic clients get great tags -->
-        <div class="gw-statement">
-            <h2>Epic Clients Get Great Tags!</h2>
-            <p>
-                We are veterans in the industry. For over 25 years we have helped thousands of hunters get the best tags
-                and
-                find hidden opportunities. We are the most knowledgeable, research-based service in the industry. Let us
-                personally take care of you.
-            </p>
-        </div>
-
-        <!-- States we apply for -->
-        <section class="gw-section" aria-labelledby="states-heading">
-            <div class="gw-section-head">
-                <span class="gw-eyebrow">Coverage</span>
-                <h2 class="gw-section-title" id="states-heading">States We Apply For</h2>
-                <p class="gw-section-intro">We submit applications for the following 16 states.</p>
-            </div>
-            <div class="gw-states-card">
-                <ul class="gw-states-list">
-                    <li class="gw-state-tag">Alaska</li>
-                    <li class="gw-state-tag">Arizona</li>
-                    <li class="gw-state-tag">California</li>
-                    <li class="gw-state-tag">Colorado</li>
-                    <li class="gw-state-tag">Idaho</li>
-                    <li class="gw-state-tag">Iowa</li>
-                    <li class="gw-state-tag">Kansas</li>
-                    <li class="gw-state-tag">Montana</li>
-                    <li class="gw-state-tag">Nevada</li>
-                    <li class="gw-state-tag">New Mexico</li>
-                    <li class="gw-state-tag">Oregon</li>
-                    <li class="gw-state-tag">South Dakota</li>
-                    <li class="gw-state-tag">Texas (sheep)</li>
-                    <li class="gw-state-tag">Utah</li>
-                    <li class="gw-state-tag">Washington</li>
-                    <li class="gw-state-tag">Wyoming</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Final CTA -->
-        <div class="gw-final">
-            <h2>Ready to Get Started?</h2>
-            <p class="gw-final-phone">Call <a href="tel:4352630777">435-263-0777</a></p>
-            <p class="gw-final-sub">Call us with any questions or to sign up.</p>
-            <a class="gw-btn-primary" href="#request-info">
-                <span>Click to Join Now</span>
-                <span class="gw-arrow" aria-hidden="true">&rarr;</span>
-            </a>
-        </div>
-
-        <!-- Request information -->
-        <section class="gw-section" id="request-info" aria-labelledby="contact-heading">
-            <div class="gw-section-head">
-                <span class="gw-eyebrow">Get In Touch</span>
-                <h2 class="gw-section-title" id="contact-heading">Request Information</h2>
-                <p class="gw-section-intro">Send us your info and we'll reach out to you soon.</p>
-            </div>
+        <div class="gw-request-cols">
+          <!-- LEFT: contact form -->
+          <div class="gw-request-col">
             <div class="gw-form-card">
-                <form action="https://epicoutdoorsmember.com/license_app_contact.asp" method="POST">
-                    <div class="gw-form-grid">
-                        <div class="gw-field">
-                            <label for="gw-first">First Name</label>
-                            <input type="text" id="gw-first" name="firstName" autocomplete="given-name" maxlength="100"
-                                required>
-                        </div>
-                        <div class="gw-field">
-                            <label for="gw-last">Last Name</label>
-                            <input type="text" id="gw-last" name="lastName" autocomplete="family-name" maxlength="100"
-                                required>
-                        </div>
-                        <div class="gw-field">
-                            <label for="gw-phone">Phone</label>
-                            <input type="tel" id="gw-phone" name="phone" autocomplete="tel" maxlength="50" required>
-                        </div>
-                        <div class="gw-field">
-                            <label for="gw-email">Email</label>
-                            <input type="email" id="gw-email" name="email" autocomplete="email" maxlength="200"
-                                required>
-                        </div>
-                    </div>
-                    <!-- honeypot: anti-spam, leave empty -->
-                    <div class="gw-hp" aria-hidden="true">
-                        <label for="gw-company">Company</label>
-                        <input type="text" id="gw-company" name="company" tabindex="-1" autocomplete="off">
-                    </div>
-                    <button type="submit" class="gw-btn-primary">
-                        <span>Send Request</span>
-                        <span class="gw-arrow" aria-hidden="true">&rarr;</span>
-                    </button>
-                </form>
+              <form
+                action="https://epicoutdoorsmember.com/license_app_contact.asp"
+                method="POST"
+              >
+                <div class="gw-form-grid">
+                  <div class="gw-field">
+                    <label for="gw-first">First Name</label>
+                    <input
+                      type="text"
+                      id="gw-first"
+                      name="firstName"
+                      autocomplete="given-name"
+                      maxlength="100"
+                      required
+                    />
+                  </div>
+                  <div class="gw-field">
+                    <label for="gw-last">Last Name</label>
+                    <input
+                      type="text"
+                      id="gw-last"
+                      name="lastName"
+                      autocomplete="family-name"
+                      maxlength="100"
+                      required
+                    />
+                  </div>
+                  <div class="gw-field">
+                    <label for="gw-phone">Phone</label>
+                    <input
+                      type="tel"
+                      id="gw-phone"
+                      name="phone"
+                      autocomplete="tel"
+                      maxlength="50"
+                      required
+                    />
+                  </div>
+                  <div class="gw-field">
+                    <label for="gw-email">Email</label>
+                    <input
+                      type="email"
+                      id="gw-email"
+                      name="email"
+                      autocomplete="email"
+                      maxlength="200"
+                      required
+                    />
+                  </div>
+                </div>
+                <!-- honeypot: anti-spam, leave empty -->
+                <div class="gw-hp" aria-hidden="true">
+                  <label for="gw-company">Company</label>
+                  <input
+                    type="text"
+                    id="gw-company"
+                    name="company"
+                    tabindex="-1"
+                    autocomplete="off"
+                  />
+                </div>
+                <button type="submit" class="gw-btn-primary">
+                  <span>Send Request</span>
+                  <span class="gw-arrow" aria-hidden="true">&rarr;</span>
+                </button>
+              </form>
             </div>
-        </section>
+          </div>
 
+          <!-- OR divider -->
+          <div class="gw-or-divider" aria-hidden="true">
+            <span class="gw-or-badge">OR</span>
+          </div>
+
+          <!-- RIGHT: PDF download -->
+          <div class="gw-request-col">
+            <div class="gw-pdf-card">
+              <h3>Prefer to Mail It In?</h3>
+              <p>Download our sign-up form, fill it out, and send it back.</p>
+              <div class="gw-pdf-preview">
+                <object
+                  class="gw-pdf-doc"
+                  data="/assets/2026-MAIL-EpicLicenseApplicationForm.pdf#toolbar=0&amp;navpanes=0&amp;scrollbar=0&amp;view=FitH"
+                  type="application/pdf"
+                >
+                  <div class="gw-pdf-fallback">
+                    Preview unavailable &mdash; use the download button below.
+                  </div>
+                </object>
+              </div>
+              <a
+                class="gw-btn-primary"
+                href="/assets/2026-MAIL-EpicLicenseApplicationForm.pdf"
+                download
+              >
+                <span>Download Sign-Up PDF</span>
+                <span class="gw-arrow" aria-hidden="true">&darr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
-        Copyright &copy; 2017&ndash;<span id="y"></span> Epic Outdoors | All Rights Reserved
+      Copyright &copy; 2017&ndash;<span id="y"></span> Epic Outdoors | All
+      Rights Reserved
     </footer>
 
     <script>
-        document.getElementById('y').textContent = new Date().getFullYear();
+      document.getElementById("y").textContent = new Date().getFullYear();
     </script>
-
-</body>
-
+  </body>
 </html>
